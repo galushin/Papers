@@ -68,5 +68,101 @@
 Галушин П.В.
 \end_layout
 
+\begin_layout Section
+Схема Бернулли
+\end_layout
+
+\begin_layout Subsection
+Распределение Бернулли
+\end_layout
+
+\begin_layout Standard
+Простейшей нетривиальной случайной величиной является величина с распределением
+ Бернулли, которая принимает значение 
+\begin_inset Formula $1$
+\end_inset
+
+, если некоторое событие произошло и 
+\begin_inset Formula $0$
+\end_inset
+
+, если это событие не произошло.
+ Если вероятность того, что событие произойдёт, равна 
+\begin_inset Formula $p$
+\end_inset
+
+, то распределение вероятностей есть
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(k\right)=\begin{cases}
+p, & k=1\\
+1-p, & k=0
+\end{cases}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Часто вводят обозначение
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+q=1-p.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Числовые характеристики этого распределения вычисляются элементарно:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[X\right]=0\cdot\left(1-p\right)+1\cdot p=p,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D\left[X\right]=M\left[X^{2}\right]-p^{2}=M\left[X\right]-p^{2}=p-p^{2}=p\left(1-p\right)=pq.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём характеристическую функцию распределения Бернулли:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\varphi\left(\lambda\right)=\left(1-p\right)e^{i\lambda\cdot0}+p\cdot e^{i\lambda\cdot1}=\left(1-p\right)+p\cdot e^{i\lambda}=q+p\cdot e^{i\lambda}.\label{eq:bernoulli_phi}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
