@@ -808,5 +808,141 @@ D\left[B\left(n,p\right)\right]=n\cdot p\cdot\left(1-p\right)=n\cdot p\cdot q.
 
 \end_layout
 
+\begin_layout Subsection
+Распределение Пуассона
+\end_layout
+
+\begin_layout Standard
+При больших 
+\begin_inset Formula $n$
+\end_inset
+
+ пользоваться биномиальным распределением непосредственно неудобно.
+ Пусть 
+\begin_inset Formula $n$
+\end_inset
+
+ бесконечно увеличивается, а 
+\begin_inset Formula $p=\frac{a}{n}$
+\end_inset
+
+, где 
+\begin_inset Formula $a$
+\end_inset
+
+ — некоторая постоянная.
+ Вычислим предел 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Биномиальное-распределение"
+
+\end_inset
+
+ при этих условиях:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}P_{n}\left(k\right)=\lim_{n\to\infty}\dbinom{n}{k}\left(\frac{a}{n}\right)^{k}\left(1-\frac{a}{n}\right)^{n-k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выразим биномиальные коэффициенты через факториалы и вынесем множители,
+ не зависящие от 
+\begin_inset Formula $n$
+\end_inset
+
+, за знак предела:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+\lim_{n\to\infty}P_{n}\left(k\right)=\lim_{n\to\infty}\frac{n!}{k!\left(n-k\right)!}\left(\frac{a}{n}\right)^{k}\left(1-\frac{a}{n}\right)^{n-k}=\\
+=\frac{a^{k}}{k!}\lim_{n\to\infty}\frac{n!}{\left(n-k\right)!}\left(\frac{1}{n}\right)^{k}\left(1-\frac{a}{n}\right)^{n-k}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как
+\begin_inset Formula 
+\[
+\frac{n!}{\left(n-k\right)!}=\prod_{j=k+1}^{n}j=\prod_{j=0}^{k-1}\left(n-j\right),
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\frac{n!}{\left(n-k\right)!}\left(\frac{1}{n}\right)^{k}=\lim_{n\to\infty}\prod_{j=0}^{k-1}\left(\frac{n-j}{n}\right)=\prod_{j=0}^{k-1}\lim_{n\to\infty}\left(1-\frac{j}{n}\right)=1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом (учитывая второй замечательный предел 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+нужна ссылка!!!
+\end_layout
+
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}P_{n}\left(k\right)=\frac{a^{k}}{k!}\lim_{n\to\infty}\left(1-\frac{a}{n}\right)^{n-k}=\frac{a^{k}}{k!}\lim_{n\to\infty}\left(1-\frac{a}{n}\right)^{n}=\frac{a^{k}}{k!}e^{-a}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Распределение вероятностей
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(k\right)=\frac{a^{k}}{k!}e^{-a},
+\]
+
+\end_inset
+
+где 
+\begin_inset Formula $k\in N\cup\{0\}$
+\end_inset
+
+, называется распределением Пуассона.
+\end_layout
+
 \end_body
 \end_document
