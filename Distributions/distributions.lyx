@@ -68,6 +68,19 @@
 Галушин П.В.
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Введение
+\end_layout
+
 \begin_layout Section
 Характеристические функции
 \end_layout
