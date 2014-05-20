@@ -944,5 +944,569 @@ P\left(k\right)=\frac{a^{k}}{k!}e^{-a},
 , называется распределением Пуассона.
 \end_layout
 
+\begin_layout Section
+Нормальное распределение
+\end_layout
+
+\begin_layout Subsection
+Нормальное распределение как предел биномиального распределения
+\end_layout
+
+\begin_layout Standard
+Распределение Пуассона не является единственным вариантом предельного распределе
+ния для биномиального распределения.
+ Пусть 
+\begin_inset Formula $n$
+\end_inset
+
+ снова стремится к бесконечности, но величина 
+\begin_inset Formula $p$
+\end_inset
+
+ остаётся постоянной.
+ Пусть случайная величина 
+\begin_inset Formula $X_{n}$
+\end_inset
+
+ имеет биномиальное распределение: 
+\begin_inset Formula 
+\[
+X_{n}\sim B\left(n,p\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Распишем в формуле для вероятностей биномиального распределения биномиальные
+ коэффициенты через факториалы:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{n}\left(k\right)=\frac{n!}{k!\left(n-k\right)!}p^{k}\cdot q^{n-k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Факториалы приблизим с помощью формулы Стирлинга:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+n!\sim\sqrt{2\pi n}\cdot\left(\frac{n}{e}\right)^{n}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Применяя эту формулу к 
+\begin_inset Formula $n!$
+\end_inset
+
+, 
+\begin_inset Formula $k!$
+\end_inset
+
+ и 
+\begin_inset Formula $\left(n-k\right)!$
+\end_inset
+
+ получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{n}\left(k\right)=\frac{\sqrt{2\pi n}\cdot n^{n}}{e^{n}}\cdot\frac{e^{k}}{\sqrt{2\pi k}\cdot k^{k}}\cdot\frac{e^{n-k}}{\sqrt{2\pi\left(n-k\right)}\cdot\left(n-k\right)^{\left(n-k\right)}}\cdot p^{k}\cdot q^{n-k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Упростим это выражение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{n}\left(k\right)=\sqrt{\frac{n}{2\pi k\left(n-k\right)}}\cdot\frac{n^{n}}{k^{k}\cdot\left(n-k\right)^{n-k}}\cdot p^{k}\cdot q^{n-k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Введём стандартизованные переменные:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+x=\frac{k}{n}-p.\label{eq:ML_local_theorem_score}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Тогда
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k=n\left(x+p\right),
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{k}{pn}=\left(\frac{x}{p}+1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+n-k=n\left(1-\frac{k}{n}\right)=n\left(1-x-p\right)=n\left(q-x\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{n-k}{nq}=\left(1-\frac{x}{q}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{n}\left(k\right)=\frac{1}{\sqrt{2\pi n\left(p+x\right)\left(q-x\right)}}\cdot\left(1+\frac{x}{p}\right)^{-n\left(x+p\right)}\cdot\left(1-\frac{x}{q}\right)^{-n\left(q-x\right)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Обозначим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+W=\left(1+\frac{x}{p}\right)^{-n\left(x+p\right)}\cdot\left(1-\frac{x}{q}\right)^{-n\left(q-x\right)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Возьмём логарифм этого выражения:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ln W=-n\left(x+p\right)\ln\left(1+\frac{x}{p}\right)-n\left(q-x\right)\ln\left(1-\frac{x}{q}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Разложим логарифмы в ряд Тейлора и возьмём первые два слагаемых:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ln W\sim-n\left(p+x\right)\left(\frac{x}{p}-\frac{x^{2}}{2p^{2}}\right)-n\left(q-x\right)\left(-\frac{x}{q}-\frac{x^{2}}{2q^{2}}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Отметим, что для того, чтобы это приближение было достаточно точным, требуется,
+ чтобы 
+\begin_inset Formula $\left|x\right|$
+\end_inset
+
+ был намного меньше, чем 
+\begin_inset Formula $p$
+\end_inset
+
+ и 
+\begin_inset Formula $q$
+\end_inset
+
+.
+ Приведём подобные слагаемые:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+\ln W\sim-n\left[\left(x-x\right)+\left(-\frac{x^{2}}{2p}+\frac{x^{2}}{p}-\frac{x^{2}}{2q}+\frac{x^{2}}{q}\right)+\left(-\frac{x^{3}}{2p^{2}}+\frac{x^{3}}{2q^{2}}\right)\right]=\\
+=-n\left[\frac{x^{2}}{2pq}+x^{3}\left(\frac{1}{q^{2}}-\frac{1}{p^{2}}\right)\right].
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+P_{n}\left(k\right)=\frac{1}{\sqrt{2\pi npq}}\exp\left(-\frac{nx^{2}}{2pq}\right).\label{eq:ML_local_approx}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём числовые характеристики случайной величины
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+X=\frac{Y}{n}-p.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[X\right]=\frac{np}{n}-p=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D\left[X\right]=\frac{D\left[Y\right]}{n^{2}}=\frac{pq}{n}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Функция плотности нормального распределения с нулевым математическим ожиданием
+ и дисперсией 
+\begin_inset Formula $\frac{1}{n}pq$
+\end_inset
+
+ имеет вид
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f\left(x\right)=\sqrt{\frac{n}{2\pi pq}}\cdot\exp\left(-\frac{nx^{2}}{2pq}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Сравнивая это выражение с 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ML_local_approx"
+
+\end_inset
+
+, легко заметить, что
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{n}\left(k\right)=\frac{1}{n}f\left(\frac{k}{n}-p\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Появление множителя 
+\begin_inset Formula $\nicefrac{1}{n}$
+\end_inset
+
+ связано с тем, что биномиальное распределение является дискретным и вероятность
+ того, что 
+\begin_inset Formula $Y=k$
+\end_inset
+
+ можно рассматривать как вероятность попадания 
+\begin_inset Formula $Y$
+\end_inset
+
+ в интервал 
+\begin_inset Formula $\left[k;k+1\right)$
+\end_inset
+
+.
+ Изменению 
+\begin_inset Formula $k$
+\end_inset
+
+ на единицу соответствует изменение 
+\begin_inset Formula $x$
+\end_inset
+
+ на 
+\begin_inset Formula $\nicefrac{1}{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Ещё один вывод нормального распределения
+\end_layout
+
+\begin_layout Subsection
+Центральная предельная теорема
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula $X_{1},...,X_{n},...$
+\end_inset
+
+ — последовательность одинаково распределённых независимых случайных чисел
+ с нулевым математическим ожиданием и единичной дисперсией.
+ Построим последовательность величин 
+\begin_inset Formula $\left\{ Z_{n}\right\} $
+\end_inset
+
+ по следующему правилу:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Z_{n}=\frac{1}{\sqrt{n}}\sum_{k=1}^{n}X_{k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Легко убедиться, что
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[Z_{n}\right]=0,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D\left[Z_{n}\right]=1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём характеристическую функцию случайной величины 
+\begin_inset Formula $Z_{n}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline}
+\psi_{n}\left(\lambda\right)=M\left[\exp\left(i\lambda Z_{n}\right)\right]=\prod_{k=1}^{n}M\left[\exp\left(\frac{i\lambda X_{k}}{\sqrt{n}}\right)\right]=\\
+=\left(\intop_{-\infty}^{+\infty}\exp\left(\frac{i\lambda x}{\sqrt{n}}\right)f\left(x\right)dx\right)^{n}=\left(\varphi\left(\frac{\lambda}{\sqrt{n}}\right)\right)^{n},\label{eq:characteristic_z_n}
+\end{multline}
+
+\end_inset
+
+ где 
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+ — плотность распределения случайных чисел 
+\begin_inset Formula $X_{k}$
+\end_inset
+
+, а 
+\begin_inset Formula $\varphi\left(\lambda\right)$
+\end_inset
+
+ — их характеристическая функция.
+ Разложим 
+\begin_inset Formula $\varphi\left(\lambda\right)$
+\end_inset
+
+ в ряд Тейлора на отрезке 
+\begin_inset Formula $\left[-a;\, a\right]$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi\left(\lambda\right)=\varphi\left(0\right)+\varphi^{\prime}\left(0\right)\cdot\lambda+\varphi^{\prime\prime}\left(0\right)\cdot\frac{\lambda^{2}}{2}+o\left(\lambda^{2}\right).
+\]
+
+\end_inset
+
+Учитывая связь (см.
+ формулы 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:mean_via_phi"
+
+\end_inset
+
+ и 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:variance_via_phi"
+
+\end_inset
+
+) между моментами распределения и значениями производных характеристической
+ функции при 
+\begin_inset Formula $\lambda=0$
+\end_inset
+
+ :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi\left(\lambda\right)=1-\frac{\lambda^{2}}{2}+o\left(\lambda^{2}\right)\text{,}
+\]
+
+\end_inset
+
+ подставим это выражение в формулу 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:characteristic_z_n"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\psi_{n}\left(\lambda\right)=\left(1-\frac{\lambda^{2}}{2\cdot n}+o\left(\frac{\lambda^{2}}{n}\right)\right)^{n}=\left(1-\frac{\lambda^{2}}{2\cdot n}\right)^{n}+o\left(\frac{\lambda^{2}}{n}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Переходя к пределу, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\left(1-\frac{\lambda^{2}}{2\cdot n}\right)^{n}=\exp\left(-\frac{\lambda^{2}}{2}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, предельное распределение 
+\begin_inset Formula $Z_{n}$
+\end_inset
+
+ является стандартным нормальным.
+\end_layout
+
 \end_body
 \end_document
