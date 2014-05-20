@@ -627,5 +627,173 @@ D\left[Y\right]=\frac{q}{p}+\frac{2q^{2}}{p^{2}}-\frac{q}{p^{2}}^{2}=\frac{pq+2q
 
 \end_layout
 
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Биномиальное-распределение"
+
+\end_inset
+
+Биномиальное распределение
+\end_layout
+
+\begin_layout Standard
+Еще одной случайной величиной, построенной на основе распределения Бернулли,
+ является количество появление события в серии экспериментов заданной длины.
+ Пусть эксперимент проводится 
+\begin_inset Formula $n$
+\end_inset
+
+ раз в абсолютно одинаковых условиях, а вероятность появления события 
+\begin_inset Formula $A$
+\end_inset
+
+ в каждом эксперименте равна 
+\begin_inset Formula $p$
+\end_inset
+
+.
+ Тогда говорят, что число 
+\begin_inset Formula $k$
+\end_inset
+
+ появлений события имеет биномиальное распределение.
+ Биномиальное распределение обозначают 
+\begin_inset Formula $B\left(n,p\right)$
+\end_inset
+
+.
+ Само распределение Бернулли является частным случаем биномиального распределени
+я при 
+\begin_inset Formula $n=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Функцию вероятности для биномиального распределения можно получить с помощью
+ характеристических функций.
+ Характеристическая функция суммы 
+\begin_inset Formula $n$
+\end_inset
+
+ независимых случайных величин Бернулли с одинаковым параметром равна характерис
+тической функции распределения Бернулли 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:bernoulli_phi"
+
+\end_inset
+
+, возведённой в степень 
+\begin_inset Formula $n$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi_{n}\left(\lambda\right)=\left(q+p\cdot e^{i\lambda}\right)^{n}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Раскрывая скобки по формуле бинома Ньютона, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi_{n}\left(\lambda\right)=\sum_{k=0}^{n}\binom{n}{k}\cdot p^{k}\left(1-p\right)^{n-k}\cdot e^{i\cdot\lambda\cdot k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Отсюда следует, что вероятность того, что событие произойдёт ровно 
+\begin_inset Formula $k$
+\end_inset
+
+ раз в 
+\begin_inset Formula $n$
+\end_inset
+
+ опытах равна
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{n}\left(k\right)=\dbinom{n}{k}\cdot p^{k}\left(1-p\right)^{n-k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Часто вводят обозначение 
+\begin_inset Formula $q=1-p$
+\end_inset
+
+ и пишут
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{n}\left(k\right)=\dbinom{n}{k}\cdot p^{k}q^{n-k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Математическое ожидание и дисперсию биномиального распределения можно легко
+ получить исходя из его определения.
+ Математическое ожидание суммы всегда равно сумме математических ожидания,
+ поэтому:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[B\left(n,p\right)\right]=n\cdot p.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Аналогично, дисперсия суммы независимых случайных величин равна сумме дисперсий,
+ поэтому
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D\left[B\left(n,p\right)\right]=n\cdot p\cdot\left(1-p\right)=n\cdot p\cdot q.
+\]
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
