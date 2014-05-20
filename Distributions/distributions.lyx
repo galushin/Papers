@@ -69,6 +69,268 @@
 \end_layout
 
 \begin_layout Section
+Характеристические функции
+\end_layout
+
+\begin_layout Standard
+Характеристической функцией распределения случайной величины 
+\begin_inset Formula $X$
+\end_inset
+
+ называется комплексная функция, определяемая по формуле
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi\left(\lambda,X\right)=M\left[\exp\left(i\lambda X\right)\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В случае дискретного распределения характеристическая функция определяется
+ формулой
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi\left(\lambda,X\right)=\sum_{k}e^{i\lambda x_{k}}p_{k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В случае же непрерывного распределения характеристическая функция вычисляется
+ следующим образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi\left(\lambda,X\right)=\intop_{-\infty}^{+\infty}e^{i\lambda x}f\left(x\right)dx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, характеристическая функция является преобразованием Фурье
+ для функции плотности распределения непрерывной случайной величины.
+\end_layout
+
+\begin_layout Standard
+Для того, чтобы получить функцию плотности распределения по её характеристическо
+й функции, нужно воспользоваться обратным преобразованием Фурье:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f\left(x\right)=\frac{1}{2\pi}\intop_{-\infty}^{+\infty}e^{-i\lambda x}\varphi\left(\lambda\right)d\lambda.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left\{ X=x_{k}\right\} =\frac{1}{2\pi}\intop_{-\infty}^{+\infty}e^{-i\lambda x}\varphi\left(\lambda\right)d\lambda.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если 
+\begin_inset Formula $X$
+\end_inset
+
+ и 
+\begin_inset Formula $Y$
+\end_inset
+
+ — независимые случайные величины, то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+\varphi\left(\lambda,X+Y\right)=M\left[\exp\left(i\lambda\left(X+Y\right)\right)\right]=\\
+=M\left[\exp\left(i\lambda X\right)\cdot\exp\left(i\lambda Y\right)\right]=\varphi\left(\lambda,X\right)\cdot\varphi\left(\lambda,Y\right).
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, характеристическая функция суммы независимых случайных величин
+ равна произведению их характеристических функций.
+ В то же время, нахождение функции плотности распределения суммы требует
+ вычисления свёртки, в некоторых случаях оказывается удобнее вычислить характери
+стические функции слагаемых и вычислить обратное преобразование Фурье их
+ произведения.
+ 
+\end_layout
+
+\begin_layout Standard
+Аналогично, характеристическая функция суммы 
+\begin_inset Formula $n$
+\end_inset
+
+ одинаково распределённых независимых случайных величин равна 
+\begin_inset Formula $n$
+\end_inset
+
+-ой степени характеристической функции их распределения.
+ В этом случае польза характеристических функций ещё более очевидна: вместо
+ 
+\begin_inset Formula $n$
+\end_inset
+
+-кратного вычисления интегралов нужно вычислить всего два интеграла.
+ Более того, при использовании характеристических функций количество 
+\begin_inset Formula $n$
+\end_inset
+
+ можно рассматривать как параметр и получать распределения для целого семейства
+ случайных величин.
+\end_layout
+
+\begin_layout Standard
+Докажем некоторые свойства характеристических функций.
+\end_layout
+
+\begin_layout Standard
+Подставим 
+\begin_inset Formula $\lambda=$
+\end_inset
+
+0:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi\left(0,X\right)=M\left[e^{0}\right]=1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Проделаем то же самое с производной:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi^{\prime}\left(\lambda,X\right)=M\left[i\cdot X\cdot\exp\left(i\lambda X\right)\right]\text{.}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi^{\prime}\left(0,X\right)=M\left[i\cdot X\cdot\exp\left(0\right)\right]=i\cdot M\left[X\right]\text{.}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Последнее равенство позволяет выразить математическое ожидание случайной
+ величины через её характеристическую функцию:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+M\left[X\right]=-i\cdot\varphi^{\prime}\left(0,X\right).\label{eq:mean_via_phi}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(M\left[X\right]\right)^{2}=-\left(\varphi^{\prime}\left(0,X\right)\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вычислим теперь вторую производную:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi^{\prime\prime}\left(\lambda,X\right)=M\left[i^{2}\cdot X^{2}\cdot\exp\left(i\lambda X\right)\right]=-M\left[X^{2}\cdot\exp\left(i\lambda X\right)\right]\text{.}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi^{\prime\prime}\left(0,X\right)=-M\left[X^{2}\right]=-M\left[X^{2}\right]+M^{2}\left[X\right]-M^{2}\left[X\right]=-D\left[X\right]-M^{2}\left[X\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выразим дисперсию:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+D\left[X\right]=-\varphi^{\prime\prime}\left(0,X\right)+\left(\varphi^{\prime}\left(0,X\right)\right)^{2}.\label{eq:variance_via_phi}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
 Схема Бернулли
 \end_layout
 
@@ -158,6 +420,207 @@ D\left[X\right]=M\left[X^{2}\right]-p^{2}=M\left[X\right]-p^{2}=p-p^{2}=p\left(1
 \begin{equation}
 \varphi\left(\lambda\right)=\left(1-p\right)e^{i\lambda\cdot0}+p\cdot e^{i\lambda\cdot1}=\left(1-p\right)+p\cdot e^{i\lambda}=q+p\cdot e^{i\lambda}.\label{eq:bernoulli_phi}
 \end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Геометрическое распределение
+\end_layout
+
+\begin_layout Standard
+На основе распределения Бернулли можно построить более сложные случайные
+ величины.
+ Например, количество экспериментов, в которых событие не произойдёт, перед
+ тем, как событие произойдёт впервые.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left\{ Y=k\right\} =q^{k}p=\left(1-p\right)^{k}p.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Отметим, что значение 
+\begin_inset Formula $p=0$
+\end_inset
+
+ не имеет смысла, так как в этом случае для любого 
+\begin_inset Formula $k$
+\end_inset
+
+ выполняется 
+\begin_inset Formula $P\left\{ Y=k\right\} =0$
+\end_inset
+
+, то есть вероятности в сумме не равны единице.
+\end_layout
+
+\begin_layout Standard
+Найдём характеристическую функцию этого распределения:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g\left(\lambda\right)=\sum_{k=0}^{\infty}e^{i\lambda k}q^{k}p.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вынесем множитель 
+\begin_inset Formula $p$
+\end_inset
+
+ за знак суммы, а из аргумента экспоненты вынесем 
+\begin_inset Formula $k$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g\left(\lambda\right)=p\sum_{k=0}^{\infty}\left(e^{i\lambda}q\right)^{k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Данная сумма представляет собой сумму бесконечно убывающей геометрической
+ прогрессии, так как
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|e^{i\lambda}\right|=\left|\cos\lambda+i\sin\lambda\right|=1,
+\]
+
+\end_inset
+
+ а 
+\begin_inset Formula $q=1-p\in\left[0;1\right)$
+\end_inset
+
+.
+ Воспользуемся формулой суммы убывающей геометрической прогрессии:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g\left(\lambda\right)=\frac{p}{1-qe^{i\lambda}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Воспользуемся полученным выражением, чтобы вычислить математическое ожидание
+ и дисперсию по формулам 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:mean_via_phi"
+
+\end_inset
+
+ и 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:variance_via_phi"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g^{\prime}\left(\lambda\right)=\frac{ipqe^{i\lambda}}{\left(1-qe^{i\lambda}\right)^{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g^{\prime}\left(0\right)=\frac{ipq}{\left(1-q\right)^{2}}=\frac{ipq}{p^{2}}=i\frac{q}{p}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Отсюда следует
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[Y\right]=\frac{q}{p}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Теперь найдём вторую производную и вычислим дисперсию:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g^{\prime\prime}\left(\lambda\right)=\frac{-pqe^{i\lambda}}{\left(1-qe^{i\lambda}\right)^{2}}+\frac{\left(-2\right)p\left(-1\right)\left(iqe^{i\lambda}\right)^{2}}{\left(1-qe^{i\lambda}\right)^{3}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g^{\prime\prime}\left(0\right)=\frac{-pq}{p^{2}}+\frac{2pq^{2}}{p^{3}}=-\frac{q}{p}-\frac{2q^{2}}{p^{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D\left[Y\right]=\frac{q}{p}+\frac{2q^{2}}{p^{2}}-\frac{q}{p^{2}}^{2}=\frac{pq+2q^{2}-q^{2}}{p^{2}}=\frac{q}{p^{2}}\left(p+q\right)=\frac{q}{p^{2}}.
+\]
 
 \end_inset
 
