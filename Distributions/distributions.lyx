@@ -984,6 +984,12 @@ P\left(k\right)=\frac{a^{k}}{k!}e^{-a},
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:normal_as_limit_of_binomial"
+
+\end_inset
+
 Нормальное распределение как предел биномиального распределения
 \end_layout
 
@@ -3442,6 +3448,625 @@ D\left[s^{2}\right]=\left(\frac{\sigma^{2}}{n-1}\right)^{2}\cdot2\cdot\left(n-1\
  дисперсию, если иное не указано явно.
 \end_layout
 
+\begin_layout Section
+Доверительный интервал для математического ожидания
+\end_layout
+
+\begin_layout Standard
+Как было установлено выше, выборочное среднее 
+\begin_inset Formula $m$
+\end_inset
+
+ имеет нормальное распределение 
+\begin_inset Formula $N\left(\mu,\frac{\sigma}{\sqrt{n}}\right)$
+\end_inset
+
+, иными словами, разность 
+\begin_inset Formula $m-\mu$
+\end_inset
+
+ имеет распределение 
+\begin_inset Formula $N\left(0,\frac{\sigma}{\sqrt{n}}\right)$
+\end_inset
+
+.
+ Если дисперсия 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ известна, то интервал, которому математическое ожидание принадлежит с вероятнос
+тью 
+\begin_inset Formula $1-\alpha$
+\end_inset
+
+ может быть построен следующим образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left\{ \Phi_{inv}\left(\frac{\alpha}{2}\right)\le\frac{\mu-m}{\sigma}\cdot\sqrt{n}\le\Phi\left(1-\frac{\alpha}{2}\right)\right\} =1-\alpha.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, включение
+\begin_inset Formula 
+\[
+\mu\in\left[m+\frac{\sigma}{\sqrt{n}}\cdot\Phi_{inv}\left(\frac{\alpha}{2}\right);m+\frac{\sigma}{\sqrt{n}}\cdot\Phi_{inv}\left(1-\frac{\alpha}{2}\right)\right]
+\]
+
+\end_inset
+
+выполняется с вероятностью 
+\begin_inset Formula $1-\alpha$
+\end_inset
+
+.
+ Так как нормальное распределение является симметричным, то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Phi_{inv}\left(\frac{\alpha}{2}\right)=1-\Phi_{inv}\left(1-\frac{\alpha}{2}\right),
+\]
+
+\end_inset
+
+а следовательно, доверительный интервал можно записать в виде
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu\in\left[m-\frac{\sigma}{\sqrt{n}}\cdot\Phi_{inv}\left(1-\frac{\alpha}{2}\right);m+\frac{\sigma}{\sqrt{n}}\cdot\Phi_{inv}\left(1-\frac{\alpha}{2}\right)\right]\text{.}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Рассмотрим теперь более важный с практической точки зрения случай, когда
+ дисперсия неизвестна.
+ Идея получения доверительного интервала для математического ожидания основана
+ на замене дисперсии её оценкой — несмещённой выборочной дисперсией.
+\end_layout
+
+\begin_layout Standard
+Рассмотрим отношение
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\mu-m}{s}\cdot\sqrt{n}=\frac{\mu-m}{\sigma}\cdot\sqrt{n}\cdot\frac{\sigma}{s}=\frac{\mu-m}{\sigma}\cdot\sqrt{n}\cdot\sqrt{\frac{\sigma^{2}}{\hat{\sigma}^{2}}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Величина 
+\begin_inset Formula $\frac{\mu-m}{\sigma}\cdot\sqrt{n}$
+\end_inset
+
+ имеет стандартное нормальное распределение 
+\begin_inset Formula $N\left(0;1\right)$
+\end_inset
+
+.
+ Величина
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{s^{2}\left(n-1\right)}{\sigma^{2}}
+\]
+
+\end_inset
+
+имеет распределение 
+\begin_inset Formula $\chi^{2}\left(n-1\right)$
+\end_inset
+
+.
+ Поэтому
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\mu-m}{s}\sqrt{n}\sim\frac{N\left(0;1\right)}{\sqrt{\frac{1}{n-1}\chi^{2}\left(n-1\right)}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Распределение величины
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{N\left(0;1\right)}{\sqrt{\frac{1}{n}\chi^{2}\left(n\right)}}
+\]
+
+\end_inset
+
+ называется 
+\emph on
+распределением Стьюдента
+\emph default
+ с 
+\begin_inset Formula $n$
+\end_inset
+
+ степенями свободы и обозначается 
+\begin_inset Formula $t\left(n\right)$
+\end_inset
+
+, свойства которого исследуются в двух следующих разделах.
+ Таким образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\mu-m}{s}\sqrt{n}=t\left(n-1\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Это означает, что доверительный интервал для математического ожидания с
+ уровнем значимости 
+\begin_inset Formula $1-\alpha$
+\end_inset
+
+ можно записать следующим образом
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu\in\left[m-\frac{s}{\sqrt{n}}\cdot t_{inv}\left(n-1,1-\frac{\alpha}{2}\right);m+\frac{s}{\sqrt{n}}\cdot t_{inv}\left(n-1,1-\frac{\alpha}{2}\right)\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Эта оценка уже не зависит от 
+\begin_inset Quotes fld
+\end_inset
+
+истинных
+\begin_inset Quotes frd
+\end_inset
+
+ параметров распределения.
+\end_layout
+
+\begin_layout Section
+Функция плотности распределения Стьюдента
+\end_layout
+
+\begin_layout Standard
+Найдём функцию плотности распределения и числовые характеристики этого распредел
+ения.
+ Пусть 
+\begin_inset Formula $X$
+\end_inset
+
+ и 
+\begin_inset Formula $Y$
+\end_inset
+
+ — случайные величины, причём 
+\begin_inset Formula $Y\ge0$
+\end_inset
+
+, а 
+\begin_inset Formula $Z=\frac{X}{Y}$
+\end_inset
+
+, тогда функция распределения 
+\begin_inset Formula $Z$
+\end_inset
+
+ имеет вид
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{Z}\left(x\right)=P\left\{ \frac{X}{Y}<x\right\} =P\left\{ X<x\cdot Y\right\} =\intop_{0}^{+\infty}F_{X}\left(x\cdot y\right)\cdot f_{Y}\left(y\right)dy.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Дифференцируя это выражения по 
+\begin_inset Formula $x$
+\end_inset
+
+, получим функцию плотности распределения
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+f_{Z}\left(x\right)=\intop_{0}^{+\infty}f_{X}\left(xy\right)\cdot y\cdot f_{Y}\left(y\right)dy.\label{eq:quotient_distirbution_positive_denom}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В нашем случае
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{X}\left(x\right)=\frac{1}{\sqrt{2\pi}}\exp\left(-\frac{x^{2}}{2}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём распределение для случайной величины 
+\begin_inset Formula $Y=\sqrt{\frac{1}{n}\chi_{n}^{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{Y}\left(x\right)=P\left\{ \sqrt{\frac{1}{n}\chi_{n}^{2}}\le x\right\} =P\left\{ \chi_{n}^{2}\le n\cdot x^{2}\right\} =F_{\chi_{n}^{2}}\left(n\cdot x^{2}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{gather*}
+f_{Y}\left(x\right)=f_{\chi_{n}^{2}}\left(n\cdot x^{2}\right)\cdot2nx=\frac{1}{A_{n}}\left(n\cdot x^{2}\right)^{\frac{n}{2}-1}\exp\left(-\frac{n\cdot x^{2}}{2}\right)\cdot2n\cdot x=\\
+=\frac{2\cdot n^{\frac{n}{2}}}{A_{n}}\cdot x^{n-1}\cdot\exp\left(-\frac{n\cdot x^{2}}{2}\right).
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Подставляя формулы для 
+\begin_inset Formula $f_{X}\left(x\right)$
+\end_inset
+
+ и 
+\begin_inset Formula $f_{Y}\left(x\right)$
+\end_inset
+
+ в формулу 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:quotient_distirbution_positive_denom"
+
+\end_inset
+
+, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+f_{Z}\left(x\right)=\intop_{0}^{+\infty}f_{X}\left(x\cdot y\right)\cdot y\cdot f_{Y}\left(y\right)dy=\\
+=\intop_{0}^{+\infty}\frac{1}{\sqrt{2\pi}}\exp\left(-\frac{x^{2}y^{2}}{2}\right)\frac{2\cdot n^{\frac{n}{2}}}{A_{n}}\cdot y^{n}\cdot\exp\left(-\frac{n\cdot y^{2}}{2}\right)dy=\\
+=\frac{2n^{\frac{n}{2}}}{A_{n}\sqrt{2\pi}}\intop_{0}^{+\infty}y^{n}\exp\left(-\frac{y^{2}}{2}\left(x^{2}+n\right)\right)dy.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Сделаем замену
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+t=y^{2}\cdot\left(x^{2}+n\right),
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dt=\left(x^{2}+n\right)2ydy,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dy=\frac{dt}{2y\left(x^{2}+n\right)}=\frac{dt}{2\sqrt{t}\cdot\sqrt{x^{2}+n}}\text{:}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+f_{Z}\left(x\right)=\frac{2n^{\frac{n}{2}}}{A_{n}\sqrt{2\pi}}\frac{1}{\left(x^{2}+n\right)^{\frac{n}{2}}}\intop_{0}^{+\infty}t^{\frac{n}{2}}\exp\left(-\frac{t}{2}\right)\frac{dt}{2\sqrt{t}\cdot\sqrt{x^{2}+n}}=\\
+=\frac{2n^{\frac{n}{2}}}{A_{n}\sqrt{2\pi}}\left(x^{2}+n\right)^{-\frac{n+1}{2}}\cdot\intop_{0}^{+\infty}t^{\frac{n-1}{2}}\exp\left(-\frac{t}{2}\right)dt=\frac{n^{\frac{n}{2}}A_{n+1}}{A_{n}\sqrt{2\pi}}\frac{1}{\left(x^{2}+n\right)^{\frac{n+1}{2}}}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вынесем в знаменателе 
+\begin_inset Formula $n$
+\end_inset
+
+ за скобки:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{Z}\left(x\right)=\frac{n^{\frac{n}{2}}A_{n+1}}{n^{\frac{n+1}{2}}A_{n}\sqrt{2\pi}}\left(x^{2}+n\right)^{-\frac{n+1}{2}}=\frac{A_{n+1}}{A_{n}\sqrt{2\pi n}}\left(1+\frac{x^{2}}{n}\right)^{-\frac{n+1}{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Учитывая, что 
+\begin_inset Formula 
+\[
+A_{n}=2^{\frac{n}{2}}\cdot\Gamma\left(\frac{n}{2}\right),
+\]
+
+\end_inset
+
+ получим 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{t_{n}}\left(x\right)=\frac{\sqrt{2}\cdot\Gamma\left(\frac{n+1}{2}\right)}{\Gamma\left(\frac{n}{2}\right)\cdot\sqrt{2\pi n}}\left(1+\frac{x^{2}}{n}\right)^{-\frac{n+1}{2}}=\frac{\Gamma\left(\frac{n+1}{2}\right)}{\Gamma\left(\frac{n}{2}\right)\sqrt{n\pi}}\left(1+\frac{x^{2}}{n}\right)^{-\frac{n+1}{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Числовые характеристики распределения Стьюдента
+\end_layout
+
+\begin_layout Standard
+Найдём основные числовые характеристики распределения Стьюдента.
+ Математическое ожидание равно нулю, так как функция плотности вероятностей
+ является чётной.
+ Вычислим дисперсию:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D\left[t_{n}\right]=T_{n}\intop_{-\infty}^{+\infty}\frac{x^{2}}{\left(1+\frac{x^{2}}{n}\right)^{\frac{n+1}{2}}}dx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Сделаем замену переменных 
+\begin_inset Formula $x=\sqrt{n}\cdot y$
+\end_inset
+
+, чтобы 
+\begin_inset Formula $n$
+\end_inset
+
+ осталась только в показателе степени:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D\left[t_{n}\right]=T_{n}\intop_{-\infty}^{+\infty}\frac{n\cdot y^{2}\sqrt{n}}{\left(1+y\right)^{\frac{n+1}{2}}}dy=T_{n}n\sqrt{n}\intop_{-\infty}^{+\infty}\frac{y^{2}dy}{\left(1+y^{2}\right)^{\frac{n+1}{2}}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Воспользуемся формулой интегрирования по частям
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{cc}
+u=y & dv=\frac{ydy}{\left(1+y^{2}\right)^{\frac{n+1}{2}}}\\
+du=dy & v=\frac{1}{2}\left(1+y^{2}\right)^{-\frac{n-1}{2}}\cdot\left(-\frac{2}{n-1}\right)
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D\left[t_{n}\right]=\left.T_{n}\frac{n\sqrt{n}}{n-1}y\left(1+y^{2}\right)^{-\frac{n-1}{2}}\right|_{-\infty}^{+\infty}+T_{n}\cdot\frac{n\sqrt{n}}{n-1}\intop_{-\infty}^{+\infty}\left(1+y^{2}\right)^{-\frac{n-1}{2}}dy.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Первое слагаемое обращается в нуль, если 
+\begin_inset Formula $n>2$
+\end_inset
+
+.
+ Снова воспользуемся заменой 
+\begin_inset Formula $x=\sqrt{n}\cdot y$
+\end_inset
+
+ в формуле для нормировочной постоянной:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{n}^{-1}=\intop_{-\infty}^{+\infty}\left(1+\frac{x^{2}}{n}\right)^{-\frac{n+1}{2}}dx=\sqrt{n}\cdot\intop_{-\infty}^{+\infty}\left(1+y^{2}\right)^{-\frac{n+1}{2}}dy.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Тогда
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sqrt{n-2}\cdot\intop_{-\infty}^{+\infty}\left(1+y^{2}\right)^{-\frac{n-1}{2}}dy=\frac{1}{T_{n-2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+С учётом этого, выражение для дисперсии примет вид:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D\left[t_{n}\right]=\frac{T_{n}}{T_{n-2}}\cdot\frac{\sqrt{n}}{\sqrt{n-2}}\cdot\frac{n}{n-1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+С другой стороны:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{n-2}=\frac{\Gamma\left(\frac{n-1}{2}\right)}{\Gamma\left(\frac{n}{2}-1\right)\sqrt{\left(n-2\right)\pi}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{n}=\frac{\Gamma\left(\frac{n+1}{2}\right)}{\Gamma\left(\frac{n}{2}\right)\sqrt{n\pi}}=\frac{\Gamma\left(\frac{n-1}{2}\right)\left(\frac{n-1}{2}\right)}{\Gamma\left(\frac{n}{2}-1\right)\left(\frac{n}{2}-1\right)\sqrt{n\pi}}=T_{n-2}\frac{\sqrt{n-2}}{\sqrt{n}}\frac{n-1}{n-2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D\left[t_{n}\right]=\frac{n}{n-2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 Основы непараметрической статистики
 \end_layout
@@ -3701,6 +4326,551 @@ status open
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Проверка гипотезы о распределении по критерию хи-квадрат
+\end_layout
+
+\begin_layout Standard
+Пусть дискретная случайная величина 
+\begin_inset Formula $X$
+\end_inset
+
+ может принимать 
+\begin_inset Formula $N$
+\end_inset
+
+ различных значений, для удобства будем считать, что эти значения есть 
+\begin_inset Formula $1,2,...,N$
+\end_inset
+
+.
+ Проверим гипотезу о том, что случайная величина 
+\begin_inset Formula $X$
+\end_inset
+
+ имеет распределение
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left\{ X=j\right\} =p_{j},\, j=1,...,N,
+\]
+
+\end_inset
+
+где
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p_{j}\ge0,\, j=1,...,N,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{j=1}^{N}p_{j}=1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Пусть проведено 
+\begin_inset Formula $n$
+\end_inset
+
+ независимых экспериментов, в ходе которых было получено 
+\begin_inset Formula $n$
+\end_inset
+
+ значений случайной величины 
+\begin_inset Formula $X$
+\end_inset
+
+, обозначим количество экспериментов, в результате которых было получено
+ значение 
+\begin_inset Formula $j$
+\end_inset
+
+ как 
+\begin_inset Formula $n_{j}$
+\end_inset
+
+.
+ Как было показано в 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:normal_as_limit_of_binomial"
+
+\end_inset
+
+, распределение 
+\begin_inset Formula $n_{j}$
+\end_inset
+
+ при 
+\begin_inset Formula $n\to\infty$
+\end_inset
+
+ стремится к нормальному с математическим ожиданием 
+\begin_inset Formula $n\cdot p_{j}$
+\end_inset
+
+ и дисперсией 
+\begin_inset Formula $n\cdot p_{j}\left(1-p_{j}\right).$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Перейдём от абсолютных частот 
+\begin_inset Formula $n_{j}$
+\end_inset
+
+ к относительным
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\nu_{j}=\frac{n_{j}}{n},
+\]
+
+\end_inset
+
+которые в пределе имеют распределение 
+\begin_inset Formula 
+\[
+N\left(p_{j},\frac{p_{j}\left(1-p_{j}\right)}{n}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Поэтому величина
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\left(\nu_{j}-p_{j}\right)^{2}}{n\cdot p_{j}\cdot\left(1-p_{j}\right)}
+\]
+
+\end_inset
+
+имеет распределение хи-квадрат с одной степенью свободы.
+ Этот факт можно использовать для проверки значимости отклонения отдельных
+ относительных частот от теоретических значений 
+\begin_inset Formula $p_{j}$
+\end_inset
+
+.
+ Однако, больший интерес представляет отклонение 
+\begin_inset Quotes fld
+\end_inset
+
+в целом
+\begin_inset Quotes frd
+\end_inset
+
+, а не отдельных частот.
+\end_layout
+
+\begin_layout Standard
+Проблема заключается в том, что величины 
+\begin_inset Formula $\nu_{1},...,\nu_{N}$
+\end_inset
+
+ не являются независимыми.
+ Это видно уже из соотношения
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{j=1}^{N}\nu_{j}=\sum_{j=1}^{N}\frac{n_{j}}{n}=\frac{1}{n}\sum_{j=1}^{N}n_{j}=\frac{n}{n}=1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Рассмотрим простейший нетривиальный случай 
+\begin_inset Formula $N=2$
+\end_inset
+
+.
+ В этом случае 
+\begin_inset Formula $v_{2}=1-v_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $p_{2}=1-p_{1}$
+\end_inset
+
+ и 
+\begin_inset Formula $p_{2}\left(1-p_{2}\right)=\left(1-p_{1}\right)p_{1}=p_{1}\left(1-p_{1}\right)$
+\end_inset
+
+, откуда следует, что
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\left(\nu_{2}-p_{2}\right)^{2}}{np_{2}\left(1-p_{2}\right)}=\frac{\left(\nu_{1}-p_{1}\right)^{2}}{np_{1}\left(1-p_{1}\right)},
+\]
+
+\end_inset
+
+то есть меры отклонения 
+\begin_inset Formula $\nu_{1}$
+\end_inset
+
+ от 
+\begin_inset Formula $p_{1}$
+\end_inset
+
+и 
+\begin_inset Formula $\nu_{2}$
+\end_inset
+
+от 
+\begin_inset Formula $p_{2}$
+\end_inset
+
+ в точности совпадают.
+\end_layout
+
+\begin_layout Standard
+Рассмотрим математическое ожидание логарифма правдоподобия:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+W=\sum_{j=1}^{m}p_{j}\ln\frac{\nu_{j}}{p_{j}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Разложим логарифм в ряд Тейлора:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ln\left(1+x\right)=x-\frac{x^{2}}{2}+O\left(x^{3}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Поэтому
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ln\frac{\nu_{j}}{p_{j}}=\ln\left(1+\frac{\nu_{j}}{p_{j}}-1\right)\approx\left(\frac{\nu_{j}}{p_{j}}-1\right)+\frac{1}{2}\left(\frac{\nu_{j}}{p_{j}}-1\right)^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Подставим это приближение в формулу, определяющую величину 
+\begin_inset Formula $W$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{j=1}^{m}p_{j}\ln\frac{\nu_{j}}{p_{j}}\approx\sum_{j=1}^{m}\left(\nu_{j}-p_{j}\right)+\frac{1}{2}\sum_{j=1}^{m}\frac{\left(\nu_{j}-p_{j}\right)^{2}}{p_{j}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Первая сумма равна нулю, так как
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{j=1}^{m}\nu_{j}=\sum_{j=1}^{m}p_{j}=1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{j=1}^{m}p_{j}\ln\frac{\nu_{j}}{p_{j}}\approx\frac{1}{2}\sum_{j=1}^{m}\frac{\left(\nu_{j}-p_{j}\right)^{2}}{p_{j}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Критерий Колмогорова-Смирнова
+\end_layout
+
+\begin_layout Standard
+Критерий согласия Пирсона (критерий хи-квадарат) позволяет проверять гипотезу
+ о распределении для дискретных случайных величин.
+ Рассмотрим статистический критерий, который может быть использован для
+ проверки гипотезы о непрерывном распределении.
+\end_layout
+
+\begin_layout Standard
+Введём эмпирическую функцию распределения:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{n}\left(x\right)=\frac{1}{n}\sum_{i=1}^{n}\left[x_{i}<x\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+При фиксированном 
+\begin_inset Formula $x$
+\end_inset
+
+ величина 
+\begin_inset Formula $n\cdot F_{n}\left(x\right)$
+\end_inset
+
+ имеет биномиальное распределение 
+\begin_inset Formula $B\left(n,F\left(x\right)\right)$
+\end_inset
+
+.
+ Однако более интересным является вопрос о поведении этой функции 
+\begin_inset Quotes fld
+\end_inset
+
+в целом
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+z=\sqrt{n}\cdot\sup_{x}\left|F\left(x\right)-F_{n}\left(x\right)\right|.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Докажем, что распределение этой величины не зависит от самой 
+\begin_inset Formula $F\left(x\right)$
+\end_inset
+
+.
+ Для этого достаточно доказать, что для любой 
+\begin_inset Formula $F\left(x\right)$
+\end_inset
+
+ распределение 
+\begin_inset Formula $z$
+\end_inset
+
+ такое же, как и для непрерывного равномерного распределения на интервале
+ 
+\begin_inset Formula $\left[0;1\right].$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Введём новую случайную величину:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Y=F\left(X\right),
+\]
+
+\end_inset
+
+которая принимает значения из интервала 
+\begin_inset Formula $\left[0;1\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Если случайная величина 
+\begin_inset Formula $X$
+\end_inset
+
+ является непрерывной, то функция 
+\begin_inset Formula $F$
+\end_inset
+
+ является непрерывной и монотонной, а значит для неё существует обратная
+ функция — 
+\begin_inset Formula $F_{inv}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+X=F_{inv}\left(Y\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Случайная величина 
+\begin_inset Formula $Y$
+\end_inset
+
+ распределена равномерно, так как для любого 
+\begin_inset Formula $x\in\left[0;1\right]$
+\end_inset
+
+ имеет место равенство:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{Y}\left(x\right)=P\left\{ Y<x\right\} =P\left\{ F\left(X\right)<x\right\} =P\left\{ X<F_{inv}\left(x\right)\right\} =F\left(F_{inv}\left(x\right)\right)=x.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Рассмотрим теперь величину
+\begin_inset Formula 
+\[
+F_{n}\left(F\left(y\right)\right)=\frac{1}{n}\sum_{i=1}^{n}\left[x_{i}<F\left(y\right)\right]=\frac{1}{n}\sum_{i=1}^{n}\left[F_{inv}\left(x_{i}\right)<y\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Обозначив
+\begin_inset Formula 
+\[
+y_{i}=F_{inv}\left(x_{i}\right),
+\]
+
+\end_inset
+
+получим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{n}\left(F\left(y\right)\right)=\frac{1}{n}\sum_{i=1}^{n}\left[y_{i}<y\right]=F_{Y,n}\left(y\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Подставим полученные результаты:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sup_{x}\left|F\left(x\right)-F_{n}\left(x\right)\right|=\sup_{y\in\left[0;1\right]}\left|F\left(F_{inv}\left(y\right)\right)-F_{n}\left(F_{inv}\left(y\right)\right)\right|=\sup_{y\in[0;1]}\left|y-F_{Y,n}\left(y\right)\right|.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Распределение статистики
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+z=\sqrt{n}\cdot\sup_{x}\left|F\left(x\right)-F_{n}\left(x\right)\right|
+\]
+
+\end_inset
+
+называется распределением Колмогорова.
 \end_layout
 
 \begin_layout Section
