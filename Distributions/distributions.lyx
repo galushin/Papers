@@ -26,7 +26,16 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize default
 \use_geometry false
 \use_amsmath 1
@@ -82,7 +91,7 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Chapter
-Основные распределения
+Модели данных
 \end_layout
 
 \begin_layout Section
@@ -2078,6 +2087,55 @@ status open
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Распределение Максвелла
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Написать этот раздел
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Генерация случайных чисел
+\end_layout
+
+\begin_layout Section
+Общие сведения
+\end_layout
+
+\begin_layout Subsection
+Принципы построения программных генераторов случайных чисел
+\end_layout
+
+\begin_layout Subsection
+Аппаратные генераторы случайных чисел
+\end_layout
+
+\begin_layout Subsection
+Общий метод для непрерывных распределений
+\end_layout
+
+\begin_layout Subsection
+Общий метод для дискретных распределений
+\end_layout
+
+\begin_layout Subsection
+Метод Уолкера для дискретных распределений
+\end_layout
+
+\begin_layout Section
+Нормальное распределение
 \end_layout
 
 \end_body
