@@ -1230,7 +1230,7 @@ X=\frac{Y}{n}-p.
 \begin_layout Standard
 \begin_inset Formula 
 \[
-M\left[X\right]=\frac{np}{n}-p=0.
+\mu=M\left[X\right]=\frac{np}{n}-p=0.
 \]
 
 \end_inset
@@ -1241,7 +1241,7 @@ M\left[X\right]=\frac{np}{n}-p=0.
 \begin_layout Standard
 \begin_inset Formula 
 \[
-D\left[X\right]=\frac{D\left[Y\right]}{n^{2}}=\frac{pq}{n}.
+\sigma^{2}=D\left[X\right]=\frac{D\left[Y\right]}{n^{2}}=\frac{pq}{n}.
 \]
 
 \end_inset
@@ -1250,8 +1250,31 @@ D\left[X\right]=\frac{D\left[Y\right]}{n^{2}}=\frac{pq}{n}.
 \end_layout
 
 \begin_layout Standard
-Функция плотности нормального распределения с нулевым математическим ожиданием
+Функция плотности нормального распределения с математическим ожиданием 
+\begin_inset Formula $\mu$
+\end_inset
+
  и дисперсией 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ имеет вид:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f\left(x\right)=\frac{1}{\sqrt{2\pi}\cdot\sigma}\exp\left(-\frac{\left(x-\mu\right)^{2}}{2\sigma^{2}}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Соответственно, функция плотности нормального распределения с нулевым математиче
+ским ожиданием и дисперсией 
 \begin_inset Formula $\frac{1}{n}pq$
 \end_inset
 
@@ -1517,6 +1540,19 @@ g\left(x\right)=C\cdot\exp\left(\frac{\lambda x^{2}}{2}\right).
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Нужно закончить доказательство
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
