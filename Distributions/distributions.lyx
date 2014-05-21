@@ -81,6 +81,10 @@ LatexCommand tableofcontents
 Введение
 \end_layout
 
+\begin_layout Chapter
+Основные распределения
+\end_layout
+
 \begin_layout Section
 Характеристические функции
 \end_layout
@@ -1766,6 +1770,314 @@ reference "eq:characteristic_z_n"
 \end_inset
 
  является стандартным нормальным.
+\end_layout
+
+\begin_layout Subsection
+Распределение с наибольшей энтропией
+\end_layout
+
+\begin_layout Standard
+Нормальное распределение имеет наибольшую энтропию среди всех непрерывных
+ распределений с заданным математическим ожиданием и дисперсией.
+\end_layout
+
+\begin_layout Standard
+Энтропия распределения с плотностью 
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+ вычисляется по формуле:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S=M\left[\log f\left(x\right)\right]=\intop_{-\infty}^{+\infty}f\left(x\right)\log f\left(x\right)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём распределение с наибольшей энтропией и фиксированными мат.
+ ожиданием и дисперсией, то есть решим следующую вариационную задачу:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+\intop_{-\infty}^{+\infty}f\left(x\right)\log f\left(x\right)dx\rightarrow\max\\
+\intop_{-\infty}^{+\infty}f\left(x\right)dx=1\\
+\intop_{-\infty}^{+\infty}x\cdot f\left(x\right)dx=\mu\\
+\intop_{-\infty}^{+\infty}x^{2}\cdot f\left(x\right)dx=\sigma^{2}+\mu^{2}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Функция Лагранжа примет вид:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(f,f^{\prime},x\right)=f\cdot\log f+a\cdot f+b\cdot x\cdot f+c\cdot x^{2}\cdot f.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Запишем уравнение Эйлера:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\log f+1+a+b\cdot x+c\cdot x^{2}=0,
+\]
+
+\end_inset
+
+ где 
+\begin_inset Formula $C$
+\end_inset
+
+ — произвольная постоянная.
+ Выражая из этого уравнения 
+\begin_inset Formula $f$
+\end_inset
+
+, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f\left(x\right)=\exp\left(-\left(c\cdot x^{2}+b\cdot x+a\right)\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Постоянные необходимо найти из ограничений.
+ Вынесем 
+\begin_inset Formula $c$
+\end_inset
+
+ за скобки и введём обозначения 
+\begin_inset Formula $\frac{b}{c}=-2\cdot\beta$
+\end_inset
+
+ и 
+\begin_inset Formula $\frac{a}{c}=\alpha$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f\left(x\right)=\exp\left(-c\left(x^{2}-2\cdot\beta\cdot x+\alpha\right)\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выделим полный квадрат:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f\left(x\right)=\exp\left(-c\left(\left(x-\beta\right)^{2}+\alpha-\beta^{2}\right)\right)=C\cdot\exp\left(-c\cdot\left(x-\beta\right)^{2}\right),
+\]
+
+\end_inset
+
+ где 
+\begin_inset Formula $C=\exp\left(-c\cdot\left(\alpha-\beta^{2}\right)\right).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intop_{-\infty}^{+\infty}f\left(x\right)dx=C\cdot\intop_{-\infty}^{+\infty}\exp\left(-c\cdot t^{2}\right)dt=\frac{C}{\sqrt{c}}\intop_{-\infty}^{+\infty}\exp\left(-y^{2}\right)dy=\frac{C}{\sqrt{c}}\cdot\sqrt{\pi}=1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Откуда следует, что
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C=\sqrt{\frac{c}{\pi}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём теперь математическое ожидание, взяв интеграл и воспользовавшись
+ заменой 
+\begin_inset Formula $t=x-\beta$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+\mu=\intop_{-\infty}^{+\infty}x\cdot C\cdot\exp\left(-c\cdot\left(x-\beta\right)^{2}\right)dx=\\
+=\intop_{-\infty}^{+\infty}\left(x-\beta\right)\cdot C\cdot\exp\left(-c\cdot\left(x-\beta\right)^{2}\right)dx+\intop_{-\infty}^{+\infty}\beta\cdot C\cdot\exp\left(-c\cdot\left(x-\beta\right)^{2}\right)dx=\\
+=\intop_{-\infty}^{+\infty}t\cdot\exp\left(-c\cdot t^{2}\right)dt+\beta=\beta.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом 
+\begin_inset Formula $\beta=\mu$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Аналогичным образом вычислим дисперсию:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+\sigma^{2}=\intop_{-\infty}^{+\infty}\left(x-\mu\right)^{2}\cdot f\left(x\right)dx=\intop_{-\infty}^{+\infty}\left(x-\beta\right)^{2}\cdot f\left(x\right)dx=\\
+=\intop_{-\infty}^{+\infty}\left(x-\beta\right)^{2}\cdot C\cdot\exp\left(-c\cdot\left(x-\beta\right)^{2}\right)dx=\\
+=C\cdot\intop_{-\infty}^{+\infty}t^{2}\exp\left(-c\cdot t^{2}\right)dt.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Воспользуемся методом интегрирования по частям.
+ Положив
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{cc}
+u=t & dv=t\cdot\exp\left(-c\cdot t^{2}\right)dt\\
+du=dt & v=-\frac{1}{2\cdot c}\exp\left(-c\cdot t^{2}\right)
+\end{array},
+\]
+
+\end_inset
+
+получим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma^{2}=\frac{1}{2\cdot c}\cdot C\cdot\intop_{-\infty}^{+\infty}\exp\left(-c\cdot t^{2}\right)dt=\frac{1}{2\cdot c}\cdot\intop_{-\infty}^{+\infty}f\left(t\right)dt=\frac{1}{2\cdot c}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Откуда следует:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\text{1}}{2\cdot c}=\sigma^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+или
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+c=\frac{1}{2\sigma^{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Подставляя все полученные константы, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f\left(x\right)=\frac{1}{\sqrt{2\pi}\cdot\sigma}\exp\left(-\frac{\left(x-\mu\right)^{2}}{2\sigma^{2}}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Мы доказали, что нормальное распределение доставляет экстремум.
+ Нужно доказать, что это именно максимум.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
