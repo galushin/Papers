@@ -275,9 +275,9 @@ P\left\{ X=x_{k}\right\} =\frac{1}{2\pi}\intop_{-\infty}^{+\infty}e^{-i\lambda x
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-\varphi\left(0,X\right)=M\left[e^{0}\right]=1.
-\]
+\begin{equation}
+\varphi\left(0,X\right)=M\left[e^{0}\right]=1.\label{eq:phi_at_zero}
+\end{equation}
 
 \end_inset
 
@@ -2107,6 +2107,1607 @@ status open
 \end_layout
 
 \begin_layout Chapter
+Алгебра случайных чисел
+\end_layout
+
+\begin_layout Section
+Распределение частного
+\end_layout
+
+\begin_layout Standard
+Пусть задана система двух случайных величин 
+\begin_inset Formula $X$
+\end_inset
+
+ и 
+\begin_inset Formula $Y$
+\end_inset
+
+, имеющих совместную плотность распределения 
+\begin_inset Formula $f\left(x,y\right).$
+\end_inset
+
+ Найдём распределение частного, то есть случайной величины 
+\begin_inset Formula $Z=\nicefrac{X}{Y}$
+\end_inset
+
+.
+ Функцию распределения 
+\begin_inset Formula $Z$
+\end_inset
+
+ обозначим как 
+\begin_inset Formula $G\left(z\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+G\left(z\right)=Pr\left\{ Z<z\right\} =\iintop_{\frac{x}{y}<z}f\left(x,y\right)dxdy.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Неравенство 
+\begin_inset Formula $\frac{x}{y}<z$
+\end_inset
+
+ можно представить в виде системы двух неравенств
+\begin_inset Formula 
+\[
+\begin{cases}
+y\ge0 & x<z\cdot y\\
+y<0 & x>z\cdot y
+\end{cases},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+поэтому
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+G\left(z\right)=\intop_{-\infty}^{0}\intop_{z\cdot y}^{+\infty}f\left(x,y\right)dxdy+\intop_{0}^{+\infty}\intop_{-\infty}^{z\cdot y}f\left(x,y\right)dxdy.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Продифференцируем это выражение по 
+\begin_inset Formula $z$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+g\left(z\right)=G^{\prime}\left(z\right)=\intop_{-\infty}^{0}\left(-y\right)\cdot f\left(zy,y\right)dy+\intop_{0}^{+\infty}y\cdot f\left(zy,y\right)dy=\\
+=\intop_{-\infty}^{0}\left|y\right|\cdot f\left(zy,y\right)dy+\intop_{0}^{+\infty}\left|y\right|\cdot f\left(zy,y\right)dy=\intop_{-\infty}^{+\infty}\left|y\right|\cdot f\left(zy,y\right)dy.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Распределение-Коши"
+
+\end_inset
+
+Распределение Коши
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula $X$
+\end_inset
+
+ и 
+\begin_inset Formula $Y$
+\end_inset
+
+ ― независимые стандартные нормальные случайные величины.
+ Найдём распределение случайной величины 
+\begin_inset Formula $Z=\frac{X}{Y}$
+\end_inset
+
+.
+ Воспользуемся формулой для вычисления функции распределения частного:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{Z}\left(x\right)=\intop_{-\infty}^{+\infty}f\left(x\cdot y\right)\cdot\left|y\right|\cdot f\left(y\right)dy.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В нашем случае 
+\begin_inset Formula 
+\[
+f\left(x\right)=\frac{1}{\sqrt{2\cdot\pi}}\exp\left(-\frac{x^{2}}{2}\right),
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+поэтому
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+f_{Z}\left(x\right)=\intop_{-\infty}^{+\infty}\frac{1}{\sqrt{2\cdot\pi}}\exp\left(-\frac{x^{2}\cdot y^{2}}{2}\right)\cdot\left|y\right|\cdot\frac{1}{\sqrt{2\cdot\pi}}\exp\left(-\frac{y^{2}}{2}\right)dy=\\
+=\frac{1}{2\pi}\intop_{-\infty}^{+\infty}\exp\left(-\frac{y^{2}\left(x^{2}+1\right)}{2}\right)\cdot\left|y\right|\cdot dy.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как подынтегральная функция является чётной, то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{Z}\left(x\right)=\frac{1}{\pi}\intop_{0}^{+\infty}\exp\left(-\frac{y^{2}\left(x^{2}+1\right)}{2}\right)\cdot y\cdot dy.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Введём новую переменную интегрирования 
+\begin_inset Formula $t=\left(x^{2}+1\right)y^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $dt=\left(x^{2}+1\right)2y\cdot dy$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+f_{Z}\left(x\right)=\frac{1}{\pi}\intop_{0}^{+\infty}\exp\left(-\frac{t}{2}\right)\frac{dt}{2\left(x^{2}+1\right)}=\frac{1}{2\pi\left(x^{2}+1\right)}\left.\left(-2\right)\cdot\exp\left(-\frac{t}{2}\right)\right|_{0}^{+\infty}=\\
+=\frac{1}{\pi\left(1+x^{2}\right)}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Функция распределения имеет вид
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{Z}\left(x\right)=\intop_{-\infty}^{x}f_{Z}\left(y\right)dy=\frac{1}{\pi}\intop_{-\infty}^{x}\frac{dy}{1+y^{2}}=\frac{1}{\pi}\mathrm{\left.arctg\left(y\right)\right|_{-\infty}^{x}=\frac{1}{\pi}arctg\left(y\right)+\frac{1}{2}.}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Распределение частного двух нормальных случайных величин (общий случай)
+\end_layout
+
+\begin_layout Chapter
+Выборочные распределения, связанные с нормальным
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Оценка-параметров-нормального"
+
+\end_inset
+
+Точечная оценка параметров нормального распределения
+\end_layout
+
+\begin_layout Standard
+Пусть имеется выборка 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+, распределённых по закону 
+\begin_inset Formula $N\left(\mu,\sigma\right)$
+\end_inset
+
+ и независимо в совокупности.
+\end_layout
+
+\begin_layout Standard
+Составим функцию правдоподобия:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(m,s\right)=\prod_{k=1}^{n}f\left(X_{k},\mu,\sigma\right),
+\]
+
+\end_inset
+
+где 
+\begin_inset Formula 
+\[
+f\left(x,\mu,\sigma\right)=\frac{1}{\sqrt{2\pi}\cdot\sigma}\cdot\exp\left(-\frac{\left(x-\mu\right)^{2}}{2\sigma^{2}}\right)
+\]
+
+\end_inset
+
+— функция плотности нормального распределения.
+ Найдём логарифм функции правдоподобия:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ln L\left(\mu,\sigma\right)=\sum_{k=1}^{n}\ln f\left(X_{k},\mu,\sigma\right)=\sum_{k=1}^{n}\left(-\frac{1}{2}\ln\left(2\pi\right)-\ln\sigma-\frac{\left(X_{k}-\mu\right)^{2}}{2\sigma^{2}}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Воспользуемся необходимым признаком экстремума: найдём частные производные
+ логарифма функции правдоподобия по параметрам и приравняем их к нулю:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial\ln L}{\partial m}=-\sum_{k=1}^{n}\frac{X_{k}-\mu}{\sigma^{2}}=-\frac{1}{\sigma^{2}}\sum_{k=1}^{n}\left(X_{k}-\mu\right)=0,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial\ln L}{\partial s}=\sum_{k=1}^{n}\left(-\frac{1}{\sigma}+2\cdot\frac{\left(X_{k}-\mu\right)^{2}}{2\sigma^{3}}\right)=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Величины 
+\begin_inset Formula $\hat{\mu}$
+\end_inset
+
+ и
+\begin_inset Formula $\hat{\sigma}^{2}$
+\end_inset
+
+, обращающие эти уравнения в тождества, и будут оценками для математического
+ ожидания и дисперсии, соответственно.
+\end_layout
+
+\begin_layout Standard
+Умножая первое уравнение на 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+, а второе — на 
+\begin_inset Formula $\sigma^{3}$
+\end_inset
+
+, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\mu}=\frac{1}{n}\sum_{k=1}X_{k},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\sigma}^{2}=\frac{1}{n}\sum_{k=1}^{n}\left(X_{k}-\mu\right)^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Величину 
+\begin_inset Formula $\hat{\mu}$
+\end_inset
+
+(которую мы в дальнейшем будем также обозначать 
+\begin_inset Formula $m$
+\end_inset
+
+) называют выборочным средним, а 
+\begin_inset Formula $\hat{\sigma}^{2}$
+\end_inset
+
+ — выборочной дисперсией.
+\end_layout
+
+\begin_layout Section
+Распределение выборочного среднего
+\end_layout
+
+\begin_layout Standard
+Исследуем распределения этих оценок.
+ Сумма нормально распределённых случайных величин также имеет нормальное
+ распределение, поэтому 
+\begin_inset Formula $m$
+\end_inset
+
+ имеет нормальное распределение.
+ Математическое ожидание 
+\begin_inset Formula $m$
+\end_inset
+
+ равно 
+\begin_inset Formula $\mu$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[m\right]=\frac{1}{n}\sum_{k=1}^{n}M\left[X_{k}\right]=\mu.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, оценка 
+\begin_inset Formula $m$
+\end_inset
+
+ является несмещённой оценкой математического ожидания 
+\begin_inset Formula $\mu$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D\left[m\right]=\frac{1}{n^{2}}\sum_{k=1}^{n}D\left[X_{k}\right]=\frac{1}{n}\sigma^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+С ростом размера выборки 
+\begin_inset Formula $n$
+\end_inset
+
+ дисперсия стремится к нулю.
+\end_layout
+
+\begin_layout Section
+Распределение выборочной дисперсии
+\end_layout
+
+\begin_layout Standard
+Займёмся теперь распределением оценки дисперсии.
+ Сначала 
+\begin_inset Quotes fld
+\end_inset
+
+отделим
+\begin_inset Quotes frd
+\end_inset
+
+ выборочное среднее 
+\begin_inset Formula $m$
+\end_inset
+
+ от случайных величин 
+\begin_inset Formula $X_{k}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+\begin_inset Formula 
+\begin{multline*}
+\hat{\sigma}^{2}=\frac{1}{n}\sum_{k=1}^{n}\left(X_{k}-m\right)^{2}=\frac{1}{n}\sum_{k=1}^{n}\left(X_{k}-\mu+\mu-m\right)^{2}=\\
+=\frac{1}{n}\sum_{k=1}^{n}\left(\left(X_{k}-\mu\right)^{2}+2\left(X_{k}-\mu\right)\left(\mu-m\right)+\left(m-\mu\right)^{2}\right)=\\
+=\frac{1}{n}\sum_{k=1}^{n}\left(X_{k}-\mu\right)^{2}-\left(m-\mu\right)+\left(m-\mu\right)^{2}=\frac{1}{n}\sum_{k=1}^{n}\left(X_{k}-\mu\right)^{2}-\left(m-\mu\right)^{2}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Представим это выражение как сумму квадратов стандартных нормальных случайных
+ величин:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\sigma}^{2}=\frac{\sigma^{2}}{n}\sum_{k=1}^{n}\left(\frac{X_{k}-\mu}{\sigma}\right)^{2}-\frac{\sigma^{2}}{n}\left(\frac{m-\mu}{\nicefrac{\sigma}{\sqrt{n}}}\right)^{2}=\frac{\sigma^{2}}{n}\left(\sum_{k=1}^{n}\left(\frac{X_{k}-\mu}{\sigma}\right)^{2}-\left(\frac{m-\mu}{\nicefrac{\sigma}{\sqrt{n}}}\right)^{2}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Проблема заключается в том, что случайные величины в этом выражении являются
+ зависимыми — выборочное среднее зависит от каждого из элементов выборки.
+ Введём 
+\emph on
+стандартизованные
+\emph default
+ переменные
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+U_{k}=\frac{X_{k}-\mu}{\sigma}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{n}\sum_{k=1}^{n}U_{k}=\overline{U}=\frac{1}{n\sigma}\sum_{k=1}^{n}\left(X_{k}-\mu\right)=\frac{m-\mu}{\sigma}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Тогда
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\sigma}^{2}=\frac{\sigma^{2}}{n}\left(\sum_{k=1}^{n}U_{k}^{2}-n\cdot\left(\overline{U}\right)^{2}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Случайная величина 
+\begin_inset Formula $\overline{U}$
+\end_inset
+
+, очевидно зависит от величин 
+\begin_inset Formula $U_{1},...,U_{n}$
+\end_inset
+
+.
+ Для того, чтобы перейти к независимым переменным, можно воспользоваться
+ ортогональным преобразованием переменных 
+\begin_inset Formula $U_{1},...,U_{n}$
+\end_inset
+
+, задаваемым матрицей вида (для наглядности строки матрицы не нормированы,
+ для того, чтобы матрица была ортогональной, нужно разделить кажду строку
+ на её норму)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(\begin{array}{ccccc}
+1 & 1 & ... & 1 & 1\\
+1 & 1 & ... & 1 & n-1\\
+1 & 1 & ... & n-2 & 0\\
+... & ... & ... & ... & ...\\
+1 & -1 & ... & 0 & 0
+\end{array}\right)\text{.}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, величина 
+\begin_inset Formula 
+\[
+\frac{\hat{\sigma}^{2}n}{\sigma^{2}}
+\]
+
+\end_inset
+
+распределена как сумма квадратов 
+\begin_inset Formula $n-1$
+\end_inset
+
+ стандартной нормальной случайной величины.
+\end_layout
+
+\begin_layout Section
+Распределение хи-квадарат
+\end_layout
+
+\begin_layout Standard
+Распределение суммы квадратов 
+\begin_inset Formula $n$
+\end_inset
+
+ независимых стандартных нормальных случайных величин называют распределением
+ хи-квадрат (
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+) с 
+\begin_inset Formula $n$
+\end_inset
+
+ степенями свободы.
+ Получим формулы для плотности этого распределения и изучим его числовые
+ характеристики.
+\end_layout
+
+\begin_layout Subsection
+Распределение квадрата стандартной нормальной случайной величины
+\end_layout
+
+\begin_layout Standard
+Начнём с частного случая 
+\begin_inset Formula $n=1$
+\end_inset
+
+.
+ Фактически, необходимо найти распределение квадрата стандартной нормальной
+ случайной величины.
+ Пусть 
+\begin_inset Formula $U$
+\end_inset
+
+ — стандартная нормальная случайная величина, а 
+\begin_inset Formula $Y=U^{2}$
+\end_inset
+
+.
+ Пусть 
+\begin_inset Formula $\Phi\left(y\right)$
+\end_inset
+
+ — функция распределения стандартного нормального распределения, а 
+\begin_inset Formula $\varphi\left(y\right)$
+\end_inset
+
+ — плотность нормального распределения.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{Y}\left(y\right)=P\left\{ Y<y\right\} =P\left\{ U^{2}<y\right\} =P\left\{ -\sqrt{y}<U<\sqrt{y}\right\} =\Phi\left(\sqrt{y}\right)-\Phi\left(-\sqrt{y}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём производную:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{Y}\left(y\right)=\varphi\left(\sqrt{y}\right)\frac{1}{2\sqrt{y}}+\varphi\left(-\sqrt{y}\right)\frac{1}{2\sqrt{y}}=\frac{\varphi\left(\sqrt{y}\right)}{\sqrt{y}}=\frac{1}{\sqrt{2\pi y}}\exp\left(-\frac{y}{2}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём характеристическую функцию этого распределения:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g_{1}\left(\lambda\right)=\intop_{0}^{+\infty}\frac{1}{\sqrt{2\pi y}}\exp\left(-\frac{y}{2}\right)e^{i\lambda y}dy=\intop_{0}^{+\infty}\frac{1}{\sqrt{2\pi y}}\exp\left(-\frac{y}{2}\left(1-2i\lambda\right)\right)dy.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Введём новую переменную так, чтобы показатель экспоненты не содержал 
+\begin_inset Formula $\lambda$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+t=y\left(1-2i\lambda\right),
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\frac{t}{1-2i\lambda},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dy=\frac{dt}{1-2i\lambda}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g_{1}\left(\lambda\right)=\frac{1}{\sqrt{1-2i\lambda}}\intop_{0}^{+\infty}\frac{1}{\sqrt{2\pi t}}\exp\left(-\frac{t}{2}\right)dt.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как подынтегральное выражение, не зависит от 
+\begin_inset Formula $\lambda$
+\end_inset
+
+, то мы можем обойтись без вычисления интеграла.
+ Мы можем записать 
+\begin_inset Formula $g_{1}$
+\end_inset
+
+ в виде
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g_{1}\left(\lambda\right)=\frac{A}{\sqrt{1-2i\lambda}},
+\]
+
+\end_inset
+
+ где 
+\begin_inset Formula $A$
+\end_inset
+
+ — неизвестная пока постоянная, которую мы определим из свойства характеристичес
+ких функций 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:phi_at_zero"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g_{1}\left(0\right)=A=1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g_{1}\left(\lambda\right)=\frac{1}{\sqrt{1-2i\lambda}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Плотность распределения хи-квадарат
+\end_layout
+
+\begin_layout Standard
+Так как характеристическая функция суммы независимых случайных величин равна
+ произведению характеристических функция слагаемых, то характеристическая
+ функция случайной величины, имеющей распределение хи-квадрат с 
+\begin_inset Formula $n$
+\end_inset
+
+ степенями свободы имеет вид
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g_{n}\left(\lambda\right)=\left(g_{1}\left(\lambda\right)\right)^{n}=\left(1-2i\lambda\right)^{-\frac{n}{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Соответствующая функция распределения 
+\begin_inset Formula $f_{n}\left(x\right)$
+\end_inset
+
+ может быть найдена по формуле
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{n}\left(x\right)=\frac{1}{2\pi}\intop_{-\infty}^{+\infty}g_{n}\left(\lambda\right)\exp\left(-i\lambda x\right)d\lambda=\frac{1}{2\pi}\intop_{-\infty}^{+\infty}\frac{\exp\left(-i\lambda x\right)}{\left(1-2i\lambda\right)^{\frac{n}{2}}}d\lambda.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Произведём замену 
+\begin_inset Formula $t=\left(1-2i\lambda\right)x$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{n}\left(x\right)=\frac{i}{2\pi}\frac{x^{\frac{n}{2}}}{2x}\intop_{-\infty}^{+\infty}\frac{\exp\left(-\frac{x}{2}+\frac{t}{2}\right)}{t^{\frac{n}{2}}}dt=\frac{1}{A_{n}}x^{\frac{n}{2}-1}\exp\left(-\frac{x}{2}\right),
+\]
+
+\end_inset
+
+ где 
+\begin_inset Formula $A_{n}$
+\end_inset
+
+ — нормировочная постоянная:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A_{n}=\intop_{0}^{+\infty}x^{\frac{n}{2}-1}\exp\left(-\frac{x}{2}\right)dx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Данный интеграл можно
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+нужна ссылка!!
+\end_layout
+
+\end_inset
+
+ выразить через гамма-функцию, которая определяется (для 
+\begin_inset Formula $\Re z\ge0$
+\end_inset
+
+) через интеграл
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Gamma\left(z\right)=\intop_{0}^{+\infty}t^{z-1}e^{-t}dt.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Сделаем замену 
+\begin_inset Formula $x=2t$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A_{n}=\intop_{0}^{+\infty}2^{\frac{n}{2}-1}t^{\frac{n}{2}-1}e^{-t}2dt=2^{\frac{n}{2}}\intop_{0}^{+\infty}t^{\frac{n}{2}-1}e^{-t}dt=2^{\frac{n}{2}}\cdot\Gamma\left(\frac{n}{2}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Окончательно получаем:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+f_{n}\left(x\right)=\frac{1}{2^{\frac{n}{2}}\cdot\Gamma\left(\frac{n}{2}\right)}x^{\frac{n}{2}-1}\exp\left(-\frac{x}{2}\right).\label{eq:chi_square_pdf}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Функция распределения
+\end_layout
+
+\begin_layout Standard
+Найдём теперь функцию распределения 
+\begin_inset Formula $F_{n}\left(x\right)$
+\end_inset
+
+, так как случайные величины с распределением хи-квадрат могут принимать
+ лишь неотрицательные значение, то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{n}\left(x\right)=\intop_{0}^{x}f_{n}\left(t\right)dt.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Воспользуемся формулой 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:chi_square_pdf"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{n}\left(x\right)=\frac{1}{2^{\frac{n}{2}}\cdot\Gamma\left(\frac{n}{2}\right)}\intop_{0}^{x}t^{\frac{n}{2}-1}\exp\left(-\frac{t}{2}\right)dt.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Сделаем в этом интеграле замену:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+t=2u
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{n}\left(x\right)=\frac{1}{2^{\frac{n}{2}}\cdot\Gamma\left(\frac{n}{2}\right)}\intop_{0}^{x}2^{\frac{n}{2}-1}u^{\frac{n}{2}-1}\exp\left(-u\right)2du=\frac{\gamma\left(\frac{n}{2},x\right)}{\Gamma\left(\frac{n}{2}\right)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Нужна ссылка на неполную гамма-функцию!!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Числовые характеристики
+\end_layout
+
+\begin_layout Standard
+Математическое ожидание случайной величины
+\begin_inset Formula $\chi^{2}\left(n\right)$
+\end_inset
+
+ можно найти по её определению:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+M\left[\chi_{n}^{2}\right]=M\left[\sum_{k=1}^{n}u_{k}^{2}\right]=\sum_{k=1}^{n}M\left[u_{k}^{2}\right]=\sum_{k=1}^{n}D\left[u_{k}\right]=n.\label{eq:chi_squared_mean}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Дисперсию вычислим с помощью формул 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:mean_via_phi"
+
+\end_inset
+
+ и 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:variance_via_phi"
+
+\end_inset
+
+.
+ В случае распределения 
+\begin_inset Formula $\chi_{n}^{2}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g_{n}\left(\lambda\right)=\left(g_{1}\left(\lambda\right)\right)^{n}=\left(1-2i\lambda\right)^{-\frac{n}{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вычислим первую производную характеристической функции:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g_{n}^{\prime}\left(\lambda\right)=\left(-\frac{n}{2}\right)\left(1-2i\lambda\right)^{-\frac{n-2}{2}}\left(-2i\right)=i\cdot n\cdot\left(1-2i\lambda\right)^{-\frac{n+2}{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Подставим 
+\begin_inset Formula $\lambda=0$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g_{n}^{\prime}\left(0\right)=i\cdot n.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Откуда в силу 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:mean_via_phi"
+
+\end_inset
+
+ получается
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[\chi_{n}^{2}\right]=n,
+\]
+
+\end_inset
+
+что согласуется с результатом, полученным выше в 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:chi_squared_mean"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Найдём вторую производную
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g_{n}^{\prime\prime}\left(\lambda\right)=i\cdot n\cdot\left(-\frac{n+2}{2}\right)\cdot\left(1-2i\lambda\right)^{-\frac{n-4}{2}}\cdot\left(-2i\right)=-n\left(n+2\right)\left(1-2i\lambda\right)^{-\frac{n+4}{2}}
+\]
+
+\end_inset
+
+и вычислим её значение при 
+\begin_inset Formula $\lambda=0$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g_{n}^{\prime\prime}\left(0\right)=-n\left(n+2\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Подставим полученные значения в формулу
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:variance_via_phi"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D\left[\chi_{n}^{2}\right]=-n^{2}+n\left(n+2\right)=2n.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Числовые характеристики выборочной дисперсии
+\end_layout
+
+\begin_layout Standard
+Воспользуемся полученными результатами для нахождения числовых характеристик
+ выборочной дисперсии.
+ В разделе 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Оценка-параметров-нормального"
+
+\end_inset
+
+ было показано, что величина 
+\begin_inset Formula 
+\[
+\frac{\hat{\sigma}^{2}n}{\sigma^{2}}
+\]
+
+\end_inset
+
+ распределена также как сумма квадратов 
+\begin_inset Formula $n-1$
+\end_inset
+
+ стандартной нормальной случайной величины, таким образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\sigma}^{2}\sim\frac{\sigma^{2}}{n}\chi_{n-1}^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Учитывая свойства распределения хи-квадрат:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[\hat{\sigma}^{2}\right]=\frac{n-1}{n}\sigma^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D\left[\hat{\sigma}^{2}\right]=\frac{\sigma^{4}}{n^{2}}\cdot2\left(n-1\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, выборочная дисперсия не является несмещённой оценкой дисперсии.
+ Введём так называемую 
+\emph on
+несмещённую выборочную дисперсию
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+s^{2}=\frac{n}{n-1}\hat{\sigma}^{2}=\frac{1}{n-1}\sum_{i=1}^{n}\left(x_{i}-m\right)^{2}\sim\frac{\sigma^{2}}{n-1}\chi_{n-1}^{2},
+\]
+
+\end_inset
+
+данная величина имеет следующие числовые характеристики:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[s^{2}\right]=\sigma^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D\left[s^{2}\right]=\left(\frac{\sigma^{2}}{n-1}\right)^{2}\cdot2\cdot\left(n-1\right)=\frac{2\sigma^{4}}{n-1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, несмещённая дисперсия 
+\begin_inset Formula $s^{2}$
+\end_inset
+
+ является несмещённой и состоятельной оценкой дисперсии.
+ В дальнейшем мы всегда будем использовать именно несмещённую выборочную
+ дисперсию, если иное не указано явно.
+\end_layout
+
+\begin_layout Chapter
+Основы непараметрической статистики
+\end_layout
+
+\begin_layout Section
+Распределения порядковых статистик
+\end_layout
+
+\begin_layout Standard
+Пусть даны 
+\begin_inset Formula $n$
+\end_inset
+
+ независимых одинаково распределённых случайных чисел 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ с функцией распределения 
+\begin_inset Formula $F\left(x\right)$
+\end_inset
+
+ и плотностью распределения 
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+.
+ Отсортируем 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ по возрастанию, обозначим упорядоченные по возрастанию значения как 
+\begin_inset Formula $Y_{1},...,Y_{n}$
+\end_inset
+
+.
+ Найдём функции распределения и плотности распределений этих величин.
+\end_layout
+
+\begin_layout Standard
+Функции распределения, которые мы обозначим как 
+\begin_inset Formula $F_{k}\left(x\right)$
+\end_inset
+
+ определяются достаточно просто.
+ Например, вероятность того, что 
+\begin_inset Formula $Y_{n}<x$
+\end_inset
+
+ равна вероятности того, что все 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ меньше 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ Так как все 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ распределены одинаково и независимо друг от друга, то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{n}\left(x\right)=P\left\{ \bigwedge_{j=1}^{n}X_{j}<y\right\} =\prod_{j=1}^{n}P\left\{ X_{j}<x\right\} =\left[F\left(x\right)\right]^{n}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вообще, неравенство 
+\begin_inset Formula $Y_{k}<x$
+\end_inset
+
+ выполняется, если не менее 
+\begin_inset Formula $k$
+\end_inset
+
+ переменных 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ меньше 
+\begin_inset Formula $x$
+\end_inset
+
+, поэтому
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{k}\left(x\right)=\sum_{j=k}^{n}\binom{n}{j}\left[F\left(x\right)\right]^{j}\left[1-F\left(x\right)\right]^{n-j}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для того, чтобы найти функции плотности распределения 
+\begin_inset Formula $f_{n}\left(x\right)$
+\end_inset
+
+продифференцируем функции 
+\begin_inset Formula $F_{k}\left(x\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+f_{k}\left(x\right)=F_{k}^{\prime}\left(x\right)=\\
+=\sum_{j=k}^{n-1}\binom{n}{j}\left(j\cdot\left[F\left(x\right)\right]^{j-1}\cdot f\left(x\right)\cdot\left[1-F\left(x\right)\right]^{n-j}-\left[F\left(x\right)\right]^{j}\cdot\left(n-j\right)\cdot\left[1-F\left(x\right)\right]^{n-j-1}\cdot f\left(x\right)\right)+\\
++n\cdot\left[F\left(x\right)\right]^{n-1}\cdot f\left(x\right).
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Введём следующие обозначения:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A_{j}\left(x\right)=\binom{n}{j}\cdot j\cdot\left(F\left(x\right)\right)^{j-1}\left(1-F\left(x\right)\right)^{n-j}\cdot f\left(x\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+B_{j}\left(x\right)=\binom{n}{j}\cdot\left(n-j\right)\cdot\left(F\left(x\right)\right)^{j}\cdot\left(1-F\left(x\right)\right)^{n-j-1}\cdot f\left(x\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+С учётом этих обозначений получим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{k}\left(x\right)=\sum_{j=k}^{n-1}\left(A_{j}\left(x\right)-B_{j}\left(x\right)\right)+A_{n}\left(x\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выразим 
+\begin_inset Formula $A_{j+1}\left(x\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A_{j+1}\left(x\right)=\binom{n}{j+1}\left(j+1\right)\left(F\left(x\right)\right)^{j}\left(1-F\left(x\right)\right)^{n-j-1}\cdot f\left(x\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\binom{n}{j+1}\cdot\left(j+1\right)=\frac{n!}{\left(j+1\right)!\cdot\left(n-j-1\right)!}\cdot\left(j+1\right)=\frac{n!}{j!\left(n-j\right)!}\cdot\left(n-j\right)=\binom{n}{j}\cdot\left(n-j\right),
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A_{j+1}\left(x\right)=B_{j}\left(x\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+f_{k}\left(x\right)=\sum_{j=k-1}^{n-1}A_{j}\left(x\right)-\sum_{j=k}^{n-1}B_{j}\left(x\right)+A_{n}\left(x\right)=\sum_{j=k-1}^{n-2}A_{j+1}\left(x\right)-\sum_{j=k}^{n-1}B_{j}\left(x\right)+A_{n}\left(x\right)=.\\
+=\sum_{j=k-1}^{n-2}B_{j}\left(x\right)-\sum_{j=k}^{n-1}B_{j}\left(x\right)+B_{n-1}\left(x\right)=B_{k-1}\left(x\right)=A_{k}\left(x\right).
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{k}\left(x\right)=\binom{n}{k}\cdot k\cdot\left(F\left(x\right)\right)^{k-1}\left(1-F\left(x\right)\right)^{n-k}\cdot f\left(x\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Нужно ли написать про совместные распределения порядковых статистик??
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Непараметрическая оценка плотности (оценка Розенблата-Парзена)
+\end_layout
+
+\begin_layout Chapter
 Генерация случайных чисел
 \end_layout
 
@@ -2123,7 +3724,149 @@ status open
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Общий-метод-для"
+
+\end_inset
+
 Общий метод для непрерывных распределений
+\end_layout
+
+\begin_layout Standard
+Пусть задана случайная величина 
+\begin_inset Formula $X$
+\end_inset
+
+ с функцией распределения 
+\begin_inset Formula $F\left(x\right)$
+\end_inset
+
+.
+ Тогда случайная величина 
+\begin_inset Formula $F\left(X\right)$
+\end_inset
+
+ имеет равномерное распределение.
+ Действительно, 
+\begin_inset Formula $F\left(x\right)$
+\end_inset
+
+ является монотонной функцией, поэтому для неё существует обратная, обозначим
+ обратную функцию распределения 
+\begin_inset Formula $F_{inv}$
+\end_inset
+
+, тогда для любого 
+\begin_inset Formula $x\in\left[0;1\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{F\left(X\right)}\left(x\right)=P\left\{ F\left(X\right)<x\right\} =P\left\{ X<F_{inv}\left(x\right)\right\} =F\left(F_{inv}\left(x\right)\right)=x\cdot\left[x\in\left[0;1\right]\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(X\right)=U,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+где 
+\begin_inset Formula $U$
+\end_inset
+
+ ― случайная величина, равномерно распределённая на 
+\begin_inset Formula $[0;1]$
+\end_inset
+
+, откуда следует
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+X=F_{inv}\left(U\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Такой подход применим, если удаётся в явном виде выразить обратную функцию
+ к функции распределения.
+ В других случаях приходится применять специализированные методы.
+\end_layout
+
+\begin_layout Standard
+В качестве примера рассмотрим генерацию случайных чисел с распределение
+ Коши 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Распределение-Коши"
+
+\end_inset
+
+.
+ Функция распределения Коши имеет вид
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(x\right)=\frac{1}{\pi}\mathrm{arctg\left(x\right)+\frac{1}{2}.}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Решая уравнение
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{\pi}\mathrm{arctg\left(X\right)+\frac{1}{2}=U},
+\]
+
+\end_inset
+
+получим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+X=\mathrm{tg}\left(\pi\left(U-\frac{1}{2}\right)\right).
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
