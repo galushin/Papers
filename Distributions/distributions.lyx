@@ -85,6 +85,10 @@ LatexCommand tableofcontents
 Характеристические функции
 \end_layout
 
+\begin_layout Subsection
+Определение характеристической функции
+\end_layout
+
 \begin_layout Standard
 Характеристической функцией распределения случайной величины 
 \begin_inset Formula $X$
@@ -137,8 +141,18 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Standard
-Таким образом, характеристическая функция является преобразованием Фурье
- для функции плотности распределения непрерывной случайной величины.
+Таким образом, характеристическая функция аналогично преобразованию Фурье
+ для функции плотности распределения непрерывной случайной величины
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+нужна ссылка и разъяснения
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -166,6 +180,10 @@ P\left\{ X=x_{k}\right\} =\frac{1}{2\pi}\intop_{-\infty}^{+\infty}e^{-i\lambda x
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Характеристическая функция суммы независимых случайных величин
 \end_layout
 
 \begin_layout Standard
@@ -224,6 +242,10 @@ P\left\{ X=x_{k}\right\} =\frac{1}{2\pi}\intop_{-\infty}^{+\infty}e^{-i\lambda x
 
  можно рассматривать как параметр и получать распределения для целого семейства
  случайных величин.
+\end_layout
+
+\begin_layout Subsection
+Вычисление моментов с помощью характеристических функций
 \end_layout
 
 \begin_layout Standard
@@ -1270,6 +1292,18 @@ f\left(x\right)=\frac{1}{\sqrt{2\pi}\cdot\sigma}\exp\left(-\frac{\left(x-\mu\rig
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Нормальное распределение с 
+\begin_inset Formula $\mu=0$
+\end_inset
+
+ и 
+\begin_inset Formula $\sigma=1$
+\end_inset
+
+ называется стандартным нормальным.
 \end_layout
 
 \begin_layout Standard
