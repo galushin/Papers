@@ -4068,6 +4068,260 @@ D\left[t_{n}\right]=\frac{n}{n-2}.
 \end_layout
 
 \begin_layout Chapter
+Исследование зависимостей между нормальными случайными величинами
+\end_layout
+
+\begin_layout Section
+Двумерное нормальное распределение
+\end_layout
+
+\begin_layout Standard
+Случайные величины 
+\begin_inset Formula $X$
+\end_inset
+
+ и 
+\begin_inset Formula $Y$
+\end_inset
+
+ имеют двумерное совместное нормальное распределение, если функция плотности
+ имеет вид
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f\left(x,y\right)=\frac{1}{2\pi\sigma_{X}\sigma_{Y}\sqrt{1-\rho^{2}}}\exp\left\{ -\frac{Q\left(x,y\right)}{2}\right\} ,
+\]
+
+\end_inset
+
+где
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q\left(x,y\right)=\frac{1}{\left(1-\rho^{2}\right)}\left[\frac{\left(x-\mu_{X}\right)^{2}}{\sigma_{X}^{2}}-2\rho\frac{\left(x-\mu_{X}\right)\left(y-\mu_{Y}\right)}{\sigma_{X}\sigma_{Y}}+\frac{\left(y-\mu_{Y}\right)^{2}}{\sigma_{Y}^{2}}\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Представим случайную величину 
+\begin_inset Formula $Y$
+\end_inset
+
+ в виде
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Y=a\cdot X+b+c\cdot U,\label{eq:regeression_equation}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+где 
+\begin_inset Formula $U$
+\end_inset
+
+ — независимая от 
+\begin_inset Formula $X$
+\end_inset
+
+ случайная величина с нулевым матожиданием.
+ Составим уравнения для определения параметров 
+\begin_inset Formula $a$
+\end_inset
+
+, 
+\begin_inset Formula $b$
+\end_inset
+
+ и дисперсии случайной величины 
+\begin_inset Formula $U$
+\end_inset
+
+.
+ По свойствам математического ожидания:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu_{Y}=M\left[Y\right]=a\cdot M\left[X\right]+b+M\left[U\right]=a\cdot\mu_{X}+b.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Отсюда следует, что
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+b=\mu_{Y}-a\cdot\mu_{X}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Поэтому уравнение 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:regeression_equation"
+
+\end_inset
+
+ можно переписать в виде
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Y-\mu_{Y}=a\left(X-\mu_{X}\right)+U.\label{eq:regression_equation_centered}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для нахождения параметра 
+\begin_inset Formula $a$
+\end_inset
+
+ умножим последнее уравнение на 
+\begin_inset Formula $\left(X-\mu_{X}\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(Y-\mu_{Y}\right)\left(X-\mu_{X}\right)=a\left(X-\mu_{X}\right)^{2}+U\left(X-\mu_{X}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Взяв математическое ожидание, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathrm{Cov}\left(Y,X\right)=a\cdot D\left[X\right],
+\]
+
+\end_inset
+
+откуда следует
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+a=\frac{\mathrm{Cov}\left(Y,X\right)}{\sigma_{X}^{2}}=\frac{\mathrm{Cov}\left(Y,X\right)}{\sigma_{X}\sigma_{Y}}\cdot\frac{\sigma_{Y}}{\sigma_{X}}=\rho\cdot\frac{\sigma_{Y}}{\sigma_{X}}.\label{eq:regression_a}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Наконец, определим дисперсию случайной величины 
+\begin_inset Formula $U$
+\end_inset
+
+.
+ Возведя правую и левую части уравнения 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:regression_equation_centered"
+
+\end_inset
+
+ в квадрат:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(Y-\mu_{Y}\right)^{2}=a^{2}\left(X-\mu_{X}\right)^{2}+2\cdot a\cdot\left(X-\mu_{X}\right)\cdot U+U^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Переходя к математическим ожиданиям, получим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D\left[Y\right]=a^{2}D\left[X\right]+D\left[U\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma_{Y}^{2}=a^{2}\sigma_{X}^{2}+\sigma_{U}^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Учитывая выражение для коэффициента 
+\begin_inset Formula $a$
+\end_inset
+
+, получим:
+\begin_inset Formula 
+\begin{equation}
+\sigma_{U}^{2}=\sigma_{Y}^{2}-\rho^{2}\frac{\sigma_{Y}^{2}}{\sigma_{X}^{2}}\sigma_{X}^{2}=\sigma_{Y}^{2}\left(1-\rho^{2}\right).\label{eq:sigma_U_sigma_Y}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
 Основы непараметрической статистики
 \end_layout
 
