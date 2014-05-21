@@ -1326,7 +1326,197 @@ P_{n}\left(k\right)=\frac{1}{n}f\left(\frac{k}{n}-p\right).
 \end_layout
 
 \begin_layout Subsection
-Ещё один вывод нормального распределения
+Центрально-симметричное распределение на плоскости с независимыми компонентами
+\end_layout
+
+\begin_layout Standard
+Пусть имеется двумерная случайная величина с центральное симметричным распределе
+нием, компоненты которой распределены независимо:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f\left(x,y\right)=g\left(x\right)\cdot h\left(y\right)=\varphi\left(r\right),
+\]
+
+\end_inset
+
+где 
+\begin_inset Formula $r=\sqrt{x^{2}+y^{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ln\varphi\left(r\right)=\ln g\left(x\right)+\ln h\left(y\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Продифференцируем это выражение по 
+\begin_inset Formula $x$
+\end_inset
+
+ и по 
+\begin_inset Formula $y$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\varphi^{\prime}\left(r\right)}{\varphi\left(r\right)}\cdot\frac{x}{r}=\frac{g^{\prime}\left(x\right)}{g\left(x\right)},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\varphi^{\prime}\left(r\right)}{\varphi\left(r\right)}\cdot\frac{y}{r}=\frac{h^{\prime}\left(y\right)}{h\left(y\right)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Из этих равенств следует
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\varphi^{\prime}\left(r\right)}{\varphi\left(r\right)}\cdot\frac{1}{r}=\frac{g^{\prime}\left(x\right)}{x\cdot g\left(x\right)}=\frac{h^{\prime}\left(y\right)}{y\cdot h\left(y\right)}\text{.}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как второе из этих выражений не зависит от 
+\begin_inset Formula $x$
+\end_inset
+
+, а третье не зависит от 
+\begin_inset Formula $y$
+\end_inset
+
+, а значит оба они являются просто константами:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{g^{\prime}\left(x\right)}{x\cdot g\left(x\right)}=\frac{h^{\prime}\left(y\right)}{y\cdot h\left(y\right)}=\lambda.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Решая дифференциальное уравнение с разделяющимися переменными
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dg}{g}=\lambda\cdot x\cdot dx,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+получим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ln g\left(x\right)+C_{0}=\frac{\lambda x^{2}}{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Или
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g\left(x\right)=C\cdot\exp\left(\frac{\lambda x^{2}}{2}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Функция 
+\begin_inset Formula $h\left(y\right)$
+\end_inset
+
+ имеет аналогичный вид.
+ Постоянные 
+\begin_inset Formula $C$
+\end_inset
+
+ и 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ определяются из естественных свойств функции плотности распределения, в
+ частности, условия нормировки:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intop_{-\infty}^{+\infty}g\left(x\right)dx=1\text{.}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В частности, для того, чтобы интеграл слева сходился, необходимо, чтобы
+ 
+\begin_inset Formula $g\left(x\right)$
+\end_inset
+
+ стремилась к нулю на бесконечности, поэтому 
+\begin_inset Formula $\lambda<0$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
