@@ -69,6 +69,22 @@
 
 \begin_body
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{sloppy}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Title
 Вероятностные распределения
 \end_layout
@@ -2774,7 +2790,7 @@ U_{k}=\frac{X_{k}-\mu}{\sigma}.
 \begin_inset Formula $\varphi\left(y\right)$
 \end_inset
 
- — плотность нормального распределения.
+ — плотность стандартного нормального распределения.
 \end_layout
 
 \begin_layout Standard
@@ -3663,6 +3679,108 @@ P\left\{ \Phi_{inv}\left(\frac{\alpha}{2}\right)\le\frac{\mu-m}{\sigma}\cdot\sqr
 \end_inset
 
  параметров распределения.
+\end_layout
+
+\begin_layout Section
+Доверительный интервал для дисперсии
+\end_layout
+
+\begin_layout Standard
+Мы установили распределение для несмещённой выборочной дисперсии:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+s^{2}\sim\frac{\sigma^{2}}{n-1}\chi_{n-1}^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Этот факт позволяет нам определить доверительный интервал, то есть интервал,
+ которому дисперсия принадлежит с заданной вероятностью.
+ Обозначим эту вероятность 
+\begin_inset Formula $1-\alpha$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{s^{2}\left(n-1\right)}{\sigma^{2}}\sim\chi_{n-1}^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Обозначим через 
+\begin_inset Formula $\chi_{n}^{2}\left(p\right)$
+\end_inset
+
+ квантиль распределения хи-квадрат с 
+\begin_inset Formula $n$
+\end_inset
+
+ степенями свободы для вероятности 
+\begin_inset Formula $p$
+\end_inset
+
+, тогда неравенство
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\chi_{n-1}^{2}\left(\frac{\alpha}{2}\right)\le\frac{s^{2}\left(n-1\right)}{\sigma^{2}}\le\chi_{n-1}^{2}\left(1-\frac{\alpha}{2}\right)
+\]
+
+\end_inset
+
+будет выполняться с вероятностью 
+\begin_inset Formula $1-\alpha.$
+\end_inset
+
+ Проведём элементарные преобразования этих неравенств:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{\chi_{n-1}^{2}\left(1-\frac{\alpha}{2}\right)}\le\frac{\sigma^{2}}{s^{2}\left(n-1\right)}\le\frac{1}{\chi_{n-1}^{2}\left(\frac{\alpha}{2}\right)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{s^{2}\left(n-1\right)}{\chi_{n-1}^{2}\left(1-\frac{\alpha}{2}\right)}\le\sigma^{2}\le\frac{s^{2}\left(n-1\right)}{\chi_{n-1}^{2}\left(\frac{\alpha}{2}\right)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Последнее неравенство определяет доверительный интервал для дисперсии, которому
+ дисперсия принадлежит с вероятностью 
+\begin_inset Formula $1-\alpha$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -5303,6 +5421,311 @@ X=\mathrm{tg}\left(\pi\left(U-\frac{1}{2}\right)\right).
 
 \begin_layout Section
 Нормальное распределение
+\end_layout
+
+\begin_layout Standard
+Оказывается, что проще генерировать два нормально распределённых случайных
+ числа, чем одно.
+\end_layout
+
+\begin_layout Standard
+Действительно, расмотрим систему двух независимых стандартных нормальных
+ случайных чисел 
+\begin_inset Formula $\left(X,Y\right)$
+\end_inset
+
+.
+ Перейдём к полярным координатам:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+X=R\cdot\cos\left(\Phi\right)\\
+Y=R\cdot\sin\left(\Phi\right)
+\end{array}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём распределения 
+\begin_inset Formula $R$
+\end_inset
+
+ и 
+\begin_inset Formula $\Phi$
+\end_inset
+
+.
+ Легко понять, что 
+\begin_inset Formula $R^{2}=X^{2}+Y^{2}$
+\end_inset
+
+.
+ Отсюда, следует, что 
+\begin_inset Formula $R^{2}$
+\end_inset
+
+ имеет распределение хи-квадрат с 2 степенями свободы.
+ Из формулы 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:chi_square_pdf"
+
+\end_inset
+
+ при 
+\begin_inset Formula $n=2$
+\end_inset
+
+ следует, что функция плотности распределения 
+\begin_inset Formula $R^{2}$
+\end_inset
+
+ имеет вид
+\begin_inset Formula 
+\[
+f_{R^{2}}\left(x\right)=\frac{1}{2}\exp\left(-\frac{x}{2}\right),
+\]
+
+\end_inset
+
+а функция распределения
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{R^{2}}\left(x\right)=1-\exp\left(-\frac{x}{2}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Используя общий метод генерации непрерывных случайных величин 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Общий-метод-для"
+
+\end_inset
+
+, составим уравнение
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+W=1-\exp\left(-\frac{R^{2}}{2}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Решая это уравнение относительно 
+\begin_inset Formula $X$
+\end_inset
+
+, получм
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R^{2}=-2\cdot\ln\left(1-W\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Теперь необходимо найти способ генерации 
+\begin_inset Formula $\Phi$
+\end_inset
+
+.
+ Разделив 
+\begin_inset Formula $Y$
+\end_inset
+
+ на 
+\begin_inset Formula $X$
+\end_inset
+
+, получим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathrm{tg}\left(\Phi\right)=\frac{Y}{X},
+\]
+
+\end_inset
+
+откуда следует
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Phi=\mathrm{arctg\left(\frac{Y}{X}\right).}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Отношение двух стандартных нормальных случайных величин имеет распределение
+ Коши c функцией распределения
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(x\right)=\frac{1}{\pi}\mathrm{arctg\left(x\right)+\frac{1}{2}.}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Снова воспользуемся общим методом порождения непрерывных случайных величин.
+ Составим уравение
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{\pi}\mathrm{arcrg\left(\mathrm{tg}\Phi\right)+\frac{1}{2}=V},
+\]
+
+\end_inset
+
+где 
+\begin_inset Formula $V$
+\end_inset
+
+ ― равномерно распределённое на 
+\begin_inset Formula $\left[0;1\right]$
+\end_inset
+
+ случайное число.
+ учитывая, что тангенс и арктангенс ― взаимно обратные функции, получим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{\pi}\Phi+\frac{1}{2}=V.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Решим это уравение относительно 
+\begin_inset Formula $\Phi$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Phi=\pi\left(V-\frac{1}{2}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, случайная величина 
+\begin_inset Formula $\Phi$
+\end_inset
+
+ имеет равномерное распределение на интервале 
+\begin_inset Formula $\left[-\frac{\pi}{2};\frac{\pi}{2}\right].$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Полученные результаты позволяют генерировать два нормально распределённых
+ случайных числа за раз.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $W,V\sim U\left(0;1\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $R=\sqrt{-2\cdot\ln\left(1-W\right)}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\Phi=\pi\left(V-\frac{1}{2}\right).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $X=R\cdot\cos\Phi.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $Y=R\cdot\sin\Phi$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{sloppy}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
