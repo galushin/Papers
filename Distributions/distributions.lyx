@@ -1570,12 +1570,7 @@ g\left(x\right)=C\cdot\exp\left(\frac{\lambda x^{2}}{2}\right).
 \end_layout
 
 \begin_layout Standard
-Функция 
-\begin_inset Formula $h\left(y\right)$
-\end_inset
-
- имеет аналогичный вид.
- Постоянные 
+Постоянные 
 \begin_inset Formula $C$
 \end_inset
 
@@ -1599,8 +1594,7 @@ g\left(x\right)=C\cdot\exp\left(\frac{\lambda x^{2}}{2}\right).
 \end_layout
 
 \begin_layout Standard
-В частности, для того, чтобы интеграл слева сходился, необходимо, чтобы
- 
+Для того, чтобы интеграл слева сходился, необходимо, чтобы 
 \begin_inset Formula $g\left(x\right)$
 \end_inset
 
