@@ -995,6 +995,140 @@ P\left(k\right)=\frac{a^{k}}{k!}e^{-a},
 , называется распределением Пуассона.
 \end_layout
 
+\begin_layout Subsection
+Оценка вероятности по частоте
+\end_layout
+
+\begin_layout Standard
+При фиксированном 
+\begin_inset Formula $p$
+\end_inset
+
+ число появлений события 
+\begin_inset Formula $k$
+\end_inset
+
+ в 
+\begin_inset Formula $n$
+\end_inset
+
+ экспериментах имеет биномиальное распределение 
+\begin_inset Formula $B\left(n,p\right)$
+\end_inset
+
+.
+ Вероятность появления ровно 
+\begin_inset Formula $k$
+\end_inset
+
+ событий равна
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L_{n}\left(p\right)=\binom{n}{k}\cdot p^{k}\left(1-p\right)^{n-k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Воспользуемся необходимым условием экстремума для получения оценки вероятности:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L_{n}^{\prime}\left(\hat{p}\right)=0,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+L_{n}^{\prime}\left(p\right)=\binom{n}{k}\left(k\cdot p^{k-1}\left(1-p\right)^{n-k}-p^{k}\left(n-k\right)\left(1-p\right)^{n-k-1}\right)=\\
+=\binom{n}{k}\cdot p^{k-1}\cdot\left(1-p\right)^{n-k-1}\left(k\left(1-p\right)-\left(n-k\right)p\right).
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k\left(1-\hat{p}\right)-\left(n-k\right)\hat{p}=0,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+n\cdot\hat{p}=k,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{p}=\frac{k}{n}
+\]
+
+\end_inset
+
+Найдём основные числовые характеристики этой оценки:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[\hat{p}\right]=p,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D\left[\hat{p}\right]=\frac{npq}{n^{2}}=\frac{pq}{n}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, 
+\begin_inset Formula $\hat{p}$
+\end_inset
+
+ является несмещённой и состоятельной оценкой 
+\begin_inset Formula $p$
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Section
 Нормальное распределение
 \end_layout
