@@ -1,0 +1,351 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{p}\left(x\right)=\frac{1}{nh}\sum_{i=1}^{n}K\left(\frac{x_{i}-x}{h}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[\hat{p}\left(x\right)\right]=\frac{1}{nh}\sum_{i=1}^{n}M_{x_{i}}\left[K\left(\frac{x_{i}-x}{h}\right)\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[\hat{p}\left(x\right)\right]=\frac{1}{nh}\sum_{i=1}^{n}\intop_{-\infty}^{+\infty}K\left(\frac{x_{i}-x}{h}\right)p\left(x_{i}\right)dx_{i}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как значение определённого интеграла не зависит от обозначения переменной
+ интегрирования, то все слагаемые имеют одно и то же значение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[\hat{p}\left(x\right)\right]=\frac{1}{h}\intop_{-\infty}^{+\infty}K\left(\frac{u-x}{h}\right)p\left(u\right)du.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Сделаем замену переменных
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{u-x}{h}=z,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u=h\cdot z+x,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+du=h\cdot dz,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В качестве интервала интегрирования по 
+\begin_inset Formula $z$
+\end_inset
+
+ можно взять 
+\begin_inset Formula $[-1;1]$
+\end_inset
+
+, так как ядро 
+\begin_inset Formula $K$
+\end_inset
+
+ имеет, по предположению, ограниченный носитель.
+ В результате получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[\hat{p}\left(x\right)\right]=\intop_{-1}^{1}K\left(z\right)p\left(x+hz\right)dz.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Разложим 
+\begin_inset Formula $p\left(x+zh\right)$
+\end_inset
+
+ в ряд по степеням 
+\begin_inset Formula $zh$
+\end_inset
+
+ и отбросим все слагаемые, кроме первых трёх:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[\hat{p}\left(x\right)\right]=\intop_{-1}^{1}K\left(z\right)\left[p\left(x\right)+p^{\prime}\left(x\right)hz+p^{\prime\prime}\left(x\right)\frac{h^{2}z^{2}}{2}+O\left(h^{3}\right)\right]dz.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+По определению:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intop_{-1}^{+1}K\left(z\right)dz=1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как ядро 
+\begin_inset Formula $K$
+\end_inset
+
+ является чётной функцией, то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intop_{-1}^{+1}K\left(z\right)zdz=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Обозначим
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula 
+\[
+\intop_{-1}^{+1}K\left(z\right)z^{2}dz=\sigma_{K}^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[\hat{p}\left(x\right)\right]=p\left(x\right)+p^{\prime\prime}\left(x\right)\frac{h^{2}}{2}\sigma_{K}^{2}+O\left(h^{4}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для того, чтобы 
+\begin_inset Formula $\hat{p}\left(x\right)$
+\end_inset
+
+ была асимптотически несмещённой оценкой плотности, чтобы выполнялось условие
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}h=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Рассмотрим следующий критерий
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q\left(h\right)=\intop_{-\infty}^{+\infty}M\left[\left(\hat{p}\left(x\right)-p\left(x\right)\right)^{2}\right]dx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[\left(\hat{p}\left(x\right)-p\left(x\right)\right)^{2}\right]=M\left[\hat{p}^{2}\left(x\right)\right]-2p\left(x\right)M\left[\hat{p}\left(x\right)\right]+M\left[p^{2}\left(x\right)\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[\hat{p}^{2}\left(x\right)\right]=\frac{1}{n^{2}h^{2}}\sum_{i=1}^{n}\sum_{j=1}^{n}M\left[K\left(\frac{x_{i}-x}{h}\right)K\left(\frac{x_{j}-x}{h}\right)\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если 
+\begin_inset Formula $i\ne j$
+\end_inset
+
+, то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[K\left(\frac{x_{i}-x}{h}\right)K\left(\frac{x_{j}-x}{h}\right)\right]=M\left[K\left(\frac{x_{i}-x}{h}\right)\right]M\left[K\left(\frac{x_{j}-x}{h}\right)\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

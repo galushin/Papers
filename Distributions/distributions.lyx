@@ -1563,7 +1563,7 @@ P_{n}\left(k\right)=\frac{1}{n}f\left(\frac{k}{n}-p\right).
 \begin_layout Standard
 \begin_inset Formula 
 \[
-f\left(x,y\right)=g\left(x\right)\cdot h\left(y\right)=\varphi\left(r\right),
+f\left(x,y\right)=g\left(x\right)\cdot g\left(y\right)=\varphi\left(r\right),
 \]
 
 \end_inset
@@ -1578,7 +1578,7 @@ f\left(x,y\right)=g\left(x\right)\cdot h\left(y\right)=\varphi\left(r\right),
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\ln\varphi\left(r\right)=\ln g\left(x\right)+\ln h\left(y\right).
+\ln\varphi\left(r\right)=\ln g\left(x\right)+\ln g\left(y\right).
 \]
 
 \end_inset
@@ -1612,7 +1612,7 @@ f\left(x,y\right)=g\left(x\right)\cdot h\left(y\right)=\varphi\left(r\right),
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{\varphi^{\prime}\left(r\right)}{\varphi\left(r\right)}\cdot\frac{y}{r}=\frac{h^{\prime}\left(y\right)}{h\left(y\right)}.
+\frac{\varphi^{\prime}\left(r\right)}{\varphi\left(r\right)}\cdot\frac{y}{r}=\frac{g^{\prime}\left(y\right)}{g\left(y\right)}.
 \]
 
 \end_inset
@@ -1627,7 +1627,7 @@ f\left(x,y\right)=g\left(x\right)\cdot h\left(y\right)=\varphi\left(r\right),
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{\varphi^{\prime}\left(r\right)}{\varphi\left(r\right)}\cdot\frac{1}{r}=\frac{g^{\prime}\left(x\right)}{x\cdot g\left(x\right)}=\frac{h^{\prime}\left(y\right)}{y\cdot h\left(y\right)}\text{.}
+\frac{\varphi^{\prime}\left(r\right)}{\varphi\left(r\right)}\cdot\frac{1}{r}=\frac{g^{\prime}\left(x\right)}{x\cdot g\left(x\right)}=\frac{g^{\prime}\left(y\right)}{y\cdot g\left(y\right)}\text{.}
 \]
 
 \end_inset
@@ -1650,7 +1650,7 @@ f\left(x,y\right)=g\left(x\right)\cdot h\left(y\right)=\varphi\left(r\right),
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{g^{\prime}\left(x\right)}{x\cdot g\left(x\right)}=\frac{h^{\prime}\left(y\right)}{y\cdot h\left(y\right)}=\lambda.
+\frac{g^{\prime}\left(x\right)}{x\cdot g\left(x\right)}=\lambda.
 \]
 
 \end_inset
@@ -1704,12 +1704,7 @@ g\left(x\right)=C\cdot\exp\left(\frac{\lambda x^{2}}{2}\right).
 \end_layout
 
 \begin_layout Standard
-Функция 
-\begin_inset Formula $h\left(y\right)$
-\end_inset
-
- имеет аналогичный вид.
- Постоянные 
+Постоянные 
 \begin_inset Formula $C$
 \end_inset
 
@@ -1733,8 +1728,7 @@ g\left(x\right)=C\cdot\exp\left(\frac{\lambda x^{2}}{2}\right).
 \end_layout
 
 \begin_layout Standard
-В частности, для того, чтобы интеграл слева сходился, необходимо, чтобы
- 
+Для того, чтобы интеграл слева сходился, необходимо, чтобы 
 \begin_inset Formula $g\left(x\right)$
 \end_inset
 
