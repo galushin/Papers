@@ -2261,6 +2261,123 @@ status open
 \end_layout
 
 \begin_layout Section
+Распределение суммы
+\end_layout
+
+\begin_layout Standard
+Пусть задана система двух случайных величин 
+\begin_inset Formula $X$
+\end_inset
+
+ и 
+\begin_inset Formula $Y$
+\end_inset
+
+, имеющих совместную плотность распределения 
+\begin_inset Formula $f\left(x,y\right).$
+\end_inset
+
+ Найдём распределение суммы, то есть случайной величины 
+\begin_inset Formula $Z=X+Y$
+\end_inset
+
+.
+ Функцию распределения 
+\begin_inset Formula $Z$
+\end_inset
+
+ обозначим как 
+\begin_inset Formula $G\left(z\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+G\left(z\right)=Pr\left\{ Z<z\right\} =\iintop_{x+y<z}f\left(x,y\right)dxdy.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Неравенство 
+\begin_inset Formula $x+y<z$
+\end_inset
+
+ можно переписать в виде 
+\begin_inset Formula $y<z-x$
+\end_inset
+
+, поэтому
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+G\left(z\right)=\iintop_{y<z-x}f\left(x,y\right)dxdy=\intop_{-\infty}^{+\infty}\intop_{-\infty}^{z-x}f\left(x,y\right)dydx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Дифференцируя это выражение по 
+\begin_inset Formula $z$
+\end_inset
+
+, получим формулу для плотности распределения 
+\begin_inset Formula $f_{Z}\left(z\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{Z}\left(z\right)=\intop_{-\infty}^{+\infty}f\left(x,z-x\right)dx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если 
+\begin_inset Formula $X$
+\end_inset
+
+ и 
+\begin_inset Formula $Y$
+\end_inset
+
+ независимы, то есть 
+\begin_inset Formula $f\left(x,y\right)=f_{X}(x)\cdot f_{Y}\left(y\right)$
+\end_inset
+
+, то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{Z}\left(z\right)=\intop_{-\infty}^{+\infty}f_{X}\left(x\right)f_{Y}\left(z-x\right)dx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
 Распределение частного
 \end_layout
 
