@@ -153,6 +153,248 @@ addcontentsline{toc}{chapter}{Введение}
 
 \end_layout
 
+\begin_layout Standard
+Последовательное и строгое введение основных понятий математической статистики.
+\end_layout
+
+\begin_layout Standard
+От случайных событий через дискретные случайные величины к непрерывным случайным
+ величинам.
+\end_layout
+
+\begin_layout Standard
+Биномиальное распределение вводится при исследовании свойств оценки вероятности
+ по частоте.
+\end_layout
+
+\begin_layout Standard
+Нормальное распределение вводится как предельное для биномиального.
+\end_layout
+
+\begin_layout Standard
+Функции распределения для распределении хи-квадрат и Стьюдента выводятся,
+ а не постулируются.
+\end_layout
+
+\begin_layout Chapter
+Оценка вероятности случайного события
+\end_layout
+
+\begin_layout Standard
+Простейшей нетривиальной случайной величиной является величина с распределением
+ Бернулли, которая принимает значение 
+\begin_inset Formula $1$
+\end_inset
+
+, если некоторое событие произошло и 
+\begin_inset Formula $0$
+\end_inset
+
+, если это событие не произошло.
+ Если вероятность того, что событие произойдёт, равна 
+\begin_inset Formula $p$
+\end_inset
+
+, то распределение вероятностей есть
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(k\right)=\begin{cases}
+p, & k=1\\
+1-p, & k=0
+\end{cases}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Часто вводят обозначение
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+q=1-p.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Каким образом можно оценить вероятность случайного события? Так как понятие
+ вероятности применимо только к массовым явлениям, то едиственный возможный
+ путь — выполнение большого количества экспериментов и анализ их результатов.
+ Если эксперименты независимы друг от друга и идентичны, то говорят, что
+ реализуется схема Бернулли.
+\end_layout
+
+\begin_layout Standard
+Если проводится 
+\begin_inset Formula $n$
+\end_inset
+
+ экспериментов, то количество экспериментов, в которых заданное событие
+ произошло также будет случайной величиной.
+ Распределение этой случайной величины называется биномиальным.
+ Найдём вероятность 
+\begin_inset Formula $P_{n}\left(k\right)$
+\end_inset
+
+ того, что событие произойдёт ровно 
+\begin_inset Formula $k$
+\end_inset
+
+ раз в 
+\begin_inset Formula $n$
+\end_inset
+
+ опытах.
+ Так как существует 
+\begin_inset Formula $\binom{n}{k}$
+\end_inset
+
+ способов выбрать 
+\begin_inset Formula $k$
+\end_inset
+
+ элементов из 
+\begin_inset Formula $n$
+\end_inset
+
+, то эта вероятность может быть записана следующим образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{n}\left(k\right)=\dbinom{n}{k}\cdot p^{k}\left(1-p\right)^{n-k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Используя обозначение 
+\begin_inset Formula $q=1-p$
+\end_inset
+
+, можно написать
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{n}\left(k\right)=\dbinom{n}{k}\cdot p^{k}q^{n-k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для построения оценки вероятности воспользуемся 
+\emph on
+методом максимизации правдоподобия
+\emph default
+.
+ В качестве оценки вероятности возьмём величину 
+\begin_inset Formula $\hat{p}$
+\end_inset
+
+, при которой вероятность 
+\begin_inset Formula $P_{n}\left(k\right)$
+\end_inset
+
+ будет наибольшей.
+ Как известно 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+нужна ссылка
+\end_layout
+
+\end_inset
+
+ необходимым условием экстремума является равенство нулю производной.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+\frac{d}{dp}\left(P_{n}\left(k\right)\right)=\binom{n}{k}\left(k\cdot p^{k-1}\left(1-p\right)^{n-k}-p^{k}\left(n-k\right)\left(1-p\right)^{n-k-1}\right)=\\
+=\binom{n}{k}\cdot p^{k-1}\cdot\left(1-p\right)^{n-k-1}\left(k\left(1-p\right)-\left(n-k\right)p\right).
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Рассмотреть случаи p=1 и p=0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k\left(1-\hat{p}\right)-\left(n-k\right)\hat{p}=0,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+n\cdot\hat{p}=k.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выражая 
+\begin_inset Formula $\hat{p}$
+\end_inset
+
+, получим оценку
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{p}=\frac{k}{n}\text{.}
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 Модели данных
 \end_layout
@@ -448,53 +690,6 @@ D\left[X\right]=-\varphi^{\prime\prime}\left(0,X\right)+\left(\varphi^{\prime}\l
 
 \begin_layout Subsection
 Распределение Бернулли
-\end_layout
-
-\begin_layout Standard
-Простейшей нетривиальной случайной величиной является величина с распределением
- Бернулли, которая принимает значение 
-\begin_inset Formula $1$
-\end_inset
-
-, если некоторое событие произошло и 
-\begin_inset Formula $0$
-\end_inset
-
-, если это событие не произошло.
- Если вероятность того, что событие произойдёт, равна 
-\begin_inset Formula $p$
-\end_inset
-
-, то распределение вероятностей есть
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-P\left(k\right)=\begin{cases}
-p, & k=1\\
-1-p, & k=0
-\end{cases}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Часто вводят обозначение
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-q=1-p.
-\]
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -1084,62 +1279,6 @@ L_{n}\left(p\right)=\binom{n}{k}\cdot p^{k}\left(1-p\right)^{n-k}.
 \end_layout
 
 \begin_layout Standard
-Воспользуемся необходимым условием экстремума для получения оценки вероятности:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-L_{n}^{\prime}\left(\hat{p}\right)=0,
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{multline*}
-L_{n}^{\prime}\left(p\right)=\binom{n}{k}\left(k\cdot p^{k-1}\left(1-p\right)^{n-k}-p^{k}\left(n-k\right)\left(1-p\right)^{n-k-1}\right)=\\
-=\binom{n}{k}\cdot p^{k-1}\cdot\left(1-p\right)^{n-k-1}\left(k\left(1-p\right)-\left(n-k\right)p\right).
-\end{multline*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-k\left(1-\hat{p}\right)-\left(n-k\right)\hat{p}=0,
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-n\cdot\hat{p}=k,
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\hat{p}=\frac{k}{n}
-\]
-
-\end_inset
-
 Найдём основные числовые характеристики этой оценки:
 \end_layout
 
