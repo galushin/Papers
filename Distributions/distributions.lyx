@@ -94,8 +94,39 @@ begin{sloppy}
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand
+\backslash
+contentsname{Содержание}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Добавить Содержание в Содержание
+\end_layout
 
 \end_inset
 
@@ -106,8 +137,20 @@ LatexCommand tableofcontents
 Введение
 \end_layout
 
-\begin_layout Chapter
-Схема Бернулли
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Введение}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
