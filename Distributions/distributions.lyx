@@ -138,6 +138,27 @@ status open
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+На второй странице Введения отображается колонтитул 
+\begin_inset Quotes fld
+\end_inset
+
+Содержание
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -320,7 +341,7 @@ P_{n}\left(k\right)=\dbinom{n}{k}\cdot p^{k}q^{n-k}.
 \end_inset
 
  будет наибольшей.
- Как известно 
+ Как известно, 
 \begin_inset Note Note
 status open
 
@@ -5088,6 +5109,268 @@ D\left[Y\right]=a^{2}D\left[X\right]+D\left[U\right].
 \begin{equation}
 \sigma_{U}^{2}=\sigma_{Y}^{2}-\rho^{2}\frac{\sigma_{Y}^{2}}{\sigma_{X}^{2}}\sigma_{X}^{2}=\sigma_{Y}^{2}\left(1-\rho^{2}\right).\label{eq:sigma_U_sigma_Y}
 \end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Выборочная ковариация
+\end_layout
+
+\begin_layout Standard
+Пусть дана выборка размера 
+\begin_inset Formula $n$
+\end_inset
+
+ из двумерной случайной величины 
+\begin_inset Formula $\left(X,Y\right)$
+\end_inset
+
+, тогда элементы этой выборки удовлетворяют соотношению
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{i}=a\cdot x_{i}+b+u_{i}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вычислим выборочное среднее:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+m_{Y}=a\cdot m_{X}+b+m_{U}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вычитая это уравнение из предыдущего, получим уравнение для центрированных
+ величин:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y_{i}-m_{Y}=a\cdot\left(x_{i}-m_{X}\right)+\left(u_{i}-m_{U}\right).\label{eq:regression_sample_centered}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Получим с помощью этого уравнения выражение для несмещённой выборочной дисперсии
+ 
+\begin_inset Formula $s_{Y}^{2}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+s_{Y}^{2}=\frac{1}{n-1}\sum_{i=1}^{n}\left(y_{i}-m_{Y}\right)^{2}=\\
+=\frac{1}{n-1}\sum_{i=1}^{n}\left(a^{2}\left(x_{i}-m_{X}\right)^{2}+2a\left(x_{i}-m_{X}\right)\left(u_{i}-m_{U}\right)+\left(u_{i}-m_{U}\right)^{2}\right).
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вводя выборочную ковариацию
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C_{XU}=\frac{1}{n-1}\sum_{i=1}^{n}\left(x_{i}-m_{X}\right)\left(u_{i}-m_{U}\right),
+\]
+
+\end_inset
+
+получим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+s_{Y}^{2}=a^{2}\cdot s_{X}^{2}+2a\cdot C_{UX}+s_{U}^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Умножая уравнение 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:regression_sample_centered"
+
+\end_inset
+
+ на 
+\begin_inset Formula $\left(x_{i}-m_{X}\right)$
+\end_inset
+
+ и суммируя, получим выражение для выборочной ковариации:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+C_{YX}=\frac{1}{n-1}\sum_{i=1}^{n}\left(y_{i}-m_{Y}\right)\left(x_{i}-m_{X}\right)=a\cdot s_{X}^{2}+C_{UX}.\label{eq:CovYX-via-CovUX}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём числовые характеристики 
+\begin_inset Formula $C_{YX}$
+\end_inset
+
+.
+ Начнём с математического ожидания:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[C_{YX}\right]=a\cdot M\left[s_{X}^{2}\right]+\frac{1}{n}\sum_{i=1}^{n}M\left[\left(x_{i}-m_{X}\right)\cdot\left(u_{i}-m_{U}\right)\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ и 
+\begin_inset Formula $u_{i}$
+\end_inset
+
+ независимы, то
+\begin_inset Formula 
+\[
+M\left[\left(x_{i}-m_{X}\right)\cdot\left(u_{i}-m_{U}\right)\right]=M\left[x_{i}-m_{X}\right]\cdot M\left[u_{i}-m_{U}\right]=0
+\]
+
+\end_inset
+
+и мы получаем
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[C_{YX}\right]=a\cdot\sigma_{X}^{2}=\rho\cdot\frac{\sigma_{Y}}{\sigma_{X}}\cdot\sigma_{X}=\rho\cdot\sigma_{X}\cdot\sigma_{Y}=\mathrm{Cov}\left(Y,X\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, выборочная ковариация является несмещённой оценкой ковариации.
+\end_layout
+
+\begin_layout Section
+Условное распределение выборочной ковариации при фиксированной выборке 
+\begin_inset Formula $X$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Изучим распределение статистик, связанных с выборочным коэффициентом корреляции
+ в предположении, что 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ — фиксированные числа.
+ Выборочная ковариация в этом случае имеет нормальное распределение как
+ сумма нормальных случайных величин:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C_{XY}=a\cdot s_{X}^{2}+C_{UX}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём условные математическое ожидание:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[C_{XY}|X\right]=a\cdot s_{X}^{2}+\frac{1}{n-1}\sum_{i=1}^{n}\left(x_{i}-m_{x}\right)M\left[u_{i}\right]=a\cdot s_{X}^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём условную дисперсию:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+D\left[C_{XY}|X\right]=D\left[C_{UX}|X\right]=\frac{1}{\left(n-1\right)^{2}}\sum_{i=1}^{n}\left(x_{i}-m_{x}\right)^{2}D\left[u_{i}\right]=\\
+=\frac{1}{\left(n-1\right)^{2}}\sum_{i=1}^{n}\left(x_{i}-m_{x}\right)^{2}\cdot\sigma_{U}^{2}=\frac{1}{\left(n-1\right)}\cdot s_{X}^{2}\cdot\sigma_{U}^{2}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left\{ \hat{C}_{XY}|X\right\} \sim N\left(a\cdot s_{X}^{2},\frac{s_{X}^{2}\cdot\sigma_{U}^{2}}{n-1}\right).
+\]
 
 \end_inset
 
