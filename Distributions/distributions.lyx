@@ -3666,9 +3666,9 @@ F_{Y}\left(y\right)=P\left\{ Y<y\right\} =P\left\{ U^{2}<y\right\} =P\left\{ -\s
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-f_{Y}\left(y\right)=\varphi\left(\sqrt{y}\right)\frac{1}{2\sqrt{y}}+\varphi\left(-\sqrt{y}\right)\frac{1}{2\sqrt{y}}=\frac{\varphi\left(\sqrt{y}\right)}{\sqrt{y}}=\frac{1}{\sqrt{2\pi y}}\exp\left(-\frac{y}{2}\right).
-\]
+\begin{equation}
+f_{Y}\left(y\right)=\varphi\left(\sqrt{y}\right)\frac{1}{2\sqrt{y}}+\varphi\left(-\sqrt{y}\right)\frac{1}{2\sqrt{y}}=\frac{\varphi\left(\sqrt{y}\right)}{\sqrt{y}}=\frac{1}{\sqrt{2\pi y}}\exp\left(-\frac{y}{2}\right).\label{eq:chi_square_1_pdf}
+\end{equation}
 
 \end_inset
 
@@ -3757,14 +3757,14 @@ g_{1}\left(\lambda\right)=\frac{1}{\sqrt{1-2i\lambda}}\intop_{0}^{+\infty}\frac{
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-g_{1}\left(\lambda\right)=\frac{A}{\sqrt{1-2i\lambda}},
-\]
+\begin{equation}
+g_{1}\left(\lambda\right)=\frac{A}{\sqrt{1-2i\lambda}},\label{eq:chi_square_1_character_undef}
+\end{equation}
 
 \end_inset
 
  где 
-\begin_inset Formula $A$
+\begin_inset Formula $A_{1}$
 \end_inset
 
  — неизвестная пока постоянная, которую мы определим из свойства характеристичес
@@ -3772,6 +3772,17 @@ g_{1}\left(\lambda\right)=\frac{A}{\sqrt{1-2i\lambda}},
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:phi_at_zero"
+
+\end_inset
+
+, подставляя 
+\begin_inset Formula $\lambda=0$
+\end_inset
+
+ в уравнение 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:chi_square_1_character_undef"
 
 \end_inset
 
@@ -3858,9 +3869,9 @@ f_{n}\left(x\right)=\frac{1}{2\pi}\intop_{-\infty}^{+\infty}g_{n}\left(\lambda\r
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-f_{n}\left(x\right)=\frac{i}{2\pi}\frac{x^{\frac{n}{2}}}{2x}\intop_{-\infty}^{+\infty}\frac{\exp\left(-\frac{x}{2}+\frac{t}{2}\right)}{t^{\frac{n}{2}}}dt=\frac{1}{A_{n}}x^{\frac{n}{2}-1}\exp\left(-\frac{x}{2}\right),
-\]
+\begin{equation}
+f_{n}\left(x\right)=\frac{i}{2\pi}\frac{x^{\frac{n}{2}}}{2x}\intop_{-\infty}^{+\infty}\frac{\exp\left(-\frac{x}{2}+\frac{t}{2}\right)}{t^{\frac{n}{2}}}dt=\frac{1}{A_{n}}x^{\frac{n}{2}-1}\exp\left(-\frac{x}{2}\right),\label{eq:chi_square_pdf_undef}
+\end{equation}
 
 \end_inset
 
@@ -3939,6 +3950,131 @@ A_{n}=\intop_{0}^{+\infty}2^{\frac{n}{2}-1}t^{\frac{n}{2}-1}e^{-t}2dt=2^{\frac{n
 \begin{equation}
 f_{n}\left(x\right)=\frac{1}{2^{\frac{n}{2}}\cdot\Gamma\left(\frac{n}{2}\right)}x^{\frac{n}{2}-1}\exp\left(-\frac{x}{2}\right).\label{eq:chi_square_pdf}
 \end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Значения нормировочных постоянных 
+\begin_inset Formula $A_{n}$
+\end_inset
+
+ можно выразить не используя специальных функций.
+ Интегрируя по частям, можно получить рекуррентные формулы для 
+\begin_inset Formula $A_{n}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+A_{n}=\intop_{0}^{+\infty}x^{\frac{n}{2}-1}\exp\left(-\frac{x}{2}\right)dx=\left|\begin{array}{cc}
+u=x^{\frac{n}{2}-1} & du=\left(\frac{n}{2}-1\right)x^{\frac{n}{2}-2}dx\\
+dv=\exp\left(-\frac{x}{2}\right)dx & v=\left(-2\right)\cdot\exp\left(-\frac{x}{2}\right)
+\end{array}\right|=\\
+=\left.x^{\frac{n}{2}-1}\left(-2\right)\cdot\exp\left(-\frac{x}{2}\right)\right|_{0}^{+\infty}+2\left(\frac{n}{2}-1\right)\intop_{0}^{+\infty}x^{\frac{n-2}{2}-1}\exp\left(-\frac{x}{2}\right)dx=\\
+=\left(n-2\right)A_{n-2}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Начальными значениями для последовательности 
+\begin_inset Formula $A_{n}$
+\end_inset
+
+ служат 
+\begin_inset Formula $A_{1}$
+\end_inset
+
+ и 
+\begin_inset Formula $A_{2}$
+\end_inset
+
+.
+ Сравнивания 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:chi_square_pdf_undef"
+
+\end_inset
+
+ с 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:chi_square_1_pdf"
+
+\end_inset
+
+, делаем вывод, что 
+\begin_inset Formula 
+\[
+A_{1}=\frac{1}{\sqrt{2\pi}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вычислить 
+\begin_inset Formula $A_{2}$
+\end_inset
+
+ можно непосредственно:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A_{2}=\intop_{0}^{+\infty}\exp\left(-\frac{x}{2}\right)dx=\left.\left(-2\right)\exp\left(-\frac{x}{2}\right)\right|_{0}^{+\infty}=2.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если 
+\begin_inset Formula $n$
+\end_inset
+
+ — чётное, то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A_{n}=\left(n-2\right)A_{n-2}=\left(n-2\right)\cdot\left(n-4\right)\cdot A_{n-4}=\left(n-2\right)\left(n-4\right)\cdot...\cdot2=\left(n-2\right)!!
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если 
+\begin_inset Formula $n$
+\end_inset
+
+ — нечётное, то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A_{n}=\left(n-2\right)\left(n-4\right)\cdot...\cdot A_{1}=\frac{\left(n-2\right)!!}{\sqrt{2\pi}}.
+\]
 
 \end_inset
 
