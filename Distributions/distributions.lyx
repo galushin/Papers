@@ -226,10 +226,21 @@ addcontentsline{toc}{chapter}{Введение}
 \begin_layout Standard
 \begin_inset Formula 
 \[
-P\left(k\right)=\begin{cases}
-p, & k=1\\
-1-p, & k=0
-\end{cases}.
+P\left(X\right)=\begin{cases}
+p, & X=1\\
+1-p, & X=0
+\end{cases}
+\]
+
+\end_inset
+
+или с использованием нотации Айверсона
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(X\right)=p\cdot\left[X=1\right]+\left(1-p\right)\left[X=0\right].
 \]
 
 \end_inset
@@ -413,6 +424,175 @@ n\cdot\hat{p}=k.
 \begin_inset Formula 
 \[
 \hat{p}=\frac{k}{n}\text{.}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Запишем теперь эту оценку через исходы отдельных экспериментов.
+ Пусть в 
+\begin_inset Formula $i$
+\end_inset
+
+-ом эксперменте был получен исход 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+, то есть исходы экспериментов образуют систему одинаково распределённых
+ независимых случайных велиин 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ имеющих распределение Бернулли, тогда
+\begin_inset Formula 
+\[
+k=\sum_{i=1}^{n}X_{i},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{p}=\frac{1}{n}\sum_{i=1}^{n}X_{i}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Состоятельность оценки
+\end_layout
+
+\begin_layout Standard
+Оценка называется 
+\emph on
+состоятельной
+\emph default
+, если вероятность отклонения оценки от оцениваемой величины можно сделать
+ сколь угодно малой за счёт увеличения размера выборки.
+ Более строго, оценка 
+\begin_inset Formula $\hat{\theta}_{n}$
+\end_inset
+
+ параметра 
+\begin_inset Formula $\theta$
+\end_inset
+
+ называется состоятельной, если для любого вещественного числа 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}P\left\{ \left|\hat{\theta}_{n}-\theta\right|>\varepsilon\right\} =0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для доказательства состоятельности оценок часто используют неравенство Чебышёва.
+ Пусть 
+\begin_inset Formula $X$
+\end_inset
+
+ — положительная случайная величина.
+ Будем считать, для определённости, что она является непрерывной (для дискретных
+ случайных величин и в общем случае доказательство аналогично):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+P\left\{ X>1\right\} =\intop_{1}^{+\infty}f\left(x\right)dx\le\intop_{1}^{+\infty}x\cdot f\left(x\right)dx\le\intop_{1}^{+\infty}x\cdot f\left(x\right)dx+\intop_{0}^{1}x\cdot f\left(x\right)dx=\\
+=\intop_{0}^{+\infty}x\cdot f\left(x\right)dx=M\left[X\right].
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left\{ X>1\right\} \le M\left[X\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Рассмотрим случайную величину
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Y=\frac{\left(X-\mu\right)^{2}}{\alpha^{2}\sigma^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Применяя к ней неравенство Чебышёва, получим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left\{ \left|X-\mu\right|>\varepsilon\right\} =P\left\{ \left(X-\mu\right)^{2}>\varepsilon^{2}\right\} =P\left\{ \frac{\left(X-\mu\right)^{2}}{\varepsilon^{2}}>1\right\} \le\frac{M\left[\left(X-\mu\right)^{2}\right]}{\varepsilon^{2}}=\frac{\sigma^{2}}{\varepsilon^{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, если математическое ожидание оценки совпадает с оцениваниваемой
+ величиной и дисперсия стремится к нулю с ростом 
+\begin_inset Formula $n$
+\end_inset
+
+, то оценка будет состоятельной.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[\hat{p}\right]=\frac{1}{n}\sum_{i=1}^{n}M\left[X_{i}\right]=\frac{1}{n}\sum_{i=1}^{n}p=p.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D\left[\hat{p}\right]=\frac{1}{n^{2}}\sum_{i=1}^{n}D\left[X_{i}\right]=\frac{1}{n^{2}}\sum_{i=1}^{n}p\left(1-p\right)=\frac{p\left(1-p\right)}{n}.
 \]
 
 \end_inset
