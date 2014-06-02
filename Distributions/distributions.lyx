@@ -180,6 +180,10 @@ addcontentsline{toc}{chapter}{Введение}
 Оценка вероятности случайного события
 \end_layout
 
+\begin_layout Section
+Точечная оценка
+\end_layout
+
 \begin_layout Standard
 Простейшей нетривиальной случайной величиной является величина с распределением
  Бернулли, которая принимает значение 
@@ -388,6 +392,208 @@ n\cdot\hat{p}=k.
 \begin_inset Formula 
 \[
 \hat{p}=\frac{k}{n}\text{.}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Интервальная оценка
+\end_layout
+
+\begin_layout Standard
+Доверительный интервал — это интервал, которому параметр распределения принадлеж
+ит с заданной вероятностью.
+\end_layout
+
+\begin_layout Chapter
+Рекуррентные формулы для выборочного среднего и дисперсии
+\end_layout
+
+\begin_layout Section
+Выборочное среднее
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+m_{n}=\frac{1}{n}\sum_{k=1}^{n}x_{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Запишем аналогичную формулу для 
+\begin_inset Formula $n+1$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+m_{n+1}=\frac{1}{n+1}\sum_{k=1}^{n+1}x_{k}=\frac{1}{n+1}\left(\sum_{k=1}^{n}x_{k}+x_{n+1}\right)=\frac{1}{n+1}\left(n\cdot m_{n}+x_{n+1}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+m_{n+1}-m_{n}=\frac{x_{n+1}-m_{n}}{n+1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Дисперсия
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+s_{n}^{2}=\frac{1}{n-1}\sum_{k=1}^{n}\left(x_{k}-m_{n}\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Введём
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n}=\left(n-1\right)s_{n}^{2}=\sum_{k=1}^{n}\left(x_{k}-m_{n}\right)^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n+1}=\sum_{k=1}^{n+1}\left(x_{k}-m_{n+1}\right)^{2}=\sum_{k=1}^{n}\left(x_{k}-m_{n+1}\right)^{2}+\left(x_{n+1}-m_{n+1}\right)^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём разность
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+\left(x_{k}-m_{n+1}\right)^{2}-\left(x_{k}-m_{n}\right)^{2}=\left(x_{k}-m_{n+1}-x_{k}+m_{n}\right)\left(x_{k}-m_{n+1}+x_{k}-m_{n}\right)=\\
+=\left(m_{n}-m_{n+1}\right)\left(2\cdot x_{k}-m_{n+1}-m_{n}\right).
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Просуммируем это выражение от 
+\begin_inset Formula $1$
+\end_inset
+
+ до 
+\begin_inset Formula $n$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+\sum_{k=1}^{n}\left(x_{k}-m_{n+1}\right)^{2}-\sum_{k=1}^{n}\left(x_{k}-m_{n}\right)^{2}=\left(m_{n}-m_{n+1}\right)\cdot n\cdot\left(2\cdot m_{n}-m_{n+1}-m_{n}\right)=\\
+=\left(m_{n}-m_{n+1}\right)\cdot n\cdot\left(m_{n}-m_{n+1}\right)=n\cdot\left(m_{n}-m_{n+1}\right)^{2}=n\cdot\left(m_{n+1}-m_{n}\right)^{2}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n+1}-S_{n}=n\cdot\left(m_{n+1}-m_{n}\right)^{2}+\left(x_{n+1}-m_{n+1}\right)^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{n+1}-m_{n+1}=x_{n+1}-m_{n}-\frac{x_{n+1}-m_{n}}{n+1}=\frac{n}{n+1}\left(x_{n+1}-m_{n}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n+1}-S_{n}=\frac{n}{\left(n+1\right)^{2}}\left(x_{n+1}-m_{n}\right)^{2}+\frac{n^{2}}{\left(n+1\right)^{2}}\left(x_{n+1}-m_{n}\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Приведём подобные слагаемые:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n+1}-S_{n}=\frac{n^{2}+n}{\left(n+1\right)^{2}}\left(x_{n+1}-m_{n}\right)^{2}=\frac{n}{n+1}\left(x_{n+1}-m_{n}\right)^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n+1}=S_{n}+\left(x_{n+1}-m_{n}\right)\left(x_{n+1}-m_{n+1}\right).
 \]
 
 \end_inset
