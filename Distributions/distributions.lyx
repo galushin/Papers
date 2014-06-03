@@ -546,7 +546,7 @@ P\left\{ X>1\right\} \le M\left[X\right].
 \begin_layout Standard
 \begin_inset Formula 
 \[
-Y=\frac{\left(X-\mu\right)^{2}}{\alpha^{2}\sigma^{2}}
+Y=\left|X-\mu\right|
 \]
 
 \end_inset
@@ -1781,7 +1781,17 @@ P_{n}\left(k\right)=\frac{n!}{k!\left(n-k\right)!}p^{k}\cdot q^{n-k}.
 \end_layout
 
 \begin_layout Standard
-Факториалы приблизим с помощью формулы Стирлинга:
+Факториалы приблизим с помощью формулы Стирлинга
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+нужна ссылка
+\end_layout
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
@@ -1942,7 +1952,17 @@ W=\left(1+\frac{x}{p}\right)^{-n\left(x+p\right)}\cdot\left(1-\frac{x}{q}\right)
 \end_layout
 
 \begin_layout Standard
-Разложим логарифмы в ряд Тейлора и возьмём первые два слагаемых:
+Разложим логарифмы в ряд Тейлора 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Нужна ссылка
+\end_layout
+
+\end_inset
+
+ и возьмём первые два слагаемых:
 \end_layout
 
 \begin_layout Standard
@@ -1968,6 +1988,16 @@ W=\left(1+\frac{x}{p}\right)^{-n\left(x+p\right)}\cdot\left(1-\frac{x}{q}\right)
 
  и 
 \begin_inset Formula $q$
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Более конкретно
+\end_layout
+
 \end_inset
 
 .
