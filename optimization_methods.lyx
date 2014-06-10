@@ -160,9 +160,9 @@ x_{k+1}=x_{k}+v_{k},
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-v_{k}=\lambda_{k}y_{k}
-\]
+\begin{equation}
+v_{k}=\lambda_{k}y_{k}\label{eq:acceleration}
+\end{equation}
 
 \end_inset
 
@@ -183,9 +183,9 @@ v_{k}=\lambda_{k}y_{k}
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-g_{k+1}^{T}y_{k}=0,
-\]
+\begin{equation}
+g_{k+1}^{T}y_{k}=0,\label{eq:minimum_by_direction}
+\end{equation}
 
 \end_inset
 
@@ -224,9 +224,9 @@ x_{k+1}-x^{*}=x_{k}-x^{*}+v_{k}.
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-g_{k+1}=g_{k}+Gv_{k}
-\]
+\begin{equation}
+g_{k+1}=g_{k}+Gv_{k}\label{eq:gradient_recurrence}
+\end{equation}
 
 \end_inset
 
@@ -241,6 +241,369 @@ g_{k+1}=g_{k}+Gv_{k}
 \begin_inset Formula 
 \[
 u_{k}=g_{k+1}-g_{k}=Gv_{k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Метод сопряженных градиентов
+\end_layout
+
+\begin_layout Standard
+Будем выбирать направления так, чтобы они были сопряжены с предыдущим относитель
+но матрицы 
+\begin_inset Formula $G$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y_{k}^{T}Gy_{i}=0,\,0\le i<k,\, k>0.\label{eq:conjugated_condition}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{0}=-g_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y_{k+1}=-g_{k+1}+\sum_{j=0}^{k}\alpha_{j}^{k+1}y_{j}\label{eq:direction_undefined}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+y_{k+1}^{T}Gy_{i}=-g_{k+1}^{T}Gy_{i}+\sum_{i=0}^{k}\alpha_{j}^{k+1}y_{j}^{T}Gy_{i}=\\
+=-g_{k+1}^{T}Gy_{i}+\sum_{i=0}^{k}\alpha_{j}^{k+1}\delta_{j}^{i}\cdot y_{i}^{T}Gy_{i}=-g_{k+1}^{T}Gy_{i}+\alpha_{i}^{k+1}y_{i}^{T}Gy_{i}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Отсюда следует
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\alpha_{i}^{k+1}=\frac{g_{k+1}^{T}Gy_{i}}{y_{i}^{T}Gy_{i}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Соотношение
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g_{k+1}=g_{k}+\lambda_{k}Gy_{k},
+\]
+
+\end_inset
+
+следующее из формул 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:gradient_recurrence"
+
+\end_inset
+
+ и 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:acceleration"
+
+\end_inset
+
+, можно использовать, чтобы величины 
+\begin_inset Formula $Gy_{i}$
+\end_inset
+
+ таким образом, чтобы в соотношении не присутствовала явным образом матрица
+ 
+\begin_inset Formula $G$
+\end_inset
+
+.
+ Выразим изн его 
+\begin_inset Formula $Gy_{k}$
+\end_inset
+
+ и подставим 
+\begin_inset Formula $k=i$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Gy_{i}=\frac{g_{i+1}-g_{i}}{\lambda_{i}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Формула для 
+\begin_inset Formula $\alpha_{i}^{k+1}$
+\end_inset
+
+ примет вид:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\alpha_{i}^{k+1}=\frac{g_{k+1}^{T}\left(g_{i+1}-g_{i}\right)}{y_{i}^{T}\left(g_{i+1}-g_{i}\right)}.\label{eq:alpha_without_G}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+По условию оптимума по направлению 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:minimum_by_direction"
+
+\end_inset
+
+ знаменатель примет вид
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{i}^{T}\left(g_{i+1}-g_{i}\right)=-y_{i}^{T}g_{i}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Займёмся числителем.
+ Нам необходимо вычислять величины
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g_{k+1}^{T}g_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выразим из 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:direction_undefined"
+
+\end_inset
+
+ 
+\begin_inset Formula $g_{k+1}$
+\end_inset
+
+ и положим 
+\begin_inset Formula $k+1=i$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g_{i}=\sum_{j=1}^{i-1}\alpha_{j}^{i}y_{j}-y_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Тогда будет иметь место равентво
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+g_{k+1}^{T}g_{i}=\sum_{j=1}^{i}\alpha_{j}^{k}g_{k+1}^{T}y_{j}-g_{k+1}^{T}y_{i}.\label{eq:gradients_products}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g_{k+1}^{T}y_{j}=g_{k}^{T}y_{j}+y_{k}^{T}Gy_{j}=g_{k}^{T}y_{j},\, j<k.
+\]
+
+\end_inset
+
+ Этот процесс можно продолжать, пока не будет получено выражение 
+\begin_inset Formula $g_{j+1}^{T}y_{j}$
+\end_inset
+
+, которое равно нулю в силу 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:minimum_by_direction"
+
+\end_inset
+
+.
+ Таким образом,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g_{k+1}^{T}y_{j}=0,\, j\le k.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как все слагаемые правой части 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:gradients_products"
+
+\end_inset
+
+ равны нулю, то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g_{k+1}^{T}g_{i}=0,i\le k.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g_{k+1}^{T}\left(g_{i+1}-g_{i}\right)=g_{k+1}^{T}g_{k+1}^{T}\delta_{i}^{k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Подставим этот результат в 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:alpha_without_G"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\alpha_{i}^{k+1}=\frac{g_{k+1}^{T}g_{k+1}}{-y_{i}^{T}g_{i}}\delta_{i}^{k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Остаётся только несколько упростить знаменатель:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{i}^{T}g_{i}=g_{i}^{T}y_{i}=g_{i}^{T}\left(-g_{i}+\sum_{j=0}^{i-1}\alpha_{j}^{i}y_{j}\right)=-g_{i}^{T}g_{i}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Окончательно получаем:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\alpha_{i}^{k+1}=\frac{g_{k+1}^{T}g_{k+1}}{g_{k}^{T}g_{k}}\delta_{i}^{k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{k+1}=-g_{k+1}+\frac{\left\Vert g_{k+1}\right\Vert ^{2}}{\left\Vert g_{k}\right\Vert ^{2}}y_{k}
 \]
 
 \end_inset
