@@ -61,7 +61,7 @@
 \begin_body
 
 \begin_layout Chapter
-Предварительные требования
+Предварительные сведения
 \end_layout
 
 \begin_layout Section
@@ -706,7 +706,7 @@ g\left(x\right)=\frac{a_{0}}{2}+\sum_{n=1}^{\infty}\left(a_{n}\cos\left(nx\right
 \begin_layout Standard
 \begin_inset Formula 
 \[
-a_{0}=\frac{1}{\pi}\intop_{-\pi}^{\pi}g\left(x\right)dx.
+a_{0}=\frac{1}{\pi}\intop_{-\pi}^{\pi}f\left(x\right)dx.
 \]
 
 \end_inset
@@ -847,9 +847,9 @@ status open
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-a_{k}=\frac{1}{\pi}\intop_{-\pi}^{\pi}f\left(x\right)\cos\left(kx\right)dx.
-\]
+\begin{equation}
+a_{k}=\frac{1}{\pi}\intop_{-\pi}^{\pi}f\left(x\right)\cos\left(kx\right)dx.\label{eq:Fourier_a_n}
+\end{equation}
 
 \end_inset
 
@@ -881,9 +881,9 @@ a_{k}=\frac{1}{\pi}\intop_{-\pi}^{\pi}f\left(x\right)\cos\left(kx\right)dx.
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-b_{k}=\frac{1}{\pi}\intop_{-\pi}^{\pi}f\left(x\right)\sin\left(kx\right)dx.
-\]
+\begin{equation}
+b_{k}=\frac{1}{\pi}\intop_{-\pi}^{\pi}f\left(x\right)\sin\left(kx\right)dx.\label{eq:Fourier_b_n}
+\end{equation}
 
 \end_inset
 
@@ -1043,9 +1043,20 @@ b_{n}=-i\left(c_{n}-c_{-n}\right).
 \begin_layout Standard
 \begin_inset Formula 
 \begin{multline*}
-c_{n}=\frac{1}{\pi}\intop_{-\pi}^{\pi}f\left(x\right)\cos\left(nx\right)dx-i\frac{1}{\pi}\intop_{-\pi}^{\pi}f\left(x\right)\sin\left(nx\right)dx=\\
-=\frac{1}{\pi}\intop_{-\pi}^{\pi}f\left(x\right)\left(\cos\left(nx\right)-i\sin\left(nx\right)\right)dx=\frac{1}{\pi}\intop_{-\pi}^{\pi}f\left(x\right)e^{-inx}dx.
+c_{n}=\frac{1}{2\pi}\intop_{-\pi}^{\pi}f\left(x\right)\cos\left(nx\right)dx-i\frac{1}{2\pi}\intop_{-\pi}^{\pi}f\left(x\right)\sin\left(nx\right)dx=\\
+=\frac{1}{2\pi}\intop_{-\pi}^{\pi}f\left(x\right)\left(\cos\left(nx\right)-i\sin\left(nx\right)\right)dx=\frac{1}{2\pi}\intop_{-\pi}^{\pi}f\left(x\right)e^{-inx}dx.
 \end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+c_{n}=\frac{1}{\pi}\intop_{-\pi}^{\pi}f\left(x\right)e^{-inx}dx.\label{eq:Fourier_c_n}
+\end{equation}
 
 \end_inset
 
@@ -1054,6 +1065,181 @@ c_{n}=\frac{1}{\pi}\intop_{-\pi}^{\pi}f\left(x\right)\cos\left(nx\right)dx-i\fra
 
 \begin_layout Section
 Сходимость ряда Фурье в точке
+\end_layout
+
+\begin_layout Standard
+Возьмём конечную сумму ряда Фурье комплексной форме 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Fouried_definition_complex"
+
+\end_inset
+
+ и подставим выражения для коэффициентов 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Fourier_c_n"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g_{N}\left(x\right)=\sum_{n=-N}^{+N}\frac{1}{2\pi}e^{inx}\intop_{-\pi}^{\pi}f\left(t\right)e^{-int}dt.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Меня порядок интегрирвоания и суммирования, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g\left(x\right)=\intop_{-\pi}^{\pi}f\left(t\right)\frac{1}{2\pi}\sum_{n=-N}^{+N}e^{in(x-t)}dt.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Введём функцию
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+K_{N}\left(x\right)=\frac{1}{2\pi}\sum_{n=-N}^{+N}e^{inx}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g\left(x\right)=\intop_{-\pi}^{\pi}f\left(t\right)K_{N}\left(x-t\right)dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Чтобы вычислить сумму
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{n=-N}^{+N}e^{inx},
+\]
+
+\end_inset
+
+заметим, что слагаемые этой суммы составляют геометрическую прогрессию,
+ первый элемент которой равен 
+\begin_inset Formula $\exp\left(-iNx\right)$
+\end_inset
+
+, а множитель — 
+\begin_inset Formula $\exp\left(ix\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+По формуле суммы геометрической прогрессии 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+нужна ссылка
+\end_layout
+
+\end_inset
+
+, получим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{n=-N}^{+N}e^{inx}=\frac{\exp\left(i\left(N+1\right)x\right)-\exp\left(-iNx\right)}{\exp\left(ix\right)-1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Умножим числитель и знаменатель на 
+\begin_inset Formula $\exp\left(-i\frac{x}{2}\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{n=-N}^{+N}e^{inx}=\frac{\exp\left(i\left(N+\frac{1}{2}\right)x\right)-\exp\left(-i\left(N+\frac{1}{2}\right)x\right)}{\exp\left(i\frac{x}{2}\right)-\exp\left(i\frac{x}{2}\right)}=\frac{\sin\left(N+\frac{1}{2}\right)x}{\sin\frac{x}{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+K_{N}(x)=\frac{1}{2\pi}\cdot\frac{\sin\left(N+\frac{1}{2}\right)x}{\sin\frac{x}{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intop_{-\infty}^{+\infty}K_{N}\left(x\right)dx=\frac{1}{2\pi}\sum_{n=-N}^{+N}\intop_{-\pi}^{+\pi}e^{inx}dx=1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g_{N}\left(x\right)-f\left(x\right)=\intop_{-\pi}^{\pi}\left[f\left(t\right)-f\left(x\right)\right]K_{N}\left(x\right)dx
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
