@@ -1,0 +1,579 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass extbook
+\use_default_options true
+\maintain_unincluded_children false
+\language russian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Дифференциальыне уравнения
+\end_layout
+
+\begin_layout Section
+Уравнение идеального маятника
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y^{\prime\prime}+\omega^{2}\cdot y=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+С начальными условиями
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y\left(x_{0}\right)=y_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y^{\prime}\left(x_{0}\right)=v_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как уравнение не зависит явным образом от 
+\begin_inset Formula $x$
+\end_inset
+
+, то сделаем замену:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y^{\prime}=u\left(y\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y^{\prime\prime}=\frac{du}{dx}=\frac{du}{dy}\cdot\frac{dy}{dx}=\frac{du}{dy}\cdot u
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{du}{dy}\cdot u=-\omega^{2}\cdot y
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Разделяя переменные, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+udu=-\omega^{2}\cdot ydy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{u^{2}}{2}=-\omega^{2}\cdot\frac{y^{2}}{2}+\frac{C}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u^{2}+\omega^{2}\cdot y^{2}=C.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u=\sqrt{C-\omega^{2}\cdot y^{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Константу 
+\begin_inset Formula $C$
+\end_inset
+
+ можно найти из начальных условий:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C=\omega^{2}\cdot y_{0}^{2}+v_{0}^{2}\ge0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Решим теперь уравнение
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=u\left(y\right)=\sqrt{C-\omega^{2}\cdot y^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Разделяя переменные, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{\sqrt{C-\omega^{2}\cdot y^{2}}}=dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{\sqrt{C}\cdot\sqrt{1-\frac{\omega^{2}\cdot y^{2}}{C}}}=dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Произведём замену:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+z=\frac{\omega}{\sqrt{C}}\cdot y
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dz=\frac{\omega}{\sqrt{C}}\cdot dy.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dz}{\sqrt{1-z^{2}}}=\omega\cdot dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathrm{arcsin}\left(z\right)=\omega\cdot x+B
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+z=\sin\left(\omega\cdot x+B\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\frac{\omega}{\sqrt{C}}\sin\left(\omega\cdot x+B\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Константу 
+\begin_inset Formula $B$
+\end_inset
+
+ вычислим по начальным условиям:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{0}=\frac{\omega}{\sqrt{C}}\sin\left(\omega\cdot x_{0}+B\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Уравнение колебаний с затуханием
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y^{\prime\prime}+2\cdot\lambda\cdot y^{\prime}+\omega^{2}\cdot y=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+С начальными условиями
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y\left(x_{0}\right)=y_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y^{\prime}\left(x_{0}\right)=v_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Представим решение в виде
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y\left(x\right)=f\left(x\right)\cdot g\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y^{\prime}=f\cdot g^{\prime}+f^{\prime}g
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y^{\prime\prime}=f\cdot g^{\prime\prime}+2\cdot f^{\prime}\cdot g^{\prime}+f^{\prime\prime}\cdot g
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Подставим эти выражения в исходное уравнение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f\cdot g^{\prime\prime}+2\cdot f^{\prime}\cdot g^{\prime}+f^{\prime\prime}\cdot g+2\cdot\lambda\left(f\cdot g^{\prime}+f^{\prime}g\right)+\omega^{2}\cdot fg=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f^{\prime\prime}g+f^{\prime}\left(2\cdot g^{\prime}+2\lambda g\right)+f\left(g^{\prime\prime}+2\lambda g^{\prime}+\omega^{2}g\right)=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выберем 
+\begin_inset Formula $g$
+\end_inset
+
+ так, чтобы множитель при 
+\begin_inset Formula $f^{\prime}$
+\end_inset
+
+ обратился в нуль:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+2g^{\prime}+2\lambda g=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g^{\prime}=-\lambda g
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Решением этого уравнения является следующая функция:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g\left(x\right)=\exp\left(-\lambda x\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вычислим теперь выражение 
+\begin_inset Formula $g^{\prime\prime}+2\lambda g^{\prime}+\omega^{2}g$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g^{\prime\prime}=-\lambda g^{\prime}=\lambda^{2}g
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g^{\prime\prime}+2\lambda g^{\prime}+\omega^{2}g=\left(\lambda^{2}-2\lambda^{2}+\omega^{2}\right)g=\left(\omega^{2}-\lambda^{2}\right)g.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Введём обозначение
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\omega_{0}^{2}=\omega^{2}-\lambda^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Подставим это выражение в исходное уравнение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g\left(f^{\prime\prime}+\omega_{0}^{2}f\right)=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как 
+\begin_inset Formula $g\left(x\right)\ne0$
+\end_inset
+
+, то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f^{\prime\prime}+\omega_{0}^{2}f=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
