@@ -61,6 +61,14 @@
 \begin_body
 
 \begin_layout Chapter
+Предварительные требования
+\end_layout
+
+\begin_layout Section
+Тригонометрические тождества
+\end_layout
+
+\begin_layout Chapter
 Дифференциальыне уравнения
 \end_layout
 
@@ -567,12 +575,327 @@ g\left(f^{\prime\prime}+\omega_{0}^{2}f\right)=0.
 \begin_layout Standard
 \begin_inset Formula 
 \[
-f^{\prime\prime}+\omega_{0}^{2}f=0
+f^{\prime\prime}+\omega_{0}^{2}f=0.
 \]
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Chapter
+Преобразование Лапласа
+\end_layout
+
+\begin_layout Chapter
+Ряды Фурье
+\end_layout
+
+\begin_layout Section
+Вычисление коэффициентов ряда Фурье
+\end_layout
+
+\begin_layout Standard
+Пусть дана функция 
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+ с периодом 
+\begin_inset Formula $2\pi$
+\end_inset
+
+.
+ Будем рассматривать её на интервале 
+\begin_inset Formula $\left[-\pi;\pi\right]$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g\left(x\right)=\frac{a_{0}}{2}+\sum_{n=1}^{\infty}\left(a_{n}\cos\left(nx\right)+b_{n}\sin\left(nx\right)\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left\Vert g-f\right\Vert ^{2}=\intop_{-\pi}^{\pi}\left(g\left(x\right)-f\left(x\right)\right)^{2}dx\to\min_{a_{n},b_{n}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Воспользуемся необходимым условием экстремума.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial a_{0}}\left(\left\Vert f-g\right\Vert ^{2}\right)=\intop_{-\pi}^{\pi}\left(g\left(x\right)-f\left(x\right)\right)\frac{\partial g}{\partial a_{0}}dx=\frac{1}{2}\intop_{-\pi}^{\pi}\left(g\left(x\right)-f\left(x\right)\right)dx=0,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intop_{-\pi}^{\pi}g\left(x\right)dx=\intop_{-\pi}^{\pi}f\left(x\right)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intop_{-\pi}^{\pi}g\left(x\right)dx=\frac{a_{0}}{2}\cdot2\cdot\pi+\sum_{n=1}^{\infty}\left(a_{n}\intop_{-\pi}^{\pi}\cos\left(nx\right)dx+b_{n}\intop_{-\pi}^{\pi}\sin\left(nx\right)dx\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intop_{-\pi}^{\pi}\cos\left(nx\right)dx=\left.-\frac{1}{n}\sin\left(nx\right)\right|_{-\pi}^{\pi}=-\frac{1}{n}\left(\sin\left(n\pi\right)-\sin\left(-n\pi\right)\right)=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Интеграл
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intop_{-\pi}^{\pi}\sin\left(nx\right)dx
+\]
+
+\end_inset
+
+ равен нулю как интеграл от нечётной функции по симметричному относительно
+ нуля интервалу.
+\end_layout
+
+\begin_layout Standard
+Таким образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{0}=\frac{1}{\pi}\intop_{-\pi}^{\pi}g\left(x\right)dx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Запишем теперь условия оптимальности по 
+\begin_inset Formula $a_{k}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial a_{k}}\left(\left\Vert f-g\right\Vert ^{2}\right)=\intop_{-\pi}^{\pi}\left(g\left(x\right)-f\left(x\right)\right)\frac{\partial g}{\partial a_{k}}dx=\frac{1}{2}\intop_{-\pi}^{\pi}\left(g\left(x\right)-f\left(x\right)\right)\cos\left(kx\right)dx=0,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intop_{-\pi}^{\pi}g\left(x\right)\cos\left(kx\right)dx=\intop_{-\pi}^{\pi}f\left(x\right)\cos\left(kx\right)dx,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intop_{-\pi}^{\pi}g\left(x\right)\cos\left(kx\right)dx=\frac{a_{0}}{2}\intop_{-\pi}^{\pi}\cos\left(kx\right)dx+\sum_{n=1}^{\infty}\left(a_{n}\intop_{-\pi}^{\pi}\cos\left(nx\right)\cos\left(kx\right)dx+b_{n}\intop_{-\pi}^{\pi}\sin\left(nx\right)\cos\left(kx\right)dx\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как 
+\begin_inset Formula $\sin\left(nx\right)\cos\left(kx\right)$
+\end_inset
+
+ — нечётная функция, то 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intop_{-\pi}^{\pi}g\left(x\right)\sin\left(nx\right)\cos\left(kx\right)dx=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Воспользуемся тригонометрическим тождеством 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+нужна ссылка
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\cos\left(nx\right)\cos\left(kx\right)=\frac{1}{2}\left(\cos\left(n-k\right)x+\cos\left(n+k\right)x\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если 
+\begin_inset Formula $n\ne k$
+\end_inset
+
+, то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intop_{-\pi}^{\pi}\cos\left(nx\right)\cos\left(kx\right)dx=\frac{1}{2}\intop_{-\pi}^{\pi}\left(\cos\left(n-k\right)x+\cos\left(n+k\right)x\right)dx=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если же 
+\begin_inset Formula $n=k$
+\end_inset
+
+, то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intop_{-\pi}^{\pi}\cos\left(nx\right)\cos\left(kx\right)dx=\frac{1}{2}\intop_{-\pi}^{\pi}\left(1+\cos\left(2n\right)x\right)dx=\text{\pi}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, все слагаемые, кроме содержащего 
+\begin_inset Formula $a_{k}$
+\end_inset
+
+, обращаются в нуль и мы получаем:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{k}=\frac{1}{\pi}\intop_{-\pi}^{\pi}f\left(x\right)\cos\left(kx\right)dx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Наконец, запишем условия оптимальности по 
+\begin_inset Formula $b_{k}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial b_{n}}\left(\left\Vert f-g\right\Vert ^{2}\right)=\intop_{-\pi}^{\pi}\left(g\left(x\right)-f\left(x\right)\right)\frac{\partial g}{\partial b_{n}}dx=\frac{1}{2}\intop_{-\pi}^{\pi}\left(g\left(x\right)-f\left(x\right)\right)\sin\left(nx\right)dx=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Проведя аналогичные выкладки, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+b_{k}=\frac{1}{\pi}\intop_{-\pi}^{\pi}f\left(x\right)\sin\left(kx\right)dx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Ряд Фурье в комплексной форме
+\end_layout
+
+\begin_layout Chapter
+Преобразование Фурье
 \end_layout
 
 \end_body
