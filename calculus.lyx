@@ -69,7 +69,7 @@
 \end_layout
 
 \begin_layout Chapter
-Дифференциальыне уравнения
+Дифференциальные уравнения
 \end_layout
 
 \begin_layout Section
@@ -585,6 +585,167 @@ f^{\prime\prime}+\omega_{0}^{2}f=0.
 
 \begin_layout Chapter
 Преобразование Лапласа
+\end_layout
+
+\begin_layout Section
+Определение
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+F\left(p\right)=\intop_{0}^{+\infty}f\left(t\right)\exp\left(-pt\right)dt.\label{eq:Laplace_image_definition}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Изображение производной
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left\{ f^{\prime}\right\} =\intop_{0}^{+\infty}f^{\prime}\left(t\right)\exp\left(-pt\right)dt.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Проинтегрируем по частям:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{cc}
+u=\exp\left(-pt\right) & dv=f^{\prime}\left(t\right)dt\\
+du=-\exp\left(-pt\right)pdt & v=f\left(t\right)
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left\{ f^{\prime}\right\} =\left.\exp\left(pt\right)f\left(t\right)\right|_{0}^{+\infty}+p\intop_{0}^{+\infty}f\left(t\right)\exp\left(-pt\right)dt=f\left(0\right)+p\cdot L\left\{ f\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Применяя это правило дважды, можно получить формулу для изображения второй
+ производной:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left\{ f^{\prime\prime}\right\} =pL\left\{ f^{\prime}\right\} +f^{\prime}\left(0\right)=p^{2}L\left\{ f\right\} +pf\left(0\right)+f^{\prime}\left(0\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Продолжая этот процесс, получим формулу для изображения производной любой
+ степени:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left\{ f^{\left(n\right)}\right\} =p^{n}L\left\{ f\right\} +\sum_{k=0}^{n-1}p^{n-k-1}f^{\left(k\right)}\left(0\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Формулы для изображения производных позволяют находить изображения функций
+ без вычисления интеграла 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Laplace_image_definition"
+
+\end_inset
+
+, если известно дифференциальное уравнение, которому удовлетворяет эта функция.
+\end_layout
+
+\begin_layout Standard
+Например, рассмотрим функцию 
+\begin_inset Formula $f\left(t\right)=\exp\left(at\right)$
+\end_inset
+
+.
+ Найдём производную этой функции
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f^{\prime}\left(t\right)=a\cdot\exp\left(at\right)=a\cdot f\left(t\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если 
+\begin_inset Formula $F\left(p\right)=L\left\{ f\right\} $
+\end_inset
+
+, то получаем следующее алгебраическое уравнение для изображения:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+pF\left(p\right)+f\left(0\right)=a\cdot F\left(p\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выражая из этого уравнения 
+\begin_inset Formula $F\left(p\right)$
+\end_inset
+
+, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(p\right)=\frac{f\left(0\right)}{p-a}=\frac{e^{0}}{p-a}=\frac{1}{p-a}.
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
