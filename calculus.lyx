@@ -863,6 +863,154 @@ L\left\{ \cos t\right\} =\frac{p}{p^{2}+1}.
 
 \end_layout
 
+\begin_layout Section
+Изображение свёртки
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula 
+\[
+f\left(t\right)=\intop_{0}^{t}g\left(\tau\right)h\left(t-\tau\right)d\tau
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём изображение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(p\right)=\intop_{0}^{+\infty}e^{-pt}\intop_{0}^{t}g\left(\tau\right)h\left(t-\tau\right)d\tau dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Изменим порядок интегрирования как показано на рисунке 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Смена-порядка-изображение-свертки"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Добавить поясняющий рисунок
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Смена-порядка-изображение-свертки"
+
+\end_inset
+
+Смена порядка интегрирования
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(p\right)=\intop_{0}^{+\infty}g\left(\tau\right)\intop_{\tau}^{+\infty}e^{-pt}h\left(t-\tau\right)dtd\tau
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Во внутреннем интеграле сделаем замену 
+\begin_inset Formula $t-\tau=u$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intop_{\tau}^{+\infty}e^{-pt}h\left(t-\tau\right)dt=\intop_{0}^{+\infty}e^{-p\left(u+\tau\right)}h\left(u\right)du=e^{-p\tau}\intop_{0}^{+\infty}e^{-pu}h\left(u\right)du=e^{-p\tau}H\left(p\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Под интегралом стоит изображение функции 
+\begin_inset Formula $h$
+\end_inset
+
+, поэтому
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(p\right)=\intop_{0}^{+\infty}g\left(\tau\right)e^{-p\tau}H\left(p\right)d\tau=H\left(p\right)\intop_{0}^{+\infty}g\left(\tau\right)e^{-p\tau}d\tau=H\left(p\right)G\left(p\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, изображению свёртки соответствует произведение изображений:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left\{ f*g\right\} =L\left\{ f\right\} \cdot L\left\{ g\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 Ряды Фурье
 \end_layout
