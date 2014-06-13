@@ -601,9 +601,114 @@ f^{\prime\prime}+\omega_{0}^{2}f=0.
 \end_layout
 
 \begin_layout Standard
+Пусть 
+\begin_inset Formula $f\left(t\right)$
+\end_inset
+
+ — комплексная функция вещественной переменной, удовлетворяющая следующим
+ свойствам:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f\left(t\right)=0,\, t<0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|f\left(t\right)\right|\le C\cdot\exp\left(st\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Тогда функция
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-F\left(p\right)=\intop_{0}^{+\infty}f\left(t\right)\exp\left(-pt\right)dt.\label{eq:Laplace_image_definition}
+F\left(p\right)=\intop_{0}^{+\infty}f\left(t\right)\exp\left(-pt\right)dt\label{eq:Laplace_image_definition}
+\end{equation}
+
+\end_inset
+
+называется 
+\emph on
+изображением по Лапласу 
+\emph default
+функции 
+\begin_inset Formula $f\left(t\right)$
+\end_inset
+
+.
+ Записывают 
+\begin_inset Formula $F=L\left\{ f\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|F\left(p\right)\right|\le\intop_{0}^{+\infty}C\cdot\exp\left(\left(s-p\right)t\right)dt=\frac{C}{s-p}\left.\exp\left(\left(s-p\right)t\right)\right|_{0}^{+\infty}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если 
+\begin_inset Formula $\Re\left(p\right)>0$
+\end_inset
+
+, то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{t\to+\infty}\exp\left(\left(s-p\right)t\right)=0
+\]
+
+\end_inset
+
+и
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|F\left(p\right)\right|\le\frac{C}{s-p}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Из этого неравенства следует, что на бесконечности изображение обращается
+ в нуль
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\lim_{p\to+\infty}F\left(p\right)=0.\label{eq:Laplace_image_at_infinity}
 \end{equation}
 
 \end_inset
@@ -612,7 +717,15 @@ F\left(p\right)=\intop_{0}^{+\infty}f\left(t\right)\exp\left(-pt\right)dt.\label
 \end_layout
 
 \begin_layout Section
+Запаздывание
+\end_layout
+
+\begin_layout Section
 Изображение производной
+\end_layout
+
+\begin_layout Subsection
+Формула изображения производной
 \end_layout
 
 \begin_layout Standard
@@ -647,7 +760,7 @@ du=-\exp\left(-pt\right)pdt & v=f\left(t\right)
 \begin_layout Standard
 \begin_inset Formula 
 \[
-L\left\{ f^{\prime}\right\} =\left.\exp\left(pt\right)f\left(t\right)\right|_{0}^{+\infty}+p\intop_{0}^{+\infty}f\left(t\right)\exp\left(-pt\right)dt=f\left(0\right)-p\cdot L\left\{ f\right\} .
+L\left\{ f^{\prime}\right\} =\left.\exp\left(pt\right)f\left(t\right)\right|_{0}^{+\infty}+p\intop_{0}^{+\infty}f\left(t\right)\exp\left(-pt\right)dt=p\cdot L\left\{ f\right\} -f\left(0\right).
 \]
 
 \end_inset
@@ -687,6 +800,10 @@ L\left\{ f^{\left(n\right)}\right\} =p^{n}L\left\{ f\right\} -\sum_{k=0}^{n-1}p^
 
 \end_layout
 
+\begin_layout Subsection
+Нахождение изображений по дифференциальным уравнениям функций
+\end_layout
+
 \begin_layout Standard
 Формулы для изображения производных позволяют находить изображения функций
  без вычисления интеграла 
@@ -697,6 +814,10 @@ reference "eq:Laplace_image_definition"
 \end_inset
 
 , если известно дифференциальное уравнение, которому удовлетворяет эта функция.
+\end_layout
+
+\begin_layout Subsubsection
+Экспоненциальная функция
 \end_layout
 
 \begin_layout Standard
@@ -755,6 +876,10 @@ L\left\{ e^{at}\right\} =\frac{f\left(0\right)}{p-a}=\frac{e^{0}}{p-a}=\frac{1}{
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection
+Синус и косинус
 \end_layout
 
 \begin_layout Standard
@@ -856,6 +981,121 @@ L\left\{ \sin t\right\} =\frac{1}{p^{2}+1}.
 \begin_inset Formula 
 \[
 L\left\{ \cos t\right\} =\frac{p}{p^{2}+1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Предельные соотношения
+\end_layout
+
+\begin_layout Standard
+Рассмотрим равенство
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intop_{0}^{+\infty}f^{\prime}\left(t\right)e^{-pt}dt=pF\left(p\right)-f\left(0\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если перейти к пределу при 
+\begin_inset Formula $p\to0$
+\end_inset
+
+, то получим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intop_{0}^{+\infty}f^{\prime}\left(t\right)dt=\lim_{p\to0}pF\left(p\right)-f\left(0\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В силу теоремы Ньютона-Лейбница
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+нужна ссылка
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intop_{0}^{+\infty}f^{\prime}\left(t\right)dt=\lim_{t\to+\infty}f\left(t\right)-f\left(0\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Сравнивая правые части последних двух равенств, получим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f\left(+\infty\right)=\lim_{t\to+\infty}f\left(t\right)=\lim_{p\to0}pF\left(p\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как 
+\begin_inset Formula $pF\left(p\right)-f\left(0\right)$
+\end_inset
+
+ — изображение, то в следствие 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Laplace_image_at_infinity"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{p\to+\infty}\left(pF\left(p\right)-f\left(0\right)\right)=0,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f\left(0\right)=\lim_{p\to+\infty}pF\left(p\right).
 \]
 
 \end_inset
