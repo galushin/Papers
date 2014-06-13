@@ -717,6 +717,66 @@ F\left(p\right)=\intop_{0}^{+\infty}f\left(t\right)\exp\left(-pt\right)dt\label{
 \end_layout
 
 \begin_layout Section
+Масштабирование аргумента
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g\left(t\right)=f\left(a\cdot t\right),\, a>0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+G\left(p\right)=\intop_{0}^{+\infty}f\left(a\cdot t\right)\exp\left(-pt\right)dt=\intop_{0}^{+\infty}f\left(a\cdot t\right)\exp\left(-pt\right)dt.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Сделаем замену 
+\begin_inset Formula $a\cdot t=\tau$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+G\left(p\right)=\intop_{0}^{+\infty}f\left(\tau\right)\exp\left(-\frac{p\tau}{a}\right)\frac{d\tau}{a}=\frac{1}{a}F\left(\frac{p}{a}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left\{ f\left(a\cdot t\right)\right\} =\frac{1}{a}F\left(\frac{p}{a}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
 Запаздывание
 \end_layout
 
