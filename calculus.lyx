@@ -716,6 +716,22 @@ F\left(p\right)=\intop_{0}^{+\infty}f\left(t\right)\exp\left(-pt\right)dt\label{
 
 \end_layout
 
+\begin_layout Standard
+Так как интеграл является линейной операцией, то аналогичным свойством обладает
+ и преобразование Лапласа:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left\{ a\cdot f+b\cdot g\right\} =a\cdot L\left\{ f\right\} +b\cdot L\left\{ g\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Масштабирование аргумента
 \end_layout
