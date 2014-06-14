@@ -723,9 +723,9 @@ F\left(p\right)=\intop_{0}^{+\infty}f\left(t\right)\exp\left(-pt\right)dt\label{
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-L\left\{ a\cdot f+b\cdot g\right\} =a\cdot L\left\{ f\right\} +b\cdot L\left\{ g\right\} .
-\]
+\begin{equation}
+L\left\{ a\cdot f+b\cdot g\right\} =a\cdot L\left\{ f\right\} +b\cdot L\left\{ g\right\} .\label{eq:Laplace_image_linearity}
+\end{equation}
 
 \end_inset
 
@@ -790,6 +790,59 @@ L\left\{ f\left(a\cdot t\right)\right\} =\frac{1}{a}F\left(\frac{p}{a}\right).
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+В силу линейности преобразования Лапласа 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Laplace_image_linearity"
+
+\end_inset
+
+ это равенство можно переписать следующим образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(\frac{p}{a}\right)=L\left\{ a\cdot f\left(a\cdot t\right)\right\} 
+\]
+
+\end_inset
+
+или
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(ap\right)=L\left\{ \frac{1}{a}\cdot f\left(\frac{t}{a}\right)\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Сдвиг аргумента изображения
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(p+a\right)=\intop_{0}^{+\infty}f\left(t\right)e^{-\left(p+a\right)t}dt=\intop_{0}^{+\infty}f\left(t\right)e^{-at}e^{-pt}dt=L\left\{ f\left(t\right)e^{-at}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, сдвигу аргумента изображения соответствует умножение оригинала
+ на показательную функцию.
 \end_layout
 
 \begin_layout Section
@@ -945,9 +998,9 @@ pF\left(p\right)-f\left(0\right)=a\cdot F\left(p\right).
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-L\left\{ e^{at}\right\} =\frac{f\left(0\right)}{p-a}=\frac{e^{0}}{p-a}=\frac{1}{p-a}.
-\]
+\begin{equation}
+L\left\{ e^{at}\right\} =\frac{f\left(0\right)}{p-a}=\frac{e^{0}}{p-a}=\frac{1}{p-a}.\label{eq:Laplace_image_exp}
+\end{equation}
 
 \end_inset
 
@@ -1325,6 +1378,254 @@ L\left\{ f*g\right\} =L\left\{ f\right\} \cdot L\left\{ g\right\} .
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Решение линейных дифференциальных уравнений с постоянными коэффициентами
+\end_layout
+
+\begin_layout Standard
+Рассмотрим линейное дифференциальное уравнение с постоянными коэффициентами
+ порядка 
+\begin_inset Formula $n$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x^{\left(n\right)}\left(t\right)+a_{1}x^{\left(n-1\right)}\left(t\right)+...+a_{n-1}x^{\prime}\left(t\right)+a_{n}x\left(t\right)=f\left(t\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+с начальными условиями
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+x\left(0\right)=x_{0}\\
+x^{\prime}\left(0\right)=x_{0}^{\prime}\\
+...\\
+x^{\left(n-1\right)}\left(0\right)=x_{0}^{\left(n-1\right)}
+\end{array}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Перейдём к изображениям:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Расписать подробнее
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A\left(p\right)X\left(p\right)-B\left(p\right)=F\left(p\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выразим изображение из этого уравнения:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+X\left(p\right)=\frac{F\left(p\right)}{A\left(p\right)}+\frac{B\left(p\right)}{A\left(p\right)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Оригиналы простейших дробей
+\end_layout
+
+\begin_layout Subsection
+Простейшие дроби первого типа
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(p\right)=\frac{A}{p+a}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В соответствие с линейностью изображения 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Laplace_image_linearity"
+
+\end_inset
+
+ и формулой изображения показательной функции 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Laplace_image_exp"
+
+\end_inset
+
+, получаем
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{A}{p+a}=L\left\{ A\cdot e^{-a\cdot t}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Простейшие дроби второго типа
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(p\right)=\frac{A\cdot p+B}{p^{2}+bp+c},
+\]
+
+\end_inset
+
+причём у знаменателя нет вещественных корней, то есть
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+b^{2}-4c<0.\label{eq:Laplace_3_type_fraction_discriminant}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выделим в знаменателе полный квадрат:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p^{2}+bp+c=p^{2}+2\cdot p\cdot\frac{b}{2}+\frac{b^{2}}{4}-\frac{b^{2}}{4}+c=\left(p+\frac{b}{2}\right)^{2}+\left(c-\frac{b^{2}}{4}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Введём величину
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\omega^{2}=c-\frac{b^{2}}{4},
+\]
+
+\end_inset
+
+которая является положительной в силу 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Laplace_3_type_fraction_discriminant"
+
+\end_inset
+
+.
+ С учётом этой замены исходное изображение можно записать в виде:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(p\right)=\frac{A\left(p+\frac{b}{2}\right)+B-A\frac{b}{2}}{\left(p+\frac{b}{2}\right)^{2}+\omega^{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как сдвиг аргумента изображения соответствует умножению оригинала на
+ экспоненциальную функцию 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+нужна ссылка
+\end_layout
+
+\end_inset
+
+, то целесообразно рассмотреть случай 
+\begin_inset Formula $b=0$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(p\right)=\frac{Ap}{p^{2}+\omega^{2}}+\frac{B}{p^{2}+\omega^{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Простейшие дроби третьего типа
+\end_layout
+
+\begin_layout Subsection
+Простейшие дроби четвёртого типа
 \end_layout
 
 \begin_layout Chapter
