@@ -954,9 +954,9 @@ G\left(p\right)=\intop_{0}^{+\infty}f\left(\tau\right)\exp\left(-\frac{p\tau}{a}
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-L\left\{ f\left(a\cdot t\right)\right\} =\frac{1}{a}F\left(\frac{p}{a}\right).
-\]
+\begin{equation}
+L\left\{ f\left(a\cdot t\right)\right\} =\frac{1}{a}F\left(\frac{p}{a}\right).\label{eq:Laplace_image_arg_scale}
+\end{equation}
 
 \end_inset
 
@@ -989,6 +989,29 @@ F\left(\frac{p}{a}\right)=L\left\{ a\cdot f\left(a\cdot t\right)\right\}
 \begin_inset Formula 
 \[
 F\left(ap\right)=L\left\{ \frac{1}{a}\cdot f\left(\frac{t}{a}\right)\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Соотношение 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Laplace_image_arg_scale"
+
+\end_inset
+
+ позволяет легко расширить список функций, для которых известных изображения.
+ Например:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left\{ \sin\omega t\right\} =\frac{1}{\omega}\frac{1}{\left(\frac{p}{\omega}\right)^{2}+1}=\frac{\omega}{p^{2}+\omega^{2}}
 \]
 
 \end_inset
