@@ -611,9 +611,9 @@ f^{\prime\prime}+\omega_{0}^{2}f=0.
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-f\left(t\right)=0,\, t<0.
-\]
+\begin{equation}
+f\left(t\right)=0,\, t<0.\label{eq:original_is_zero_before_start}
+\end{equation}
 
 \end_inset
 
@@ -622,9 +622,9 @@ f\left(t\right)=0,\, t<0.
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-\left|f\left(t\right)\right|\le C\cdot\exp\left(st\right).
-\]
+\begin{equation}
+\left|f\left(t\right)\right|\le C\cdot\exp\left(st\right).\label{eq:original_is_not_faster_than_exp}
+\end{equation}
 
 \end_inset
 
@@ -732,6 +732,177 @@ L\left\{ a\cdot f+b\cdot g\right\} =a\cdot L\left\{ f\right\} +b\cdot L\left\{ g
 
 \end_layout
 
+\begin_layout Standard
+Простейшей функцией, удовлетворяющей условиям 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:original_is_zero_before_start"
+
+\end_inset
+
+ и 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:original_is_not_faster_than_exp"
+
+\end_inset
+
+, является 
+\emph on
+функция Хевисайд
+\emph default
+а:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\eta\left(t\right)=\begin{cases}
+0, & t<0\\
+1, & t\ge0
+\end{cases}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как большинство знакомых нам из математического анализа функций не обращаютс
+я в ноль при отрицательном аргументе, то мы будем предполагать в дальнейшем,
+ что все функции умножены на функцию Хевисайда.
+ То есть, например, запись 
+\begin_inset Formula $\sin t$
+\end_inset
+
+ будет обозначать 
+\begin_inset Formula $\sin t\cdot\eta\left(t\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Непосредственное нахождение изображений
+\end_layout
+
+\begin_layout Standard
+Вычисление изображений функции Хевисайда и показательной функции сводится
+ к табличным интегралам:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intop_{0}^{+\infty}\eta\left(t\right)e^{-pt}dt=\left.-\frac{1}{p}e^{-pt}\right|_{0}^{+\infty}=\frac{1}{p}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intop_{0}^{+\infty}e^{t}e^{-pt}dt=\intop_{0}^{+\infty}e^{-\left(p-1\right)t}dt=\frac{1}{p-1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вычислить изображения синуса и косинуса можно с помощью двукратного интегрирован
+ия по частям
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+нужна ссылка
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+L\left\{ \sin t\right\} =\intop_{0}^{+\infty}\sin t\cdot e^{-pt}dt=\left|\begin{array}{cc}
+u=\sin t & dv=e^{-pt}dt\\
+du=\cos t & v=-\frac{1}{p}e^{-pt}
+\end{array}\right|=\\
+=\left.-\sin t\cdot\frac{1}{p}e^{-pt}\right|_{0}^{+\infty}+\frac{1}{p}\intop_{0}^{+\infty}\cos t\cdot e^{-pt}dt.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как синус обращается в ноль при 
+\begin_inset Formula $t=0$
+\end_inset
+
+, а 
+\begin_inset Formula $e^{-pt}$
+\end_inset
+
+ — на бесконечности, то
+\begin_inset Formula 
+\begin{multline*}
+L\left\{ \sin t\right\} =\frac{1}{p}\intop_{0}^{+\infty}\cos t\cdot e^{-pt}dt=\left|\begin{array}{cc}
+u=\cos t & dv=e^{-pt}dt\\
+du=-\sin t & v=-\frac{1}{p}e^{-pt}
+\end{array}\right|=\\
+=\left.-\cos t\cdot\frac{1}{p^{2}}e^{-pt}\right|_{0}^{+\infty}-\frac{1}{p^{2}}\intop_{0}^{+\infty}\sin t\cdot e^{-pt}dt.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Заметив, что интеграл в правой части есть снова изображение синуса, получим
+ уравнение, не содержащее интеграла:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left\{ \sin t\right\} =\frac{1}{p^{2}}-\frac{1}{p^{2}}L\left\{ \sin t\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выражая из него 
+\begin_inset Formula $L\left\{ \sin t\right\} $
+\end_inset
+
+, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left\{ \sin t\right\} =\frac{1}{p^{2}+1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Масштабирование аргумента
 \end_layout
@@ -831,9 +1002,9 @@ F\left(ap\right)=L\left\{ \frac{1}{a}\cdot f\left(\frac{t}{a}\right)\right\} .
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-F\left(p+a\right)=\intop_{0}^{+\infty}f\left(t\right)e^{-\left(p+a\right)t}dt=\intop_{0}^{+\infty}f\left(t\right)e^{-at}e^{-pt}dt=L\left\{ f\left(t\right)e^{-at}\right\} .
-\]
+\begin{equation}
+F\left(p+a\right)=\intop_{0}^{+\infty}f\left(t\right)e^{-\left(p+a\right)t}dt=\intop_{0}^{+\infty}f\left(t\right)e^{-at}e^{-pt}dt=L\left\{ f\left(t\right)e^{-at}\right\} .\label{eq:Laplace_image_arg_shift}
+\end{equation}
 
 \end_inset
 
@@ -1532,7 +1703,28 @@ F\left(p\right)=\frac{A}{\left(p+a\right)^{k}},
 \end_inset
 
  — целое число.
- 
+\end_layout
+
+\begin_layout Standard
+Используя правило сдвига аргумента изображения 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Laplace_image_arg_shift"
+
+\end_inset
+
+, задачу можно свести к нахождению оригинала от
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+G\left(p\right)=\frac{A}{p^{k}}.
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
