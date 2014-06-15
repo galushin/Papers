@@ -1522,6 +1522,26 @@ reference "eq:Laplace_image_exp"
 \begin_layout Standard
 \begin_inset Formula 
 \[
+F\left(p\right)=\frac{A}{\left(p+a\right)^{k}},
+\]
+
+\end_inset
+
+ где 
+\begin_inset Formula $k>1$
+\end_inset
+
+ — целое число.
+ 
+\end_layout
+
+\begin_layout Subsection
+Простейшие дроби третьего типа
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
 F\left(p\right)=\frac{A\cdot p+B}{p^{2}+bp+c},
 \]
 
@@ -1621,11 +1641,34 @@ F\left(p\right)=\frac{Ap}{p^{2}+\omega^{2}}+\frac{B}{p^{2}+\omega^{2}}.
 \end_layout
 
 \begin_layout Subsection
-Простейшие дроби третьего типа
+Простейшие дроби четвёртого типа
 \end_layout
 
-\begin_layout Subsection
-Простейшие дроби четвёртого типа
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(p\right)=\frac{A\cdot p+B}{\left(p^{2}+bp+c\right)^{k}},
+\]
+
+\end_inset
+
+где 
+\begin_inset Formula $k>1$
+\end_inset
+
+ — целое число.
+ у знаменателя нет вещественных корней, то есть
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+b^{2}-4c<0.\label{eq:Laplace_3_type_fraction_discriminant-1}
+\end{equation}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
