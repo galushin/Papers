@@ -854,6 +854,46 @@ du=\cos t & v=-\frac{1}{p}e^{-pt}
 \end_inset
 
  — на бесконечности, то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+L\left\{ \sin t\right\} =\frac{1}{p}\intop_{0}^{+\infty}\cos t\cdot e^{-pt}dt.\label{eq:Laplace_image_part_2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Заметим, что интеграл в правой части — изображение косинуса, поэтому
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left\{ \cos t\right\} =p\cdot L\left\{ \sin t\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Применим к интегралу в правой части 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Laplace_image_part_2"
+
+\end_inset
+
+ интегрирование по частям:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \begin{multline*}
 L\left\{ \sin t\right\} =\frac{1}{p}\intop_{0}^{+\infty}\cos t\cdot e^{-pt}dt=\left|\begin{array}{cc}
@@ -894,8 +934,30 @@ L\left\{ \sin t\right\} =\frac{1}{p^{2}}-\frac{1}{p^{2}}L\left\{ \sin t\right\} 
 
 \begin_layout Standard
 \begin_inset Formula 
+\begin{equation}
+L\left\{ \sin t\right\} =\frac{1}{p^{2}+1}.\label{eq:Laplace_image_sin}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Воспользуемся теперь соотношением
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Laplace_image_part_2"
+
+\end_inset
+
+ :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
 \[
-L\left\{ \sin t\right\} =\frac{1}{p^{2}+1}.
+L\left\{ \cos t\right\} =\frac{p}{p^{2}+1}.
 \]
 
 \end_inset
@@ -1005,13 +1067,38 @@ reference "eq:Laplace_image_arg_scale"
 \end_inset
 
  позволяет легко расширить список функций, для которых известных изображения.
- Например:
+ Например, используя изображение синуса 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Laplace_image_sin"
+
+\end_inset
+
+ и правило 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Laplace_image_arg_scale"
+
+\end_inset
+
+, можно получить изображение синуса кратного аргумента:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-L\left\{ \sin\omega t\right\} =\frac{1}{\omega}\frac{1}{\left(\frac{p}{\omega}\right)^{2}+1}=\frac{\omega}{p^{2}+\omega^{2}}
+L\left\{ \sin\omega t\right\} =\frac{1}{\omega}\frac{1}{\left(\frac{p}{\omega}\right)^{2}+1}=\frac{\omega}{p^{2}+\omega^{2}},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left\{ \cos\omega t\right\} =\frac{1}{\omega}\frac{\frac{p}{\omega}}{\left(\frac{p}{\omega}\right)^{2}+1}=\frac{p}{p^{2}+\omega^{2}}.
 \]
 
 \end_inset
