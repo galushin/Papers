@@ -1,0 +1,300 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass extbook
+\use_default_options true
+\maintain_unincluded_children false
+\language russian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Пусть траектория движения тела задана в параметрической форме :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbf{r}=\mathbf{r}\left(s\right),
+\]
+
+\end_inset
+
+где 
+\begin_inset Formula $s$
+\end_inset
+
+ - длина пройденного пути (то есть используется естественная параметризация).
+ Движение тела по траектории задаётся как функция пройденного пути от времени:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+s=s\left(t\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём скорость:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbf{v}=\frac{d\mathbf{r}}{dt}=\frac{d\mathbf{r}}{ds}\cdot\frac{ds}{dt}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d\mathbf{r}}{ds}=\tau
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{ds}{dt}=\left|\mathbf{v}\right|=v.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём ускорение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbf{a}=\frac{d\mathbf{v}}{dt}=\frac{d\tau}{dt}v+\tau\frac{dv}{dt}=\frac{d\tau}{ds}\cdot\frac{ds}{dt}\cdot v+\tau\cdot\frac{dv}{dt}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{dv}{dt}=a_{\tau}$
+\end_inset
+
+ - быстрота изменения модуля скорости, тангенциальное ускорение.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbf{a}=\frac{d\tau}{ds}\cdot v^{2}+\tau\cdot a_{\tau}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{d\tau}{ds}=\mathbf{N}$
+\end_inset
+
+ - вектор, перпендикулярный 
+\begin_inset Formula $\tau$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Для того, чтобы понять смысл физический смысл этого вектора, применим его
+ к движению по окружности.
+\end_layout
+
+\begin_layout Standard
+В этом случае:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbf{r}=\rho\left(\cos\omega t;\sin\omega t\right),
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+s=\rho\omega t.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Естественная параметризация траектории:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbf{r=}\rho\left(\cos\frac{s}{\rho};\sin\frac{s}{\rho}\right),
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\tau=\frac{d\mathbf{r}}{ds}=\left(-\sin\frac{s}{\rho};\cos\frac{s}{\rho}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbf{N}=\frac{d\tau}{ds}=\frac{1}{\rho}\left(-\cos\frac{s}{\rho};-\sin\frac{s}{\rho}\right)=-\frac{\mathbf{r}}{\rho^{2}}=\frac{\mathbf{n}}{\rho}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, в случае движения по окружности, модуль вектора 
+\begin_inset Formula $\mathbf{N}$
+\end_inset
+
+ является числом, обратным к радиусу окружности.
+ Поэтому мы можем записать в общем случае:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbf{a}=\mathbf{n}\cdot\frac{v^{2}}{R}+\tau\cdot a_{\tau}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+где величина 
+\begin_inset Formula $R=\left|\frac{d\tau}{ds}\right|$
+\end_inset
+
+ называется радиусом кривизны траектории.
+ Такое название оправдано тем, что в случае окружности радиус кривизны совпадает
+ с радиусом окружности.
+\end_layout
+
+\begin_layout Standard
+Величину
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{n}=\frac{v^{2}}{R}
+\]
+
+\end_inset
+
+называют центростремительным ускорением:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbf{a}=\mathbf{n}\cdot a_{n}+\tau\cdot a_{\tau}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
