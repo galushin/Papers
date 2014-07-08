@@ -1,0 +1,295 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass extbook
+\use_default_options true
+\maintain_unincluded_children false
+\language russian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sin\alpha=AC
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\cos\alpha=AD
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sin\varphi=BE
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\cos\varphi=OE
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём 
+\begin_inset Formula $\sin\left(\alpha+\varphi\right)$
+\end_inset
+
+ и 
+\begin_inset Formula $\cos\left(\alpha+\varphi\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sin\left(\alpha+\varphi\right)=BF=BH+HF
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\angle AEI=\alpha$
+\end_inset
+
+ как углы с параллельными сторонами
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\angle HEJ=\angle AEI=\alpha$
+\end_inset
+
+ как вертикальные углы
+\end_layout
+
+\begin_layout Standard
+Дважды используем свойство острых углов прямоугольных треугольников:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\angle HBE=\frac{\pi}{2}-\angle HEB=\frac{\pi}{2}-\left(\frac{\pi}{2}-\angle HEJ\right)=\angle HEJ=\alpha.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+BH=BE\cdot\cos\alpha=\sin\varphi\cdot\cos\alpha.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Теперь найдём 
+\begin_inset Formula $HF$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+HF=AC-AI=\sin\alpha-EA\cdot\sin\alpha=\sin\alpha-\left(OA-OE\right)\sin\alpha=\\
+=\sin\alpha-\left(1-\cos\varphi\right)\sin\alpha=\sin\alpha\cdot\cos\varphi.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Окончательно получаем
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sin\left(\alpha+\varphi\right)=\sin\alpha\cdot\cos\varphi+\sin\varphi\cdot\cos\alpha.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Перейдём теперь к вычислению косинуса суммы углов.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\cos\left(\alpha+\varphi\right)=OF=OK-KF.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+OK=OC-CK=\cos\alpha-EI=\cos\alpha-EA\cdot\cos\alpha=\\
+=\cos\alpha-\left(1-\cos\varphi\right)\cdot\cos\alpha=\cos\alpha\cdot\cos\varphi.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+KF=HE=BE\cdot\sin\alpha=\sin\varphi\cdot\sin\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\cos\left(\alpha+\varphi\right)=\cos\alpha\cdot\cos\varphi-\sin\varphi\cdot\sin\alpha.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename sin_of_sum.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
