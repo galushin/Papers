@@ -1,0 +1,515 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass extarticle
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 14
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Вывод преобразований Лоренца в матричном виде
+\end_layout
+
+\begin_layout Standard
+Преобразование из исходной системы 
+\begin_inset Formula $\left(x,t\right)$
+\end_inset
+
+ в 
+\begin_inset Formula $\left(x^{\prime},t^{\prime}\right)$
+\end_inset
+
+, начало которой движется в исходной со скоростью 
+\begin_inset Formula $u$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Из соображений линейности, преобразования должны иметь вид:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{c}
+x^{\prime}=A\left(u\right)x+a\left(u\right)t\\
+t^{\prime}=x^{T}b\left(u\right)+\alpha\left(u\right)t
+\end{array}\label{eq:Initial}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Инверсия пространства
+\end_layout
+
+\begin_layout Standard
+Произведём инверсию пространственных координат:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{c}
+-x^{\prime}=A\left(-u\right)\left(-x\right)+a\left(-u\right)t\\
+t^{\prime}=\left(-x\right)^{T}b\left(-u\right)+\alpha\left(-u\right)t
+\end{array}\label{eq:Space_inverse}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Сравниваия уравнения 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Initial"
+
+\end_inset
+
+ и 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Space_inverse"
+
+\end_inset
+
+, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{c}
+A\left(-u\right)=A\left(u\right)\\
+a\left(-u\right)=-a\left(u\right)\\
+b\left(-u\right)=-b\left(u\right)\\
+\alpha\left(-u\right)=\alpha\left(u\right)
+\end{array}\label{eq:coefficients_parity}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Обратное преобразование
+\end_layout
+
+\begin_layout Standard
+Рассмотрим теперь обратное преобразование из 
+\begin_inset Formula $\left(x^{\prime},t^{\prime}\right)$
+\end_inset
+
+ в 
+\begin_inset Formula $\left(x,t\right)$
+\end_inset
+
+.
+ В силу равноправности всех систем отсчёта, оно должно отличаться от 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Initial"
+
+\end_inset
+
+ только заменой 
+\begin_inset Formula $u$
+\end_inset
+
+ на 
+\begin_inset Formula $-u$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{c}
+x=A\left(-u\right)x^{\prime}+a\left(-u\right)t^{\prime}\\
+t=\left(x^{\prime}\right)^{T}b\left(-u\right)+\alpha\left(-u\right)t^{\prime}
+\end{array}\label{eq:Inverse}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Воспользовавшись соотношениями 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:coefficients_parity"
+
+\end_inset
+
+, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+x=Ax^{\prime}-a\cdot t^{\prime}\\
+t=-\left(x^{\prime}\right)^{T}b+\alpha t^{\prime}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Подставим в эти формулы выражения для 
+\begin_inset Formula $x^{\prime}$
+\end_inset
+
+ и 
+\begin_inset Formula $t^{\prime}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+x=A\left(Ax+at\right)-a\left(x^{T}b+\alpha t\right)=\left(A^{2}-ab^{T}\right)x+\left(Aa-\alpha a\right)t\\
+t=-\left(Ax+at\right)^{T}b+\alpha\left(x^{T}b+\alpha t\right)=\left(\alpha b-A^{T}b\right)x+\left(\alpha^{2}-a^{T}b\right)t
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как данные равенства должны выполняться при любых 
+\begin_inset Formula $x$
+\end_inset
+
+ и 
+\begin_inset Formula $t$
+\end_inset
+
+, коэффициенты при них в левых и правых частях должны быть равны:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+I=A^{2}-ab^{T}\\
+0=Aa-\alpha a\\
+0=\alpha b-A^{T}b\\
+1=\alpha^{2}-a^{T}b
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Эти равенства можно переписать в более удобной форме:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+A^{2}=I+ab^{T}\\
+Aa=\alpha a\\
+A^{T}b=\alpha b\\
+\alpha^{2}=1+a^{T}b
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Движение начала координат
+\end_layout
+
+\begin_layout Standard
+Рассмотрим движение начала системы координат 
+\begin_inset Formula $\left(x^{\prime},t^{\prime}\right)$
+\end_inset
+
+, для него 
+\begin_inset Formula $x^{\prime}=0$
+\end_inset
+
+, 
+\begin_inset Formula $x=u\cdot t$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u\cdot t=-a\cdot t^{\prime}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+t=\alpha\cdot t
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+a=-\alpha u\label{eq:a_and_alpha_relation}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Сохранение интервала
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+c^{2}t^{2}-\left\Vert x\right\Vert ^{2}=c^{2}\left(t^{\prime}\right)^{2}-\left\Vert x^{\prime}\right\Vert ^{2}=\\
+=c^{2}\left(x^{T}bb^{T}x+2\alpha b^{T}x\cdot t+\alpha^{2}t^{2}\right)-\left(x^{T}A^{T}Ax+2a^{T}Ax\cdot t+a^{T}a\cdot t^{2}\right)=\\
+=\left(c^{2}\alpha^{2}-a^{T}a\right)t^{2}+2\left(\alpha b^{T}-a^{T}A\right)xt+x^{T}\left(c^{2}bb^{T}-A^{T}A\right)x.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как данное равенство должно выполняться при любых 
+\begin_inset Formula $x$
+\end_inset
+
+ и 
+\begin_inset Formula $t$
+\end_inset
+
+, то коэффициенты в правой и левой части должны быть равны:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+c^{2}=c^{2}\alpha^{2}-a^{T}a\\
+0=\alpha b^{T}-a^{T}A\\
+-I=c^{2}bb^{T}-A^{T}A
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+В последнем равенстве можно было бы добавить антисимметричную матрицу, но
+ она можеть быть только нулевой, так как все остальные матрицы симметричные.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Эти равенства можно переписать в более удобной форме:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{c}
+c^{2}\left(\alpha^{2}-1\right)=a^{T}a\\
+A^{T}a=\alpha b\\
+A^{T}A=I+c^{2}bb^{T}
+\end{array}\label{eq:Interval_conservation_consequent}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Выражение для 
+\begin_inset Formula $\alpha$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Подставим в первое из уравнений 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Interval_conservation_consequent"
+
+\end_inset
+
+ выражение для 
+\begin_inset Formula $a$
+\end_inset
+
+ из 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:a_and_alpha_relation"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+c^{2}\left(\alpha^{2}-1\right)=\alpha^{2}\left|u\right|^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Решая это уравение относительно 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\alpha=\frac{1}{\sqrt{1-\frac{\left|u\right|^{2}}{c^{2}}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Здесь нужно написать про выбор знака
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
