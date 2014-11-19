@@ -294,14 +294,14 @@ I=A^{2}-ab^{T}\\
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
+\begin{equation}
 \begin{array}{c}
 A^{2}=I+ab^{T}\\
 Aa=\alpha a\\
 A^{T}b=\alpha b\\
 \alpha^{2}=1+a^{T}b
-\end{array}
-\]
+\end{array}\label{eq:Inverse_consequences}
+\end{equation}
 
 \end_inset
 
@@ -370,7 +370,7 @@ a=-\alpha u\label{eq:a_and_alpha_relation}
 \begin{multline*}
 c^{2}t^{2}-\left\Vert x\right\Vert ^{2}=c^{2}\left(t^{\prime}\right)^{2}-\left\Vert x^{\prime}\right\Vert ^{2}=\\
 =c^{2}\left(x^{T}bb^{T}x+2\alpha b^{T}x\cdot t+\alpha^{2}t^{2}\right)-\left(x^{T}A^{T}Ax+2a^{T}Ax\cdot t+a^{T}a\cdot t^{2}\right)=\\
-=\left(c^{2}\alpha^{2}-a^{T}a\right)t^{2}+2\left(\alpha b^{T}-a^{T}A\right)xt+x^{T}\left(c^{2}bb^{T}-A^{T}A\right)x.
+=\left(c^{2}\alpha^{2}-a^{T}a\right)t^{2}+2\left(\alpha c^{2}b^{T}-a^{T}A\right)xt+x^{T}\left(c^{2}bb^{T}-A^{T}A\right)x.
 \end{multline*}
 
 \end_inset
@@ -395,7 +395,7 @@ c^{2}t^{2}-\left\Vert x\right\Vert ^{2}=c^{2}\left(t^{\prime}\right)^{2}-\left\V
 \[
 \begin{array}{c}
 c^{2}=c^{2}\alpha^{2}-a^{T}a\\
-0=\alpha b^{T}-a^{T}A\\
+0=\alpha c^{2}b^{T}-a^{T}A\\
 -I=c^{2}bb^{T}-A^{T}A
 \end{array}
 \]
@@ -428,7 +428,7 @@ status open
 \begin{equation}
 \begin{array}{c}
 c^{2}\left(\alpha^{2}-1\right)=a^{T}a\\
-A^{T}a=\alpha b\\
+A^{T}a=\alpha c^{2}b\\
 A^{T}A=I+c^{2}bb^{T}
 \end{array}\label{eq:Interval_conservation_consequent}
 \end{equation}
@@ -509,6 +509,218 @@ status open
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Отсюда, в следствие 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:a_and_alpha_relation"
+
+\end_inset
+
+, получаем выражение для 
+\begin_inset Formula $a$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a=-\frac{u}{\sqrt{1-\frac{\left|u\right|^{2}}{c^{2}}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Выражение для 
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Домножим второй из уравнений справа на матрицу 
+\begin_inset Formula $A^{T}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A^{T}Aa=A^{T}\left(\alpha a\right)=\alpha A^{T}a.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Воспользуемся теперь в правой части данного равенства вторым из соотношений
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Interval_conservation_consequent"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A^{T}Aa=\alpha^{2}c^{2}b.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+С другой стороны, в силу третьего из соотношений 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Interval_conservation_consequent"
+
+\end_inset
+
+ и четвёртого из соотношений 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Inverse_consequences"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A^{T}Aa=\left(I+c^{2}bb^{T}\right)a=a+c^{2}b\cdot b^{T}a=a+c^{2}\left(\alpha^{2}-1\right)b.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как левые части 
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Нужны ли здесь ссылки на формулы?
+\end_layout
+
+\end_inset
+
+ равны, то равны и правые:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\alpha^{2}c^{2}b=a+\alpha^{2}c^{2}b-c^{2}b,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a=c^{2}b,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+b=\frac{a}{c^{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Выражение для 
+\begin_inset Formula $A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A^{2}=I+c^{2}bb^{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A^{T}A=I+c^{2}bb^{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как 
+\begin_inset Formula $\det A\neq0$
+\end_inset
+
+
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+доказать
+\end_layout
+
+\end_inset
+
+, то из 
+\begin_inset Formula $A^{T}A=A^{2}$
+\end_inset
+
+ следует 
+\begin_inset Formula $A=A^{T}$
+\end_inset
+
+, то есть 
+\begin_inset Formula $A$
+\end_inset
+
+ является симметричной матрицей.
 \end_layout
 
 \end_body
