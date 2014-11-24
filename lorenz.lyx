@@ -655,7 +655,18 @@ a=c^{2}b,
 \begin_layout Standard
 \begin_inset Formula 
 \[
-b=\frac{a}{c^{2}}.
+b=\frac{a}{c^{2}}=-\frac{\alpha}{c^{2}}u=-\frac{u}{c^{2}\sqrt{1-\frac{\left|u\right|^{2}}{c^{2}}}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+bb^{T}=\frac{\alpha^{2}}{c^{4}}uu^{T}.
 \]
 
 \end_inset
@@ -721,6 +732,235 @@ status open
 \end_inset
 
  является симметричной матрицей.
+\end_layout
+
+\begin_layout Standard
+Cогласно третьему из уравнений 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Inverse_consequences"
+
+\end_inset
+
+, одним из собственных векторов матрицы 
+\begin_inset Formula $A$
+\end_inset
+
+ является вектор 
+\begin_inset Formula $a$
+\end_inset
+
+ (с собственным числом 
+\begin_inset Formula $\alpha$
+\end_inset
+
+).
+ Так как 
+\begin_inset Formula $A$
+\end_inset
+
+ — трёхмерная симметричная матрица, то она может быть представлена в виде
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A=\alpha\frac{bb^{T}}{b^{T}b}+\lambda_{1}d_{1}d_{1}^{T}+\lambda_{2}d_{2}d_{2}^{T},
+\]
+
+\end_inset
+
+
+\begin_inset Formula $d_{1}$
+\end_inset
+
+и 
+\begin_inset Formula $d_{2}$
+\end_inset
+
+ — единичные векторы, а 
+\begin_inset Formula $\lambda_{1}$
+\end_inset
+
+и 
+\begin_inset Formula $\lambda_{2}$
+\end_inset
+
+ — соответствующие им собственные числа.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A^{2}=\alpha^{2}\frac{bb^{T}}{b^{T}b}+\lambda_{1}^{2}d_{1}d_{1}^{T}+\lambda_{2}^{2}d_{2}d_{2}^{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+С другой стороны:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A^{2}=I+c^{2}bb^{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Единичную матрицу можно записать в виде
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+I=\frac{bb^{T}}{b^{T}b}+d_{1}d_{1}^{T}+d_{2}d_{2}^{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Поэтому
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A^{2}=\left(c^{2}b^{T}b+1\right)\frac{bb^{T}}{b^{T}b}+d_{1}d_{1}^{T}+d_{2}d_{2}^{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+b^{T}b=\frac{a^{T}a}{c^{4}}=\frac{\alpha^{2}\left|u\right|^{2}}{c^{4}},\label{eq:b_norm_square}
+\end{equation}
+
+\end_inset
+
+то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+c^{2}b^{T}b+1=c^{2}\frac{\alpha^{2}\left|u\right|^{2}}{c^{4}}+1=1+\frac{\alpha^{2}\left|u\right|^{2}}{c^{2}}=\\
+=1+\frac{\left|u\right|^{2}}{c^{2}}\frac{1}{1-\frac{\left|u\right|^{2}}{c^{2}}}=1+\frac{\left|u\right|^{2}}{c^{2}-\left|u\right|^{2}}=\frac{c^{2}-\left|u\right|^{2}+\left|u\right|}{c^{2}-\left|u\right|^{2}}=\\
+=\frac{c^{2}}{c^{2}-\left|u\right|^{2}}=\frac{1}{1-\frac{\left|u\right|^{2}}{c^{2}}}=\alpha^{2}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A^{2}=\alpha^{2}\frac{bb^{T}}{b^{T}b}+d_{1}d_{1}^{T}+d_{2}d_{2}^{T}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda_{1}^{2}=\lambda_{2}^{2}=1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Здесь нужно написать про выбор знака
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+A=\alpha\frac{bb^{T}}{b^{T}b}+d_{1}d_{1}^{T}+d_{2}d_{2}^{T}=\left(\alpha-1\right)\frac{bb^{T}}{b^{T}b}+I=\\
+=\left(\alpha-1\right)\frac{uu^{T}}{\left|u\right|^{2}}+I.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Частный случай
+\end_layout
+
+\begin_layout Standard
+Пусть вектор 
+\begin_inset Formula $u$
+\end_inset
+
+ направлен вдоль оси 
+\begin_inset Formula $0x$
+\end_inset
+
+, то есть имеет вид 
+\begin_inset Formula $\left(U,0,0\right)$
+\end_inset
+
+, а матрица 
+\begin_inset Formula $A$
+\end_inset
+
+ примет вид
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(\begin{array}{ccc}
+\alpha & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{array}\right)
+\]
+
+\end_inset
+
+
 \end_layout
 
 \end_body
