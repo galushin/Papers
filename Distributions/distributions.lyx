@@ -1,5 +1,5 @@
-#LyX 2.0 created this file. For more info see http://www.lyx.org/
-\lyxformat 413
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
 \textclass extbook
@@ -12,13 +12,13 @@
 \font_roman default
 \font_sans default
 \font_typewriter default
+\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
-
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -38,15 +38,24 @@
 \pdf_pdfusetitle true
 \papersize default
 \use_geometry false
-\use_amsmath 1
-\use_esint 1
-\use_mhchem 1
-\use_mathdots 1
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
 \cite_engine basic
+\cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
+\justification true
 \use_refstyle 1
 \index Index
 \shortcut idx
@@ -86,11 +95,20 @@ begin{sloppy}
 \end_layout
 
 \begin_layout Title
-Вероятностные распределения
+Математическая статистика.
+ Углубленный курс.
 \end_layout
 
 \begin_layout Author
-Галушин П.В.
+Галушин
+\begin_inset space ~
+\end_inset
+
+П.
+\begin_inset space ~
+\end_inset
+
+В.
 \end_layout
 
 \begin_layout Standard
@@ -193,54 +211,192 @@ addcontentsline{toc}{chapter}{Введение}
 \end_layout
 
 \begin_layout Standard
-Функции распределения для распределении хи-квадрат и Стьюдента выводятся,
- а не постулируются.
+Традиционые курсы теории вероятностей и математической статистики оставляют
+ некоторые важные моменты без доказательств.
+ В частности, выборочные распределения (хи-квадрат, Стьюдента и другие)
+ не выводятся, а постулируются.
+ Устранить этот пробел — одна из целей данной книги.
 \end_layout
 
 \begin_layout Chapter
-Оценка вероятности случайного события
+Случайные события
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Случайное событие — 
+\emph default
+это событие, которое может произойти или не произойти в результате опыта,
+ причём результат опыта непредсказуем.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Добавить примеры
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Теория вероятностей 
+\emph default
+— это раздел математики, изучающий закономерности массовых случайных событий.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Вероятность случайного события — 
+\emph default
+это вещественное число из интервала 
+\begin_inset Formula $[0;1]$
+\end_inset
+
+, являющееся объективной мерой возможности появления события.
+\end_layout
+
+\begin_layout Standard
+Случайные события, как правило, обозначаются большими латинскими буквами
+ (например, 
+\begin_inset Formula $A$
+\end_inset
+
+).
+ Вероятность наступления события 
+\begin_inset Formula $A$
+\end_inset
+
+ обозначается как 
+\begin_inset Formula $P\left(A\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Событие, вероятность которого равна нулю называется 
+\emph on
+невозможным
+\emph default
+.
+ Событие, вероятность которого равна единице называется 
+\emph on
+достоверным.
+\end_layout
+
+\begin_layout Standard
+Мы стремимся как можно быстрее перейти к практике, поэтому данная глава
+ преследует две цели:
+\end_layout
+
+\begin_layout Enumerate
+Изучить основные понятия и теоремы теории вероятностей, связанные со случайными
+ событиями;
+\end_layout
+
+\begin_layout Enumerate
+Понять на примере вероятности, как параметры случайных явлений оцениваются
+ по результатом опытов.
 \end_layout
 
 \begin_layout Section
-Точечная оценка
+Подходы к определению вероятности
 \end_layout
 
 \begin_layout Standard
-Простейшей нетривиальной случайной величиной является величина с распределением
- Бернулли, которая принимает значение 
-\begin_inset Formula $1$
-\end_inset
+Если исключить простейшие случаи, в которых все исходы можно считать равновероят
+ными, то значение вероятности события на практике не известно.
+\end_layout
 
-, если некоторое событие произошло и 
-\begin_inset Formula $0$
-\end_inset
+\begin_layout Standard
+Существуют разные подходы к определению вероятностей конкретных случайных
+ событий: непосредственный подсчёт вероятностей, геометричкая вероятность,
+ частотный подход, аксиоматический подход (являющийся современным фундаментом
+ теории вероятностей) и т.д.
+\end_layout
 
-, если это событие не произошло.
- Если вероятность того, что событие произойдёт, равна 
-\begin_inset Formula $p$
-\end_inset
+\begin_layout Standard
 
-, то распределение вероятностей есть
+\emph on
+Непосредственный подсчёт вероятностей
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Геометрическая вероятность
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Частотный подход 
+\emph default
+заключается в том, что вероятность определяют как предел частоты (то есть
+ доли опытов, в которых событие произошло), при неограниченном увеличении
+ количества опытов.
+ 
+\end_layout
+
+\begin_layout Standard
+Частотный подход интуитивно понятен, но само определение сходимости в нём
+ не является вполне строгим.
+ Поэтому современная теория вероятностей построена на основе 
+\emph on
+аксиоматического подхода
+\emph default
+, в котором вероятности некоторых событий просто постулируются.
+
+\emph on
+ 
+\emph default
+При использовании аксиоматического подхода утверждение о том, что вероятность
+ и предел частоты равны, превращается из определения в теорему, которую
+ нужно доказывать.
+\end_layout
+
+\begin_layout Section
+Одновременное наступления нескольких событий
+\end_layout
+
+\begin_layout Standard
+Случайные события называются 
+\emph on
+независимыми
+\emph default
+, если появление одного из них не влияет на вероятности появления других.
+ Если же появление одного события влияет на вероятности других, то такие
+ события называются 
+\emph on
+зависимыми
+\emph default
+.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-P\left(X\right)=\begin{cases}
-p, & X=1\\
-1-p, & X=0
-\end{cases}
+P\left(AB\right)=P\left(A\right)\cdot P\left(B\right).
 \]
 
 \end_inset
 
-или с использованием нотации Айверсона
+
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-P\left(X\right)=p\cdot\left[X=1\right]+\left(1-p\right)\left[X=0\right].
+P\left(AB\right)=P\left(A\right)\cdot P\left(B|A\right).
 \]
 
 \end_inset
@@ -249,13 +405,61 @@ P\left(X\right)=p\cdot\left[X=1\right]+\left(1-p\right)\left[X=0\right].
 \end_layout
 
 \begin_layout Standard
-Часто вводят обозначение
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Добавить примеры
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Наступления одного из нескольких событий
+\end_layout
+
+\begin_layout Standard
+Если несколько событий могут произойти одновременно, то такие события называются
+ 
+\emph on
+совместными
+\emph default
+, в противном случае они называются 
+\emph on
+несовместными
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Добавить примеры
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Задача.
+ 
+\series default
+Могут ли несовместные события быть независимыми?
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-q=1-p.
+P\left(A+B\right)=P\left(A\right)+P\left(B\right).
 \]
 
 \end_inset
@@ -264,11 +468,75 @@ q=1-p.
 \end_layout
 
 \begin_layout Standard
-Каким образом можно оценить вероятность случайного события? Так как понятие
- вероятности применимо только к массовым явлениям, то едиственный возможный
- путь — выполнение большого количества экспериментов и анализ их результатов.
- Если эксперименты независимы друг от друга и идентичны, то говорят, что
- реализуется схема Бернулли.
+\begin_inset Formula 
+\[
+P\left(A+B\right)=P\left(A\right)+P\left(B\right)-P\left(AB\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Противоположное событие 
+\emph default
+к событию 
+\begin_inset Formula $A$
+\end_inset
+
+
+\emph on
+ — 
+\emph default
+это случайное событие, заключающееся в том, что событие 
+\begin_inset Formula $A$
+\end_inset
+
+ не произойдёт.
+ Противоположное событие обозначается 
+\begin_inset Formula $\bar{A}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(\bar{A}\right)=1-P\left(A\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Оценка вероятности по результатам опытов
+\end_layout
+
+\begin_layout Standard
+Каким же образом можно 
+\emph on
+оценить 
+\emph default
+вероятность случайного события? Едиственный возможный на практике путь —
+ выполнение большого количества опытов и анализ их результатов.
+ Если опыты независимы друг от друга и идентичны, то говорят, что реализуется
+ схема Бернулли.
+ В данной главе рассматривается задача оценки вероятности по исходам эксперимент
+ов в схеме Бернулли.
+\end_layout
+
+\begin_layout Subsection
+Вероятность появления события заданное число раз в 
+\begin_inset Formula $n$
+\end_inset
+
+ опытах
 \end_layout
 
 \begin_layout Standard
@@ -276,14 +544,26 @@ q=1-p.
 \begin_inset Formula $n$
 \end_inset
 
- экспериментов, то количество экспериментов, в которых заданное событие
- произошло также будет случайной величиной.
- Распределение этой случайной величины называется биномиальным.
- Найдём вероятность 
-\begin_inset Formula $P_{n}\left(k\right)$
+ одинаковых опытов, в каждом из которых может произойти случайное событие
+ 
+\begin_inset Formula $A$
 \end_inset
 
- того, что событие произойдёт ровно 
+, то количество опытов, в которых заданное событие произойдёт, также будет
+ случайным.
+ Найдём вероятность 
+\begin_inset Formula $P\left(k,n,p\right)$
+\end_inset
+
+ события 
+\begin_inset Formula $B\left(k,n,p\right)$
+\end_inset
+
+, которое заключается в том, что в схеме Бернулли событие 
+\begin_inset Formula $A$
+\end_inset
+
+ произойдёт ровно 
 \begin_inset Formula $k$
 \end_inset
 
@@ -291,7 +571,43 @@ q=1-p.
 \begin_inset Formula $n$
 \end_inset
 
- опытах.
+ опытах, если вероятность появления события в каждом из опытов равна 
+\begin_inset Formula $p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Вероятность того, что событие произойдёт, например, в первых 
+\begin_inset Formula $k$
+\end_inset
+
+ опытах и не произойдёт в остальных 
+\begin_inset Formula $n-k$
+\end_inset
+
+ опытах, в силу теорему умножения, равна
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p^{k}\left(1-p\right)^{n-k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Однако это не единственный способ реализации события 
+\begin_inset Formula $B\left(k,n,p\right)$
+\end_inset
+
+.
+ Опыты, в которых событие произошло могут иметь любые номера.
  Так как существует 
 \begin_inset Formula $\binom{n}{k}$
 \end_inset
@@ -304,14 +620,28 @@ q=1-p.
 \begin_inset Formula $n$
 \end_inset
 
-, то эта вероятность может быть записана следующим образом:
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Нужна ссылка
+\end_layout
+
+\end_inset
+
+, то в силу теоремы сложения для несовместных событий, вероятность 
+\begin_inset Formula $P\left(k,n,p\right)$
+\end_inset
+
+ может быть записана следующим образом:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-P_{n}\left(k\right)=\dbinom{n}{k}\cdot p^{k}\left(1-p\right)^{n-k}.
-\]
+\begin{equation}
+P\left(k,n,p\right)=\dbinom{n}{k}\cdot p^{k}\left(1-p\right)^{n-k}.\label{eq:probability_k_from_n}
+\end{equation}
 
 \end_inset
 
@@ -323,13 +653,13 @@ P_{n}\left(k\right)=\dbinom{n}{k}\cdot p^{k}\left(1-p\right)^{n-k}.
 \begin_inset Formula $q=1-p$
 \end_inset
 
-, можно написать
+, можно получить более компактную запись
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-P_{n}\left(k\right)=\dbinom{n}{k}\cdot p^{k}q^{n-k}.
+P\left(k,n,p\right)=\dbinom{n}{k}\cdot p^{k}q^{n-k}.
 \]
 
 \end_inset
@@ -337,18 +667,24 @@ P_{n}\left(k\right)=\dbinom{n}{k}\cdot p^{k}q^{n-k}.
 
 \end_layout
 
+\begin_layout Subsection
+Метод максимизации правдоподобия
+\end_layout
+
 \begin_layout Standard
-Для построения оценки вероятности воспользуемся 
+Для построения оценки вероятности воспользуемся так называемым 
 \emph on
 методом максимизации правдоподобия
 \emph default
 .
- В качестве оценки вероятности возьмём величину 
-\begin_inset Formula $\hat{p}$
+ Подробнее этот метод будет рассмотрен в дальнейшем.
+ Пока же мы примём его без обоснования.
+ В качестве оценки вероятности возьмём значение 
+\begin_inset Formula $p=\hat{p}$
 \end_inset
 
-, при которой вероятность 
-\begin_inset Formula $P_{n}\left(k\right)$
+, при котором вероятность 
+\begin_inset Formula $P\left(k,n,p\right)$
 \end_inset
 
  будет наибольшей.
@@ -363,12 +699,20 @@ status open
 \end_inset
 
  необходимым условием экстремума является равенство нулю производной.
+ Продиффиренцируем уравнение 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:probability_k_from_n"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{multline*}
-\frac{d}{dp}\left(P_{n}\left(k\right)\right)=\binom{n}{k}\left(k\cdot p^{k-1}\left(1-p\right)^{n-k}-p^{k}\left(n-k\right)\left(1-p\right)^{n-k-1}\right)=\\
+\frac{d}{dp}\left(P\left(k,n,p\right)\right)=\binom{n}{k}\left(k\cdot p^{k-1}\left(1-p\right)^{n-k}-p^{k}\left(n-k\right)\left(1-p\right)^{n-k-1}\right)=\\
 =\binom{n}{k}\cdot p^{k-1}\cdot\left(1-p\right)^{n-k-1}\left(k\left(1-p\right)-\left(n-k\right)p\right).
 \end{multline*}
 
@@ -378,46 +722,81 @@ status open
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Рассмотреть случаи p=1 и p=0
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-k\left(1-\hat{p}\right)-\left(n-k\right)\hat{p}=0,
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-n\cdot\hat{p}=k.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Выражая 
+Исходя из последнего выражения, корни 
 \begin_inset Formula $\hat{p}$
 \end_inset
 
-, получим оценку
+ уравнения
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d}{dp}\left(P\left(k,n,p\right)\right)=0
+\]
+
+\end_inset
+
+определяются следующими условиями:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{p}=0,\,k>1,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+1-\hat{p}=0,\,k<n-2,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k\left(1-\hat{p}\right)-\left(n-k\right)\hat{p}=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Эти условия приводят к следующим возможным значениям корня:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{p}=0,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{p}=1,
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -432,24 +811,112 @@ n\cdot\hat{p}=k.
 \end_layout
 
 \begin_layout Standard
-Запишем теперь эту оценку через исходы отдельных экспериментов.
- Пусть в 
-\begin_inset Formula $i$
+Первые два из этих корней не имеют 
+\begin_inset Quotes fld
 \end_inset
 
--ом эксперменте был получен исход 
-\begin_inset Formula $X_{i}$
+физического смысла
+\begin_inset Quotes frd
 \end_inset
 
-, то есть исходы экспериментов образуют систему одинаково распределённых
- независимых случайных велиин 
-\begin_inset Formula $X_{1},...,X_{n}$
+, так как не зависят от 
+\begin_inset Formula $k$
 \end_inset
 
- имеющих распределение Бернулли, тогда
+ и 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ Таким образом, оценка вероятности по частоте даётся формулой
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \[
-k=\sum_{i=1}^{n}X_{i},
+\hat{p}=\frac{k}{n}\text{.}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выражение в правой части — 
+\emph on
+частота события
+\emph default
+, то есть отношение количества опытов, в которых событие произошло, к общему
+ числу проводимых опытов.
+\end_layout
+
+\begin_layout Section
+Оценка вероятности редких событий
+\end_layout
+
+\begin_layout Standard
+Как оценить вероятность, если в серии опытов событие не произошло ни разу?
+ В соответствии с результатами предыдущего раздела, мы должны были бы заключить,
+ что вероятность равна нулю.
+ Но возможно событие просто настолько редкое, что мы провели слишком мало
+ опытов?
+\end_layout
+
+\begin_layout Chapter
+Дискретные случайные величины
+\end_layout
+
+\begin_layout Standard
+В предыдущей главе мы выяснили, что оценкой вероятности случайного события
+ является его частота.
+ Частота события, в свою очередь, это величина, которая может принимать
+ различные значения в различных сериях опытов, то есть является случайной.
+ В данной главе мы получим результаты, касающиеся таких величин.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Случайная величина 
+\emph default
+— это величина, которая в разных опытах может принимать разные значения.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Дискретная случайная величина 
+\emph default
+— это случайная величина, множество возможных значений которой является
+ конечным или счётным.
+ Иными словами множество возможных значений дискретной случайной величины
+ эквивалентно подмножеству множества натуральных чисел.
+\end_layout
+
+\begin_layout Standard
+Количество опытов, в которых произошло случайное событие, является примером
+ дискретной случайной величины.
+\end_layout
+
+\begin_layout Standard
+В общем случае, свойства случайной величины, в отличие от случайного события,
+ невозможно полностью описать с помощью одного вещественного числа (вероятности).
+\end_layout
+
+\begin_layout Part
+Необработанный материал
+\end_layout
+
+\begin_layout Section
+Теорема Байеса
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(AB\right)=P\left(A\right)\cdot P(B|A)=P\left(B\right)\cdot P\left(A|B\right)
 \]
 
 \end_inset
@@ -460,7 +927,7 @@ k=\sum_{i=1}^{n}X_{i},
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\hat{p}=\frac{1}{n}\sum_{i=1}^{n}X_{i}.
+P\left(B|A\right)=\frac{P\left(A|B\right)P\left(B\right)}{P\left(A\right)}.
 \]
 
 \end_inset
@@ -468,8 +935,22 @@ k=\sum_{i=1}^{n}X_{i},
 
 \end_layout
 
-\begin_layout Section
-Состоятельность оценки
+\begin_layout Subsection
+Состоятельность и несмещённость оценки
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Здесь уже используется понятие случайной величины.
+ Нужно либо ввести это понятие раньше, либо изложить этот материал позже
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -485,6 +966,10 @@ k=\sum_{i=1}^{n}X_{i},
 
  параметра 
 \begin_inset Formula $\theta$
+\end_inset
+
+ по выборке объёма 
+\begin_inset Formula $n$
 \end_inset
 
  называется состоятельной, если для любого вещественного числа 
@@ -506,7 +991,17 @@ k=\sum_{i=1}^{n}X_{i},
 \end_layout
 
 \begin_layout Standard
-Для доказательства состоятельности оценок часто используют неравенство Чебышёва.
+Состоятельность является важнейшим свойством оценки: оценки, не являющиеся
+ состоятельными, нельзя использовать на практике.
+ 
+\end_layout
+
+\begin_layout Standard
+Для доказательства состоятельности оценок часто используют 
+\emph on
+неравенство Чебышёва
+\emph default
+.
  Пусть 
 \begin_inset Formula $X$
 \end_inset
@@ -579,6 +1074,10 @@ P\left\{ \left|X-\mu\right|>\varepsilon\right\} =P\left\{ \left(X-\mu\right)^{2}
 \end_layout
 
 \begin_layout Standard
+Проверим, выполняются ли эти требования для оценки вероятности:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \[
 M\left[\hat{p}\right]=\frac{1}{n}\sum_{i=1}^{n}M\left[X_{i}\right]=\frac{1}{n}\sum_{i=1}^{n}p=p.
@@ -600,6 +1099,82 @@ D\left[\hat{p}\right]=\frac{1}{n^{2}}\sum_{i=1}^{n}D\left[X_{i}\right]=\frac{1}{
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}D\left[\hat{p}\right]=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Оценка, математическое ожидание которой равно самой оцениваемой величине,
+ называется 
+\emph on
+несмещённой
+\emph default
+.
+ Если математической ожидание оценки не равно самой оцениваемой величине,
+ но его предел (при размере выборки стремящемся к бесконечности) равен оцениваем
+ой величине, то оценку называют 
+\emph on
+асимптотически несмещённой
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Выше мы видели, что частота является несмещённой оценкой вероятности.
+\end_layout
+
+\begin_layout Subsection
+Выражение оценки вероятности через исходы опытов
+\end_layout
+
+\begin_layout Standard
+Запишем теперь эту оценку через исходы отдельных экспериментов.
+ Пусть в 
+\begin_inset Formula $i$
+\end_inset
+
+-ом эксперменте был получен исход 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+, то есть исходы экспериментов образуют систему одинаково распределённых
+ независимых случайных велиин 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ имеющих распределение Бернулли с параметром 
+\begin_inset Formula $p$
+\end_inset
+
+, тогда
+\begin_inset Formula 
+\[
+k=\sum_{i=1}^{n}X_{i},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{p}=\frac{1}{n}\sum_{i=1}^{n}X_{i}.
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Интервальная оценка
 \end_layout
@@ -609,12 +1184,125 @@ D\left[\hat{p}\right]=\frac{1}{n^{2}}\sum_{i=1}^{n}D\left[X_{i}\right]=\frac{1}{
 ит с заданной вероятностью.
 \end_layout
 
+\begin_layout Section
+Распределение Бернулли
+\end_layout
+
+\begin_layout Standard
+Простейшей нетривиальной случайной величиной является величина с распределением
+ Бернулли, которая принимает значение 
+\begin_inset Formula $1$
+\end_inset
+
+, если некоторое событие произошло и 
+\begin_inset Formula $0$
+\end_inset
+
+, если это событие не произошло.
+ Если вероятность того, что событие произойдёт, равна 
+\begin_inset Formula $p$
+\end_inset
+
+, то распределение вероятностей есть
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(X\right)=\begin{cases}
+p, & X=1\\
+1-p, & X=0
+\end{cases}
+\]
+
+\end_inset
+
+или с использованием нотации Айверсона
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(X\right)=p\cdot\left[X=1\right]+\left(1-p\right)\left[X=0\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Часто вводят обозначение
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+q=1-p.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если проводится 
+\begin_inset Formula $n$
+\end_inset
+
+ экспериментов, то количество экспериментов, в которых заданное событие
+ произошло также будет случайным.
+ Распределение этой случайной величины называется биномиальным.
+ Найдём вероятность 
+\begin_inset Formula $P_{n}\left(k\right)$
+\end_inset
+
+ того, что событие произойдёт ровно 
+\begin_inset Formula $k$
+\end_inset
+
+ раз в 
+\begin_inset Formula $n$
+\end_inset
+
+ опытах.
+ Так как существует 
+\begin_inset Formula $\binom{n}{k}$
+\end_inset
+
+ способов выбрать 
+\begin_inset Formula $k$
+\end_inset
+
+ элементов из 
+\begin_inset Formula $n$
+\end_inset
+
+, то эта вероятность может быть записана следующим образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{n}\left(k\right)=\dbinom{n}{k}\cdot p^{k}\left(1-p\right)^{n-k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 Рекуррентные формулы для выборочного среднего и дисперсии
 \end_layout
 
 \begin_layout Section
 Выборочное среднее
+\end_layout
+
+\begin_layout Standard
+Выборочное среднее определяется следующим образом:
 \end_layout
 
 \begin_layout Standard
@@ -648,6 +1336,14 @@ m_{n+1}=\frac{1}{n+1}\sum_{k=1}^{n+1}x_{k}=\frac{1}{n+1}\left(\sum_{k=1}^{n}x_{k
 \end_layout
 
 \begin_layout Standard
+Вычитая из правой и левой части 
+\begin_inset Formula $m_{n}$
+\end_inset
+
+, получим:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \[
 m_{n+1}-m_{n}=\frac{x_{n+1}-m_{n}}{n+1}.
@@ -658,8 +1354,28 @@ m_{n+1}-m_{n}=\frac{x_{n+1}-m_{n}}{n+1}.
 
 \end_layout
 
+\begin_layout Standard
+Окончательно рекурентную формулу для выборочного среднего можно записать
+ следующим образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+m_{n+1}=m_{n}+\frac{x_{n+1}-m_{n}}{n+1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Дисперсия
+\end_layout
+
+\begin_layout Standard
+Выборочная дисперсия определяется следующим образом:
 \end_layout
 
 \begin_layout Standard
@@ -686,6 +1402,18 @@ S_{n}=\left(n-1\right)s_{n}^{2}=\sum_{k=1}^{n}\left(x_{k}-m_{n}\right)^{2}.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Перепишем эту формулу, заменив 
+\begin_inset Formula $n$
+\end_inset
+
+ на 
+\begin_inset Formula $n+1$
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
@@ -755,6 +1483,15 @@ S_{n+1}-S_{n}=n\cdot\left(m_{n+1}-m_{n}\right)^{2}+\left(x_{n+1}-m_{n+1}\right)^
 \end_layout
 
 \begin_layout Standard
+Воспользуемся рекуррентной формулой для выборочного среднего, чтобы исключить
+ 
+\begin_inset Formula $m_{n+1}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \[
 x_{n+1}-m_{n+1}=x_{n+1}-m_{n}-\frac{x_{n+1}-m_{n}}{n+1}=\frac{n}{n+1}\left(x_{n+1}-m_{n}\right).
@@ -800,6 +1537,11 @@ S_{n+1}=S_{n}+\left(x_{n+1}-m_{n}\right)\left(x_{n+1}-m_{n+1}\right).
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Преимущество этой формулы заключается в том, что при вычислениях по ней
+ выборочная дисперсия всегда будет неотрицательной величиной.
 \end_layout
 
 \begin_layout Chapter
@@ -1650,6 +2392,35 @@ P\left(k\right)=\frac{a^{k}}{k!}e^{-a},
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Этот раздел дублирует раздел 
+\begin_inset Quotes fld
+\end_inset
+
+Оценка верояности
+\begin_inset Quotes frd
+\end_inset
+
+ / 
+\begin_inset Quotes fld
+\end_inset
+
+Точечная оценка
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 При фиксированном 
 \begin_inset Formula $p$
 \end_inset
@@ -2187,7 +2958,7 @@ P_{n}\left(k\right)=\frac{1}{n}f\left(\frac{k}{n}-p\right).
 \begin_layout Standard
 \begin_inset Formula 
 \[
-f\left(x,y\right)=g\left(x\right)\cdot g\left(y\right)=\varphi\left(r\right),
+f\left(x,y\right)=g\left(x\right)\cdot h\left(y\right)=\varphi\left(r\right),
 \]
 
 \end_inset
@@ -2202,7 +2973,7 @@ f\left(x,y\right)=g\left(x\right)\cdot g\left(y\right)=\varphi\left(r\right),
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\ln\varphi\left(r\right)=\ln g\left(x\right)+\ln g\left(y\right).
+\ln\varphi\left(r\right)=\ln g\left(x\right)+\ln h\left(y\right).
 \]
 
 \end_inset
@@ -2236,7 +3007,7 @@ f\left(x,y\right)=g\left(x\right)\cdot g\left(y\right)=\varphi\left(r\right),
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{\varphi^{\prime}\left(r\right)}{\varphi\left(r\right)}\cdot\frac{y}{r}=\frac{g^{\prime}\left(y\right)}{g\left(y\right)}.
+\frac{\varphi^{\prime}\left(r\right)}{\varphi\left(r\right)}\cdot\frac{y}{r}=\frac{h^{\prime}\left(y\right)}{h\left(y\right)}.
 \]
 
 \end_inset
@@ -2251,7 +3022,7 @@ f\left(x,y\right)=g\left(x\right)\cdot g\left(y\right)=\varphi\left(r\right),
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{\varphi^{\prime}\left(r\right)}{\varphi\left(r\right)}\cdot\frac{1}{r}=\frac{g^{\prime}\left(x\right)}{x\cdot g\left(x\right)}=\frac{g^{\prime}\left(y\right)}{y\cdot g\left(y\right)}\text{.}
+\frac{\varphi^{\prime}\left(r\right)}{\varphi\left(r\right)}\cdot\frac{1}{r}=\frac{g^{\prime}\left(x\right)}{x\cdot g\left(x\right)}=\frac{h^{\prime}\left(y\right)}{y\cdot h\left(y\right)}\text{.}
 \]
 
 \end_inset
@@ -2376,6 +3147,14 @@ status open
 
 \end_layout
 
+\begin_layout Standard
+Аналогичные рассуждения можно провести и для функции 
+\begin_inset Formula $h\left(y\right)$
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Subsection
 Центральная предельная теорема
 \end_layout
@@ -2466,7 +3245,7 @@ D\left[Z_{n}\right]=1.
 \end_inset
 
  в ряд Тейлора на отрезке 
-\begin_inset Formula $\left[-a;\, a\right]$
+\begin_inset Formula $\left[-a;\,a\right]$
 \end_inset
 
 :
@@ -6012,7 +6791,7 @@ status open
 \begin_layout Standard
 \begin_inset Formula 
 \[
-P\left\{ X=j\right\} =p_{j},\, j=1,...,N,
+P\left\{ X=j\right\} =p_{j},\,j=1,...,N,
 \]
 
 \end_inset
@@ -6023,7 +6802,7 @@ P\left\{ X=j\right\} =p_{j},\, j=1,...,N,
 \begin_layout Standard
 \begin_inset Formula 
 \[
-p_{j}\ge0,\, j=1,...,N,
+p_{j}\ge0,\,j=1,...,N,
 \]
 
 \end_inset
