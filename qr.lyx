@@ -1,0 +1,642 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+QR-алгоритм
+\end_layout
+
+\begin_layout Standard
+Пусть нужно найти все собственные векторы и числа симметричной положительно
+ определённой матрицы 
+\begin_inset Formula $A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Положим
+\begin_inset Formula 
+\[
+A_{1}=A
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Пусть определена матрица 
+\begin_inset Formula $A_{k}$
+\end_inset
+
+, разложим эту матрицу на произведение ортогональной и правой треугольной:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+A_{k}=Q_{k}R_{k}\label{eq:QR_A_k}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Матрицу 
+\begin_inset Formula $A_{k+1}$
+\end_inset
+
+ определим по правилу
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+A_{k+1}=R_{k}Q_{k}\label{eq:QR_A_k+1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Покажем, что все матрицы 
+\begin_inset Formula $A_{k}$
+\end_inset
+
+ является подобными, то есть имеют одни и те же собственные числа.
+\end_layout
+
+\begin_layout Standard
+Умножим 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:QR_A_k"
+
+\end_inset
+
+ слева на 
+\begin_inset Formula $Q_{k}^{T}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q_{k}^{T}A_{k}=R_{k},
+\]
+
+\end_inset
+
+подставляя это выражение для 
+\begin_inset Formula $R_{k}$
+\end_inset
+
+ в уравнение 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:QR_A_k+1"
+
+\end_inset
+
+, получим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+A_{k+1}=Q_{k}^{T}A_{k}Q_{k}.\label{eq:A_k_same_eigenvectors}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Применяя данное уравнение рекурентно, получим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A_{k+1}=\left(Q_{k}^{T}\cdot...\cdot Q_{1}^{T}\right)A_{1}\left(Q_{1}\cdot...\cdot Q_{k}\right)=\left(Q_{1}\cdot...\cdot Q_{k}\right)^{T}A_{1}\left(Q_{1}\cdot...\cdot Q_{k}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Введём следующее обозначение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{k}=Q_{1}\cdot...\cdot Q_{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A^{k}=A_{1}^{k}=\left(Q_{1}R_{1}\right)^{k}=Q_{1}\left(R_{1}Q_{1}\right)^{k-1}R_{1}=Q_{1}A_{2}^{k-1}R_{1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Применяя это соотношение рекурсивно, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A^{k}=Q_{1}\cdot...\cdot Q_{k}\cdot R_{k}\cdot...\cdot R_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Обозначив
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{k}=R_{k}\cdot...\cdot R_{1},
+\]
+
+\end_inset
+
+получим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A^{k}=S_{k}T_{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+С другой стороны
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A^{k}=S\Lambda^{k}S^{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S\Lambda^{k}S^{T}=S_{k}T_{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Предположим, что существует 
+\begin_inset Formula $LU$
+\end_inset
+
+-разложение матрицы 
+\begin_inset Formula $S^{T}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S^{T}=LU
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S\Lambda^{k}LU=S_{k}T_{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S\Lambda^{k}L=S_{k}T_{k}U^{-1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S\Lambda^{k}L\Lambda^{-k}=S_{k}T_{k}U^{-1}\Lambda^{-k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Можно показать, что
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Lambda^{k}L\Lambda^{-k}\to diag\left(l_{11},...,l_{nn}\right)=L^{\prime}
+\]
+
+\end_inset
+
+при 
+\begin_inset Formula $k\to\infty$
+\end_inset
+
+, поэтому
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{k}T_{k}U^{-1}\Lambda^{-k}\to S\cdot L^{\prime}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Обозначим 
+\begin_inset Formula 
+\[
+T_{k}U^{-1}\Lambda^{-k}=P_{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P_{k}$
+\end_inset
+
+ — положительно определённая правая верхняя треугольная матрица.
+\end_layout
+
+\begin_layout Standard
+Покажем, что если 
+\begin_inset Formula $S_{k}$
+\end_inset
+
+ и 
+\begin_inset Formula $S$
+\end_inset
+
+ — ортогнональные матрицы, 
+\begin_inset Formula $P_{k}$
+\end_inset
+
+ — верхняя треугольная, и 
+\begin_inset Formula $S_{k}P_{k}\to S$
+\end_inset
+
+, то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{k}\to S
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+P_{k}\to I
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Обозначим столбцы матриц 
+\begin_inset Formula $S_{k}$
+\end_inset
+
+ и 
+\begin_inset Formula $S$
+\end_inset
+
+ как 
+\begin_inset Formula $s_{k,i}$
+\end_inset
+
+ и 
+\begin_inset Formula $s_{j}$
+\end_inset
+
+ соответственно, тогда
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{i=1}^{j}p_{k,ji}\cdot s_{k,i}\to s_{j}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В частности:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p_{k,11}\cdot s_{k,1}\to s_{1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Возьмём норму правой и левой частей этого равенства.
+\end_layout
+
+\begin_layout Standard
+В силу того, что 
+\begin_inset Formula $p_{k}$
+\end_inset
+
+ — положительная треугольная матрица, её диагональные элементы положительны,
+ поэтому:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p_{k,11}\left\Vert s_{k,1}\right\Vert \to\left\Vert s_{1}\right\Vert .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как 
+\begin_inset Formula $s_{1}$
+\end_inset
+
+ и 
+\begin_inset Formula $s_{k,1}$
+\end_inset
+
+ — столбцы ортогональных матриц, то
+\begin_inset Formula 
+\[
+\left\Vert s_{1}\right\Vert =\left\Vert s_{k,1}\right\Vert =1,
+\]
+
+\end_inset
+
+из последних двух выражений следует
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p_{k,11}=1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+s_{k,1}\to s_{1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Рассмотрим теперь второй столбец:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p_{k,12}\cdot s_{k,1}+p_{k,22}\cdot s_{k,2}\to s_{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Перемножая это соотношение с предыдущим, получим
+\begin_inset Formula 
+\[
+p_{k,12}\to0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом:
+\begin_inset Formula 
+\[
+p_{k,22}\cdot s_{k,2}\to s_{2}\text{.}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Повторяя теперь рассуждения для 
+\begin_inset Formula $s_{1}$
+\end_inset
+
+ можно доказать, что
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p_{k,22}\to1,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+s_{k,2}\to s_{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Итак, мы доказали, что
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{k}\to S\cdot L^{\prime}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, столбцы матрицы 
+\begin_inset Formula $S_{k}$
+\end_inset
+
+ сходятся к собственным векторам матрицы 
+\begin_inset Formula $A$
+\end_inset
+
+ с точностью до множителя
+\end_layout
+
+\end_body
+\end_document
