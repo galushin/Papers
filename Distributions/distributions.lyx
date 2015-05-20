@@ -3,7 +3,13 @@
 \begin_document
 \begin_header
 \textclass extbook
+\begin_preamble
+\usepackage{indentfirst}
+\end_preamble
 \use_default_options true
+\begin_modules
+theorems-ams
+\end_modules
 \maintain_unincluded_children false
 \language russian
 \language_package default
@@ -218,6 +224,45 @@ addcontentsline{toc}{chapter}{Введение}
  Устранить этот пробел — одна из целей данной книги.
 \end_layout
 
+\begin_layout Section
+План книги
+\end_layout
+
+\begin_layout Standard
+Глава 1 содержит основные понятия и теоремы, связанные со случайными событиями,
+ в объёме российской средней школы.
+ Читатели, знакомые с данным материалом могут её свободно пропустить.
+\end_layout
+
+\begin_layout Standard
+В главе 2 рассматривается одна важная задача статистики: оценка вероятности
+ случайного события по результатам опытов.
+ Оказывается, что для решения и исследования этой задачи требуется ввести
+ важнейшие понятия теории вероятностей: случайная величина, математическое
+ ожидание, дисперсия.
+ Цель данной главы показать мотивировку введения этих понятий с точки зрения
+ статистики, а не систематическое изложение соответствующих разделов теории
+ вероятностей.
+\end_layout
+
+\begin_layout Standard
+Глава 3 посвящена систематическому изложению
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Описать, как виды сходимости теории вероятности соотносятся с видами сходимости
+ в функциональном анализе
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 Случайные события
 \end_layout
@@ -276,7 +321,7 @@ status open
 \end_inset
 
  обозначается как 
-\begin_inset Formula $P\left(A\right)$
+\begin_inset Formula $P\left\{ A\right\} $
 \end_inset
 
 .
@@ -385,7 +430,7 @@ status open
 \begin_layout Standard
 \begin_inset Formula 
 \[
-P\left(AB\right)=P\left(A\right)\cdot P\left(B\right).
+P\left\{ AB\right\} =P\left\{ A\right\} \cdot P\left\{ B\right\} .
 \]
 
 \end_inset
@@ -396,7 +441,7 @@ P\left(AB\right)=P\left(A\right)\cdot P\left(B\right).
 \begin_layout Standard
 \begin_inset Formula 
 \[
-P\left(AB\right)=P\left(A\right)\cdot P\left(B|A\right).
+P\left\{ AB\right\} =P\left\{ A\right\} \cdot P\left\{ B|A\right\} .
 \]
 
 \end_inset
@@ -459,7 +504,7 @@ status open
 \begin_layout Standard
 \begin_inset Formula 
 \[
-P\left(A+B\right)=P\left(A\right)+P\left(B\right).
+P\left\{ A+B\right\} =P\left\{ A\right\} +P\left\{ B\right\} .
 \]
 
 \end_inset
@@ -470,7 +515,7 @@ P\left(A+B\right)=P\left(A\right)+P\left(B\right).
 \begin_layout Standard
 \begin_inset Formula 
 \[
-P\left(A+B\right)=P\left(A\right)+P\left(B\right)-P\left(AB\right).
+P\left\{ A+B\right\} =P\left\{ A\right\} +P\left\{ B\right\} -P\left\{ AB\right\} .
 \]
 
 \end_inset
@@ -506,7 +551,7 @@ P\left(A+B\right)=P\left(A\right)+P\left(B\right)-P\left(AB\right).
 \begin_layout Standard
 \begin_inset Formula 
 \[
-P\left(\bar{A}\right)=1-P\left(A\right).
+P\left\{ \bar{A}\right\} =1-P\left\{ A\right\} .
 \]
 
 \end_inset
@@ -514,24 +559,33 @@ P\left(\bar{A}\right)=1-P\left(A\right).
 
 \end_layout
 
-\begin_layout Section
-Оценка вероятности по результатам опытов
+\begin_layout Chapter
+Тур по математической статистике
 \end_layout
 
 \begin_layout Standard
-Каким же образом можно 
+Каким же образом можно
 \emph on
-оценить 
+ 
 \emph default
-вероятность случайного события? Едиственный возможный на практике путь —
- выполнение большого количества опытов и анализ их результатов.
+узнать вероятность случайного события на практике? Едиственный возможный
+ путь — выполнение большого количества опытов и 
+\emph on
+оценивание 
+\emph default
+вероятности по их результатам.
  Если опыты независимы друг от друга и идентичны, то говорят, что реализуется
  схема Бернулли.
  В данной главе рассматривается задача оценки вероятности по исходам эксперимент
 ов в схеме Бернулли.
+ В этой главе мы отклоняемся от последовательного изложения теории вероятностей,
+ принятого в большинстве известных курсов.
+ Вместо этого, мы стремися показать, как важнейшие понятия теории вероятностей
+ возникают естественным образом при решении достаточно простой по формулировке
+ задачи математической статистики.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Вероятность появления события заданное число раз в 
 \begin_inset Formula $n$
 \end_inset
@@ -552,7 +606,7 @@ P\left(\bar{A}\right)=1-P\left(A\right).
 , то количество опытов, в которых заданное событие произойдёт, также будет
  случайным.
  Найдём вероятность 
-\begin_inset Formula $P\left(k,n,p\right)$
+\begin_inset Formula $P\left\{ k,n,p\right\} $
 \end_inset
 
  события 
@@ -631,7 +685,7 @@ status open
 \end_inset
 
 , то в силу теоремы сложения для несовместных событий, вероятность 
-\begin_inset Formula $P\left(k,n,p\right)$
+\begin_inset Formula $P\left\{ k,n,p\right\} $
 \end_inset
 
  может быть записана следующим образом:
@@ -640,7 +694,7 @@ status open
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-P\left(k,n,p\right)=\dbinom{n}{k}\cdot p^{k}\left(1-p\right)^{n-k}.\label{eq:probability_k_from_n}
+P\left\{ k,n,p\right\} =\dbinom{n}{k}\cdot p^{k}\left(1-p\right)^{n-k}.\label{eq:probability_k_from_n}
 \end{equation}
 
 \end_inset
@@ -659,7 +713,7 @@ P\left(k,n,p\right)=\dbinom{n}{k}\cdot p^{k}\left(1-p\right)^{n-k}.\label{eq:pro
 \begin_layout Standard
 \begin_inset Formula 
 \[
-P\left(k,n,p\right)=\dbinom{n}{k}\cdot p^{k}q^{n-k}.
+P\left\{ k,n,p\right\} =\dbinom{n}{k}\cdot p^{k}q^{n-k}.
 \]
 
 \end_inset
@@ -667,7 +721,7 @@ P\left(k,n,p\right)=\dbinom{n}{k}\cdot p^{k}q^{n-k}.
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Метод максимизации правдоподобия
 \end_layout
 
@@ -684,7 +738,7 @@ P\left(k,n,p\right)=\dbinom{n}{k}\cdot p^{k}q^{n-k}.
 \end_inset
 
 , при котором вероятность 
-\begin_inset Formula $P\left(k,n,p\right)$
+\begin_inset Formula $P\left\{ k,n,p\right\} $
 \end_inset
 
  будет наибольшей.
@@ -712,7 +766,7 @@ reference "eq:probability_k_from_n"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{multline*}
-\frac{d}{dp}\left(P\left(k,n,p\right)\right)=\binom{n}{k}\left(k\cdot p^{k-1}\left(1-p\right)^{n-k}-p^{k}\left(n-k\right)\left(1-p\right)^{n-k-1}\right)=\\
+\frac{d}{dp}\left(P\left\{ k,n,p\right\} \right)=\binom{n}{k}\left(k\cdot p^{k-1}\left(1-p\right)^{n-k}-p^{k}\left(n-k\right)\left(1-p\right)^{n-k-1}\right)=\\
 =\binom{n}{k}\cdot p^{k-1}\cdot\left(1-p\right)^{n-k-1}\left(k\left(1-p\right)-\left(n-k\right)p\right).
 \end{multline*}
 
@@ -732,7 +786,7 @@ reference "eq:probability_k_from_n"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{d}{dp}\left(P\left(k,n,p\right)\right)=0
+\frac{d}{dp}\left(P\left\{ k,n,p\right\} \right)=0
 \]
 
 \end_inset
@@ -851,25 +905,9 @@ k\left(1-\hat{p}\right)-\left(n-k\right)\hat{p}=0.
  числу проводимых опытов.
 \end_layout
 
-\begin_layout Section
-Оценка вероятности редких событий
-\end_layout
-
 \begin_layout Standard
-Как оценить вероятность, если в серии опытов событие не произошло ни разу?
- В соответствии с результатами предыдущего раздела, мы должны были бы заключить,
- что вероятность равна нулю.
- Но возможно событие просто настолько редкое, что мы провели слишком мало
- опытов?
-\end_layout
-
-\begin_layout Chapter
-Дискретные случайные величины
-\end_layout
-
-\begin_layout Standard
-В предыдущей главе мы выяснили, что оценкой вероятности случайного события
- является его частота.
+Итак, мы выяснили, что оценкой вероятности случайного события является его
+ частота.
  Частота события, в свою очередь, это величина, которая может принимать
  различные значения в различных сериях опытов, то есть является случайной.
  В данной главе мы получим результаты, касающиеся таких величин.
@@ -905,8 +943,1078 @@ k\left(1-\hat{p}\right)-\left(n-k\right)\hat{p}=0.
  невозможно полностью описать с помощью одного вещественного числа (вероятности).
 \end_layout
 
-\begin_layout Part
+\begin_layout Standard
+Частным случаем дискретной случайной величины является неслучайная величина:
+ у ней одно возможное значение, вероятность которого равна 1.
+\end_layout
+
+\begin_layout Section
+Состоятельность оценки параметра распределения
+\end_layout
+
+\begin_layout Standard
+Оценка параметра распределения должна сходится к истинному значению с ростом
+ количества проводимых опытов.
+ Но что значит 
+\begin_inset Quotes fld
+\end_inset
+
+сходится
+\begin_inset Quotes frd
+\end_inset
+
+ для случайной величины? Мы не можем взять определение сходимости числовой
+ последовательности из математического анализа, так как случайная величина
+ не является вещественным числом.
+ Как и для конечномерных векторных пространств и множеств функций, сходимость
+ можно определить разными способами.
+ Подробнее мы рассмотрим виды сходимости позже, а пока ограничимся одним
+ из видов: 
+\emph on
+сходимости по вероятности
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Говорят, что последовательность случайных величин 
+\begin_inset Formula $\left\{ X_{n}\right\} $
+\end_inset
+
+ сходится к случайной величине 
+\begin_inset Formula $X$
+\end_inset
+
+, если
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}P\left\{ \left|X_{n}-X\right|>\varepsilon\right\} =0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если в качестве 
+\begin_inset Formula $X$
+\end_inset
+
+ берётся неслучайная величина — параметр распределения 
+\begin_inset Formula $\theta$
+\end_inset
+
+, а в качестве 
+\begin_inset Formula $X_{n}$
+\end_inset
+
+ — оценки параметра 
+\begin_inset Formula $\hat{\theta}_{n}$
+\end_inset
+
+, то понятие сходимости по вероятности переходит в понятие 
+\emph on
+состоятельности оценки
+\emph default
+.
+ В данной главе мы будем считать, что оценка параметра является дискретной
+ случайной величиной, если это не оговорено особо.
+ Обобщение результатов этой главы на общий случай будет произведено в дальнейшем.
+\end_layout
+
+\begin_layout Standard
+Оценка параметра распределения называется состоятельной, если вероятность
+ отклонения оценки от оцениваемой величины можно сделать сколь угодно малой
+ за счёт увеличения размера выборки.
+ Более строго, оценка 
+\begin_inset Formula $\hat{\theta}_{n}$
+\end_inset
+
+ параметра 
+\begin_inset Formula $\theta$
+\end_inset
+
+ по выборке объёма 
+\begin_inset Formula $n$
+\end_inset
+
+ называется состоятельной, если последовательность 
+\begin_inset Formula $\text{\left\{  \hat{\theta}_{n}\right\}  }$
+\end_inset
+
+ сходится по вероятности к 
+\begin_inset Formula $\theta$
+\end_inset
+
+, то есть для любого вещественного числа 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}P\left\{ \left|\hat{\theta}_{n}-\theta\right|>\varepsilon\right\} =0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Состоятельность является важнейшим свойством оценки: оценки, не являющиеся
+ состоятельными, нельзя использовать на практике.
+\end_layout
+
+\begin_layout Standard
+Вероятность, которая входит в определение состоятельности оценки, можно
+ записать следующим образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left\{ \left|\hat{\theta}_{n}-\theta\right|>\varepsilon\right\} =P\left\{ \frac{\left|\hat{\theta}_{n}-\theta\right|^{2}}{\varepsilon^{2}}>1\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, для доказательства состоятельности оценки нужно доказать
+ сходимость к нулю вероятности того, что определённая положительная дискретная
+ случайная величина превышает единицу.
+ Один из способов доказательства утверждений такого рода мы рассмотрим ниже.
+\end_layout
+
+\begin_layout Section
+Неравенство Чебышёва и математическое ожидание
+\end_layout
+
+\begin_layout Standard
+Для доказательства состоятельности оценок часто используют 
+\emph on
+неравенство Чебышёва
+\emph default
+.
+ Пусть 
+\begin_inset Formula $X$
+\end_inset
+
+ — дискретная случайная величина, все значения которой являются неотрицательными.
+ Найдём оценку сверху для вероятности того, что 
+\begin_inset Formula $X>1$
+\end_inset
+
+.
+ В силу теоремы сложения вероятностей:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left\{ X>1\right\} =\sum_{x\text{>}1}p\left(x\right),
+\]
+
+\end_inset
+
+если умножить каждое из слагаемых на соответствующее значение 
+\begin_inset Formula $x$
+\end_inset
+
+, то в силу условия 
+\begin_inset Formula $x>1$
+\end_inset
+
+ значение правой части не уменьшится:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left\{ X>1\right\} =\sum_{x\text{>}1}p\left(x\right)\le\sum_{x>1}x\cdot p\left(x\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В силу того, что 
+\begin_inset Formula $x>0$
+\end_inset
+
+ имеет место неравенство
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{x\le1}x\cdot p\left(x\right)\ge0,
+\]
+
+\end_inset
+
+поэтому
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left\{ X>1\right\} \le\sum_{x\le1}x\cdot p\left(x\right)+\sum_{x>1}x\cdot p\left(x\right)=\sum_{x}x\cdot p\left(x\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Сумма в правой части этой формулы называется 
+\emph on
+математическим ожиданием 
+\emph default
+дискретной случайной величины 
+\begin_inset Formula $X$
+\end_inset
+
+ и обозначается 
+\begin_inset Formula $M\left[X\right]$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[X\right]=\sum_{x}x\cdot p\left(x\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Используя это обозначение, мы можем записать:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left\{ X>1\right\} \le M\left[X\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Чтобы применить неравенство Чебышёва к вопросу проверки состоятельности
+ оценки, в качестве случайной величины 
+\begin_inset Formula $X$
+\end_inset
+
+ нужно взять
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+X=\frac{\left|\hat{\theta}_{n}-\theta\right|^{2}}{\varepsilon^{2}},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+тогда, используя свойства математического ожидания, мы получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left\{ \left|\hat{\theta}_{n}-\theta\right|>\varepsilon\right\} =P\left\{ \frac{\left|\hat{\theta}_{n}-\theta\right|^{2}}{\varepsilon^{2}}>1\right\} \le M\left[\frac{\left|\hat{\theta}_{n}-\theta\right|^{2}}{\varepsilon^{2}}\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, для доказательства состоятельности оценки нам нужно доказать,
+ что
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}M\left[\frac{\left|\hat{\theta}_{n}-\theta\right|^{2}}{\varepsilon^{2}}\right]=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Некоторые свойства математического ожидания
+\end_layout
+
+\begin_layout Standard
+Оказывается, у математического ожидания есть ряд свойств, которые делают
+ проверку этого факта более простым делом, чем праверка определения состоятельно
+сти.
+\end_layout
+
+\begin_layout Fact
+Математическое ожидание неслучайной величины 
+\begin_inset Formula $a$
+\end_inset
+
+ равно самой этой величине.
+\end_layout
+
+\begin_layout Proof
+Действительно, неслучайную величину 
+\begin_inset Formula $a$
+\end_inset
+
+ можно рассмотреть как вырожденный случай дискретной случайной величины
+ с одним возможным значением (
+\begin_inset Formula $a$
+\end_inset
+
+), которое она принимает с вероятностью, равной единице, поэтому:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+M\left[a\right]=a\cdot P\left\{ a=a\right\} =a\cdot1=a.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Fact
+Пусть 
+\begin_inset Formula $X$
+\end_inset
+
+ — дискретная случайная величина, 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ — произвольное неслучайное вещественное число.
+ Тогда 
+\begin_inset Formula 
+\[
+M\left[\alpha\cdot X\right]=\alpha M\left[X\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+В случае 
+\begin_inset Formula $\alpha=0$
+\end_inset
+
+ доказательство тривиально, поэтому в дальнейшем мы будем считать, что 
+\begin_inset Formula $\alpha\ne0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Если случайная величина 
+\begin_inset Formula $X$
+\end_inset
+
+ может принимать значения 
+\begin_inset Formula $\{x_{1},...,x_{n},...\}$
+\end_inset
+
+, то случайная величина 
+\begin_inset Formula $Y=\alpha\cdot X$
+\end_inset
+
+ может принимать значения 
+\begin_inset Formula $\{\alpha x_{1},...,\alpha x_{n},...\}$
+\end_inset
+
+, причём 
+\begin_inset Formula $P\left\{ Y=\alpha\cdot x_{n}\right\} =P\left\{ X=x_{n}\right\} .$
+\end_inset
+
+ Таким образом:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\begin{multline*}
+M\left[\alpha X\right]=M\left[Y\right]=\sum_{n\in\mathbb{N}}y_{n}\cdot P\left\{ Y=y_{n}\right\} =\\
+=\sum_{n\in\mathbb{N}}\alpha\cdot x_{n}\cdot P\left\{ X=x_{n}\right\} =\alpha\cdot\sum_{n\in\mathbb{N}}x_{n}\cdot P\left\{ X=x_{n}\right\} =\\
+=\alpha\cdot M\left[X\right].
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Fact
+Пусть 
+\begin_inset Formula $X$
+\end_inset
+
+ и 
+\begin_inset Formula $Y$
+\end_inset
+
+ — произвольные дискретные случайные величины.
+ Тогда имеет место равенство 
+\begin_inset Formula 
+\[
+M\left[X+Y\right]=M\left[X\right]+M\left[Y\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Пусть возможные значения случайной величины 
+\begin_inset Formula $X$
+\end_inset
+
+ есть 
+\begin_inset Formula $\left\{ x_{i}\right\} $
+\end_inset
+
+, а случайной величины 
+\begin_inset Formula $Y$
+\end_inset
+
+ — 
+\begin_inset Formula $\left\{ y_{j}\right\} $
+\end_inset
+
+.
+ Обозначим множество всевозможных сумм 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ и 
+\begin_inset Formula $y_{j}$
+\end_inset
+
+ как 
+\begin_inset Formula $\left\{ z_{k}\right\} $
+\end_inset
+
+, тогда:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\begin{multline*}
+M\left[X+Y\right]=\sum_{k}z_{k}P\left\{ X+Y=z_{k}\right\} =\\
+=\sum_{i}\sum_{j}\left(x_{i}+y_{j}\right)P\left\{ X=x_{i}\wedge Y=y_{j}\right\} =\\
+=\sum_{i}x_{i}\sum_{j}P\left\{ X=x_{i}\wedge Y=y_{j}\right\} +\sum_{j}y_{j}\sum_{i}P\left\{ X=x_{i}\wedge Y=y_{j}\right\} =\\
+=\sum_{i}x_{i}P\left\{ X=x_{i}\right\} +\sum_{j}y_{j}P\left\{ Y=y_{j}\right\} =M\left[X\right]+M\left[Y\right].
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Первая лемма позволяет написать:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}M\left[\frac{\left|\hat{\theta}_{n}-\theta\right|^{2}}{\varepsilon^{2}}\right]=\frac{1}{\varepsilon^{2}}\lim_{n\to\infty}M\left[\left(\hat{\theta}_{n}-\theta\right)^{2}\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+, то нам остаётся доказать, что 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}M\left[\left(\hat{\theta}_{n}-\theta\right)^{2}\right]=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если указанное условие выполняется, то говорят, что последовательность 
+\begin_inset Formula $\left\{ \hat{\theta}_{n}\right\} $
+\end_inset
+
+ сходится к 
+\begin_inset Formula $\theta$
+\end_inset
+
+ в 
+\emph on
+среднем квадратическом
+\emph default
+.
+ Таким образом, неравенство Чебышёва позволяет сделать вывод о том, что
+ сходимость в среднем квадратическом, влечёт сходимость по вероятности.
+\end_layout
+
+\begin_layout Section
+Выражение частоты через исходы отдельных опытов
+\end_layout
+
+\begin_layout Standard
+Используя вторую лемму, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[\left(\hat{\theta}_{n}-\theta\right)^{2}\right]=M\left[\left(\hat{\theta}_{n}\right)^{2}-2\hat{\theta}_{n}\theta+\theta^{2}\right]=M\left[\left(\hat{\theta}_{n}\right)^{2}\right]-2\theta M\left[\hat{\theta}_{n}\right]+\theta^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Итак, теперь нам нужно вычислить математическое ожидание 
+\begin_inset Formula $\hat{\theta}_{n}$
+\end_inset
+
+ и его квадрата.
+\end_layout
+
+\begin_layout Standard
+Далее мы будем выполнять вычисления не в общем случае, а конкретно для случая
+ частоты появления события.
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula $\hat{\theta}_{n}=\hat{p}_{n}$
+\end_inset
+
+ — частота события по результатам 
+\begin_inset Formula $n$
+\end_inset
+
+ опытов.
+ Возможными значеними этой случайной величины являются числа 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left\{ 0=\frac{0}{n};\frac{1}{n};\frac{2}{n};...;\frac{n-1}{n};\frac{n}{n}=1\right\} ,
+\]
+
+\end_inset
+
+причём
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left\{ \hat{p}_{n}=\frac{k}{n}\right\} =\binom{n}{k}\cdot p^{k}\left(1-p\right)^{n-k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Мы могли бы вычислить математическое ожидание непосредственно, как сумму
+\begin_inset Formula 
+\[
+M\left[\hat{p}_{n}\right]=\sum_{k=0}^{n}k\cdot\binom{n}{k}\cdot p^{k}\left(1-p\right)^{n-k},
+\]
+
+\end_inset
+
+ но существует более простой путь, основанный на свойствах матеметического
+ ожидания.
+\end_layout
+
+\begin_layout Standard
+Запишем теперь эту оценку через исходы отдельных экспериментов.
+ Введём случайные величины 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ следующим образом: если в 
+\begin_inset Formula $i$
+\end_inset
+
+-ом эксперменте событие произошло, то 
+\begin_inset Formula $X_{i}=1$
+\end_inset
+
+, иначе — 
+\begin_inset Formula $X_{i}=0$
+\end_inset
+
+.
+ Иными словами, 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ — количество появлений события в 
+\begin_inset Formula $i$
+\end_inset
+
+-ом эксперименте.
+ Такие случайные величины называются 
+\emph on
+индикаторными
+\emph default
+, либо распределёнными по закону 
+\emph on
+Бернулли
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Найдём математическое ожидание случайных величин 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[X_{i}\right]=0\cdot P\left\{ X_{i}=0\right\} +1\cdot P\left\{ X_{i}=1\right\} =P\left\{ X_{i}=1\right\} =p.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, математическое ожидание случайной величины с распределением
+ Бернулли равно вероятности появления соответствующего события.
+\end_layout
+
+\begin_layout Standard
+Через введённые случайные величины можно выразить частоту появления события:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{p}_{n}=\frac{1}{n}\sum_{i=1}^{n}X_{i}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вычислим теперь 
+\begin_inset Formula $M\left[\left(\hat{\theta}_{n}-\theta\right)^{2}\right]$
+\end_inset
+
+.
+ В силу свойств математического ожидания:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[\hat{p}_{n}\right]=\frac{1}{n}\sum_{i=1}^{n}M\left[X_{i}\right]=\frac{1}{n}\sum_{i=1}^{n}p=\frac{1}{n}\cdot n\cdot p=p.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Заметим, что математическое ожидание оценки (частота) совпало со значением
+ оцениваемого параметра (вероятности).
+ Такое свойство называется 
+\emph on
+несмещённостью оценки
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(\hat{p}_{n}\right)^{2}=\frac{1}{n^{2}}\sum_{i=1}^{n}\sum_{j=1}^{n}X_{i}X_{j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если 
+\begin_inset Formula $i=j$
+\end_inset
+
+ (таких слагаемых 
+\begin_inset Formula $n$
+\end_inset
+
+), то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[X_{i}X_{j}\right]=M\left[X_{i}^{2}\right]=M\left[X_{i}\right]=p.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если же 
+\begin_inset Formula $i\ne j$
+\end_inset
+
+ (таких слагаемых 
+\begin_inset Formula $n^{2}-n=n\left(n-1\right)$
+\end_inset
+
+), то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[X_{i}X_{j}\right]=0\cdot P\left\{ X_{i}=0\vee X_{j}=0\right\} +1\cdot P\left\{ X_{i}=1\vee X_{j}=1\right\} =P\left\{ X_{i}=1\vee X_{j}=1\right\} =p^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[\left(\hat{p}_{n}\right)^{2}\right]=\frac{n\cdot p+n\left(n-1\right)p^{2}}{n^{2}}=\frac{p+\left(n-1\right)p^{2}}{n}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+M\left[\left(\hat{p}_{n}-p\right)^{2}\right]=\frac{p+\left(n-1\right)p^{2}}{n}-2p^{2}+p^{2}=\frac{p+\left(n-1\right)p^{2}}{n}-p^{2}=\\
+=\frac{p+n\cdot p^{2}-p^{2}-n\cdot p^{2}}{n}=\frac{p-p^{2}}{n}=\frac{p\left(1-p\right)}{n}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Переходя к пределу, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}M\left[\left(\hat{p}_{n}-p\right)^{2}\right]=p\left(1-p\right)\lim_{n\to\infty}\frac{1}{n}=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Дисперсия
+\end_layout
+
+\begin_layout Standard
+Величина 
+\begin_inset Formula $M\left[\left(X-M\left[X\right]\right)^{2}\right]$
+\end_inset
+
+ настолько важна в теории вероятностей (это видно уже по рассматриваемой
+ нами задаче), что она заслужила отдельное название — 
+\emph on
+дисперсия 
+\emph default
+случайной величины 
+\begin_inset Formula $X$
+\end_inset
+
+ и обозначение 
+\begin_inset Formula $D\left[X\right]$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D\left[X\right]=M\left[\left(X-M\left[X\right]\right)^{2}\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Асимптотическая несмещённость
+\end_layout
+
+\begin_layout Standard
+Выше мы показали, что из несмещённости и стремления дисперсии к нулю следует
+ состоятельность.
+ Рассмотрим следующий вопрос: можно ли ослабить требование несмещённости?
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula $\left\{ X_{n}\right\} $
+\end_inset
+
+ — последовательность случайных величин, причём 
+\begin_inset Formula $M\left[X_{n}\right]=\mu_{n}$
+\end_inset
+
+, 
+\begin_inset Formula $a$
+\end_inset
+
+ — произвольное неслучайное число.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[\left(X_{n}-a\right)^{2}\right]=M\left[\left(\left(X_{n}-\mu_{n}\right)-\left(\mu_{n}-a\right)\right)^{2}\right]=M\left[\left(X_{n}-\mu_{n}\right)^{2}\right]-2\left(\mu_{n}-a\right)M\left[X-\mu_{n}\right]+\left(\mu_{n}-a\right)^{2}=D\left[X_{n}\right]+\left(\mu_{n}-a\right)^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}M\left[\left(X_{n}-a\right)^{2}\right]=\lim_{n\to\infty}D\left[X_{n}\right]+\lim_{n\to\infty}\left(\mu_{n}-a\right)^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как оба предела в правой части не отрицательны, для того, чтобы левая
+ часть была равна нулю необходимо выполнение двух условий:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}D\left[X_{n}\right]=0,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\left(\mu_{n}-a\right)^{2}=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Второе из этих условий в силу непрерывности функции возведения в квадрат
+ можно переписать в виде
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\mu_{n}=a.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Оценки, не являющиеся несмещёнными, но для которых 
+\emph on
+предел
+\emph default
+ последовательности математических ожиданий равен оцениваемому параметру,
+ называются 
+\emph on
+асимптотически несмещёнными.
+\end_layout
+
+\begin_layout Section
+Заключение
+\end_layout
+
+\begin_layout Standard
+Проследим ещё раз проделанный нами путь.
+\end_layout
+
+\begin_layout Enumerate
+Для построения оценки мы воспользовались методом максимизации правдоподобия,
+ который заключается в том, чтобы подобрать неизвестный параметр так, чтобы
+ вероятность полученных в опытах результатов была наибольшей.
+ Для вероятности оценкой максимума правдоподобия оказалась частота.
+\end_layout
+
+\begin_layout Enumerate
+Так как оценка параметра случайного события зависит от исходов опытов, то
+ есть является случайной, мы ввели понятие случайной величины.
+ Затем мы перешли к ключевому понятию математического анализа — сходимости:
+ ввели понятие сходимости по вероятности.
+ Применительно к оценкам параметров случайных событий, этот вид сходимости
+ приводит к свойству состоятельности.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Наконец, мы доказали, что частота является состоятельной оценкой вероятности.
+ Для этого нам потребовалось ввести понятие математического ожидания и изучить
+ его свойства, доказать неравенство Чебышёва и познакомились с понятием
+ дисперсии.
+ Мы ввели ещё два свойства оценок: несмещённость и асимптотическая несмещённость
+, причём мы показали, что если оценка является асимптотически несмещённой,
+ а ей дисперсия стремится к нулю, то такая оценка является состоятельной.
+\end_layout
+
+\begin_layout Standard
+Многие приёмы, используемые в этой главе могли показаться искусственными,
+ в следующих главах мы будем изучать введённые нами понятия более систематически.
+\end_layout
+
+\begin_layout Chapter
+Дискретные случайные величины
+\end_layout
+
+\begin_layout Section
+Закон распределения дискретной случайной величины
+\end_layout
+
+\begin_layout Chapter
 Необработанный материал
+\end_layout
+
+\begin_layout Section
+Оценка вероятности редких событий
+\end_layout
+
+\begin_layout Standard
+Как оценить вероятность, если в серии опытов событие не произошло ни разу?
+ В соответствии с результатами предыдущего раздела, мы должны были бы заключить,
+ что вероятность равна нулю.
+ Но возможно событие просто настолько редкое, что мы провели слишком мало
+ опытов?
+\end_layout
+
+\begin_layout Section
+Неравенство Чебышёва для непрерывных случайных величин
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+P\left\{ X>1\right\} =\intop_{1}^{+\infty}f\left(x\right)dx\le\intop_{1}^{+\infty}x\cdot f\left(x\right)dx\le\intop_{1}^{+\infty}x\cdot f\left(x\right)dx+\intop_{0}^{1}x\cdot f\left(x\right)dx=\\
+=\intop_{0}^{+\infty}x\cdot f\left(x\right)dx=M\left[X\right].
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left\{ X>1\right\} \le M\left[X\right].
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -937,101 +2045,6 @@ P\left(B|A\right)=\frac{P\left(A|B\right)P\left(B\right)}{P\left(A\right)}.
 
 \begin_layout Subsection
 Состоятельность и несмещённость оценки
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Здесь уже используется понятие случайной величины.
- Нужно либо ввести это понятие раньше, либо изложить этот материал позже
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Оценка называется 
-\emph on
-состоятельной
-\emph default
-, если вероятность отклонения оценки от оцениваемой величины можно сделать
- сколь угодно малой за счёт увеличения размера выборки.
- Более строго, оценка 
-\begin_inset Formula $\hat{\theta}_{n}$
-\end_inset
-
- параметра 
-\begin_inset Formula $\theta$
-\end_inset
-
- по выборке объёма 
-\begin_inset Formula $n$
-\end_inset
-
- называется состоятельной, если для любого вещественного числа 
-\begin_inset Formula $\varepsilon>0$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\lim_{n\to\infty}P\left\{ \left|\hat{\theta}_{n}-\theta\right|>\varepsilon\right\} =0.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Состоятельность является важнейшим свойством оценки: оценки, не являющиеся
- состоятельными, нельзя использовать на практике.
- 
-\end_layout
-
-\begin_layout Standard
-Для доказательства состоятельности оценок часто используют 
-\emph on
-неравенство Чебышёва
-\emph default
-.
- Пусть 
-\begin_inset Formula $X$
-\end_inset
-
- — положительная случайная величина.
- Будем считать, для определённости, что она является непрерывной (для дискретных
- случайных величин и в общем случае доказательство аналогично):
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{multline*}
-P\left\{ X>1\right\} =\intop_{1}^{+\infty}f\left(x\right)dx\le\intop_{1}^{+\infty}x\cdot f\left(x\right)dx\le\intop_{1}^{+\infty}x\cdot f\left(x\right)dx+\intop_{0}^{1}x\cdot f\left(x\right)dx=\\
-=\intop_{0}^{+\infty}x\cdot f\left(x\right)dx=M\left[X\right].
-\end{multline*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-P\left\{ X>1\right\} \le M\left[X\right].
-\]
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -1128,51 +2141,6 @@ D\left[\hat{p}\right]=\frac{1}{n^{2}}\sum_{i=1}^{n}D\left[X_{i}\right]=\frac{1}{
 
 \begin_layout Standard
 Выше мы видели, что частота является несмещённой оценкой вероятности.
-\end_layout
-
-\begin_layout Subsection
-Выражение оценки вероятности через исходы опытов
-\end_layout
-
-\begin_layout Standard
-Запишем теперь эту оценку через исходы отдельных экспериментов.
- Пусть в 
-\begin_inset Formula $i$
-\end_inset
-
--ом эксперменте был получен исход 
-\begin_inset Formula $X_{i}$
-\end_inset
-
-, то есть исходы экспериментов образуют систему одинаково распределённых
- независимых случайных велиин 
-\begin_inset Formula $X_{1},...,X_{n}$
-\end_inset
-
- имеющих распределение Бернулли с параметром 
-\begin_inset Formula $p$
-\end_inset
-
-, тогда
-\begin_inset Formula 
-\[
-k=\sum_{i=1}^{n}X_{i},
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\hat{p}=\frac{1}{n}\sum_{i=1}^{n}X_{i}.
-\]
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
