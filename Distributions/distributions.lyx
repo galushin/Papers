@@ -213,7 +213,9 @@ addcontentsline{toc}{chapter}{Введение}
 \end_layout
 
 \begin_layout Standard
-Нормальное распределение вводится как предельное для биномиального.
+Нормальное распределение вводится как предельное для биномиального, а также
+ несколькими другими способами, чтобы объяснить, почему это распределение
+ используется так активно.
 \end_layout
 
 \begin_layout Standard
@@ -231,7 +233,6 @@ addcontentsline{toc}{chapter}{Введение}
 \begin_layout Standard
 Глава 1 содержит основные понятия и теоремы, связанные со случайными событиями,
  в объёме российской средней школы.
- Читатели, знакомые с данным материалом могут её свободно пропустить.
 \end_layout
 
 \begin_layout Standard
@@ -246,7 +247,28 @@ addcontentsline{toc}{chapter}{Введение}
 \end_layout
 
 \begin_layout Standard
-Глава 3 посвящена систематическому изложению
+Глава 3 посвящена систематическому изложению теории дискретных случайных
+ величин.
+ В ней рассматриваются важные семейства дискретных случайных величин, которые
+ могут применяться для описания явлений окружающего мира.
+\end_layout
+
+\begin_layout Standard
+В главе 4 определения и результаты, полученные для дискретных случайных
+ величин переносятся на непрерывные.
+\end_layout
+
+\begin_layout Standard
+Глава 5 посвящена изучению свойств важнейшего вида непрерывных случайных
+ величин — нормального распределения.
+ Нормальное распределение выводится несколькими независимыми способами,
+ чтобы показать, почему оно так часто становится объектом изучения в математичес
+кой статистике.
+\end_layout
+
+\begin_layout Standard
+В главе 6 изучение нормального распределения продолжается с другой точки
+ зрения: как определить параметры этого распределения по наблюдениям.
 \end_layout
 
 \begin_layout Standard
@@ -267,7 +289,28 @@ status open
 Случайные события
 \end_layout
 
+\begin_layout Section
+Основные определения
+\end_layout
+
 \begin_layout Standard
+В данной главе рассматриваются основные понятия и теоремы теории вероятностей,
+ связанные со случайными событиями, в объёме российской средней школы.
+\end_layout
+
+\begin_layout Definition
+
+\emph on
+Теория вероятностей 
+\emph default
+— это раздел математики, изучающий закономерности массовых случайных событий.
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Definition
 
 \emph on
 Случайное событие — 
@@ -289,15 +332,7 @@ status open
 
 \end_layout
 
-\begin_layout Standard
-
-\emph on
-Теория вероятностей 
-\emph default
-— это раздел математики, изучающий закономерности массовых случайных событий.
-\end_layout
-
-\begin_layout Standard
+\begin_layout Definition
 
 \emph on
 Вероятность случайного события — 
@@ -327,30 +362,29 @@ status open
 .
 \end_layout
 
-\begin_layout Standard
+\begin_layout Definition
 Событие, вероятность которого равна нулю называется 
 \emph on
 невозможным
 \emph default
 .
- Событие, вероятность которого равна единице называется 
+ 
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Definition
+Событие, вероятность которого равна единице называется 
 \emph on
 достоверным.
 \end_layout
 
-\begin_layout Standard
-Мы стремимся как можно быстрее перейти к практике, поэтому данная глава
- преследует две цели:
-\end_layout
-
-\begin_layout Enumerate
-Изучить основные понятия и теоремы теории вероятностей, связанные со случайными
- событиями;
-\end_layout
-
-\begin_layout Enumerate
-Понять на примере вероятности, как параметры случайных явлений оцениваются
- по результатом опытов.
+\begin_layout Definition
+Эти определения показывают, что неслучайные события (то есть такие, которые
+ либо происходят всегда, либо никогда), можно рассматривать как вырожденные
+ случаи случайных событий.
 \end_layout
 
 \begin_layout Section
@@ -410,10 +444,54 @@ status open
 \end_layout
 
 \begin_layout Section
-Одновременное наступления нескольких событий
+Одновременное наступления нескольких событий, условная вероятность
 \end_layout
 
-\begin_layout Standard
+\begin_layout Definition
+Произведением двух случайных событий 
+\begin_inset Formula $A$
+\end_inset
+
+ и 
+\begin_inset Formula $B$
+\end_inset
+
+ называется случайное событие, которое заключается в том, что события 
+\begin_inset Formula $A$
+\end_inset
+
+ и 
+\begin_inset Formula $B$
+\end_inset
+
+ происходят одновременно, и обозначается 
+\begin_inset Formula $AB$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Вынимание из колоды вальта пик является произведением событий 
+\begin_inset Quotes fld
+\end_inset
+
+вынимание вальта
+\begin_inset Quotes frd
+\end_inset
+
+ и 
+\begin_inset Quotes fld
+\end_inset
+
+вынимание карты масти пики
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
 Случайные события называются 
 \emph on
 независимыми
@@ -492,12 +570,7 @@ status open
 
 \end_layout
 
-\begin_layout Standard
-
-\series bold
-Задача.
- 
-\series default
+\begin_layout Exercise
 Могут ли несовместные события быть независимыми?
 \end_layout
 
@@ -575,13 +648,17 @@ P\left\{ \bar{A}\right\} =1-P\left\{ A\right\} .
 \emph default
 вероятности по их результатам.
  Если опыты независимы друг от друга и идентичны, то говорят, что реализуется
- схема Бернулли.
- В данной главе рассматривается задача оценки вероятности по исходам эксперимент
-ов в схеме Бернулли.
+ 
+\emph on
+схема Бернулли
+\emph default
+.
+ В данной главе задача оценки вероятности в схеме Бернулли рассматривается
+ для того, чтобы дать читателю представление о методе математической статистики.
  В этой главе мы отклоняемся от последовательного изложения теории вероятностей,
  принятого в большинстве известных курсов.
- Вместо этого, мы стремися показать, как важнейшие понятия теории вероятностей
- возникают естественным образом при решении достаточно простой по формулировке
+ Вместо этого мы стремися показать, как важнейшие понятия теории вероятностей
+ естественным образом возникают при решении достаточно простой по формулировке
  задачи математической статистики.
 \end_layout
 
@@ -606,7 +683,7 @@ P\left\{ \bar{A}\right\} =1-P\left\{ A\right\} .
 , то количество опытов, в которых заданное событие произойдёт, также будет
  случайным.
  Найдём вероятность 
-\begin_inset Formula $P\left\{ k,n,p\right\} $
+\begin_inset Formula $P\left(k,n,p\right)$
 \end_inset
 
  события 
@@ -625,11 +702,11 @@ P\left\{ \bar{A}\right\} =1-P\left\{ A\right\} .
 \begin_inset Formula $n$
 \end_inset
 
- опытах, если вероятность появления события в каждом из опытов равна 
+ опытах (вероятность появления события в каждом из опытов равна 
 \begin_inset Formula $p$
 \end_inset
 
-.
+).
 \end_layout
 
 \begin_layout Standard
@@ -685,7 +762,7 @@ status open
 \end_inset
 
 , то в силу теоремы сложения для несовместных событий, вероятность 
-\begin_inset Formula $P\left\{ k,n,p\right\} $
+\begin_inset Formula $P\left(k,n,p\right)$
 \end_inset
 
  может быть записана следующим образом:
@@ -694,7 +771,7 @@ status open
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-P\left\{ k,n,p\right\} =\dbinom{n}{k}\cdot p^{k}\left(1-p\right)^{n-k}.\label{eq:probability_k_from_n}
+P\left(k,n,p\right)=\dbinom{n}{k}\cdot p^{k}\left(1-p\right)^{n-k}.\label{eq:probability_k_from_n}
 \end{equation}
 
 \end_inset
@@ -713,7 +790,7 @@ P\left\{ k,n,p\right\} =\dbinom{n}{k}\cdot p^{k}\left(1-p\right)^{n-k}.\label{eq
 \begin_layout Standard
 \begin_inset Formula 
 \[
-P\left\{ k,n,p\right\} =\dbinom{n}{k}\cdot p^{k}q^{n-k}.
+P\left(k,n,p\right)=\dbinom{n}{k}\cdot p^{k}q^{n-k}.
 \]
 
 \end_inset
@@ -738,7 +815,7 @@ P\left\{ k,n,p\right\} =\dbinom{n}{k}\cdot p^{k}q^{n-k}.
 \end_inset
 
 , при котором вероятность 
-\begin_inset Formula $P\left\{ k,n,p\right\} $
+\begin_inset Formula $P\left(k,n,p\right)$
 \end_inset
 
  будет наибольшей.
@@ -766,7 +843,7 @@ reference "eq:probability_k_from_n"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{multline*}
-\frac{d}{dp}\left(P\left\{ k,n,p\right\} \right)=\binom{n}{k}\left(k\cdot p^{k-1}\left(1-p\right)^{n-k}-p^{k}\left(n-k\right)\left(1-p\right)^{n-k-1}\right)=\\
+\frac{d}{dp}\left(P\left(k,n,p\right)\right)=\binom{n}{k}\left(k\cdot p^{k-1}\left(1-p\right)^{n-k}-p^{k}\left(n-k\right)\left(1-p\right)^{n-k-1}\right)=\\
 =\binom{n}{k}\cdot p^{k-1}\cdot\left(1-p\right)^{n-k-1}\left(k\left(1-p\right)-\left(n-k\right)p\right).
 \end{multline*}
 
@@ -786,7 +863,7 @@ reference "eq:probability_k_from_n"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{d}{dp}\left(P\left\{ k,n,p\right\} \right)=0
+\frac{d}{dp}\left(P\left(k,n,p\right)\right)=0
 \]
 
 \end_inset
@@ -910,8 +987,8 @@ k\left(1-\hat{p}\right)-\left(n-k\right)\hat{p}=0.
  частота.
  Частота события, в свою очередь, это величина, которая может принимать
  различные значения в различных сериях опытов, то есть является случайной.
- В данной главе мы получим результаты, касающиеся таких величин.
- 
+ Систематическое изучение случайных величин мы отложим до следующих глав,
+ а пока ограничимся несколькими определениями.
 \end_layout
 
 \begin_layout Standard
@@ -931,6 +1008,8 @@ k\left(1-\hat{p}\right)-\left(n-k\right)\hat{p}=0.
  конечным или счётным.
  Иными словами множество возможных значений дискретной случайной величины
  эквивалентно подмножеству множества натуральных чисел.
+ В данной главе мы будем считать, что случайные величины являются дискретными,
+ если это не оговорено особо.
 \end_layout
 
 \begin_layout Standard
@@ -953,7 +1032,8 @@ k\left(1-\hat{p}\right)-\left(n-k\right)\hat{p}=0.
 \end_layout
 
 \begin_layout Standard
-Оценка параметра распределения должна сходится к истинному значению с ростом
+Мы построили оценку вероятности, но насколько эта оценка хороша? Оценка
+ параметра случайного явления должна сходится к истинному значению с ростом
  количества проводимых опытов.
  Но что значит 
 \begin_inset Quotes fld
@@ -969,15 +1049,15 @@ k\left(1-\hat{p}\right)-\left(n-k\right)\hat{p}=0.
  Как и для конечномерных векторных пространств и множеств функций, сходимость
  можно определить разными способами.
  Подробнее мы рассмотрим виды сходимости позже, а пока ограничимся одним
- из видов: 
+ из них: 
 \emph on
-сходимости по вероятности
+сходимость по вероятности
 \emph default
 .
 \end_layout
 
 \begin_layout Standard
-Говорят, что последовательность случайных величин 
+Последовательность случайных величин 
 \begin_inset Formula $\left\{ X_{n}\right\} $
 \end_inset
 
@@ -985,7 +1065,7 @@ k\left(1-\hat{p}\right)-\left(n-k\right)\hat{p}=0.
 \begin_inset Formula $X$
 \end_inset
 
-, если
+ по вероятности, если
 \end_layout
 
 \begin_layout Standard
@@ -1000,11 +1080,31 @@ k\left(1-\hat{p}\right)-\left(n-k\right)\hat{p}=0.
 \end_layout
 
 \begin_layout Standard
+Говоря неформально, Последовательность случайных величин 
+\begin_inset Formula $\left\{ X_{n}\right\} $
+\end_inset
+
+ сходится к случайной величине 
+\begin_inset Formula $X$
+\end_inset
+
+ по вероятности, если вероятность сколько угодно малых отклонений 
+\begin_inset Formula $X_{n}$
+\end_inset
+
+ от 
+\begin_inset Formula $X$
+\end_inset
+
+ стремится к нулю.
+\end_layout
+
+\begin_layout Standard
 Если в качестве 
 \begin_inset Formula $X$
 \end_inset
 
- берётся неслучайная величина — параметр распределения 
+ берётся неслучайная величина — параметр случайного события
 \begin_inset Formula $\theta$
 \end_inset
 
@@ -1012,24 +1112,21 @@ k\left(1-\hat{p}\right)-\left(n-k\right)\hat{p}=0.
 \begin_inset Formula $X_{n}$
 \end_inset
 
- — оценки параметра 
+ — оценки этого параметра 
 \begin_inset Formula $\hat{\theta}_{n}$
 \end_inset
 
-, то понятие сходимости по вероятности переходит в понятие 
-\emph on
-состоятельности оценки
-\emph default
-.
- В данной главе мы будем считать, что оценка параметра является дискретной
- случайной величиной, если это не оговорено особо.
- Обобщение результатов этой главы на общий случай будет произведено в дальнейшем.
+ по опытам, то понятие сходимости по вероятности переходит в понятие состоятельн
+ости оценки.
 \end_layout
 
 \begin_layout Standard
-Оценка параметра распределения называется состоятельной, если вероятность
- отклонения оценки от оцениваемой величины можно сделать сколь угодно малой
- за счёт увеличения размера выборки.
+Оценка параметра распределения называется 
+\emph on
+состоятельной
+\emph default
+, если вероятность отклонения оценки от оцениваемой величины можно сделать
+ сколь угодно малой за счёт увеличения количества опытов.
  Более строго, оценка 
 \begin_inset Formula $\hat{\theta}_{n}$
 \end_inset
@@ -1094,6 +1191,38 @@ P\left\{ \left|\hat{\theta}_{n}-\theta\right|>\varepsilon\right\} =P\left\{ \fra
  сходимость к нулю вероятности того, что определённая положительная дискретная
  случайная величина превышает единицу.
  Один из способов доказательства утверждений такого рода мы рассмотрим ниже.
+\end_layout
+
+\begin_layout Remark
+Внимательный читатель мог бы указать, что возведение в квадрат не является
+ необходимым, мы могли бы рассмотреть случайную величину
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula 
+\[
+\frac{\left|\hat{\theta}_{n}-\theta\right|}{\varepsilon},
+\]
+
+\end_inset
+
+однако квадрат разности оказывается более удобной для манипулирования величиной,
+ чем модуль разности.
+ Вообще говоря, мы могли бы вместо квадрата взять любую монотонно возрастающую
+ функцию.
+ Отметим также, что неопределённость в выборе случайной величины для дальнейшего
+ анализа связана с возможностью вводить разные виды сходимости для случайных
+ величин.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+добавить ссылку на виды сходимости
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -1207,7 +1336,25 @@ M\left[X\right]=\sum_{x}x\cdot p\left(x\right).
 \end_layout
 
 \begin_layout Standard
-Используя это обозначение, мы можем записать:
+Если случайная величина имеет бесконечное количество возможных значений,
+ то сумму в определении математического ожидания нужно понимать как сумму
+ ряда.
+ В таком случае математическое ожидание не может не существовать (если ряд
+ не сходится).
+\end_layout
+
+\begin_layout Standard
+Используя это обозначение и предшествующие рассуждения, мы можем сформулировать
+ следующую лемму:
+\end_layout
+
+\begin_layout Lemma
+Пусть 
+\begin_inset Formula $X$
+\end_inset
+
+ — неотрицательная случайная величина для которой определено математическое
+ ожидание, тогда 
 \end_layout
 
 \begin_layout Standard
@@ -1238,17 +1385,13 @@ X=\frac{\left|\hat{\theta}_{n}-\theta\right|^{2}}{\varepsilon^{2}},
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-тогда, используя свойства математического ожидания, мы получим:
+тогда, используя элементарные правила преобразования неравенств, мы получим:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-P\left\{ \left|\hat{\theta}_{n}-\theta\right|>\varepsilon\right\} =P\left\{ \frac{\left|\hat{\theta}_{n}-\theta\right|^{2}}{\varepsilon^{2}}>1\right\} \le M\left[\frac{\left|\hat{\theta}_{n}-\theta\right|^{2}}{\varepsilon^{2}}\right].
+P\left\{ \left|\hat{\theta}_{n}-\theta\right|>\varepsilon\right\} =P\left\{ \frac{\left(\hat{\theta}_{n}-\theta\right)^{2}}{\varepsilon^{2}}>1\right\} \le M\left[\frac{\left(\hat{\theta}_{n}-\theta\right)^{2}}{\varepsilon^{2}}\right].
 \]
 
 \end_inset
@@ -1264,12 +1407,17 @@ P\left\{ \left|\hat{\theta}_{n}-\theta\right|>\varepsilon\right\} =P\left\{ \fra
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\lim_{n\to\infty}M\left[\frac{\left|\hat{\theta}_{n}-\theta\right|^{2}}{\varepsilon^{2}}\right]=0.
+\lim_{n\to\infty}M\left[\frac{\left(\hat{\theta}_{n}-\theta\right)^{2}}{\varepsilon^{2}}\right]=0.
 \]
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Но для этого нам нужно будет доказать несколько свойств математического
+ ожидания.
 \end_layout
 
 \begin_layout Section
@@ -1453,7 +1601,11 @@ M\left[X+Y\right]=\sum_{k}z_{k}P\left\{ X+Y=z_{k}\right\} =\\
 \end_layout
 
 \begin_layout Standard
-Первая лемма позволяет написать:
+Отметим, что это свойство можно расспространить на произвольное число слагаемых.
+\end_layout
+
+\begin_layout Standard
+Второе из этих свойств мы можем применить прямо сейчас:
 \end_layout
 
 \begin_layout Standard
@@ -1501,7 +1653,7 @@ M\left[X+Y\right]=\sum_{k}z_{k}P\left\{ X+Y=z_{k}\right\} =\\
 \emph default
 .
  Таким образом, неравенство Чебышёва позволяет сделать вывод о том, что
- сходимость в среднем квадратическом, влечёт сходимость по вероятности.
+ сходимость в среднем квадратическом влечёт сходимость по вероятности.
 \end_layout
 
 \begin_layout Section
@@ -1509,7 +1661,8 @@ M\left[X+Y\right]=\sum_{k}z_{k}P\left\{ X+Y=z_{k}\right\} =\\
 \end_layout
 
 \begin_layout Standard
-Используя вторую лемму, получим:
+Используя установленные в предыдущем разделе свойства математического ожидания,
+ мы можем написать:
 \end_layout
 
 \begin_layout Standard
@@ -1524,20 +1677,9 @@ M\left[\left(\hat{\theta}_{n}-\theta\right)^{2}\right]=M\left[\left(\hat{\theta}
 \end_layout
 
 \begin_layout Standard
-Итак, теперь нам нужно вычислить математическое ожидание 
-\begin_inset Formula $\hat{\theta}_{n}$
-\end_inset
-
- и его квадрата.
-\end_layout
-
-\begin_layout Standard
 Далее мы будем выполнять вычисления не в общем случае, а конкретно для случая
  частоты появления события.
-\end_layout
-
-\begin_layout Standard
-Пусть 
+ Пусть 
 \begin_inset Formula $\hat{\theta}_{n}=\hat{p}_{n}$
 \end_inset
 
@@ -1546,7 +1688,26 @@ M\left[\left(\hat{\theta}_{n}-\theta\right)^{2}\right]=M\left[\left(\hat{\theta}
 \end_inset
 
  опытов.
- Возможными значеними этой случайной величины являются числа 
+ Таким образом, нам нужно найти значение следующего выражения:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+M\left[\left(\hat{p}_{n}-p\right)^{2}\right]=M\left[\left(\hat{p}_{n}\right)^{2}\right]-2pM\left[\hat{p}_{n}\right]+p^{2}.\label{eq:MSE_for_frequency}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Возможными значеними этой случайной величины 
+\begin_inset Formula $\hat{p}_{n}$
+\end_inset
+
+ являются числа 
 \end_layout
 
 \begin_layout Standard
@@ -1557,7 +1718,7 @@ M\left[\left(\hat{\theta}_{n}-\theta\right)^{2}\right]=M\left[\left(\hat{\theta}
 
 \end_inset
 
-причём
+причём вероятности их появления определяются следующими формулами:
 \end_layout
 
 \begin_layout Standard
@@ -1572,7 +1733,12 @@ P\left\{ \hat{p}_{n}=\frac{k}{n}\right\} =\binom{n}{k}\cdot p^{k}\left(1-p\right
 \end_layout
 
 \begin_layout Standard
-Мы могли бы вычислить математическое ожидание непосредственно, как сумму
+Итак, теперь нам нужно вычислить математическое ожидание 
+\begin_inset Formula $\hat{p}_{n}$
+\end_inset
+
+ и его квадрата.
+ Мы могли бы вычислить математическое ожидание непосредственно, как сумму
 \begin_inset Formula 
 \[
 M\left[\hat{p}_{n}\right]=\sum_{k=0}^{n}k\cdot\binom{n}{k}\cdot p^{k}\left(1-p\right)^{n-k},
@@ -1585,7 +1751,7 @@ M\left[\hat{p}_{n}\right]=\sum_{k=0}^{n}k\cdot\binom{n}{k}\cdot p^{k}\left(1-p\r
 \end_layout
 
 \begin_layout Standard
-Запишем теперь эту оценку через исходы отдельных экспериментов.
+Выразим частоту события через исходы отдельных экспериментов.
  Введём случайные величины 
 \begin_inset Formula $X_{i}$
 \end_inset
@@ -1594,7 +1760,7 @@ M\left[\hat{p}_{n}\right]=\sum_{k=0}^{n}k\cdot\binom{n}{k}\cdot p^{k}\left(1-p\r
 \begin_inset Formula $i$
 \end_inset
 
--ом эксперменте событие произошло, то 
+-ом опыте событие произошло, то 
 \begin_inset Formula $X_{i}=1$
 \end_inset
 
@@ -1616,9 +1782,9 @@ M\left[\hat{p}_{n}\right]=\sum_{k=0}^{n}k\cdot\binom{n}{k}\cdot p^{k}\left(1-p\r
 \emph on
 индикаторными
 \emph default
-, либо распределёнными по закону 
+ или 
 \emph on
-Бернулли
+распределёнными по закону Бернулли
 \emph default
 .
  
@@ -1664,19 +1830,14 @@ M\left[X_{i}\right]=0\cdot P\left\{ X_{i}=0\right\} +1\cdot P\left\{ X_{i}=1\rig
 \end_layout
 
 \begin_layout Standard
-Вычислим теперь 
-\begin_inset Formula $M\left[\left(\hat{\theta}_{n}-\theta\right)^{2}\right]$
-\end_inset
-
-.
- В силу свойств математического ожидания:
+В силу свойств математического ожидания:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-M\left[\hat{p}_{n}\right]=\frac{1}{n}\sum_{i=1}^{n}M\left[X_{i}\right]=\frac{1}{n}\sum_{i=1}^{n}p=\frac{1}{n}\cdot n\cdot p=p.
-\]
+\begin{equation}
+M\left[\hat{p}_{n}\right]=\frac{1}{n}\sum_{i=1}^{n}M\left[X_{i}\right]=\frac{1}{n}\sum_{i=1}^{n}p=\frac{1}{n}\cdot n\cdot p=p.\label{eq:frequency_mean}
+\end{equation}
 
 \end_inset
 
@@ -1691,21 +1852,31 @@ M\left[\hat{p}_{n}\right]=\frac{1}{n}\sum_{i=1}^{n}M\left[X_{i}\right]=\frac{1}{
 несмещённостью оценки
 \emph default
 .
+ Квадрат частоты можно записать следующим образом:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\left(\hat{p}_{n}\right)^{2}=\frac{1}{n^{2}}\sum_{i=1}^{n}\sum_{j=1}^{n}X_{i}X_{j}
+\left(\hat{p}_{n}\right)^{2}=\frac{1}{n^{2}}\sum_{i=1}^{n}\sum_{j=1}^{n}X_{i}X_{j},
 \]
 
 \end_inset
 
-
+взяв математическое ожидание от левой и правой части, получим, в силу свойства
+ математического ожидания суммы:
 \end_layout
 
 \begin_layout Standard
-Если 
+\begin_inset Formula 
+\[
+M\left[\left(\hat{p}_{n}\right)^{2}\right]=\frac{1}{n^{2}}\sum_{i=1}^{n}\sum_{j=1}^{n}M\left[X_{i}X_{j}\right],
+\]
+
+\end_inset
+
+причём слагаемые этой двойной суммы можно разделить на две группы.
+ Если 
 \begin_inset Formula $i=j$
 \end_inset
 
@@ -1719,16 +1890,12 @@ M\left[\hat{p}_{n}\right]=\frac{1}{n}\sum_{i=1}^{n}M\left[X_{i}\right]=\frac{1}{
 \begin_layout Standard
 \begin_inset Formula 
 \[
-M\left[X_{i}X_{j}\right]=M\left[X_{i}^{2}\right]=M\left[X_{i}\right]=p.
+M\left[X_{i}X_{j}\right]=M\left[X_{i}^{2}\right]=M\left[X_{i}\right]=p,
 \]
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-Если же 
+если же 
 \begin_inset Formula $i\ne j$
 \end_inset
 
@@ -1741,9 +1908,10 @@ M\left[X_{i}X_{j}\right]=M\left[X_{i}^{2}\right]=M\left[X_{i}\right]=p.
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-M\left[X_{i}X_{j}\right]=0\cdot P\left\{ X_{i}=0\vee X_{j}=0\right\} +1\cdot P\left\{ X_{i}=1\vee X_{j}=1\right\} =P\left\{ X_{i}=1\vee X_{j}=1\right\} =p^{2}.
-\]
+\begin{multline*}
+M\left[X_{i}X_{j}\right]=0\cdot P\left\{ X_{i}=0\vee X_{j}=0\right\} +1\cdot P\left\{ X_{i}=1\vee X_{j}=1\right\} =\\
+=P\left\{ X_{i}=1\vee X_{j}=1\right\} =p^{2}.
+\end{multline*}
 
 \end_inset
 
@@ -1751,14 +1919,44 @@ M\left[X_{i}X_{j}\right]=0\cdot P\left\{ X_{i}=0\vee X_{j}=0\right\} +1\cdot P\l
 \end_layout
 
 \begin_layout Standard
+Таким образом, математическое ожидание квадрата частоты можно выразить следующим
+ образом:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
-\[
-M\left[\left(\hat{p}_{n}\right)^{2}\right]=\frac{n\cdot p+n\left(n-1\right)p^{2}}{n^{2}}=\frac{p+\left(n-1\right)p^{2}}{n}.
-\]
+\begin{equation}
+M\left[\left(\hat{p}_{n}\right)^{2}\right]=\frac{1}{n^{2}}\left(n\cdot p+n\left(n-1\right)p^{2}\right)=\frac{p+\left(n-1\right)p^{2}}{n}.\label{eq:frequence_square_mean}
+\end{equation}
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Подставим найденные выражения 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:frequency_mean"
+
+\end_inset
+
+ и 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:frequence_square_mean"
+
+\end_inset
+
+ в равенство 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:MSE_for_frequency"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
@@ -1789,16 +1987,47 @@ M\left[\left(\hat{p}_{n}-p\right)^{2}\right]=\frac{p+\left(n-1\right)p^{2}}{n}-2
 \end_layout
 
 \begin_layout Section
-Дисперсия
+Асимптотическая несмещённость и дисперсия
 \end_layout
 
 \begin_layout Standard
-Величина 
+Итак, мы доказали, что из сходимости в среднем квадратическом можно вывести
+ сходимость по вероятности, а также продемонстрировали, как доказывается
+ сходимость в среднем квадратическом на примере сходимости частоты к вероятности.
+ Таким образом, важной задачей теории вероятности является исследование
+ выражений вида
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[\left(X-a\right)^{2}\right],
+\]
+
+\end_inset
+
+где 
+\begin_inset Formula $X$
+\end_inset
+
+ — случайная величина, а 
+\begin_inset Formula $a$
+\end_inset
+
+ — (неслучайное) число.
+ Частный случай, когда 
+\begin_inset Formula $a$
+\end_inset
+
+ равно математическому ожиданию случайной величины 
+\begin_inset Formula $X$
+\end_inset
+
+ настолько важен, что величина 
 \begin_inset Formula $M\left[\left(X-M\left[X\right]\right)^{2}\right]$
 \end_inset
 
- настолько важна в теории вероятностей (это видно уже по рассматриваемой
- нами задаче), что она заслужила отдельное название — 
+ заслужила отдельное название — 
 \emph on
 дисперсия 
 \emph default
@@ -1806,7 +2035,7 @@ M\left[\left(\hat{p}_{n}-p\right)^{2}\right]=\frac{p+\left(n-1\right)p^{2}}{n}-2
 \begin_inset Formula $X$
 \end_inset
 
- и обозначение 
+, дисперсия обозначается 
 \begin_inset Formula $D\left[X\right]$
 \end_inset
 
@@ -1824,13 +2053,12 @@ D\left[X\right]=M\left[\left(X-M\left[X\right]\right)^{2}\right].
 
 \end_layout
 
-\begin_layout Section
-Асимптотическая несмещённость
-\end_layout
-
 \begin_layout Standard
-Выше мы показали, что из несмещённости и стремления дисперсии к нулю следует
- состоятельность.
+По сути, в предыдущем параграфе мы показали, что для несмещённой оценки
+ сходимость в среднем-квадратичесом (а значит и сходимость по вероятности)
+ к оцениваемому параметру следуют из стремлению к нулю дисперсии с ростом
+ колчества опытов.
+ Однако это лишь достаточное условие.
  Рассмотрим следующий вопрос: можно ли ослабить требование несмещённости?
 \end_layout
 
@@ -1848,17 +2076,24 @@ D\left[X\right]=M\left[\left(X-M\left[X\right]\right)^{2}\right].
 \end_inset
 
  — произвольное неслучайное число.
+ Мы можем написать:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-M\left[\left(X_{n}-a\right)^{2}\right]=M\left[\left(\left(X_{n}-\mu_{n}\right)-\left(\mu_{n}-a\right)\right)^{2}\right]=M\left[\left(X_{n}-\mu_{n}\right)^{2}\right]-2\left(\mu_{n}-a\right)M\left[X-\mu_{n}\right]+\left(\mu_{n}-a\right)^{2}=D\left[X_{n}\right]+\left(\mu_{n}-a\right)^{2}.
-\]
+\begin{multline*}
+M\left[\left(X_{n}-a\right)^{2}\right]=M\left[\left(\left(X_{n}-\mu_{n}\right)-\left(\mu_{n}-a\right)\right)^{2}\right]=\\
+=M\left[\left(X_{n}-\mu_{n}\right)^{2}\right]-2\left(\mu_{n}-a\right)M\left[X-\mu_{n}\right]+\left(\mu_{n}-a\right)^{2}=\\
+=D\left[X_{n}\right]+\left(\mu_{n}-a\right)^{2}.
+\end{multline*}
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Переходя к пределу в левой и правой части, получим:
 \end_layout
 
 \begin_layout Standard
@@ -1873,7 +2108,7 @@ M\left[\left(X_{n}-a\right)^{2}\right]=M\left[\left(\left(X_{n}-\mu_{n}\right)-\
 \end_layout
 
 \begin_layout Standard
-Так как оба предела в правой части не отрицательны, для того, чтобы левая
+Так как оба предела справа не могут отрицательны, то для того, чтобы левая
  часть была равна нулю необходимо выполнение двух условий:
 \end_layout
 
@@ -1924,6 +2159,23 @@ M\left[\left(X_{n}-a\right)^{2}\right]=M\left[\left(\left(X_{n}-\mu_{n}\right)-\
  называются 
 \emph on
 асимптотически несмещёнными.
+
+\emph default
+ Мы можем сформулировать теперь следующее условие состоятельности оценки:
+\end_layout
+
+\begin_layout Theorem
+Если оценка 
+\begin_inset Formula $\hat{\theta}_{n}$
+\end_inset
+
+ параметра 
+\begin_inset Formula $\theta$
+\end_inset
+
+ некоторого случайного события является асимптотически несмещённой, а её
+ дисперсия стремится к нулю с ростом количества опытов, то данная оценка
+ является состоятельной.
 \end_layout
 
 \begin_layout Section
@@ -1944,10 +2196,10 @@ M\left[\left(X_{n}-a\right)^{2}\right]=M\left[\left(\left(X_{n}-\mu_{n}\right)-\
 \begin_layout Enumerate
 Так как оценка параметра случайного события зависит от исходов опытов, то
  есть является случайной, мы ввели понятие случайной величины.
- Затем мы перешли к ключевому понятию математического анализа — сходимости:
- ввели понятие сходимости по вероятности.
+ Затем мы перешли к ключевому понятию математического анализа — сходимости,
+ применительно к случайным величинам: ввели понятие сходимости по вероятности.
  Применительно к оценкам параметров случайных событий, этот вид сходимости
- приводит к свойству состоятельности.
+ приводит к свойству состоятельности оценки.
  
 \end_layout
 
@@ -1958,7 +2210,7 @@ M\left[\left(X_{n}-a\right)^{2}\right]=M\left[\left(\left(X_{n}-\mu_{n}\right)-\
  дисперсии.
  Мы ввели ещё два свойства оценок: несмещённость и асимптотическая несмещённость
 , причём мы показали, что если оценка является асимптотически несмещённой,
- а ей дисперсия стремится к нулю, то такая оценка является состоятельной.
+ а её дисперсия стремится к нулю, то такая оценка является состоятельной.
 \end_layout
 
 \begin_layout Standard
@@ -1970,186 +2222,24 @@ M\left[\left(X_{n}-a\right)^{2}\right]=M\left[\left(\left(X_{n}-\mu_{n}\right)-\
 Дискретные случайные величины
 \end_layout
 
+\begin_layout Standard
+В данной главе систематически излагаются сведения, связанные с дискретными
+ случайными величинами.
+ Закон распределения дискретных случайных величин, их числовые характеристики,
+ важные семейства дискретных случайных величин, а также приводится пример
+ приближение одной случайной величины с помощью другой — более удобной для
+ анализа.
+ Основная цель данной главы — изучить важшейшие классы дискретных случайных
+ величин и понять, для описание каких явлений окружающего мира их можно
+ использовать.
+\end_layout
+
 \begin_layout Section
 Закон распределения дискретной случайной величины
 \end_layout
 
-\begin_layout Chapter
-Необработанный материал
-\end_layout
-
 \begin_layout Section
-Оценка вероятности редких событий
-\end_layout
-
-\begin_layout Standard
-Как оценить вероятность, если в серии опытов событие не произошло ни разу?
- В соответствии с результатами предыдущего раздела, мы должны были бы заключить,
- что вероятность равна нулю.
- Но возможно событие просто настолько редкое, что мы провели слишком мало
- опытов?
-\end_layout
-
-\begin_layout Section
-Неравенство Чебышёва для непрерывных случайных величин
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{multline*}
-P\left\{ X>1\right\} =\intop_{1}^{+\infty}f\left(x\right)dx\le\intop_{1}^{+\infty}x\cdot f\left(x\right)dx\le\intop_{1}^{+\infty}x\cdot f\left(x\right)dx+\intop_{0}^{1}x\cdot f\left(x\right)dx=\\
-=\intop_{0}^{+\infty}x\cdot f\left(x\right)dx=M\left[X\right].
-\end{multline*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-P\left\{ X>1\right\} \le M\left[X\right].
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Теорема Байеса
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-P\left(AB\right)=P\left(A\right)\cdot P(B|A)=P\left(B\right)\cdot P\left(A|B\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-P\left(B|A\right)=\frac{P\left(A|B\right)P\left(B\right)}{P\left(A\right)}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Состоятельность и несмещённость оценки
-\end_layout
-
-\begin_layout Standard
-Рассмотрим случайную величину
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-Y=\left|X-\mu\right|
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Применяя к ней неравенство Чебышёва, получим
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-P\left\{ \left|X-\mu\right|>\varepsilon\right\} =P\left\{ \left(X-\mu\right)^{2}>\varepsilon^{2}\right\} =P\left\{ \frac{\left(X-\mu\right)^{2}}{\varepsilon^{2}}>1\right\} \le\frac{M\left[\left(X-\mu\right)^{2}\right]}{\varepsilon^{2}}=\frac{\sigma^{2}}{\varepsilon^{2}}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Таким образом, если математическое ожидание оценки совпадает с оцениваниваемой
- величиной и дисперсия стремится к нулю с ростом 
-\begin_inset Formula $n$
-\end_inset
-
-, то оценка будет состоятельной.
-\end_layout
-
-\begin_layout Standard
-Проверим, выполняются ли эти требования для оценки вероятности:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-M\left[\hat{p}\right]=\frac{1}{n}\sum_{i=1}^{n}M\left[X_{i}\right]=\frac{1}{n}\sum_{i=1}^{n}p=p.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-D\left[\hat{p}\right]=\frac{1}{n^{2}}\sum_{i=1}^{n}D\left[X_{i}\right]=\frac{1}{n^{2}}\sum_{i=1}^{n}p\left(1-p\right)=\frac{p\left(1-p\right)}{n}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\lim_{n\to\infty}D\left[\hat{p}\right]=0.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Оценка, математическое ожидание которой равно самой оцениваемой величине,
- называется 
-\emph on
-несмещённой
-\emph default
-.
- Если математической ожидание оценки не равно самой оцениваемой величине,
- но его предел (при размере выборки стремящемся к бесконечности) равен оцениваем
-ой величине, то оценку называют 
-\emph on
-асимптотически несмещённой
-\emph default
-.
-\end_layout
-
-\begin_layout Standard
-Выше мы видели, что частота является несмещённой оценкой вероятности.
-\end_layout
-
-\begin_layout Section
-Интервальная оценка
-\end_layout
-
-\begin_layout Standard
-Доверительный интервал — это интервал, которому параметр распределения принадлеж
-ит с заданной вероятностью.
+Числовые характеристики дискретной случайной величины
 \end_layout
 
 \begin_layout Section
@@ -2186,6 +2276,16 @@ p, & X=1\\
 \end_inset
 
 или с использованием нотации Айверсона
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Нужно объяснить, что это такое
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2214,46 +2314,179 @@ q=1-p.
 
 \end_layout
 
+\begin_layout Section
+Биномиальное распределение
+\end_layout
+
+\begin_layout Section
+Геометрическое распределение
+\end_layout
+
+\begin_layout Section
+Распределение Пуассона
+\end_layout
+
 \begin_layout Standard
-Если проводится 
+При больших 
 \begin_inset Formula $n$
 \end_inset
 
- экспериментов, то количество экспериментов, в которых заданное событие
- произошло также будет случайным.
- Распределение этой случайной величины называется биномиальным.
- Найдём вероятность 
-\begin_inset Formula $P_{n}\left(k\right)$
-\end_inset
-
- того, что событие произойдёт ровно 
-\begin_inset Formula $k$
-\end_inset
-
- раз в 
+ пользоваться биномиальным распределением непосредственно неудобно.
+ Пусть 
 \begin_inset Formula $n$
 \end_inset
 
- опытах.
- Так как существует 
-\begin_inset Formula $\binom{n}{k}$
+ бесконечно увеличивается, а 
+\begin_inset Formula $p=\frac{a}{n}$
 \end_inset
 
- способов выбрать 
-\begin_inset Formula $k$
+, где 
+\begin_inset Formula $a$
 \end_inset
 
- элементов из 
-\begin_inset Formula $n$
+ — некоторая постоянная.
+ Вычислим предел 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Биномиальное-распределение"
+
 \end_inset
 
-, то эта вероятность может быть записана следующим образом:
+ при этих условиях:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-P_{n}\left(k\right)=\dbinom{n}{k}\cdot p^{k}\left(1-p\right)^{n-k}.
+\lim_{n\to\infty}P_{n}\left(k\right)=\lim_{n\to\infty}\dbinom{n}{k}\left(\frac{a}{n}\right)^{k}\left(1-\frac{a}{n}\right)^{n-k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выразим биномиальные коэффициенты через факториалы и вынесем множители,
+ не зависящие от 
+\begin_inset Formula $n$
+\end_inset
+
+, за знак предела:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+\lim_{n\to\infty}P_{n}\left(k\right)=\lim_{n\to\infty}\frac{n!}{k!\left(n-k\right)!}\left(\frac{a}{n}\right)^{k}\left(1-\frac{a}{n}\right)^{n-k}=\\
+=\frac{a^{k}}{k!}\lim_{n\to\infty}\frac{n!}{\left(n-k\right)!}\left(\frac{1}{n}\right)^{k}\left(1-\frac{a}{n}\right)^{n-k}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как
+\begin_inset Formula 
+\[
+\frac{n!}{\left(n-k\right)!}=\prod_{j=k+1}^{n}j=\prod_{j=0}^{k-1}\left(n-j\right),
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\frac{n!}{\left(n-k\right)!}\left(\frac{1}{n}\right)^{k}=\lim_{n\to\infty}\prod_{j=0}^{k-1}\left(\frac{n-j}{n}\right)=\prod_{j=0}^{k-1}\lim_{n\to\infty}\left(1-\frac{j}{n}\right)=1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом (учитывая второй замечательный предел 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+нужна ссылка!!!
+\end_layout
+
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}P_{n}\left(k\right)=\frac{a^{k}}{k!}\lim_{n\to\infty}\left(1-\frac{a}{n}\right)^{n-k}=\frac{a^{k}}{k!}\lim_{n\to\infty}\left(1-\frac{a}{n}\right)^{n}=\frac{a^{k}}{k!}e^{-a}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Распределение вероятностей
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(k\right)=\frac{a^{k}}{k!}e^{-a},
+\]
+
+\end_inset
+
+где 
+\begin_inset Formula $k\in\mathbb{N}\cup\{0\}$
+\end_inset
+
+, называется распределением Пуассона.
+\end_layout
+
+\begin_layout Chapter
+Непрерывные случайные величины
+\end_layout
+
+\begin_layout Standard
+Основное содержание данной главы — перенос определений и результатов, полученных
+ для дискретных случайных величин на непрерывные.
+\end_layout
+
+\begin_layout Section
+Неравенство Чебышёва для непрерывных случайных величин
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+P\left\{ X>1\right\} =\intop_{1}^{+\infty}f\left(x\right)dx\le\intop_{1}^{+\infty}x\cdot f\left(x\right)dx\le\intop_{1}^{+\infty}x\cdot f\left(x\right)dx+\intop_{0}^{1}x\cdot f\left(x\right)dx=\\
+=\intop_{0}^{+\infty}x\cdot f\left(x\right)dx=M\left[X\right].
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left\{ X>1\right\} \le M\left[X\right].
 \]
 
 \end_inset
@@ -2262,11 +2495,506 @@ P_{n}\left(k\right)=\dbinom{n}{k}\cdot p^{k}\left(1-p\right)^{n-k}.
 \end_layout
 
 \begin_layout Chapter
-Рекуррентные формулы для выборочного среднего и дисперсии
+Нормальное распределение
+\end_layout
+
+\begin_layout Standard
+В данной главе рассматривается важнейшее непрырывное распределение в теории
+ вероятностей и математической статистике — нормальное или распределение
+ Гаусса.
+ 
 \end_layout
 
 \begin_layout Section
-Выборочное среднее
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:normal_as_limit_of_binomial"
+
+\end_inset
+
+Нормальное распределение как предел биномиального распределения
+\end_layout
+
+\begin_layout Standard
+Распределение Пуассона не является единственным вариантом предельного распределе
+ния для биномиального распределения.
+ Пусть случайная величина 
+\begin_inset Formula $X_{n}$
+\end_inset
+
+ имеет биномиальное распределение: 
+\begin_inset Formula 
+\[
+X_{n}\sim B\left(n,p\right).
+\]
+
+\end_inset
+
+Рассмотрим случай, когда 
+\begin_inset Formula $n$
+\end_inset
+
+ стремится к бесконечности, но величина 
+\begin_inset Formula $p$
+\end_inset
+
+ остаётся постоянной в отличие от распределения Пуассона.
+ 
+\end_layout
+
+\begin_layout Standard
+Распишем в формуле для вероятностей биномиального распределения биномиальные
+ коэффициенты через факториалы:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{n}\left(k\right)=\frac{n!}{k!\left(n-k\right)!}p^{k}\cdot q^{n-k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Факториалы приблизим с помощью формулы Стирлинга
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+нужна ссылка
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+n!\approx\sqrt{2\pi n}\cdot\left(\frac{n}{e}\right)^{n}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Применяя эту формулу к 
+\begin_inset Formula $n!$
+\end_inset
+
+, 
+\begin_inset Formula $k!$
+\end_inset
+
+ и 
+\begin_inset Formula $\left(n-k\right)!$
+\end_inset
+
+ получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{n}\left(k\right)\approx\frac{\sqrt{2\pi n}\cdot n^{n}}{e^{n}}\cdot\frac{e^{k}}{\sqrt{2\pi k}\cdot k^{k}}\cdot\frac{e^{n-k}}{\sqrt{2\pi\left(n-k\right)}\cdot\left(n-k\right)^{\left(n-k\right)}}\cdot p^{k}\cdot q^{n-k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Упростим это выражение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{n}\left(k\right)\approx\sqrt{\frac{n}{2\pi k\left(n-k\right)}}\cdot\frac{n^{n}}{k^{k}\cdot\left(n-k\right)^{n-k}}\cdot p^{k}\cdot q^{n-k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Введём стандартизованные переменные:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+x=\frac{k}{n}-p.\label{eq:ML_local_theorem_score}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Тогда
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k=n\left(x+p\right),
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{k}{pn}=\left(\frac{x}{p}+1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+n-k=n\left(1-\frac{k}{n}\right)=n\left(1-x-p\right)=n\left(q-x\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{n-k}{nq}=\left(1-\frac{x}{q}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{n}\left(k\right)\approx\frac{1}{\sqrt{2\pi n\left(p+x\right)\left(q-x\right)}}\cdot\left(1+\frac{x}{p}\right)^{-n\left(x+p\right)}\cdot\left(1-\frac{x}{q}\right)^{-n\left(q-x\right)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Обозначим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+W=\left(1+\frac{x}{p}\right)^{-n\left(x+p\right)}\cdot\left(1-\frac{x}{q}\right)^{-n\left(q-x\right)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Возьмём логарифм этого выражения:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ln W=-n\left(x+p\right)\ln\left(1+\frac{x}{p}\right)-n\left(q-x\right)\ln\left(1-\frac{x}{q}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Разложим логарифмы в ряд Тейлора 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Нужна ссылка
+\end_layout
+
+\end_inset
+
+ и возьмём первые два слагаемых:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ln W\approx-n\left(p+x\right)\left(\frac{x}{p}-\frac{x^{2}}{2p^{2}}\right)-n\left(q-x\right)\left(-\frac{x}{q}-\frac{x^{2}}{2q^{2}}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Отметим, что для того, чтобы это приближение было достаточно точным, требуется,
+ чтобы 
+\begin_inset Formula $\left|x\right|$
+\end_inset
+
+ был намного меньше, чем 
+\begin_inset Formula $p$
+\end_inset
+
+ и 
+\begin_inset Formula $q$
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Более конкретно
+\end_layout
+
+\end_inset
+
+.
+ Приведём подобные слагаемые:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+\ln W\approx-n\left[\left(x-x\right)+\left(-\frac{x^{2}}{2p}+\frac{x^{2}}{p}-\frac{x^{2}}{2q}+\frac{x^{2}}{q}\right)+\left(-\frac{x^{3}}{2p^{2}}+\frac{x^{3}}{2q^{2}}\right)\right]=\\
+=-n\left[\frac{x^{2}}{2pq}+x^{3}\left(\frac{1}{q^{2}}-\frac{1}{p^{2}}\right)\right].
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+P_{n}\left(k\right)\approx\frac{1}{\sqrt{2\pi npq}}\exp\left(-\frac{nx^{2}}{2pq}\right).\label{eq:ML_local_approx}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём числовые характеристики случайной величины
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+X=\frac{Y}{n}-p.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu=M\left[X\right]=\frac{np}{n}-p=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma^{2}=D\left[X\right]=\frac{D\left[Y\right]}{n^{2}}=\frac{pq}{n}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Функция плотности нормального распределения с математическим ожиданием 
+\begin_inset Formula $\mu$
+\end_inset
+
+ и дисперсией 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ имеет вид:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f\left(x\right)=\frac{1}{\sqrt{2\pi}\cdot\sigma}\exp\left(-\frac{\left(x-\mu\right)^{2}}{2\sigma^{2}}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Нормальное распределение с 
+\begin_inset Formula $\mu=0$
+\end_inset
+
+ и 
+\begin_inset Formula $\sigma=1$
+\end_inset
+
+ называется стандартным нормальным.
+\end_layout
+
+\begin_layout Standard
+Соответственно, функция плотности нормального распределения с нулевым математиче
+ским ожиданием и дисперсией 
+\begin_inset Formula $\frac{1}{n}pq$
+\end_inset
+
+ имеет вид
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f\left(x\right)=\sqrt{\frac{n}{2\pi pq}}\cdot\exp\left(-\frac{nx^{2}}{2pq}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Сравнивая это выражение с 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ML_local_approx"
+
+\end_inset
+
+, легко заметить, что
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{n}\left(k\right)=\frac{1}{n}f\left(\frac{k}{n}-p\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Появление множителя 
+\begin_inset Formula $\nicefrac{1}{n}$
+\end_inset
+
+ связано с тем, что биномиальное распределение является дискретным и вероятность
+ того, что 
+\begin_inset Formula $Y=k$
+\end_inset
+
+ можно рассматривать как вероятность попадания 
+\begin_inset Formula $Y$
+\end_inset
+
+ в интервал 
+\begin_inset Formula $\left[k;k+1\right)$
+\end_inset
+
+.
+ Изменению 
+\begin_inset Formula $k$
+\end_inset
+
+ на единицу соответствует изменение 
+\begin_inset Formula $x$
+\end_inset
+
+ на 
+\begin_inset Formula $\nicefrac{1}{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Chapter
+Оценка параметров нормального распределения
+\end_layout
+
+\begin_layout Standard
+Для применения нормального распределения как модели явлений окружающего
+ мира необходимо уметь оценивать параметры этого распределения.
+ Получение оценок математического ожидания и дисперсии нормального распределения
+ и будет основным содержанием данной главы.
+\end_layout
+
+\begin_layout Standard
+Оценки параметров делятся на точечные и интервальные.
+ Точечная оценка — это одна величина, интервальная — это интервал, которому
+ оцениваемая величина принадлежит с некоторой вероятностью.
+ Для построения точечных оценок используется метод максимизации правдоподобия.
+\end_layout
+
+\begin_layout Section
+Вывод оценок по методу максимального правдоподобия
+\end_layout
+
+\begin_layout Section
+Числовые характеристики оценок параметров нормального распределения
+\end_layout
+
+\begin_layout Section
+Несмещённость и состоятельность
+\end_layout
+
+\begin_layout Section
+Рекуррентная формула для вычисления выборочного среднего
+\end_layout
+
+\begin_layout Standard
+Во многих случаях возникает необходимость вычислить выборочное среднее не
+ один раз, а постепенно — по мере получения данных.
+ Чтобы уменьшить количество повторных вычислений, выведем 
+\emph on
+рекуррентную 
+\emph default
+формулу для выборочного среднего.
 \end_layout
 
 \begin_layout Standard
@@ -2339,7 +3067,12 @@ m_{n+1}=m_{n}+\frac{x_{n+1}-m_{n}}{n+1}.
 \end_layout
 
 \begin_layout Section
-Дисперсия
+Рекуррентная формула для вычисления выборочной дисперсии
+\end_layout
+
+\begin_layout Standard
+Перейдём теперь к более сложному вопросу: получение формулы для вычисления
+ выборочной дисперсии.
 \end_layout
 
 \begin_layout Standard
@@ -2510,6 +3243,578 @@ S_{n+1}=S_{n}+\left(x_{n+1}-m_{n}\right)\left(x_{n+1}-m_{n+1}\right).
 \begin_layout Standard
 Преимущество этой формулы заключается в том, что при вычислениях по ней
  выборочная дисперсия всегда будет неотрицательной величиной.
+\end_layout
+
+\begin_layout Section
+Распределение выборочной дисперсии
+\end_layout
+
+\begin_layout Section
+Распределение выборочного среднего
+\end_layout
+
+\begin_layout Chapter
+Алгебра случайных чисел
+\end_layout
+
+\begin_layout Standard
+В данной главе рассматриваются случайные величины, которые получаются в
+ результате применения алгебраических операций к другим случайным величинам.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Где-то нужно написать про системы случайных величин
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Распределение суммы
+\end_layout
+
+\begin_layout Standard
+Пусть задана система двух случайных величин 
+\begin_inset Formula $X$
+\end_inset
+
+ и 
+\begin_inset Formula $Y$
+\end_inset
+
+, имеющих совместную плотность распределения 
+\begin_inset Formula $f\left(x,y\right).$
+\end_inset
+
+ Найдём распределение суммы, то есть случайной величины 
+\begin_inset Formula $Z=X+Y$
+\end_inset
+
+.
+ Функцию распределения 
+\begin_inset Formula $Z$
+\end_inset
+
+ обозначим как 
+\begin_inset Formula $G\left(z\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+G\left(z\right)=Pr\left\{ Z<z\right\} =\iintop_{x+y<z}f\left(x,y\right)dxdy.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Неравенство 
+\begin_inset Formula $x+y<z$
+\end_inset
+
+ можно переписать в виде 
+\begin_inset Formula $y<z-x$
+\end_inset
+
+, поэтому
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+G\left(z\right)=\iintop_{y<z-x}f\left(x,y\right)dxdy=\intop_{-\infty}^{+\infty}\intop_{-\infty}^{z-x}f\left(x,y\right)dydx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Дифференцируя это выражение по 
+\begin_inset Formula $z$
+\end_inset
+
+, получим формулу для плотности распределения 
+\begin_inset Formula $f_{Z}\left(z\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{Z}\left(z\right)=\intop_{-\infty}^{+\infty}f\left(x,z-x\right)dx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если 
+\begin_inset Formula $X$
+\end_inset
+
+ и 
+\begin_inset Formula $Y$
+\end_inset
+
+ независимы, то есть 
+\begin_inset Formula $f\left(x,y\right)=f_{X}(x)\cdot f_{Y}\left(y\right)$
+\end_inset
+
+, то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{Z}\left(z\right)=\intop_{-\infty}^{+\infty}f_{X}\left(x\right)f_{Y}\left(z-x\right)dx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Распределение частного
+\end_layout
+
+\begin_layout Standard
+Пусть задана система двух случайных величин 
+\begin_inset Formula $X$
+\end_inset
+
+ и 
+\begin_inset Formula $Y$
+\end_inset
+
+, имеющих совместную плотность распределения 
+\begin_inset Formula $f\left(x,y\right).$
+\end_inset
+
+ Найдём распределение частного, то есть случайной величины 
+\begin_inset Formula $Z=\nicefrac{X}{Y}$
+\end_inset
+
+.
+ Функцию распределения 
+\begin_inset Formula $Z$
+\end_inset
+
+ обозначим как 
+\begin_inset Formula $G\left(z\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+G\left(z\right)=Pr\left\{ Z<z\right\} =\iintop_{\frac{x}{y}<z}f\left(x,y\right)dxdy.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Неравенство 
+\begin_inset Formula $\frac{x}{y}<z$
+\end_inset
+
+ можно представить в виде системы двух неравенств
+\begin_inset Formula 
+\[
+\begin{cases}
+y\ge0 & x<z\cdot y\\
+y<0 & x>z\cdot y
+\end{cases},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+поэтому
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+G\left(z\right)=\intop_{-\infty}^{0}\intop_{z\cdot y}^{+\infty}f\left(x,y\right)dxdy+\intop_{0}^{+\infty}\intop_{-\infty}^{z\cdot y}f\left(x,y\right)dxdy.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Продифференцируем это выражение по 
+\begin_inset Formula $z$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+g\left(z\right)=G^{\prime}\left(z\right)=\intop_{-\infty}^{0}\left(-y\right)\cdot f\left(zy,y\right)dy+\intop_{0}^{+\infty}y\cdot f\left(zy,y\right)dy=\\
+=\intop_{-\infty}^{0}\left|y\right|\cdot f\left(zy,y\right)dy+\intop_{0}^{+\infty}\left|y\right|\cdot f\left(zy,y\right)dy=\intop_{-\infty}^{+\infty}\left|y\right|\cdot f\left(zy,y\right)dy.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Распределение-Коши"
+
+\end_inset
+
+Распределение Коши
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula $X$
+\end_inset
+
+ и 
+\begin_inset Formula $Y$
+\end_inset
+
+ ― независимые стандартные нормальные случайные величины.
+ Найдём распределение случайной величины 
+\begin_inset Formula $Z=\frac{X}{Y}$
+\end_inset
+
+.
+ Воспользуемся формулой для вычисления функции распределения частного:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{Z}\left(x\right)=\intop_{-\infty}^{+\infty}f\left(x\cdot y\right)\cdot\left|y\right|\cdot f\left(y\right)dy.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В нашем случае 
+\begin_inset Formula 
+\[
+f\left(x\right)=\frac{1}{\sqrt{2\cdot\pi}}\exp\left(-\frac{x^{2}}{2}\right),
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+поэтому
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+f_{Z}\left(x\right)=\intop_{-\infty}^{+\infty}\frac{1}{\sqrt{2\cdot\pi}}\exp\left(-\frac{x^{2}\cdot y^{2}}{2}\right)\cdot\left|y\right|\cdot\frac{1}{\sqrt{2\cdot\pi}}\exp\left(-\frac{y^{2}}{2}\right)dy=\\
+=\frac{1}{2\pi}\intop_{-\infty}^{+\infty}\exp\left(-\frac{y^{2}\left(x^{2}+1\right)}{2}\right)\cdot\left|y\right|\cdot dy.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как подынтегральная функция является чётной, то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{Z}\left(x\right)=\frac{1}{\pi}\intop_{0}^{+\infty}\exp\left(-\frac{y^{2}\left(x^{2}+1\right)}{2}\right)\cdot y\cdot dy.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Введём новую переменную интегрирования 
+\begin_inset Formula $t=\left(x^{2}+1\right)y^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $dt=\left(x^{2}+1\right)2y\cdot dy$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+f_{Z}\left(x\right)=\frac{1}{\pi}\intop_{0}^{+\infty}\exp\left(-\frac{t}{2}\right)\frac{dt}{2\left(x^{2}+1\right)}=\frac{1}{2\pi\left(x^{2}+1\right)}\left.\left(-2\right)\cdot\exp\left(-\frac{t}{2}\right)\right|_{0}^{+\infty}=\\
+=\frac{1}{\pi\left(1+x^{2}\right)}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Функция распределения имеет вид
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{Z}\left(x\right)=\intop_{-\infty}^{x}f_{Z}\left(y\right)dy=\frac{1}{\pi}\intop_{-\infty}^{x}\frac{dy}{1+y^{2}}=\frac{1}{\pi}\mathrm{\left.arctg\left(y\right)\right|_{-\infty}^{x}=\frac{1}{\pi}arctg\left(y\right)+\frac{1}{2}.}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Распределение частного двух нормальных случайных величин (общий случай)
+\end_layout
+
+\begin_layout Part
+Необработанный материал
+\end_layout
+
+\begin_layout Section
+Оценка вероятности редких событий
+\end_layout
+
+\begin_layout Standard
+Как оценить вероятность, если в серии опытов событие не произошло ни разу?
+ В соответствии с результатами предыдущего раздела, мы должны были бы заключить,
+ что вероятность равна нулю.
+ Но возможно событие просто настолько редкое, что мы провели слишком мало
+ опытов?
+\end_layout
+
+\begin_layout Section
+Теорема Байеса
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(AB\right)=P\left(A\right)\cdot P(B|A)=P\left(B\right)\cdot P\left(A|B\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(B|A\right)=\frac{P\left(A|B\right)P\left(B\right)}{P\left(A\right)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Состоятельность и несмещённость оценки
+\end_layout
+
+\begin_layout Standard
+Рассмотрим случайную величину
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Y=\left|X-\mu\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Применяя к ней неравенство Чебышёва, получим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left\{ \left|X-\mu\right|>\varepsilon\right\} =P\left\{ \left(X-\mu\right)^{2}>\varepsilon^{2}\right\} =P\left\{ \frac{\left(X-\mu\right)^{2}}{\varepsilon^{2}}>1\right\} \le\frac{M\left[\left(X-\mu\right)^{2}\right]}{\varepsilon^{2}}=\frac{\sigma^{2}}{\varepsilon^{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, если математическое ожидание оценки совпадает с оцениваниваемой
+ величиной и дисперсия стремится к нулю с ростом 
+\begin_inset Formula $n$
+\end_inset
+
+, то оценка будет состоятельной.
+\end_layout
+
+\begin_layout Standard
+Проверим, выполняются ли эти требования для оценки вероятности:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[\hat{p}\right]=\frac{1}{n}\sum_{i=1}^{n}M\left[X_{i}\right]=\frac{1}{n}\sum_{i=1}^{n}p=p.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D\left[\hat{p}\right]=\frac{1}{n^{2}}\sum_{i=1}^{n}D\left[X_{i}\right]=\frac{1}{n^{2}}\sum_{i=1}^{n}p\left(1-p\right)=\frac{p\left(1-p\right)}{n}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}D\left[\hat{p}\right]=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Оценка, математическое ожидание которой равно самой оцениваемой величине,
+ называется 
+\emph on
+несмещённой
+\emph default
+.
+ Если математической ожидание оценки не равно самой оцениваемой величине,
+ но его предел (при размере выборки стремящемся к бесконечности) равен оцениваем
+ой величине, то оценку называют 
+\emph on
+асимптотически несмещённой
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Выше мы видели, что частота является несмещённой оценкой вероятности.
+\end_layout
+
+\begin_layout Section
+Интервальная оценка
+\end_layout
+
+\begin_layout Standard
+Доверительный интервал — это интервал, которому параметр распределения принадлеж
+ит с заданной вероятностью.
+\end_layout
+
+\begin_layout Section
+Распределение Бернулли
+\end_layout
+
+\begin_layout Standard
+Если проводится 
+\begin_inset Formula $n$
+\end_inset
+
+ экспериментов, то количество экспериментов, в которых заданное событие
+ произошло также будет случайным.
+ Распределение этой случайной величины называется биномиальным.
+ Найдём вероятность 
+\begin_inset Formula $P_{n}\left(k\right)$
+\end_inset
+
+ того, что событие произойдёт ровно 
+\begin_inset Formula $k$
+\end_inset
+
+ раз в 
+\begin_inset Formula $n$
+\end_inset
+
+ опытах.
+ Так как существует 
+\begin_inset Formula $\binom{n}{k}$
+\end_inset
+
+ способов выбрать 
+\begin_inset Formula $k$
+\end_inset
+
+ элементов из 
+\begin_inset Formula $n$
+\end_inset
+
+, то эта вероятность может быть записана следующим образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{n}\left(k\right)=\dbinom{n}{k}\cdot p^{k}\left(1-p\right)^{n-k}.
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
@@ -3220,142 +4525,6 @@ D\left[B\left(n,p\right)\right]=n\cdot p\cdot\left(1-p\right)=n\cdot p\cdot q.
 \end_layout
 
 \begin_layout Subsection
-Распределение Пуассона
-\end_layout
-
-\begin_layout Standard
-При больших 
-\begin_inset Formula $n$
-\end_inset
-
- пользоваться биномиальным распределением непосредственно неудобно.
- Пусть 
-\begin_inset Formula $n$
-\end_inset
-
- бесконечно увеличивается, а 
-\begin_inset Formula $p=\frac{a}{n}$
-\end_inset
-
-, где 
-\begin_inset Formula $a$
-\end_inset
-
- — некоторая постоянная.
- Вычислим предел 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sub:Биномиальное-распределение"
-
-\end_inset
-
- при этих условиях:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\lim_{n\to\infty}P_{n}\left(k\right)=\lim_{n\to\infty}\dbinom{n}{k}\left(\frac{a}{n}\right)^{k}\left(1-\frac{a}{n}\right)^{n-k}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Выразим биномиальные коэффициенты через факториалы и вынесем множители,
- не зависящие от 
-\begin_inset Formula $n$
-\end_inset
-
-, за знак предела:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{multline*}
-\lim_{n\to\infty}P_{n}\left(k\right)=\lim_{n\to\infty}\frac{n!}{k!\left(n-k\right)!}\left(\frac{a}{n}\right)^{k}\left(1-\frac{a}{n}\right)^{n-k}=\\
-=\frac{a^{k}}{k!}\lim_{n\to\infty}\frac{n!}{\left(n-k\right)!}\left(\frac{1}{n}\right)^{k}\left(1-\frac{a}{n}\right)^{n-k}.
-\end{multline*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Так как
-\begin_inset Formula 
-\[
-\frac{n!}{\left(n-k\right)!}=\prod_{j=k+1}^{n}j=\prod_{j=0}^{k-1}\left(n-j\right),
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-то
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\lim_{n\to\infty}\frac{n!}{\left(n-k\right)!}\left(\frac{1}{n}\right)^{k}=\lim_{n\to\infty}\prod_{j=0}^{k-1}\left(\frac{n-j}{n}\right)=\prod_{j=0}^{k-1}\lim_{n\to\infty}\left(1-\frac{j}{n}\right)=1.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Таким образом (учитывая второй замечательный предел 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-нужна ссылка!!!
-\end_layout
-
-\end_inset
-
-):
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\lim_{n\to\infty}P_{n}\left(k\right)=\frac{a^{k}}{k!}\lim_{n\to\infty}\left(1-\frac{a}{n}\right)^{n-k}=\frac{a^{k}}{k!}\lim_{n\to\infty}\left(1-\frac{a}{n}\right)^{n}=\frac{a^{k}}{k!}e^{-a}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Распределение вероятностей
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-P\left(k\right)=\frac{a^{k}}{k!}e^{-a},
-\]
-
-\end_inset
-
-где 
-\begin_inset Formula $k\in N\cup\{0\}$
-\end_inset
-
-, называется распределением Пуассона.
-\end_layout
-
-\begin_layout Subsection
 Оценка вероятности по частоте
 \end_layout
 
@@ -3464,454 +4633,6 @@ D\left[\hat{p}\right]=\frac{npq}{n^{2}}=\frac{pq}{n}.
 
 \begin_layout Section
 Нормальное распределение
-\end_layout
-
-\begin_layout Subsection
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:normal_as_limit_of_binomial"
-
-\end_inset
-
-Нормальное распределение как предел биномиального распределения
-\end_layout
-
-\begin_layout Standard
-Распределение Пуассона не является единственным вариантом предельного распределе
-ния для биномиального распределения.
- Пусть 
-\begin_inset Formula $n$
-\end_inset
-
- снова стремится к бесконечности, но величина 
-\begin_inset Formula $p$
-\end_inset
-
- остаётся постоянной.
- Пусть случайная величина 
-\begin_inset Formula $X_{n}$
-\end_inset
-
- имеет биномиальное распределение: 
-\begin_inset Formula 
-\[
-X_{n}\sim B\left(n,p\right).
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Распишем в формуле для вероятностей биномиального распределения биномиальные
- коэффициенты через факториалы:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-P_{n}\left(k\right)=\frac{n!}{k!\left(n-k\right)!}p^{k}\cdot q^{n-k}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Факториалы приблизим с помощью формулы Стирлинга
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-нужна ссылка
-\end_layout
-
-\end_inset
-
-:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-n!\approx\sqrt{2\pi n}\cdot\left(\frac{n}{e}\right)^{n}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Применяя эту формулу к 
-\begin_inset Formula $n!$
-\end_inset
-
-, 
-\begin_inset Formula $k!$
-\end_inset
-
- и 
-\begin_inset Formula $\left(n-k\right)!$
-\end_inset
-
- получим:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-P_{n}\left(k\right)\approx\frac{\sqrt{2\pi n}\cdot n^{n}}{e^{n}}\cdot\frac{e^{k}}{\sqrt{2\pi k}\cdot k^{k}}\cdot\frac{e^{n-k}}{\sqrt{2\pi\left(n-k\right)}\cdot\left(n-k\right)^{\left(n-k\right)}}\cdot p^{k}\cdot q^{n-k}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Упростим это выражение:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-P_{n}\left(k\right)\approx\sqrt{\frac{n}{2\pi k\left(n-k\right)}}\cdot\frac{n^{n}}{k^{k}\cdot\left(n-k\right)^{n-k}}\cdot p^{k}\cdot q^{n-k}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Введём стандартизованные переменные:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-x=\frac{k}{n}-p.\label{eq:ML_local_theorem_score}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Тогда
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-k=n\left(x+p\right),
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\frac{k}{pn}=\left(\frac{x}{p}+1\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-n-k=n\left(1-\frac{k}{n}\right)=n\left(1-x-p\right)=n\left(q-x\right).
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\frac{n-k}{nq}=\left(1-\frac{x}{q}\right).
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-P_{n}\left(k\right)\approx\frac{1}{\sqrt{2\pi n\left(p+x\right)\left(q-x\right)}}\cdot\left(1+\frac{x}{p}\right)^{-n\left(x+p\right)}\cdot\left(1-\frac{x}{q}\right)^{-n\left(q-x\right)}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Обозначим
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-W=\left(1+\frac{x}{p}\right)^{-n\left(x+p\right)}\cdot\left(1-\frac{x}{q}\right)^{-n\left(q-x\right)}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Возьмём логарифм этого выражения:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\ln W=-n\left(x+p\right)\ln\left(1+\frac{x}{p}\right)-n\left(q-x\right)\ln\left(1-\frac{x}{q}\right).
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Разложим логарифмы в ряд Тейлора 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Нужна ссылка
-\end_layout
-
-\end_inset
-
- и возьмём первые два слагаемых:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\ln W\approx-n\left(p+x\right)\left(\frac{x}{p}-\frac{x^{2}}{2p^{2}}\right)-n\left(q-x\right)\left(-\frac{x}{q}-\frac{x^{2}}{2q^{2}}\right).
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Отметим, что для того, чтобы это приближение было достаточно точным, требуется,
- чтобы 
-\begin_inset Formula $\left|x\right|$
-\end_inset
-
- был намного меньше, чем 
-\begin_inset Formula $p$
-\end_inset
-
- и 
-\begin_inset Formula $q$
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Более конкретно
-\end_layout
-
-\end_inset
-
-.
- Приведём подобные слагаемые:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{multline*}
-\ln W\approx-n\left[\left(x-x\right)+\left(-\frac{x^{2}}{2p}+\frac{x^{2}}{p}-\frac{x^{2}}{2q}+\frac{x^{2}}{q}\right)+\left(-\frac{x^{3}}{2p^{2}}+\frac{x^{3}}{2q^{2}}\right)\right]=\\
-=-n\left[\frac{x^{2}}{2pq}+x^{3}\left(\frac{1}{q^{2}}-\frac{1}{p^{2}}\right)\right].
-\end{multline*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-P_{n}\left(k\right)\approx\frac{1}{\sqrt{2\pi npq}}\exp\left(-\frac{nx^{2}}{2pq}\right).\label{eq:ML_local_approx}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Найдём числовые характеристики случайной величины
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-X=\frac{Y}{n}-p.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\mu=M\left[X\right]=\frac{np}{n}-p=0.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\sigma^{2}=D\left[X\right]=\frac{D\left[Y\right]}{n^{2}}=\frac{pq}{n}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Функция плотности нормального распределения с математическим ожиданием 
-\begin_inset Formula $\mu$
-\end_inset
-
- и дисперсией 
-\begin_inset Formula $\sigma^{2}$
-\end_inset
-
- имеет вид:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-f\left(x\right)=\frac{1}{\sqrt{2\pi}\cdot\sigma}\exp\left(-\frac{\left(x-\mu\right)^{2}}{2\sigma^{2}}\right).
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Нормальное распределение с 
-\begin_inset Formula $\mu=0$
-\end_inset
-
- и 
-\begin_inset Formula $\sigma=1$
-\end_inset
-
- называется стандартным нормальным.
-\end_layout
-
-\begin_layout Standard
-Соответственно, функция плотности нормального распределения с нулевым математиче
-ским ожиданием и дисперсией 
-\begin_inset Formula $\frac{1}{n}pq$
-\end_inset
-
- имеет вид
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-f\left(x\right)=\sqrt{\frac{n}{2\pi pq}}\cdot\exp\left(-\frac{nx^{2}}{2pq}\right).
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Сравнивая это выражение с 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:ML_local_approx"
-
-\end_inset
-
-, легко заметить, что
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-P_{n}\left(k\right)=\frac{1}{n}f\left(\frac{k}{n}-p\right).
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Появление множителя 
-\begin_inset Formula $\nicefrac{1}{n}$
-\end_inset
-
- связано с тем, что биномиальное распределение является дискретным и вероятность
- того, что 
-\begin_inset Formula $Y=k$
-\end_inset
-
- можно рассматривать как вероятность попадания 
-\begin_inset Formula $Y$
-\end_inset
-
- в интервал 
-\begin_inset Formula $\left[k;k+1\right)$
-\end_inset
-
-.
- Изменению 
-\begin_inset Formula $k$
-\end_inset
-
- на единицу соответствует изменение 
-\begin_inset Formula $x$
-\end_inset
-
- на 
-\begin_inset Formula $\nicefrac{1}{n}$
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Subsection
@@ -4446,6 +5167,16 @@ f\left(x\right)=\exp\left(-c\left(\left(x-\beta\right)^{2}+\alpha-\beta^{2}\righ
 \end_inset
 
 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Здесь нужна ссылка на интеграл Пуассона
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4642,350 +5373,6 @@ status open
 \end_inset
 
 
-\end_layout
-
-\begin_layout Chapter
-Алгебра случайных чисел
-\end_layout
-
-\begin_layout Section
-Распределение суммы
-\end_layout
-
-\begin_layout Standard
-Пусть задана система двух случайных величин 
-\begin_inset Formula $X$
-\end_inset
-
- и 
-\begin_inset Formula $Y$
-\end_inset
-
-, имеющих совместную плотность распределения 
-\begin_inset Formula $f\left(x,y\right).$
-\end_inset
-
- Найдём распределение суммы, то есть случайной величины 
-\begin_inset Formula $Z=X+Y$
-\end_inset
-
-.
- Функцию распределения 
-\begin_inset Formula $Z$
-\end_inset
-
- обозначим как 
-\begin_inset Formula $G\left(z\right)$
-\end_inset
-
-:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-G\left(z\right)=Pr\left\{ Z<z\right\} =\iintop_{x+y<z}f\left(x,y\right)dxdy.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Неравенство 
-\begin_inset Formula $x+y<z$
-\end_inset
-
- можно переписать в виде 
-\begin_inset Formula $y<z-x$
-\end_inset
-
-, поэтому
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-G\left(z\right)=\iintop_{y<z-x}f\left(x,y\right)dxdy=\intop_{-\infty}^{+\infty}\intop_{-\infty}^{z-x}f\left(x,y\right)dydx.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Дифференцируя это выражение по 
-\begin_inset Formula $z$
-\end_inset
-
-, получим формулу для плотности распределения 
-\begin_inset Formula $f_{Z}\left(z\right)$
-\end_inset
-
-:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-f_{Z}\left(z\right)=\intop_{-\infty}^{+\infty}f\left(x,z-x\right)dx.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Если 
-\begin_inset Formula $X$
-\end_inset
-
- и 
-\begin_inset Formula $Y$
-\end_inset
-
- независимы, то есть 
-\begin_inset Formula $f\left(x,y\right)=f_{X}(x)\cdot f_{Y}\left(y\right)$
-\end_inset
-
-, то
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-f_{Z}\left(z\right)=\intop_{-\infty}^{+\infty}f_{X}\left(x\right)f_{Y}\left(z-x\right)dx.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Распределение частного
-\end_layout
-
-\begin_layout Standard
-Пусть задана система двух случайных величин 
-\begin_inset Formula $X$
-\end_inset
-
- и 
-\begin_inset Formula $Y$
-\end_inset
-
-, имеющих совместную плотность распределения 
-\begin_inset Formula $f\left(x,y\right).$
-\end_inset
-
- Найдём распределение частного, то есть случайной величины 
-\begin_inset Formula $Z=\nicefrac{X}{Y}$
-\end_inset
-
-.
- Функцию распределения 
-\begin_inset Formula $Z$
-\end_inset
-
- обозначим как 
-\begin_inset Formula $G\left(z\right)$
-\end_inset
-
-:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-G\left(z\right)=Pr\left\{ Z<z\right\} =\iintop_{\frac{x}{y}<z}f\left(x,y\right)dxdy.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Неравенство 
-\begin_inset Formula $\frac{x}{y}<z$
-\end_inset
-
- можно представить в виде системы двух неравенств
-\begin_inset Formula 
-\[
-\begin{cases}
-y\ge0 & x<z\cdot y\\
-y<0 & x>z\cdot y
-\end{cases},
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-поэтому
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-G\left(z\right)=\intop_{-\infty}^{0}\intop_{z\cdot y}^{+\infty}f\left(x,y\right)dxdy+\intop_{0}^{+\infty}\intop_{-\infty}^{z\cdot y}f\left(x,y\right)dxdy.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Продифференцируем это выражение по 
-\begin_inset Formula $z$
-\end_inset
-
-:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{multline*}
-g\left(z\right)=G^{\prime}\left(z\right)=\intop_{-\infty}^{0}\left(-y\right)\cdot f\left(zy,y\right)dy+\intop_{0}^{+\infty}y\cdot f\left(zy,y\right)dy=\\
-=\intop_{-\infty}^{0}\left|y\right|\cdot f\left(zy,y\right)dy+\intop_{0}^{+\infty}\left|y\right|\cdot f\left(zy,y\right)dy=\intop_{-\infty}^{+\infty}\left|y\right|\cdot f\left(zy,y\right)dy.
-\end{multline*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Распределение-Коши"
-
-\end_inset
-
-Распределение Коши
-\end_layout
-
-\begin_layout Standard
-Пусть 
-\begin_inset Formula $X$
-\end_inset
-
- и 
-\begin_inset Formula $Y$
-\end_inset
-
- ― независимые стандартные нормальные случайные величины.
- Найдём распределение случайной величины 
-\begin_inset Formula $Z=\frac{X}{Y}$
-\end_inset
-
-.
- Воспользуемся формулой для вычисления функции распределения частного:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-f_{Z}\left(x\right)=\intop_{-\infty}^{+\infty}f\left(x\cdot y\right)\cdot\left|y\right|\cdot f\left(y\right)dy.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-В нашем случае 
-\begin_inset Formula 
-\[
-f\left(x\right)=\frac{1}{\sqrt{2\cdot\pi}}\exp\left(-\frac{x^{2}}{2}\right),
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-поэтому
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{multline*}
-f_{Z}\left(x\right)=\intop_{-\infty}^{+\infty}\frac{1}{\sqrt{2\cdot\pi}}\exp\left(-\frac{x^{2}\cdot y^{2}}{2}\right)\cdot\left|y\right|\cdot\frac{1}{\sqrt{2\cdot\pi}}\exp\left(-\frac{y^{2}}{2}\right)dy=\\
-=\frac{1}{2\pi}\intop_{-\infty}^{+\infty}\exp\left(-\frac{y^{2}\left(x^{2}+1\right)}{2}\right)\cdot\left|y\right|\cdot dy.
-\end{multline*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Так как подынтегральная функция является чётной, то
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-f_{Z}\left(x\right)=\frac{1}{\pi}\intop_{0}^{+\infty}\exp\left(-\frac{y^{2}\left(x^{2}+1\right)}{2}\right)\cdot y\cdot dy.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Введём новую переменную интегрирования 
-\begin_inset Formula $t=\left(x^{2}+1\right)y^{2}$
-\end_inset
-
-, 
-\begin_inset Formula $dt=\left(x^{2}+1\right)2y\cdot dy$
-\end_inset
-
-:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{multline*}
-f_{Z}\left(x\right)=\frac{1}{\pi}\intop_{0}^{+\infty}\exp\left(-\frac{t}{2}\right)\frac{dt}{2\left(x^{2}+1\right)}=\frac{1}{2\pi\left(x^{2}+1\right)}\left.\left(-2\right)\cdot\exp\left(-\frac{t}{2}\right)\right|_{0}^{+\infty}=\\
-=\frac{1}{\pi\left(1+x^{2}\right)}.
-\end{multline*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Функция распределения имеет вид
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-F_{Z}\left(x\right)=\intop_{-\infty}^{x}f_{Z}\left(y\right)dy=\frac{1}{\pi}\intop_{-\infty}^{x}\frac{dy}{1+y^{2}}=\frac{1}{\pi}\mathrm{\left.arctg\left(y\right)\right|_{-\infty}^{x}=\frac{1}{\pi}arctg\left(y\right)+\frac{1}{2}.}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Распределение частного двух нормальных случайных величин (общий случай)
 \end_layout
 
 \begin_layout Chapter
