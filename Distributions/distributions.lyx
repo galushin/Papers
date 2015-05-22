@@ -1500,6 +1500,12 @@ P\left\{ \left|\hat{\theta}_{n}-\theta\right|>\varepsilon\right\} =P\left\{ \fra
 \end_layout
 
 \begin_layout Fact
+\begin_inset CommandInset label
+LatexCommand label
+name "fact:mean_for_non_random_discrete"
+
+\end_inset
+
 Математическое ожидание неслучайной величины 
 \begin_inset Formula $a$
 \end_inset
@@ -1532,6 +1538,12 @@ M\left[a\right]=a\cdot P\left\{ a=a\right\} =a\cdot1=a.
 \end_layout
 
 \begin_layout Fact
+\begin_inset CommandInset label
+LatexCommand label
+name "fact:mean_for_scaled_discrete"
+
+\end_inset
+
 Пусть 
 \begin_inset Formula $X$
 \end_inset
@@ -1602,6 +1614,12 @@ M\left[\alpha X\right]=M\left[Y\right]=\sum_{n\in\mathbb{N}}y_{n}\cdot P\left\{ 
 \end_layout
 
 \begin_layout Fact
+\begin_inset CommandInset label
+LatexCommand label
+name "fact:mean_of_sum_discrete"
+
+\end_inset
+
 Пусть 
 \begin_inset Formula $X$
 \end_inset
@@ -2363,7 +2381,342 @@ status open
 \end_layout
 
 \begin_layout Section
-Числовые характеристики дискретной случайной величины
+Математическое ожидание
+\end_layout
+
+\begin_layout Standard
+В дальнейшем нам часто придётся вычислять математическое ожидание функций
+ случайных величин (в частности: при вычислении дисперсии).
+ Пусть случайные величины 
+\begin_inset Formula $X$
+\end_inset
+
+ и 
+\begin_inset Formula $Y$
+\end_inset
+
+ связаны функциональной зависимостью 
+\begin_inset Formula $Y=g\left(X\right)$
+\end_inset
+
+.
+ Оказывается, для того, чтобы вычислить математическое ожидание 
+\begin_inset Formula $Y$
+\end_inset
+
+ нет необходимости находить вероятности её возможных значений, вместо этого
+ можно воспользоваться формулой
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[Y\right]=M\left[g\left(X\right)\right]=\sum_{k}g\left(x_{k}\right)P\left\{ X=x_{k}\right\} ,
+\]
+
+\end_inset
+
+даже если среди 
+\begin_inset Formula $\left\{ g\left(x_{k}\right)\right\} $
+\end_inset
+
+ есть повторяющиеся значения.
+ Действительно, пусть 
+\begin_inset Formula $\left\{ y_{1},...,y_{n},...\right\} $
+\end_inset
+
+ — множество возможных значений случайной величины 
+\begin_inset Formula $Y$
+\end_inset
+
+.
+ Тогда мы можем написать
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[Y\right]=\sum_{n}y_{n}P\left\{ Y=y_{n}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вероятность того, что 
+\begin_inset Formula $Y=y_{n}$
+\end_inset
+
+ равна сумме вероятностей того, что 
+\begin_inset Formula $X$
+\end_inset
+
+ принимает такие значения, что 
+\begin_inset Formula $g\left(X\right)=y_{n}$
+\end_inset
+
+: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left\{ Y=y_{n}\right\} =\sum_{k}\left[g\left(x_{k}\right)=y_{n}\right]\cdot P\left\{ X=x_{k}\right\} ,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[Y\right]=\sum_{n}y_{n}\sum_{k}\left[g\left(x_{k}\right)=y_{n}\right]\cdot P\left\{ X=x_{k}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Изменим порядок суммирования:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[Y\right]=\sum_{k}\left(\sum_{n}y_{n}\left[g\left(x_{k}\right)=y_{n}\right]\right)\cdot P\left\{ X=x_{k}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Из всех возможных 
+\begin_inset Formula $n$
+\end_inset
+
+ только при одном значении выполнится равенство 
+\begin_inset Formula $g\left(x_{k}\right)=y_{n}$
+\end_inset
+
+, поэтому
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{n}y_{n}\left[g\left(x_{k}\right)=y_{n}\right]=g\left(x_{k}\right),
+\]
+
+\end_inset
+
+таким образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[Y\right]=\sum_{k}g\left(x_{k}\right)P\left\{ X=x_{k}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Дисперсия дискретной случайной величины
+\end_layout
+
+\begin_layout Fact
+Дисперсия неслучайной величины 
+\begin_inset Formula $a$
+\end_inset
+
+ равна нулю.
+\end_layout
+
+\begin_layout Proof
+По свойству математического ожидания 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fact:mean_for_non_random_discrete"
+
+\end_inset
+
+
+\begin_inset Formula $M\left[a\right]=a,$
+\end_inset
+
+ то
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+D\left[a\right]=\left(a-M\left[a\right]\right)^{2}\cdot1=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Fact
+Если 
+\begin_inset Formula $X$
+\end_inset
+
+ — случайная величина, а 
+\begin_inset Formula $a$
+\end_inset
+
+ — неслучайное вещественное число, то
+\end_layout
+
+\begin_layout Fact
+\begin_inset Formula 
+\[
+D\left[a\cdot X\right]=a^{2}\cdot D\left[X\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+По определению дисперсии и свойству математического ожидания 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fact:mean_for_scaled_discrete"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+D\left[a\cdot X\right]=M\left[\left(a\cdot X-M\left[a\cdot X\right]\right)^{2}\right]=M\left[a^{2}\left(X-M\left[X\right]\right)^{2}\right]=a^{2}\cdot D\left[X\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Fact
+\begin_inset Formula $D\left[X\right]=M\left[X^{2}\right]-\left(M\left[X\right]\right)^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Запишем определение дисперсии и расскроем квадрат по формуле сокращённого
+ умножения:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+D\left[X\right]=M\left[\left(X-M\left[X\right]\right)^{2}\right]=M\left[X^{2}-2\cdot X\cdot M\left[X\right]+\left(M\left[X\right]\right)^{2}\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+По свойствам математического ожидания:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+D\left[X\right]=M\left[X^{2}\right]-2\cdot\left(M\left[X\right]\right)^{2}+\left(M\left[X\right]\right)^{2}=M\left[X^{2}\right]-\left(M\left[X\right]\right)^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Дисперсия суммы: нужно подумать, ввести уже здесь ковариацию или ограничиться
+ независимыми случайными величинами
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём дисперсию суммы двух случайных величин
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+D\left[X+Y\right]=M\left[\left(X+Y-M\left[X+Y\right]\right)^{2}\right]=M\left[\left(X-M\left[X\right]+Y-M\left[Y\right]\right)^{2}\right]=\\
+=M\left[\left(X-M\left[X\right]\right)^{2}+2\left(X-M\left[X\right]\right)\left(Y-M\left[Y\right]\right)+\left(Y-M\left[Y\right]\right)^{2}\right]=\\
+=M\left[\left(X-M\left[X\right]\right)^{2}\right]+2\cdot M\left[\left(X-M\left[X\right]\right)\left(Y-M\left[Y\right]\right)\right]+M\left[\left(Y-M\left[Y\right]\right)^{2}\right]=\\
+=D\left[X\right]+2\cdot M\left[\left(X-M\left[X\right]\right)\left(Y-M\left[Y\right]\right)\right]+D\left[Y\right].
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Величина 
+\begin_inset Formula $M\left[\left(X-M\left[X\right]\right)\left(Y-M\left[Y\right]\right)\right]$
+\end_inset
+
+ называется ковариацией случайных величин 
+\begin_inset Formula $X$
+\end_inset
+
+ и 
+\begin_inset Formula $Y$
+\end_inset
+
+, обозначается она как 
+\begin_inset Formula $Cov\left[X,Y\right]$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Cov\left[X,Y\right]=M\left[\left(X-M\left[X\right]\right)\left(Y-M\left[Y\right]\right)\right].
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -2451,6 +2804,22 @@ M\left[X\right]=0\cdot\left(1-p\right)+1\cdot p=p,
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Так как 
+\begin_inset Formula $0^{2}=0$
+\end_inset
+
+ и 
+\begin_inset Formula $1^{2}=1$
+\end_inset
+
+, то 
+\begin_inset Formula $X^{2}=X.$
+\end_inset
+
+ Поэтому дисперсию распределения Бернулли можно посчитать следующим образом:
 \end_layout
 
 \begin_layout Standard
@@ -2671,7 +3040,7 @@ P\left\{ Y=k\right\} =q^{k}p=\left(1-p\right)^{k}p.
 status open
 
 \begin_layout Plain Layout
-Существуют другое определение геометрического распределения
+Существует другое определение геометрического распределения
 \end_layout
 
 \end_inset
@@ -3015,20 +3384,145 @@ P\left(k\right)=\frac{a^{k}}{k!}e^{-a},
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Вычислить математическое ожидание и дисперсию
+Проверим, что сумма всех вероятностей равна единице.
 \end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{k=0}^{\infty}P\left(k\right)=\sum_{k=0}^{\infty}\frac{a^{k}}{k!}e^{-a}=e^{-a}\sum_{k=0}^{\infty}\frac{a^{k}}{k!}.
+\]
 
 \end_inset
 
 
 \end_layout
 
+\begin_layout Standard
+Сумма в правой части — ряд Тейлора 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+нужна ссылка?
+\end_layout
+
+\end_inset
+
+ для 
+\begin_inset Formula $e^{a}$
+\end_inset
+
+, поэтому
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{k=0}^{\infty}P\left(k\right)=e^{-a}\cdot e^{a}=1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вычислим математическое ожидание и дисперсию этой случайной величины (обозначим
+ её 
+\begin_inset Formula $X$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+M\left[X\right]=\sum_{k=0}^{\infty}k\cdot\frac{a^{k}}{k!}e^{-a}=\sum_{k=1}^{\infty}\frac{a^{k}}{\left(k-1\right)!}e^{-a}=\\
+=a\sum_{k=1}^{\infty}\frac{a^{k-1}}{\left(k-1\right)!}e^{-a}=a\sum_{k=0}^{\infty}\frac{a^{k}}{k!}e^{-a}=a.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вычисление дисперсии начнём с вычисления квадрата случайной величины 
+\begin_inset Formula $X$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+M\left[X^{2}\right]=\sum_{k=0}^{\infty}k^{2}\cdot\frac{a^{k}}{k!}e^{-a}=\sum_{k=1}^{\infty}k\cdot\frac{a^{k}}{\left(k-1\right)!}e^{-a}=\\
+=\sum_{k=0}^{\infty}\left(k+1\right)\cdot\frac{a^{k+1}}{k!}e^{-a}=a\cdot\sum_{k=0}^{\infty}k\cdot\frac{a^{k}}{k!}e^{-a}+a\cdot\sum_{k=0}^{\infty}\frac{a^{k}}{k!}e^{-a}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Первая из сумм, стоящий в правой части есть 
+\begin_inset Formula $M\left[X\right]$
+\end_inset
+
+, а вторая — единица как сумма вероятностей всех возможных значений случайной
+ величины:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[X^{2}\right]=a\cdot a+a\cdot1=a^{2}+a.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D\left[X\right]=M\left[X^{2}\right]-\left(M\left[X\right]\right)^{2}=a^{2}+a-a^{2}=a.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Заметьтим, что наличие бесконечного количества значений величины только
+ помогало нам при нахождении числовых характеристик.
+\end_layout
+
 \begin_layout Chapter
 Непрерывные случайные величины
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Нужно бы ещё описать смеси распределения
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3042,6 +3536,15 @@ status open
 
 \begin_layout Section
 Числовые характеристики непрерывных случайных величин
+\end_layout
+
+\begin_layout Standard
+Заметим, что при доказательстве свойств дисперсии для дискретных случайных
+ величин мы пользовались лишь свойствами математического ожидания, счётность
+ множества возможных значений.
+ Так как мы перенесли свойства математического ожидания на непрерывные случайные
+ величины, то свойства дисперсии непрерывных случайных величин автоматически
+ становятся доказанными.
 \end_layout
 
 \begin_layout Section
@@ -3065,6 +3568,113 @@ P\left\{ X>1\right\} =\intop_{1}^{+\infty}f\left(x\right)dx\le\intop_{1}^{+\inft
 \[
 P\left\{ X>1\right\} \le M\left[X\right].
 \]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Равномерное распределение
+\end_layout
+
+\begin_layout Standard
+Случайная величина 
+\begin_inset Formula $X$
+\end_inset
+
+ называется распределённой равномерно на интервале 
+\begin_inset Formula $\left[a;b\right]$
+\end_inset
+
+, если функция плотности этого распределения равна нулю вне указанного интервала
+, а внутри него имеет постоянное (ненулевое значение).
+ Значение функции плотности распределения внутри интервала легко найти из
+ требования нормировки:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f\left(x\right)=\begin{cases}
+0, & x\notin\left[a;b\right]\\
+\frac{1}{b-a}, & x\notin\left[a;b\right]
+\end{cases}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём функцию распределения:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(x\right)=\begin{cases}
+0, & x<a\\
+\frac{x-a}{b-a}, & a\le x\le b\\
+1, & b<x
+\end{cases}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вычислим теперь математическое ожидание:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[X\right]=\intop_{a}^{b}x\cdot\frac{1}{b-a}dx=\frac{1}{b-a}\left.\frac{x^{2}}{2}\right|_{a}^{b}=\frac{b^{2}-a^{2}}{2\left(b-a\right)}=\frac{b+a}{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, математическое ожидание равномерно распределённой случайной
+ величины есть середина интервала, что соответствует ожидаемому.
+\end_layout
+
+\begin_layout Standard
+Найдём теперь дисперсию, начнём с вычисления математического ожидания квадрата
+ 
+\begin_inset Formula $X$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+M\left[X^{2}\right]=\intop_{a}^{b}x^{2}\cdot\frac{1}{b-a}dx=\frac{1}{b-a}\left.\frac{x^{3}}{3}\right|_{a}^{b}=\frac{b^{3}-a^{3}}{3\left(b-a\right)}=\\
+=\frac{\left(b-a\right)\left(a^{2}+ab+b^{2}\right)}{3\left(b-a\right)}=\frac{a^{2}+ab+b^{2}}{3}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+D\left[X\right]=M\left[X^{2}\right]-\left(M\left[X\right]\right)^{2}=\frac{a^{2}+ab+b^{2}}{3}-\frac{\left(b+a\right)^{2}}{4}=\\
+=\frac{a^{2}+ab+b^{2}}{3}-\frac{b^{2}+2ab+a^{2}}{4}=\\
+=\frac{4a^{2}+4ab+4b^{2}-3b^{2}-6ab-3a^{2}}{12}=\\
+=\frac{a^{2}-2ab+b^{2}}{12}=\frac{\left(b-a\right)^{2}}{12}.
+\end{multline*}
 
 \end_inset
 
