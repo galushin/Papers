@@ -144,21 +144,24 @@ LatexCommand tableofcontents
 
 \end_layout
 
+\begin_layout Chapter*
+Введение
+\end_layout
+
 \begin_layout Standard
-\begin_inset Note Note
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-Добавить Содержание в Содержание
+
+
+\backslash
+addcontentsline{toc}{chapter}{Введение}
 \end_layout
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Chapter*
-Введение
 \end_layout
 
 \begin_layout Standard
@@ -175,22 +178,6 @@ status open
 \end_inset
 
 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{chapter}{Введение}
 \end_layout
 
 \end_inset
@@ -219,7 +206,7 @@ addcontentsline{toc}{chapter}{Введение}
 \end_layout
 
 \begin_layout Standard
-Традиционые курсы теории вероятностей и математической статистики оставляют
+Традиционные курсы теории вероятностей и математической статистики оставляют
  некоторые важные моменты без доказательств.
  В частности, выборочные распределения (хи-квадрат, Стьюдента и другие)
  не выводятся, а постулируются.
@@ -325,6 +312,63 @@ status open
 
 \end_layout
 
+\begin_layout Section
+Требования к математической подготовке
+\end_layout
+
+\begin_layout Standard
+Так как при выводе многих результатов теории вероятностей и математической
+ статистики используются методы дифференциального и интегрального исчисления,
+ поэтому предполагается, что читатель изучил курс математического анализа
+ в объёме стандартного курса технического вуза.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Нужно добавить ссылки на конкретные книги
+\end_layout
+
+\end_inset
+
+ Пропуская доказательства, можно существенно ослабить требования к подготовке
+ в области математического анализа.
+\end_layout
+
+\begin_layout Standard
+В отличие от приёмов вычисления интегралов, приёмы вычисления конечных сумм,
+ которые нам понадобятся, не входят в стандартные курсы математики технических
+ вузов.
+ Данный материал излагается, например, в книге 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ConcreteMath"
+
+\end_inset
+
+, однако для удобства мы приводим нужные результаты в 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Sums_calculations"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Линейная алгебра используется не только в доказательствах, но и для описания
+ статистических объектов, поэтому мы излагаем все необходимые сведения в
+ главе 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Linear_algebra"
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Chapter
 Случайные события
 \end_layout
@@ -338,7 +382,7 @@ status open
 \begin_inset Quotes fld
 \end_inset
 
-генеральная совакупность
+генеральная совокупность
 \begin_inset Quotes frd
 \end_inset
 
@@ -382,6 +426,15 @@ status open
 \begin_layout Definition
 
 \emph on
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+Случайное событие
+\end_layout
+
+\end_inset
+
 Случайное событие — 
 \emph default
 это событие, которое может произойти или не произойти в результате опыта,
@@ -467,7 +520,7 @@ status open
 
 \begin_layout Standard
 Существуют разные подходы к определению вероятностей конкретных случайных
- событий: непосредственный подсчёт вероятностей, геометричкая вероятность,
+ событий: непосредственный подсчёт вероятностей, геометрическая вероятность,
  частотный подход, аксиоматический подход (являющийся современным фундаментом
  теории вероятностей) и т.д.
 \end_layout
@@ -710,7 +763,7 @@ P\left\{ \bar{A}\right\} =1-P\left\{ A\right\} .
 \emph on
  
 \emph default
-узнать вероятность случайного события на практике? Едиственный возможный
+узнать вероятность случайного события на практике? Единственный возможный
  путь — выполнение большого количества опытов и 
 \emph on
 оценивание 
@@ -726,7 +779,7 @@ P\left\{ \bar{A}\right\} =1-P\left\{ A\right\} .
  для того, чтобы дать читателю представление о методе математической статистики.
  В этой главе мы отклоняемся от последовательного изложения теории вероятностей,
  принятого в большинстве известных курсов.
- Вместо этого мы стремися показать, как важнейшие понятия теории вероятностей
+ Вместо этого мы стремимся показать, как важнейшие понятия теории вероятностей
  естественным образом возникают при решении достаточно простой по формулировке
  задачи математической статистики.
 \end_layout
@@ -872,14 +925,42 @@ P\left(k,n,p\right)=\dbinom{n}{k}\cdot p^{k}q^{n-k}.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Может быть сначала обсудить критерий качества оценки
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Для построения оценки вероятности воспользуемся так называемым 
 \emph on
 методом максимизации правдоподобия
 \emph default
 .
- Подробнее этот метод будет рассмотрен в дальнейшем.
- Пока же мы примём его без обоснования.
- В качестве оценки вероятности возьмём значение 
+ Суть данного метода заключается в том, что в качестве оценки параметра
+ берётся такое его значение, которое максимизирует вероятность результата,
+ полученного в результате опытов.
+ Пока мы примем его без обоснования, как практический рецепт.
+ При этом нам придётся каждый раз доказывать, что полученная оценка действительн
+о является 
+\begin_inset Quotes fld
+\end_inset
+
+хорошей
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Итак, в качестве оценки вероятности возьмём значение 
 \begin_inset Formula $p=\hat{p}$
 \end_inset
 
@@ -1790,7 +1871,7 @@ M\left[\left(\hat{p}_{n}-p\right)^{2}\right]=M\left[\left(\hat{p}_{n}\right)^{2}
 \end_layout
 
 \begin_layout Standard
-Возможными значеними этой случайной величины 
+Возможными значениями этой случайной величины 
 \begin_inset Formula $\hat{p}_{n}$
 \end_inset
 
@@ -1833,7 +1914,7 @@ M\left[\hat{p}_{n}\right]=\sum_{k=0}^{n}k\cdot\binom{n}{k}\cdot p^{k}\left(1-p\r
 
 \end_inset
 
- но существует более простой путь, основанный на свойствах матеметического
+ но существует более простой путь, основанный на свойствах математического
  ожидания.
 \end_layout
 
@@ -2719,6 +2800,30 @@ Cov\left[X,Y\right]=M\left[\left(X-M\left[X\right]\right)\left(Y-M\left[Y\right]
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Описать подробнее
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D\left[X+a\right]=D\left[X\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Распределение Бернулли
 \end_layout
@@ -2881,6 +2986,23 @@ p=\frac{1}{2}.
 
 \end_layout
 
+\begin_layout Standard
+Другой способ получить тот же результат, выделить полный квадрат в формуле
+ для дисперсии:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+D\left[X\right]=p\cdot\left(1-p\right)=-\left(p^{2}-p\right)=\\
+=-\left(p^{2}-2\cdot p\cdot\frac{1}{2}+\frac{1}{4}-\frac{1}{4}\right)=\frac{1}{4}-\left(p-\frac{1}{2}\right)^{2}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 \begin_inset CommandInset label
 LatexCommand label
@@ -2966,6 +3088,22 @@ P_{n}\left(k\right)=\dbinom{n}{k}\cdot p^{k}q^{n-k}.
 \end_layout
 
 \begin_layout Standard
+Во-первых, мы должны проверить, что вероятности в суммы дают единицу.
+ Для этого воспользуемся одним из определений биномиальных коэффициентов:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{k=0}^{n}P_{n}\left(k\right)=\sum_{k=0}^{n}\dbinom{n}{k}\cdot p^{k}q^{n-k}=\left(p+q\right)^{n}=1^{n}=1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Математическое ожидание и дисперсию биномиального распределения можно легко
  получить исходя из его определения.
  Математическое ожидание суммы всегда равно сумме математических ожидания,
@@ -3035,17 +3173,28 @@ P\left\{ Y=k\right\} =q^{k}p=\left(1-p\right)^{k}p.
 \end_inset
 
 , то есть вероятности в сумме не равны единице.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Существует другое определение геометрического распределения
 \end_layout
 
+\begin_layout Remark
+Заметим, что существует некоторая неопределённость в определении геометрического
+ распределения.
+ Вместо количества опытов, которое предшествует первому появлению события,
+ можно рассматривать количество опытов перед тем, как событие первый раз
+ не произойдёт.
+ Эта вариация сводится к смене ролей 
+\begin_inset Formula $p$
 \end_inset
 
+ и 
+\begin_inset Formula $q=1-p$
+\end_inset
 
+.
+ Вторая вариация заключается в том, чтобы вместо количества опытов до первого
+ появления события, рассматривать номер опыта, в котором событие произойдёт
+ (причём нумерация осуществляется с нуля).
+ Эти неопределённости нужно иметь в виду, но они не оказывают существенного
+ влияния на исследование свойств геометрического распределения.
 \end_layout
 
 \begin_layout Standard
@@ -3241,6 +3390,157 @@ M\left[Y^{2}\right]=\frac{q}{p^{2}}+\frac{q}{p}M\left[Y\right]=\frac{q}{p^{2}}+\
 \[
 D\left[Y\right]=M\left[Y^{2}\right]-M^{2}\left[Y\right]=\frac{q}{p^{2}}.
 \]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Равномерное дискретное распределение
+\end_layout
+
+\begin_layout Standard
+Случайная величина, которая может принимать целочисленные значения из интервала
+ 
+\begin_inset Formula $[a;b]$
+\end_inset
+
+, причём все значения имеют одинаковую вероятность.
+\begin_inset Formula 
+\[
+P\left(X=x\right)=\frac{1}{b-a+1}\cdot\left[a\le x\le b\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём математическое ожидание:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[X\right]=\sum_{x=a}^{b}x\cdot\frac{1}{b-a+1}=\frac{1}{b-a+1}\sum_{x=a}^{b}x.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Воспользовавшись формулой для суммы арифметической прогрессии
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{x=a}^{b}x=\frac{\left(b+a\right)\cdot\left(b-a+1\right)}{2},
+\]
+
+\end_inset
+
+получим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[X\right]=\frac{b+a}{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вычисление дисперсии сложнее.
+ Основную сложность представляет вычисление суммы
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{b-a+1}\sum_{x=a}^{b}x^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Мы знаем, что прибавление к случайной величины неслучайного числа не влияет
+ на значение дисперсии.
+ Таким образом, мы можем вычислить дисперсию случайной величины, равномерно
+ распределённой на 
+\begin_inset Formula $[0;b-a]$
+\end_inset
+
+.
+ Воспользуемся формулой 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:factorial_power_sum"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+\sum_{x=0}^{b-a}x^{2}=\sum_{x=0}^{b-a}\left(x\left(x-1\right)+x\right)=\sum_{x=0}^{b-a}\left(x^{\underline{2}}+x^{\underline{1}}\right)=\\
+=\sum_{x=1}^{b-a}x^{\underline{2}}+\sum_{x=0}^{b-a}x^{\underline{1}}=\\
+=\frac{1}{3}\left(b-a+1\right)^{\underline{3}}+\frac{1}{2}\left(b-a+1\right)^{\underline{2}}=\\
+=\left(b-a+1\right)\left(b-a\right)\left(\frac{1}{3}\left(b-a-1\right)+\frac{1}{2}\right).
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вводя обозначение для количества возможных значений случайной величины 
+\begin_inset Formula $N=b-a+1$
+\end_inset
+
+, это выражение можно переписать следующим образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{b-a+1}\sum_{x=0}^{b-a}x^{2}=\frac{N\left(N-1\right)}{N}\cdot\frac{2\left(N-2\right)+3}{6}=\frac{\left(N-1\right)\left(2N-1\right)}{6}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Математическое ожидание рассматриваемой случайной величины равно 
+\begin_inset Formula $\frac{1}{2}\left(b-a\right)$
+\end_inset
+
+, следовательно, дисперсия равна
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+D\left[X\right]=\frac{\left(N-1\right)\left(2N-1\right)}{6}-\frac{\left(N-1\right)^{2}}{4}=\\
+=\left(N-1\right)\left(\frac{2N-1}{6}-\frac{N-1}{4}\right)=\left(N-1\right)\frac{4N-2-3N+3}{12}=\\
+=\frac{\left(N-1\right)\left(N+1\right)}{12}=\frac{N^{2}-1}{12}=\frac{\left(b-a+1\right)^{2}-1}{12}.
+\end{multline*}
 
 \end_inset
 
@@ -5530,6 +5830,24 @@ status open
 характеристической функции 
 \emph default
 этой случайной величины.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Написать, что сходимость частоты к вероятности — это закон больших чисел
+ в форме Бернулли
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Закон больших чисел в форме Чебышёва
 \end_layout
 
 \begin_layout Section
@@ -9528,6 +9846,10 @@ P\left\{ \left|t_{n-2}\right|<\left|t_{emp}\right|\right\} =2\cdot F_{t_{n-1}}\l
 \end_layout
 
 \begin_layout Section
+Оценка функции распределения
+\end_layout
+
+\begin_layout Section
 Распределения порядковых статистик
 \end_layout
 
@@ -10330,11 +10652,41 @@ z=\sqrt{n}\cdot\sup_{x}\left|F\left(x\right)-F_{n}\left(x\right)\right|
 \end_layout
 
 \begin_layout Section
+Оценка плотности распределения (проекции на ортогональные многочлены)
+\end_layout
+
+\begin_layout Section
 Непараметрическая оценка плотности (оценка Розенблата-Парзена)
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Задача оценки плотности как некорректно поставленная задача
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Модифицированная оценка (на основе непрерывной оценки функции распределения)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
-Основы теоии информации
+Основы теории информации
 \end_layout
 
 \begin_layout Section
@@ -11276,11 +11628,50 @@ E\left(p_{0}\right)=\frac{n^{2}-2c^{2}n+c^{2}n}{4\left(n-c^{2}\right)\left(n+c\r
 \end_layout
 
 \begin_layout Chapter
-Генерация случайных чисел
+Генерация случайных объектов
+\end_layout
+
+\begin_layout Standard
+Данная глава посвящена способам порождения случайных объектов.
+ Она предназначена, прежде всего, для программистов.
+ Тем не менее, мы не используем особенности конкретных языков программирования.
+ Сначала мы рассмотрим общие методы порождения случайных чисел, затем перейдём
+ к изучению частных методов для тех случаев, где общие методы оказываются
+ недостаточно эффективными, чем общие методы, а в конце главы мы рассмотрим
+ порождение различных комбинаторных объектов.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Отдельно написать про генерацию случайных чисел для функциональных языков
+ программирования и многопоточности
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
 Общие сведения
+\end_layout
+
+\begin_layout Standard
+Задача порождения случайных объектов, как правило, разделяется на две более
+ простые задачи:
+\end_layout
+
+\begin_layout Enumerate
+Порождение независимых равномерно распределённых (дискретных или непрерывных)
+ случайных чисел;
+\end_layout
+
+\begin_layout Enumerate
+Получение случайных объектов с нужными свойствами на основе независимых
+ равномерно распределённых случайных чисел.
 \end_layout
 
 \begin_layout Subsection
@@ -11450,12 +11841,25 @@ X=\mathrm{tg}\left(\pi\left(U-\frac{1}{2}\right)\right).
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Ссылка на первоисточник
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Оказывается, что проще генерировать два нормально распределённых случайных
  числа, чем одно.
 \end_layout
 
 \begin_layout Standard
-Действительно, расмотрим систему двух независимых стандартных нормальных
+Действительно, рассмотрим систему двух независимых стандартных нормальных
  случайных чисел 
 \begin_inset Formula $\left(X,Y\right)$
 \end_inset
@@ -11739,11 +12143,663 @@ F\left(x\right)=\frac{1}{\pi}\mathrm{arctg\left(x\right)+\frac{1}{2}.}
 \end_layout
 
 \begin_layout Section
+Порождение упорядоченных случайных чисел
+\end_layout
+
+\begin_layout Standard
+Конечно, данную задачу можно было решить просто породив заданное количество
+ случайных чисел, а затем отсортировав их.
+ Эффективные методы сортировки имеют сложность 
+\begin_inset Formula $\mathcal{O}\left(n\cdot\log n\right)$
+\end_inset
+
+, но если есть возможность построения нужно объекта за линейное время, ей
+ необходимо воспользоваться.
+\end_layout
+
+\begin_layout Section
+Многомерное распределение с заданной ковариационной матрицей и маргинальными
+ распределениями
+\end_layout
+
+\begin_layout Section
 Случайные перестановки
 \end_layout
 
 \begin_layout Section
 Случайные подмножества
+\end_layout
+
+\begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Sums_calculations"
+
+\end_inset
+
+Некоторые приёмы вычисления сумм
+\end_layout
+
+\begin_layout Section
+Символ Кронеккера и нотация Аайверсона
+\end_layout
+
+\begin_layout Section
+Суммирование
+\end_layout
+
+\begin_layout Subsection
+Сумма геометрической прогрессии
+\end_layout
+
+\begin_layout Standard
+Вычислим сумму геометрической прогрессии 
+\begin_inset Formula $\left\{ b_{k}\right\} $
+\end_inset
+
+, первый элемент которой равен 
+\begin_inset Formula $1$
+\end_inset
+
+, множитель равен 
+\begin_inset Formula $q$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n}=\sum_{k=0}^{n}b_{k}=\sum_{k=0}^{n}q^{k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выделим первое слагаемое:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n}=\sum_{k=0}^{n}q^{k}=q^{0}+\sum_{k=1}^{n}q^{k}=1+\sum_{k=1}^{n}q^{k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вынесем из суммы 
+\begin_inset Formula $q$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n}=1+q\cdot\sum_{k=1}^{n}q^{k-1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Заменим 
+\begin_inset Formula $k$
+\end_inset
+
+ на 
+\begin_inset Formula $k-1$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n}=1+q\cdot\sum_{k=0}^{n-1}q^{k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Сумма в правой части отличается от 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+ только отсутствием последнего слагаемого:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{k=0}^{n-1}q^{k}=\sum_{k=0}^{n}q^{k}-q^{n}=S_{n}-q^{n},
+\]
+
+\end_inset
+
+поэтому мы можем написать:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n}=1+q\cdot\left(S_{n}-q^{n}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Решая это уравнение относительно 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n}=\frac{1-q^{n+1}}{1-q}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Сумма арифметической прогрессии
+\end_layout
+
+\begin_layout Standard
+Используя удачное наблюдение, можно доказать, что сумма последовательных
+ целых чисел выражается следующей формулой:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{x=a}^{b}x=\frac{1}{2}\left(a+b\right)\cdot\left(b-a+1\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Однако для суммы квадратов последовательных целых чисел такого простого
+ наводящего соображения уже нет.
+ Цель данного раздела — найти более общий метод вычисления подобных сумм.
+\end_layout
+
+\begin_layout Subsection
+Сумма квадратов
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n,t}=\sum_{k=1}^{n}k^{t},
+\]
+
+\end_inset
+
+в частности, при 
+\begin_inset Formula $t=2$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n,2}=\sum_{k=1}^{n}k^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Попробуем воспользоваться методом, который мы применяли для вычисления суммы
+ геометрической прогрессии.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+S_{n,2}=1+\sum_{k=2}^{n}k^{2}=1+\sum_{k=2}^{n}\left(k-1+1\right)^{2}=\\
+=1+\sum_{k=1}^{n}\left(k+1\right)^{2}=1+\sum_{k=1}^{n-1}\left(k^{2}+2k+1\right)=\\
+=1+S_{n-1,2}+2\cdot S_{n-1,1}+\left(n-1\right).
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n-1,2}=S_{n,2}-n^{2},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n,2}=S_{n,2}-n^{2}+2\cdot S_{n-1,1}+n.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Мы видим, что 
+\begin_inset Formula $S_{n,2}$
+\end_inset
+
+ в левой и правой части сокращаются, так что данный подход не даёт нам возможнос
+ть получить формулу для этой величины.
+ Но мы можем заметить, что мы можем получить формулу для 
+\begin_inset Formula $S_{n,1}$
+\end_inset
+
+.
+ Действительно, взаимно уничтожив 
+\begin_inset Formula $S_{n,2}$
+\end_inset
+
+ в левой и правой части, мы получим:
+\begin_inset Formula 
+\[
+2S_{n-1,1}=n^{2}-n=n\left(n-1\right),
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n-1,1}=\frac{n\left(n-1\right)}{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n,1}=\frac{\left(n+1\right)n}{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Этот факт даёт нам надежду для получения формулы для суммы квадратов, рассматрив
+ая сумму кубов.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+S_{n,3}=\sum_{k=1}^{n}k^{3}=1+\sum_{k=2}^{n}k^{3}=1+\sum_{k=1}^{n-1}\left(k+1\right)^{3}=\\
+=1+\sum_{k=1}^{n-1}\left(k^{3}+3k^{2}+3k+1\right)=\\
+=1+\left(S_{n,3}-n^{3}\right)+3\left(S_{n,2}-n^{2}\right)+3\left(S_{n,1}-n\right)+n-1=\\
+=S_{n,3}+3S_{n,2}+3S_{n,1}-n^{3}-3n^{2}-3n+n.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+3S_{n,2}=n^{3}+3n^{2}+2n-3S_{n,1}=n^{3}+3n^{2}+2n-3\cdot\frac{\left(n+1\right)n}{2}=\\
+=n^{3}+3n^{2}+2n-\frac{3}{2}n^{2}-\frac{3}{2}n=n^{3}+\frac{3}{2}n^{2}+\frac{n}{2}=\\
+=n\cdot\left(n^{2}+\frac{3}{2}n+\frac{1}{2}\right)=n\cdot\left(n+1\right)\cdot\left(n+\frac{1}{2}\right)=\frac{n\left(n+1\right)\left(2n+1\right)}{2}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n,2}=\frac{n\left(n+1\right)\left(2n+1\right)}{6}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Факториальные степени
+\end_layout
+
+\begin_layout Standard
+Мы сталкиваемся с такими сложностями при вычислении сумм от степеней потому,
+ что используем 
+\begin_inset Quotes fld
+\end_inset
+
+неправильные
+\begin_inset Quotes frd
+\end_inset
+
+ степени.
+ Для дискретной математики можно ввести более естественные 
+\emph on
+факториальные степени
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x^{\underline{t}}=x\cdot\left(x-1\right)\cdot...\cdot\left(x-t+1\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(x+1\right)^{\underline{2}}-x^{\underline{2}}=\left(x+1\right)\cdot x-x\cdot\left(x-1\right)=x\left(x+1-x-1\right)=2\cdot x.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+По аналогии в общем случае:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(x+1\right)^{\underline{t}}-x^{\underline{t}}=\left(x+1\right)x^{\underline{t-1}}-x^{\underline{t-1}}\cdot\left(x-t+1\right)=t\cdot x^{\underline{t-1}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+По аналогии с правилом дифференцирования степеней
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d}{dx}\left(x^{t}\right)=t\cdot x^{t-1},
+\]
+
+\end_inset
+
+ существует правило вычисление разности для факториальных степеней:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Delta x^{\underline{t}}=t\cdot x^{\underline{t-1}},\label{eq:difference_of_factorial_power}
+\end{equation}
+
+\end_inset
+
+где мы ввели оператор левой разности:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Delta f\left(x\right)=f\left(x+1\right)-f\left(x\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В математическом анализе обратной операцией к дифференцированию является
+ операция интегрирования, по аналогии, в дискретном случае, обратной операцией
+ в вычислению разностей является суммирование:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Delta\left(\sum_{k=a}^{n}f\left(k\right)\right)=\sum_{k=a}^{n+1}f\left(k\right)-\sum_{k=a}^{n}f\left(k\right)=f\left(n+1\right),
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{k=a}^{n}\Delta f\left(k\right)=\sum_{k=a}^{n}\left(f\left(k+1\right)-f\left(k\right)\right)=f\left(n+1\right)-f\left(a-1\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Применяя последнее свойство к формуле 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:difference_of_factorial_power"
+
+\end_inset
+
+, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(n+1\right)^{\underline{t}}-\left(a-1\right)^{\underline{t}}=\sum_{k=a}^{n}\Delta k^{\underline{t}}=t\cdot\sum_{k=a}^{n}k^{\underline{t-1}},
+\]
+
+\end_inset
+
+откуда следует
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\sum_{k=a}^{n}k^{\underline{t}}=\frac{\left(n+1\right)^{\underline{t+1}}-\left(a-1\right)^{\underline{t+1}}}{t+1},\label{eq:factorial_power_sum}
+\end{equation}
+
+\end_inset
+
+в частности, при 
+\begin_inset Formula $a\le t$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{k=a}^{n}k^{\underline{t}}=\frac{\left(n+1\right)^{\underline{t+1}}}{t+1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Идея состоит в том, чтобы представить 
+\begin_inset Formula $x^{t}$
+\end_inset
+
+ как сумму факториальных степеней.
+\end_layout
+
+\begin_layout Standard
+Попробуем применить описанный метод для вычисления суммы квадратов.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k^{2}=k\left(k-1\right)+k=k^{\underline{2}}+k^{\underline{1}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+\sum_{k=1}^{n}k^{2}=\frac{\left(n+1\right)^{\underline{3}}}{3}+\frac{\left(n+1\right)^{\underline{2}}}{2}=\\
+=\frac{\left(n+1\right)n\left(n-1\right)}{3}+\frac{\left(n+1\right)n}{2}=\\
+=\left(n+1\right)n\left(\frac{n-1}{3}+\frac{1}{2}\right)=\left(n+1\right)n\left(\frac{2n-2+3}{6}\right)=\\
+=\frac{\left(n+1\right)n\left(2n+1\right)}{6}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Возможно, здесь нужна ссылка на 
+\begin_inset Quotes fld
+\end_inset
+
+конкретную математику
+\begin_inset Quotes frd
+\end_inset
+
+, где описываются числа, дающие такое разложение
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Linear_algebra"
+
+\end_inset
+
+Элементы линейной алгебры
+\end_layout
+
+\begin_layout Section
+Векторы
+\end_layout
+
+\begin_layout Section
+Матрицы
+\end_layout
+
+\begin_layout Section
+Определители
+\end_layout
+
+\begin_layout Section
+Собственные числа и собственные векторы
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "ConcreteMath"
+
+\end_inset
+
+Конкретная математика
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset index_print
+LatexCommand printindex
+type "idx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Добавить предметный указатель в содержание и проверить колонтитул
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
