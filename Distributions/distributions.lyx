@@ -186,6 +186,27 @@ status open
 \end_layout
 
 \begin_layout Standard
+Данная книга предназначена для обучающихся по направлениям подготовки 
+\begin_inset Quotes fld
+\end_inset
+
+Системный анализ и управление
+\begin_inset Quotes frd
+\end_inset
+
+ и 
+\begin_inset Quotes fld
+\end_inset
+
+Прикладная математика
+\begin_inset Quotes frd
+\end_inset
+
+, а также всех, кто стремится глубоко разобраться в сути и методах теории
+ вероятностей и математической статистики.
+\end_layout
+
+\begin_layout Standard
 Последовательное и строгое введение основных понятий математической статистики.
 \end_layout
 
@@ -305,6 +326,23 @@ status open
 
 \begin_layout Plain Layout
 Описать все главы
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Использовать для обозначений математического ожидания 
+\begin_inset Formula $\mathbb{E}$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -913,17 +951,14 @@ p^{k}\left(1-p\right)^{n-k}.
 \begin_inset Formula $n$
 \end_inset
 
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Нужна ссылка
-\end_layout
+ (смотри 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:binomial_coefficients"
 
 \end_inset
 
-, то в силу теоремы сложения для несовместных событий, вероятность 
+), то в силу теоремы сложения для несовместных событий, вероятность 
 \begin_inset Formula $P\left(k,n,p\right)$
 \end_inset
 
@@ -961,24 +996,14 @@ P\left(k,n,p\right)=\dbinom{n}{k}\cdot p^{k}q^{n-k}.
 \end_layout
 
 \begin_layout Section
-Метод максимизации правдоподобия
+Точечное оценивание и метод максимизации правдоподобия
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Может быть сначала обсудить критерий качества оценки
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Для построения оценки вероятности воспользуемся так называемым 
+Точечная оценка параметра случайного объекта — это единственное значения
+ соответствующего параметра.
+ Для построения точечной оценки вероятности мы воспользуемся так называемым
+ 
 \emph on
 методом максимизации правдоподобия
 \emph default
@@ -997,6 +1022,19 @@ status open
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Добавить ссылку на строгое обоснование этого метода
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1526,10 +1564,23 @@ M\left[X\right]=\sum_{x}x\cdot p\left(x\right).
 \end_layout
 
 \begin_layout Standard
+Для сокращении записи мы иногда будем применяеть обозначение 
+\begin_inset Formula $\mu_{X}$
+\end_inset
+
+, если же из контекста понятно, о математической ожидании какой случайной
+ величины идёт речь, мы будем писать просто 
+\begin_inset Formula $\mu$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 Если случайная величина имеет бесконечное количество возможных значений,
  то сумму в определении математического ожидания нужно понимать как сумму
  ряда.
- В таком случае математическое ожидание не может не существовать (если ряд
+ В таком случае математическое ожидание может и не существовать (если ряд
  не сходится).
 \end_layout
 
@@ -1580,9 +1631,9 @@ X=\frac{\left|\hat{\theta}_{n}-\theta\right|^{2}}{\varepsilon^{2}},
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-P\left\{ \left|\hat{\theta}_{n}-\theta\right|>\varepsilon\right\} =P\left\{ \frac{\left(\hat{\theta}_{n}-\theta\right)^{2}}{\varepsilon^{2}}>1\right\} \le M\left[\frac{\left(\hat{\theta}_{n}-\theta\right)^{2}}{\varepsilon^{2}}\right].
-\]
+\begin{equation}
+P\left\{ \left|\hat{\theta}_{n}-\theta\right|>\varepsilon\right\} =P\left\{ \frac{\left(\hat{\theta}_{n}-\theta\right)^{2}}{\varepsilon^{2}}>1\right\} \le M\left[\frac{\left(\hat{\theta}_{n}-\theta\right)^{2}}{\varepsilon^{2}}\right].\label{eq:tchebushev_ineq_difference_square}
+\end{equation}
 
 \end_inset
 
@@ -2299,6 +2350,11 @@ D\left[X\right]=\sigma_{X}^{2}.
 \end_layout
 
 \begin_layout Standard
+Если из контекста понятно, о какой случайной величине идёт речь, то название
+ случайной величины может быть опущено.
+\end_layout
+
+\begin_layout Standard
 По сути, в предыдущем параграфе мы показали, что для несмещённой оценки
  сходимость в среднем-квадратичесом (а значит и сходимость по вероятности)
  к оцениваемому параметру следуют из стремлению к нулю дисперсии с ростом
@@ -2424,42 +2480,23 @@ M\left[\left(X_{n}-a\right)^{2}\right]=M\left[\left(\left(X_{n}-\mu_{n}\right)-\
 \end_layout
 
 \begin_layout Section
-Интервальное оценивание
+Оценка вероятности редких событий и интервальное оценивание
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Написать этот раздел: в общем виде, правило трёх сигм
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-написать где-нибудь Правило трёх сигм для унимодальных
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Оценка вероятности редких событий
+В некоторых ситуациях точечная оценка недостаточно информативна, так как
+ нам нужно получить представление об интервале, в котором лежит оцениваемый
+ параметр (доверительный интервал).
+ Построение таких интервалов называется 
+\emph on
+интервальным оцениванием
+\emph default
+.
 \end_layout
 
 \begin_layout Standard
 Как оценить вероятность, если в серии опытов событие не произошло ни разу?
- В соответствии с результатами предыдущего раздела, мы должны были бы заключить,
+ В соответствии с результатами предыдущих разделов, мы должны были бы заключить,
  что вероятность равна нулю.
  Но возможно событие просто настолько редкое, что мы провели слишком мало
  опытов?
@@ -2470,18 +2507,16 @@ status open
 \begin_inset Formula $p$
 \end_inset
 
-.
+ (можно ожидать, что она достаточно мала, так как событие не произошло ни
+ разу).
  Вероятность того, что событие ни разу не появится в 
 \begin_inset Formula $n$
 \end_inset
 
  опытах, согласно 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-нужна ссылка
-\end_layout
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:probability_k_from_n"
 
 \end_inset
 
@@ -2491,8 +2526,103 @@ status open
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\left(1-p\right)^{n}.
+P_{n}\left(0\right)=\left(1-p\right)^{n}.
 \]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Зададимся вероятностью 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ (предполагается, что она близка к нулю) и потребуем, чтобы вероятность
+ отсутствия события во всех 
+\begin_inset Formula $n$
+\end_inset
+
+ опытах была не меньше 
+\begin_inset Formula $1-\alpha$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(1-p\right)^{n}\ge1-\alpha.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Извлечём корень степени 
+\begin_inset Formula $n$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+1-p\ge\sqrt[n]{1-\alpha}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p\le1-\sqrt[n]{1-\alpha}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, неизвестный параметр 
+\begin_inset Formula $p$
+\end_inset
+
+ в рассматриваемом случае выходит за границы отрезка
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left[0;1-\sqrt[n]{1-\alpha}\right]
+\]
+
+\end_inset
+
+с вероятностью не более 
+\begin_inset Formula $\alpha$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Закончить этот раздел
+\end_layout
 
 \end_inset
 
@@ -2504,7 +2634,104 @@ status open
 status open
 
 \begin_layout Plain Layout
-Закончить этот раздел
+Описать мотивировку
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Рассмотрим теперь задачу интервального оценивания в общем.
+ К сожалению, мы пока не владеем достаточно развитым инструментарием, чтобы
+ описать построение доверительных интервалов для конкретных случайных величин.
+ Однако мы можем получить один интересный результат: неравенство Чебышева
+ позволяет оценить вероятность больших отклонений случайной величины от
+ математического ожидания.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left\{ \left|X-\mu\right|>\varepsilon\right\} =P\left\{ \frac{\left(X-\mu\right)^{2}}{\varepsilon^{2}}>1\right\} \le\frac{1}{\varepsilon^{2}}M\left[\left(X-\mu\right)^{2}\right]=\frac{\sigma^{2}}{\varepsilon^{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Положив в последней формуле 
+\begin_inset Formula $\varepsilon=k\cdot\sigma$
+\end_inset
+
+, получим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left\{ \left|X-\mu\right|>k\cdot\sigma\right\} \le\frac{1}{k^{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+При 
+\begin_inset Formula $k\le1$
+\end_inset
+
+ эта формула не даёт никакой информации, так как мы и так знаем, что вероятность
+ меньше единицы.
+ Однако, если положить 
+\begin_inset Formula $k=3$
+\end_inset
+
+, то придём к выводу, что вероятность того, что случайная величина отклоняется
+ от своего математического ожидания более чем на 3 среднеквадратических
+ уклонения не превышает 
+\begin_inset Formula $\frac{1}{9}$
+\end_inset
+
+.
+ Данная оценка, называемая 
+\emph on
+правило трёх сигм,
+\emph default
+ является худшим случаем, для большинства случайных величин эта граница
+ сильно завышена.
+ Отметим, что этот вывод применим к любым случайным величинам, для которых
+ определены математическое ожидание и дисперсия.
+ Получение подобных результатов, не зависящих от конкретных распределений
+ случайной величины, составляет суть 
+\emph on
+непараметрической статистики
+\emph default
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Добавить ссылку на главу про непараметрику? Или этих глав будет несколько?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+написать где-нибудь Правило трёх сигм для унимодальных, возможно, в другом
+ месте, куда нужно дать ссылку
 \end_layout
 
 \end_inset
@@ -2538,13 +2765,20 @@ status open
 \end_layout
 
 \begin_layout Enumerate
-Наконец, мы доказали, что частота является состоятельной оценкой вероятности.
+Мы доказали, что частота является состоятельной оценкой вероятности.
  Для этого нам потребовалось ввести понятие математического ожидания и изучить
  его свойства, доказать неравенство Чебышёва и познакомились с понятием
  дисперсии.
  Мы ввели ещё два свойства оценок: несмещённость и асимптотическая несмещённость
 , причём мы показали, что если оценка является асимптотически несмещённой,
  а её дисперсия стремится к нулю, то такая оценка является состоятельной.
+\end_layout
+
+\begin_layout Enumerate
+Наконец, мы обсудили интервальное оценивание — построение интервалов, содержащих
+ истинное значение с заданной вероятностью.
+ При этом мы коснулись одного из самых новых направлений в математической
+ статистике — непараметрической статистики.
 \end_layout
 
 \begin_layout Standard
@@ -3375,6 +3609,172 @@ Cov\left[X,Y\right]=M\left[X-M\left[X\right]\right]\cdot M\left[Y-M\left[Y\right
 \begin_inset Formula 
 \[
 D\left[X+Y\right]=D\left[X\right]+D\left[Y\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Моменты случайных величин
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Нужен ли этот раздел прямо здесь? Нужно написать про смешанные моменты,
+ моменты со специальным названием и т.д.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Говоря вообще, моменты — это математические ожидания степеней случайных
+ величин.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Начальным моментом 
+\emph default
+порядка 
+\begin_inset Formula $k$
+\end_inset
+
+ случайной величины 
+\begin_inset Formula $X$
+\end_inset
+
+ называется величина 
+\begin_inset Formula $\mu_{k}=M\left[X^{k}\right].$
+\end_inset
+
+ В частности, математическое ожидание — это начальный момент первого порядка.
+\end_layout
+
+\begin_layout Standard
+Для каждой случайной величины 
+\begin_inset Formula $X$
+\end_inset
+
+, для которой существует математическое ожидание, можно определить 
+\emph on
+центрированную случайную величину
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathring{X}=X-M\left[X\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Центральный моментом порядка 
+\begin_inset Formula $k$
+\end_inset
+
+ случайной величины 
+\begin_inset Formula $X$
+\end_inset
+
+ называется величина
+\begin_inset Formula 
+\[
+s_{k}=M\left[\left(\mathring{X}\right)^{k}\right].
+\]
+
+\end_inset
+
+ В частности, дисперсия — это центральный момент второго порядка.
+\end_layout
+
+\begin_layout Fact
+Центральный момент первого порядка равен нулю для любого распределения.
+\end_layout
+
+\begin_layout Standard
+Для каждой случайной величины 
+\begin_inset Formula $X$
+\end_inset
+
+, для которой существует математическое ожидание и дисперсия, можно определить
+ 
+\emph on
+стандартизированную случайную величину
+\emph default
+ по правилу
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{X-M\left[X\right]}{\sqrt{D\left[X\right]}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Стандартизованным моментом 
+\emph default
+порядка 
+\begin_inset Formula $k$
+\end_inset
+
+ случайной величины 
+\begin_inset Formula $X$
+\end_inset
+
+ называется величина 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[\left(\frac{\mathring{X}}{s_{X}}\right)^{k}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Факториальным моментом 
+\emph default
+порядка 
+\begin_inset Formula $k$
+\end_inset
+
+ случайной величины 
+\begin_inset Formula $X$
+\end_inset
+
+ называется величина
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[X^{\underline{k}}\right]
 \]
 
 \end_inset
@@ -4418,7 +4818,8 @@ D\left[X\right]=M\left[X^{2}\right]-\left(M\left[X\right]\right)^{2}=a^{2}+a-a^{
 status open
 
 \begin_layout Plain Layout
-Нужно бы ещё описать смеси распределения
+Нужно бы ещё описать смеси распределения, например, чтобы описать случайные
+ величины, имеющие дискретную и непрерывную часть
 \end_layout
 
 \end_inset
@@ -4429,6 +4830,11 @@ status open
 \begin_layout Standard
 Основное содержание данной главы — перенос определений и результатов, полученных
  для дискретных случайных величин на непрерывные.
+ Заметим, что если нам удастся ввести понятие математического ожидания для
+ непрерывных случайных величин с сохранением свойств математического ожидания
+ дискретных случайных величин, то большинство остальных результатов будут
+ перенесены автоматически, так как они определяются в терминах математических
+ ожиданий, а не законов распределений.
 \end_layout
 
 \begin_layout Section
@@ -4446,6 +4852,7 @@ status open
  Так как мы перенесли свойства математического ожидания на непрерывные случайные
  величины, то свойства дисперсии непрерывных случайных величин автоматически
  становятся доказанными.
+ То же самое касается и остальных моментов случайной величины.
 \end_layout
 
 \begin_layout Section
@@ -5528,14 +5935,7 @@ f\left(x\right)=f_{X}\left(x|y\right).
 Для применения нормального распределения как модели явлений окружающего
  мира необходимо уметь оценивать параметры этого распределения.
  Получение оценок математического ожидания и дисперсии нормального распределения
- и будет основным содержанием данной главы.
-\end_layout
-
-\begin_layout Standard
-Оценки параметров делятся на точечные и интервальные.
- Точечная оценка — это одна величина, интервальная — это интервал, которому
- оцениваемая величина принадлежит с некоторой вероятностью.
- Для построения точечных оценок используется метод максимизации правдоподобия.
+, а также исследование их свойств, и будет основным содержанием данной главы.
 \end_layout
 
 \begin_layout Section
@@ -7187,6 +7587,19 @@ reference "eq:bernoulli_phi"
 \begin_layout Standard
 Доверительный интервал — это интервал, которому параметр распределения принадлеж
 ит с заданной вероятностью.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Объединить эту главу с 5 (Оценка параметров нормального распределения)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -10582,7 +10995,7 @@ a=\frac{\overline{x\cdot y}-\overline{x}\cdot\overline{y}}{\overline{x^{2}}-\lef
 \end_layout
 
 \begin_layout Section
-Другие виды регрессионых моделей
+Другие виды регрессионных моделей
 \end_layout
 
 \begin_layout Chapter
@@ -10591,6 +11004,54 @@ a=\frac{\overline{x\cdot y}-\overline{x}\cdot\overline{y}}{\overline{x^{2}}-\lef
 
 \begin_layout Chapter
 Основы непараметрической статистики
+\end_layout
+
+\begin_layout Standard
+В предыдущих главах мы часто предполагали, что данные имеют нормально распределе
+ние.
+ Во многих случаях для такого предположения есть основания: мы видели 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+дать конкретные ссылки?
+\end_layout
+
+\end_inset
+
+ как нормальное распределение возникает при довольно общих предположениях
+ о структуре изучаемых случайных величин.
+ Тем опаснее ситуация, когда эти предположения не соответствуют действительности.
+\end_layout
+
+\begin_layout Standard
+Подавляющее большинство методов статистики, предполагающих нормальное распределе
+ние исходных данных, используют выборочные среднее и дисперсию.
+ Понятно, что если математическое ожидание и дисперсия не определены для
+ реального распределения данных, то все наши выводы будут несостоятельны.
+ А распределение без математического ожидания получить легче, чем может
+ показаться.
+ Простейший пример — распределение Коши (а ведь это всего лишь частное двух
+ стандартных нормальных случайных величин!).
+\end_layout
+
+\begin_layout Standard
+Заметим, что проблема не в нормальном распределении как таковом.
+ Вся высказанная выше критика относится ко всем методам, предполагающим,
+ что распределение данных принадлежит некоторому узкому классу (равномерное,
+ экспоненциальное и т.д.).
+\end_layout
+
+\begin_layout Standard
+Такое положение вещей приводит нас к необходимости построения методов статистики
+, которые не делают предположений о распределении исходных данных.
+ Над этой проблемой работают два направления: робастная статистика и непараметри
+ческая статистика.
+ Робастная статистика подразумевает использование методов, которые при небольшом
+ отклонении от сделанных предположений приводят к небольшим ошибкам.
+ Непараметрическая статистика разрабатывает методы, которые вообще не делают
+ предположений о распределении исходных данных.
+ В данной главе мы рассмотрим некоторые методы непараметрической статистики.
 \end_layout
 
 \begin_layout Section
@@ -10715,7 +11176,7 @@ F_{k}\left(x\right)=\sum_{j=k}^{n}\binom{n}{j}\left[F\left(x\right)\right]^{j}\l
 \begin_inset Formula 
 \begin{multline*}
 f_{k}\left(x\right)=F_{k}^{\prime}\left(x\right)=\\
-=\sum_{j=k}^{n-1}\binom{n}{j}\left(j\cdot\left[F\left(x\right)\right]^{j-1}\cdot f\left(x\right)\cdot\left[1-F\left(x\right)\right]^{n-j}-\left[F\left(x\right)\right]^{j}\cdot\left(n-j\right)\cdot\left[1-F\left(x\right)\right]^{n-j-1}\cdot f\left(x\right)\right)+\\
+=\sum_{j=k}^{n-1}\binom{n}{j}\left(j\cdot\left[F\left(x\right)\right]^{j-1}\cdot\left[1-F\left(x\right)\right]^{n-j}-\left[F\left(x\right)\right]^{j}\cdot\left(n-j\right)\cdot\left[1-F\left(x\right)\right]^{n-j-1}\right)\cdot f\left(x\right)+\\
 +n\cdot\left[F\left(x\right)\right]^{n-1}\cdot f\left(x\right).
 \end{multline*}
 
@@ -11426,7 +11887,164 @@ z=\sqrt{n}\cdot\sup_{x}\left|F\left(x\right)-F_{n}\left(x\right)\right|
 \end_layout
 
 \begin_layout Section
-Оценка плотности распределения (проекции на ортогональные многочлены)
+Проекционная оценка плотности распределения
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula $X$
+\end_inset
+
+ — случайная величина, принимающая значения из множества 
+\begin_inset Formula $\Omega$
+\end_inset
+
+.
+ Пусть также
+\begin_inset Formula $\left\{ g_{k}\left(x\right)\right\} $
+\end_inset
+
+ — семейство ортонормироаннвых на множестве 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ функций, то есть имеет место равенство
+\begin_inset Formula 
+\[
+\intop_{\Omega}g_{k}\left(x\right)g_{j}\left(x\right)dx=\delta_{ij}.
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Привести примеры
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Будем искать оценку для функции плотности распределения случайной величины
+ 
+\begin_inset Formula $X$
+\end_inset
+
+ в виде
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{f}\left(x\right)=\sum_{k=0}^{m}a_{k}\cdot g_{k}\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q\left(a_{1},...,a_{m}\right)=\intop_{\Omega}\left(\hat{f}\left(x\right)-f\left(x\right)\right)^{2}dx\to\min_{a_{k}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Необходимое условие экстремума — равенство нулю частных производных:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial Q}{\partial a_{j}}=\intop_{\Omega}2\cdot\left(\hat{f}\left(x\right)-f\left(x\right)\right)\frac{\partial\hat{f}}{\partial a_{j}}=2\cdot\intop_{\Omega}\left(\hat{f}\left(x\right)-f\left(x\right)\right)g_{j}\left(x\right)dx=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intop_{\Omega}g_{j}\left(x\right)f\left(x\right)dx=\mathbb{E}\left[g_{j}\left(X\right)\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+\intop_{\Omega}g_{j}\left(x\right)\hat{f}\left(x\right)dx=\\
+=\intop_{\Omega}g_{j}\left(x\right)\sum_{k=0}^{m}a_{k}\cdot g_{k}\left(x\right)dx=\sum_{k=0}^{m}a_{k}\cdot\intop_{\Omega}g_{j}\left(x\right)g_{k}\left(x\right)dx=\\
+=\sum_{k=0}^{m}a_{k}\delta_{jk}=a_{j}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{j}=\mathbb{E}\left[g_{j}\left(X\right)\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Мы знаем, что состоятельной оценкой математического ожидания является выборочное
+ среднее.
+ То есть если в нашем распоряжении есть выборка 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{a}_{j}=\frac{1}{n}\sum_{i=0}^{n}g_{j}\left(x_{i}\right)\to a_{j}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Всегда ли существует матожидание в правой части
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -13090,9 +13708,9 @@ status open
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-C_{n,k}=\frac{A_{n,k}}{k!}=\frac{n!}{\left(n-k\right)!\cdot k!}=\binom{n}{k}.
-\]
+\begin{equation}
+C_{n,k}=\frac{A_{n,k}}{k!}=\frac{n!}{\left(n-k\right)!\cdot k!}=\binom{n}{k}.\label{eq:binomial_coefficients}
+\end{equation}
 
 \end_inset
 
