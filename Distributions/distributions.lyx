@@ -594,11 +594,11 @@ status open
 \end_layout
 
 \begin_layout Example
-Вынимание из колоды вальта пик является произведением событий 
+Вынимание из колоды короля пик является произведением событий 
 \begin_inset Quotes fld
 \end_inset
 
-вынимание вальта
+вынимание короля
 \begin_inset Quotes frd
 \end_inset
 
@@ -2222,6 +2222,43 @@ D\left[X\right]=M\left[\left(X-M\left[X\right]\right)^{2}\right].
 \end_layout
 
 \begin_layout Standard
+В некоторых случаях дисперсия недостаточно информативна, так как единицей
+ её измерения является квадрат единицы измерения описываемой случайной величины.
+ Поэтому была введена характеристика, равна квадратному корню из дисперсии,
+ — 
+\emph on
+среднеквадратическое отклонение
+\emph default
+, которое обозначают как 
+\begin_inset Formula $\sigma_{X}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma_{X}=\sqrt{D\left[X\right]},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D\left[X\right]=\sigma_{X}^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 По сути, в предыдущем параграфе мы показали, что для несмещённой оценки
  сходимость в среднем-квадратичесом (а значит и сходимость по вероятности)
  к оцениваемому параметру следуют из стремлению к нулю дисперсии с ростом
@@ -2389,6 +2426,40 @@ status open
 \end_layout
 
 \begin_layout Standard
+Пусть вероятность появления события в одном опыте равна 
+\begin_inset Formula $p$
+\end_inset
+
+.
+ Вероятность того, что событие ни разу не появится в 
+\begin_inset Formula $n$
+\end_inset
+
+ опытах, согласно 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+нужна ссылка
+\end_layout
+
+\end_inset
+
+, равна:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(1-p\right)^{n}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -2459,6 +2530,21 @@ status open
 
 \begin_layout Section
 Закон распределения дискретной случайной величины
+\end_layout
+
+\begin_layout Standard
+По аналогии с независимыми случайными событиями, вводится понятие независимых
+ случайных величин.
+ Случайные величины 
+\begin_inset Formula $X$
+\end_inset
+
+ и 
+\begin_inset Formula $Y$
+\end_inset
+
+ называются независимыми, если значение, которое приняла одна из них, не
+ влияет на закон распределения другой.
 \end_layout
 
 \begin_layout Section
@@ -2610,6 +2696,262 @@ M\left[Y\right]=\sum_{k}\left(\sum_{n}y_{n}\left[g\left(x_{k}\right)=y_{n}\right
 \[
 M\left[Y\right]=\sum_{k}g\left(x_{k}\right)P\left\{ X=x_{k}\right\} .
 \]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Fact
+Если случайные величины 
+\begin_inset Formula $X$
+\end_inset
+
+ и 
+\begin_inset Formula $Y$
+\end_inset
+
+ являются независимыми, то математическое ожидание их произведения равно
+ произведению их математических ожиданий:
+\end_layout
+
+\begin_layout Fact
+\begin_inset Formula 
+\[
+M\left[X\cdot Y\right]=M\left[X\right]\cdot M\left[Y\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Пусть 
+\begin_inset Formula $Z=X\cdot Y$
+\end_inset
+
+.
+ Возможные значения 
+\begin_inset Formula $Z$
+\end_inset
+
+ — это все возможные произведения возможных значений случайных величин 
+\begin_inset Formula $X$
+\end_inset
+
+ и 
+\begin_inset Formula $Y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+M\left[Z\right]=\sum_{k}z_{k}P\left\{ Z=z_{k}\right\} =\sum_{k}z_{k}P\left\{ X\cdot Y=z_{k}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+В силу определения 
+\begin_inset Formula $Z$
+\end_inset
+
+ и теоремы полной вероятности
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+которую нужно ввести и доказать
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+P\left\{ Z=z_{k}\right\} =\sum_{i}\sum_{j}P\left\{ XY=z_{k}|X=x_{i}\wedge Y=y_{j}\right\} P\left\{ X=x_{i}\wedge Y=y_{j}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+В силу независимости 
+\begin_inset Formula $Y$
+\end_inset
+
+ от 
+\begin_inset Formula $X$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+P\left\{ X=x_{i}\wedge Y=y_{j}\right\} =P\left\{ X=x_{i}\right\} \cdot P\left\{ Y=y_{j}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Так как условия, входящие в условную вероятность можно считать истинными,
+ то
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+P\left\{ XY=z_{k}|X=x_{i}\wedge Y=Y_{j}\right\} =P\left\{ x_{i}y_{j}=z_{k}\right\} =\left[x_{i}y_{j}=z_{k}\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+С учётом всего сказанного, мы можем написать:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+M\left[XY\right]=\sum_{k}z_{k}\sum_{i}\sum_{j}\left[x_{i}y_{j}=z_{k}\right]P\left\{ X=x_{i}\right\} \cdot P\left\{ Y=y_{j}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Изменим порядок суммирования:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\begin{equation}
+M\left[XY\right]=\sum_{i}P\left\{ X=x_{i}\right\} \sum_{j}P\left\{ Y=y_{j}\right\} \sum_{k}z_{k}\left[x_{i}y_{j}=z_{k}\right].\label{eq:mean_XY_triple_sum}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Вычислим сумую внутренную сумму (по 
+\begin_inset Formula $j$
+\end_inset
+
+).
+ Во-первых, мы можем заменить 
+\begin_inset Formula $z_{k}$
+\end_inset
+
+ на 
+\begin_inset Formula $x_{i}y_{j}$
+\end_inset
+
+, так как множитель 
+\begin_inset Formula $\left[x_{i}y_{j}=z_{k}\right]$
+\end_inset
+
+ устранит все слагаемые, где эта замена не является правомерной:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\sum_{k}z_{k}\left[x_{i}y_{j}=z_{k}\right]=\sum_{k}x_{i}y_{j}\left[x_{i}y_{j}=z_{k}\right]=x_{i}y_{j}\sum_{k}\left[x_{i}y_{j}=z_{k}\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Во-вторых, так как значения 
+\begin_inset Formula $z_{k}$
+\end_inset
+
+ являются неповторяющимися, а любое 
+\begin_inset Formula $z_{k}$
+\end_inset
+
+ явлется произведением некоторых 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ и 
+\begin_inset Formula $y_{j}$
+\end_inset
+
+, то
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\sum_{k}\left[x_{i}y_{j}=z_{k}\right]=1,
+\]
+
+\end_inset
+
+таким образом
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\sum_{k}z_{k}\left[x_{i}y_{j}=z_{k}\right]=x_{i}y_{j}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Подставляя этот результат в выражение 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:mean_XY_triple_sum"
+
+\end_inset
+
+ для 
+\begin_inset Formula $M\left[XY\right]$
+\end_inset
+
+, получим:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\begin{multline*}
+M\left[XY\right]=\sum_{i}P\left\{ X=x_{i}\right\} \sum_{j}P\left\{ Y=y_{j}\right\} \cdot x_{i}y_{j}=\\
+=\sum_{i}x_{i}P\left\{ X=x_{i}\right\} \sum_{j}y_{j}P\left\{ Y=y_{j}\right\} =\\
+=M\left[X\right]\cdot M\left[Y\right].
+\end{multline*}
 
 \end_inset
 
@@ -5838,7 +6180,8 @@ status open
 
 \begin_layout Plain Layout
 Написать, что сходимость частоты к вероятности — это закон больших чисел
- в форме Бернулли
+ в форме Бернулли, затем описать закон больших чисел в форме Пуассона, в
+ том числе его роль в обосновании примения теории вероятностей на практике
 \end_layout
 
 \end_inset
@@ -5906,8 +6249,8 @@ status open
 \end_layout
 
 \begin_layout Standard
-Таким образом, характеристическая функция аналогично (с точностью до множителя
- и знако экспоненты) преобразованию Фурье для функции плотности распределения
+Таким образом, характеристическая функция аналогична (с точностью до множителя
+ и знаку экспоненты) преобразованию Фурье для функции плотности распределения
  непрерывной случайной величины
 \begin_inset Note Note
 status open
@@ -5966,6 +6309,20 @@ P\left\{ X=x_{k}\right\} =\frac{1}{2\pi}\intop_{-\infty}^{+\infty}e^{-i\lambda x
 \varphi\left(\lambda,X+Y\right)=M\left[\exp\left(i\lambda\left(X+Y\right)\right)\right]=\\
 =M\left[\exp\left(i\lambda X\right)\cdot\exp\left(i\lambda Y\right)\right]=\varphi\left(\lambda,X\right)\cdot\varphi\left(\lambda,Y\right).
 \end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Нужно где-то доказать, что матожидание произведения независимых есть произведени
+е матожиданий
+\end_layout
 
 \end_inset
 
@@ -6183,6 +6540,20 @@ reference "eq:characteristic_z_n"
 \end_inset
 
  является стандартным нормальным.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Убедиться, что мы уже вывели характеристическую функцию нормального распределени
+я
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
@@ -9834,7 +10205,126 @@ P\left\{ \left|t_{n-2}\right|<\left|t_{emp}\right|\right\} =2\cdot F_{t_{n-1}}\l
 \end_layout
 
 \begin_layout Section
+Линейная регрессия для случая одной независимой переменной
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=ax+b
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q\left(a,b\right)=\frac{1}{n}\sum_{k=1}^{n}\left(ax_{k}+b-y_{k}\right)^{2}\to\min_{a,b}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial Q}{\partial b}=\frac{1}{n}\sum_{k=1}^{n}\left(ax_{k}+b-y_{k}\right)=0,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial Q}{\partial a}=\frac{1}{n}\sum_{k=1}^{n}\left(ax_{k}+b-y_{k}\right)x_{k}=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a\cdot\bar{x}+b-\bar{y}=0,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a\cdot\overline{x^{2}}+b\cdot\bar{x}-\overline{x\cdot y}=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выразим 
+\begin_inset Formula $b$
+\end_inset
+
+ из первого уравнения
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+b=\overline{y}-a\cdot\overline{x}
+\]
+
+\end_inset
+
+и подставим полученное выражение во второе:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a\cdot\overline{x^{2}}+\left(\overline{y}-a\cdot\overline{x}\right)\cdot\bar{x}-\overline{x\cdot y}=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a=\frac{\overline{x\cdot y}-\overline{x}\cdot\overline{y}}{\overline{x^{2}}-\left(\bar{x}\right)^{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Многомерная линейная регрессия
+\end_layout
+
+\begin_layout Section
 Адаптивное вычисление коэффициентов линейной регрессии
+\end_layout
+
+\begin_layout Section
+Другие виды регрессионых моделей
 \end_layout
 
 \begin_layout Chapter
@@ -9943,7 +10433,7 @@ F_{n}\left(x\right)=P\left\{ \bigwedge_{j=1}^{n}X_{j}<y\right\} =\prod_{j=1}^{n}
 \begin_layout Standard
 \begin_inset Formula 
 \[
-F_{k}\left(x\right)=\sum_{j=k}^{n}\binom{n}{j}\left[F\left(x\right)\right]^{j}\left[1-F\left(x\right)\right]^{n-j}.
+F_{k}\left(x\right)=\sum_{j=k}^{n}\binom{n}{j}\left[F\left(x\right)\right]^{j}\left[1-F\left(x\right)\right]^{n-j}=1-\sum_{j=0}^{k}\binom{n}{j}\left[F\left(x\right)\right]^{j}\left[1-F\left(x\right)\right]^{n-j}.
 \]
 
 \end_inset
@@ -10086,6 +10576,32 @@ f_{k}\left(x\right)=\sum_{j=k-1}^{n-1}A_{j}\left(x\right)-\sum_{j=k}^{n-1}B_{j}\
 \begin_inset Formula 
 \[
 f_{k}\left(x\right)=\binom{n}{k}\cdot k\cdot\left(F\left(x\right)\right)^{k-1}\left(1-F\left(x\right)\right)^{n-k}\cdot f\left(x\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В частности, плотность распределения наименьшего значения имеет вид
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{1}\left(x\right)=\binom{n}{1}\cdot1\cdot\left(1-F\left(x\right)\right)^{n-1}\cdot f\left(x\right)=n\cdot\left(1-F\left(x\right)\right)^{n-1}\cdot f\left(x\right),
+\]
+
+\end_inset
+
+ а функция распределения —
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{1}\left(x\right)=1-\left(1-F\left(x\right)\right)^{n}.
 \]
 
 \end_inset
@@ -11856,6 +12372,9 @@ status open
 \begin_layout Standard
 Оказывается, что проще генерировать два нормально распределённых случайных
  числа, чем одно.
+ Действительно, для применения общего метода для непрерывных распределений,
+ нужно найти обратную функцию к функции распределения, но для нормального
+ распределения эта функция не выражается через элементарные функции.
 \end_layout
 
 \begin_layout Standard
@@ -12184,11 +12703,37 @@ name "chap:Sums_calculations"
 Символ Кронеккера и нотация Аайверсона
 \end_layout
 
-\begin_layout Section
-Суммирование
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\delta_{i,k}=\begin{cases}
+1, & i=k\\
+0, & i\ne k
+\end{cases}.
+\]
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Standard
+Нотация Айверсона является обобщением этого символа на произвольные условия.
+ Если дано утверждение 
+\begin_inset Formula $P$
+\end_inset
+
+, то 
+\begin_inset Formula $\left[P\right]$
+\end_inset
+
+ равен единице, когда это утверждение истинно, и нулю, когда оно ложно.
+ Отметим, что во многих языках программирования существует возможность неявного
+ преобразования логических значений (истина и ложь) в арифметические (1
+ и 0 соответственно).
+\end_layout
+
+\begin_layout Section
 Сумма геометрической прогрессии
 \end_layout
 
@@ -12325,7 +12870,7 @@ S_{n}=\frac{1-q^{n+1}}{1-q}.
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Сумма арифметической прогрессии
 \end_layout
 
@@ -12351,7 +12896,7 @@ S_{n}=\frac{1-q^{n+1}}{1-q}.
  Цель данного раздела — найти более общий метод вычисления подобных сумм.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Сумма квадратов
 \end_layout
 
@@ -12513,7 +13058,7 @@ S_{n,2}=\frac{n\left(n+1\right)\left(2n+1\right)}{6}.
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Факториальные степени
 \end_layout
 
