@@ -552,7 +552,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-Событие!невозможное
+Случайное событие!невозможное
 \end_layout
 
 \end_inset
@@ -573,7 +573,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-Событие!достоверное
+Случайное событие!достоверное
 \end_layout
 
 \end_inset
@@ -604,15 +604,17 @@ status open
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
 
-\emph on
-Непосредственный подсчёт вероятностей
+\begin_layout Plain Layout
+Подумать о порядке изложения подходов.
+ Добавить примеры
 \end_layout
 
-\begin_layout Standard
+\end_inset
 
-\emph on
-Геометрическая вероятность
+
 \end_layout
 
 \begin_layout Standard
@@ -623,24 +625,125 @@ status open
 заключается в том, что вероятность определяют как предел частоты (то есть
  доли опытов, в которых событие произошло), при неограниченном увеличении
  количества опытов.
- 
+ Частотный подход интуитивно понятен, но само определение сходимости в нём
+ не является вполне строгим (как мы увидим позже, понятие сходимости в теории
+ вероятностей определяется через вероятность, так что мы оказываемся в порочном
+ кругу), поэтому мы не можем вычислить вероятность теоретически.
+ С другой стороны, сходимость (как бы она не была определена) подразумевает
+ бесконечное число экспериментов, поэтому частотный подход не позволяет
+ нам вычислять вероятности и экспериментальным путём.
 \end_layout
 
 \begin_layout Standard
-Частотный подход интуитивно понятен, но само определение сходимости в нём
- не является вполне строгим.
- Поэтому современная теория вероятностей построена на основе 
+
+\emph on
+Непосредственный подсчёт вероятностей.
+ 
+\emph default
+Пусть опыт может завершиться одним из 
+\begin_inset Formula $n$
+\end_inset
+
+ элементарных исходов, причём нет никаких объективных причин считать, что
+ одни исходы более вероятны, чем другие.
+ Если интересующее нас событие произойдёт в любом из 
+\begin_inset Formula $m$
+\end_inset
+
+ каких-либо элементарных исходов, то вероятность этого события равна
+\begin_inset Formula 
+\[
+\frac{m}{n}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Какова вероятность вытащить короля из колоды 36 карт? Так как в колоде всего
+ 
+\begin_inset Formula $36$
+\end_inset
+
+ карт, а королей — 
+\begin_inset Formula $4$
+\end_inset
+
+, то вероятность вытащить короля равна 
+\begin_inset Formula 
+\[
+\frac{4}{36}=\frac{1}{9}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Геометрическая вероятность.
+ 
+\emph default
+В этом подходе случайные события представляют как подмножества некоторых
+ геометрических объектов: отрезков, фигур на плоскости, объёмных тел.
+ Опыт — выбор случайной точки этих геометрических объектов, причём вероятность
+ попасть в подмножество зависит не от местоположения, но только от его размера
+ (длины, площади и объёма соответственно).
+ Если точка попала в часть, соответствующую событию, то считают, что событие
+ произошло.
+\end_layout
+
+\begin_layout Standard
+Непосредственный подсчёт вероятностей и геометрическая вероятность позволяют
+ решить довольное большое количество задач.
+\end_layout
+
+\begin_layout Standard
+Современная теория вероятностей построена на основе 
 \emph on
 аксиоматического подхода
 \emph default
 , в котором вероятности некоторых событий просто постулируются.
+ Система аксиом, лежащая в основе теории вероятностей называется 
+\emph on
+аксиоматикой Колмогорова
+\emph default
+.
 
 \emph on
  
 \emph default
 При использовании аксиоматического подхода утверждение о том, что вероятность
- и предел частоты равны, превращается из определения в теорему, которую
- нужно доказывать.
+ и предел частоты равны (частотный подход), превращается из определения
+ в теорему, которую нужно доказывать.
+ И наоборот, некоторые теоремы классической теории вероятностей стали аксиомами.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Добавить ссылки на эту теоремы?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Наше изложении теории вероятностей строится следующим образом, в этой главе
+ мы сначала рассматриваем классическую теорию вероятностей (иными словами:
+ непосредственный подсчёт вероятностей для доказательства теорем), так как
+ такой подход более интуитивен и позволяет лучше продмонстрировать связь
+ с практикой.
+ В заключение этой главы мы рассматриваем аксиоматику Колмогорова, пересматривае
+м предшествующие выводы этой главы в соответствие с новыми представлениями,
+ а в последующих главах уже окончательно переходим к использованию аксиоматическ
+ого подхода.
 \end_layout
 
 \begin_layout Section
@@ -772,9 +875,46 @@ status open
 
 \begin_layout Exercise
 Могут ли несовместные события быть независимыми?
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ответ к этому упражнению?
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise
+Следующее утверждение называется 
+\emph on
+теоремой сложения вероятностей, 
+\emph default
+но в современной теории вероятности оно перешло в разряд аксиом.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+проверить это
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+Пусть 
+\begin_inset Formula $A$
+\end_inset
+
+ и 
+\begin_inset Formula $B$
+\end_inset
+
+ — несовместные случайные события, тогда 
 \begin_inset Formula 
 \[
 P\left\{ A+B\right\} =P\left\{ A\right\} +P\left\{ B\right\} .
@@ -785,12 +925,236 @@ P\left\{ A+B\right\} =P\left\{ A\right\} +P\left\{ B\right\} .
 
 \end_layout
 
+\begin_layout Proof
+Воспользуемся непосредственным подсчётом вероятностей.
+ Пусть событию 
+\begin_inset Formula $A$
+\end_inset
+
+ благоприятствуют 
+\begin_inset Formula $m_{1}$
+\end_inset
+
+ исходов, а событию 
+\begin_inset Formula $B$
+\end_inset
+
+ — 
+\begin_inset Formula $m_{2}$
+\end_inset
+
+ исходов, а общее количество исходов равно 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ Так как события 
+\begin_inset Formula $A$
+\end_inset
+
+ и 
+\begin_inset Formula $B$
+\end_inset
+
+ несовместны, множества благоприятствующих исходов не пересекаются, следовательн
+о, число исходов благоприятствующих событию 
+\begin_inset Formula $A+B$
+\end_inset
+
+ равно 
+\begin_inset Formula $m_{1}+m_{2}$
+\end_inset
+
+.
+ Воспользовавшись определением вероятности (в рамках непосредственного подсчёта
+ вероятностей), получим:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+P\left\{ A+B\right\} =\frac{m_{1}+m_{2}}{n}=\frac{m_{1}}{n}+\frac{m_{2}}{n}=P\left\{ A\right\} +\left\{ B\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Написать про принцип 
+\begin_inset Quotes fld
+\end_inset
+
+Включения-исключения
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+Пусть 
+\begin_inset Formula $A$
+\end_inset
+
+ и 
+\begin_inset Formula $B$
+\end_inset
+
+ — произвольные случайные события, тогда имеет место равенство
+\end_layout
+
 \begin_layout Standard
 \begin_inset Formula 
 \[
 P\left\{ A+B\right\} =P\left\{ A\right\} +P\left\{ B\right\} -P\left\{ AB\right\} .
 \]
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Представим событие 
+\begin_inset Formula $A+B$
+\end_inset
+
+ в виде объединения непересекающихся множеств: 
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+A+B=A+\left(B\setminus A\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+P\left\{ A+B\right\} =P\left\{ A\right\} +P\left\{ B\setminus A\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Множество 
+\begin_inset Formula $B$
+\end_inset
+
+, свою очередь может быть представлено в виде объединения двух непересекающися
+ множеств следующим образом:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+B=B\setminus A+AB
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+P\left\{ B\right\} =P\left\{ B\setminus A\right\} +P\left\{ AB\right\} ,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+P\left\{ B\setminus A\right\} =P\left\{ B\right\} -P\left\{ AB\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+P\left\{ A+B\right\} =P\left\{ A\right\} +P\left\{ B\right\} -P\left\{ AB\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset CommandInset label
+LatexCommand label
+name "exer:dice_prime_or_even"
+
+\end_inset
+
+Бросается игральная кость.
+ Какова вероятность того, что выпадет чётное или простое число очков? Обозначим
+ выпадение чётного числа очков как 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ Так как чётными являются 3 из 6 возможных исходов, то 
+\begin_inset Formula $P\left(A\right)=\frac{3}{6}=\frac{1}{2}$
+\end_inset
+
+.
+ Выпадение простого числа очков обозначим как 
+\begin_inset Formula $B$
+\end_inset
+
+, простыми числами являются 2, 3 и 5 очков, поэтому 
+\begin_inset Formula $P\left(B\right)=\frac{3}{6}=\frac{1}{2}$
+\end_inset
+
+.
+ Совмещение событий 
+\begin_inset Formula $A$
+\end_inset
+
+ и 
+\begin_inset Formula $B$
+\end_inset
+
+ возможно только если выпадет число 
+\begin_inset Formula $2$
+\end_inset
+
+, поэтому 
+\begin_inset Formula $P\left(AB\right)=\frac{1}{6}$
+\end_inset
+
+.
+ Теперь мы можем вычислить окончательный ответ: 
+\begin_inset Formula $P\left\{ A+B\right\} =\frac{1}{2}+\frac{1}{2}-\frac{1}{6}=\frac{5}{6}.$
 \end_inset
 
 
@@ -830,6 +1194,129 @@ P\left\{ \bar{A}\right\} =1-P\left\{ A\right\} .
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+В некоторых случаях найти вероятность противоположного события оказывается
+ проще, чем непосредственно находить вероятность интересующего нас события.
+\end_layout
+
+\begin_layout Example
+Рассмотрим ещё раз условия примера 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "exer:dice_prime_or_even"
+
+\end_inset
+
+.
+ Противоположным к событию 
+\begin_inset Quotes fld
+\end_inset
+
+выпало чётное или просто число очков
+\begin_inset Quotes frd
+\end_inset
+
+ является 
+\begin_inset Quotes fld
+\end_inset
+
+выпало нечётное и не просто число очков
+\begin_inset Quotes frd
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+явно выписать формулы де Моргана?
+\end_layout
+
+\end_inset
+
+, среди нечётных чисел простым не является только единица.
+ Поэтому 
+\begin_inset Formula $P\left\{ A+B\right\} =1-\frac{1}{6}=\frac{5}{6}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Standard
+Классическая ситуация, в которой удобно найти вероятность противоположного
+ события — это задачи с формулировкой вида 
+\begin_inset Quotes fld
+\end_inset
+
+хотя бы один (одно)
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+По цели производится 3 выстрела, вероятность попадания в первом выстреле
+ равна 0,4, во втором — 0,3, а в третьем — 0,2.
+ Кокова вероятность, что в результате этих выстрелов будет хотя бы одно
+ попадание? Противоположным к событию 
+\begin_inset Quotes fld
+\end_inset
+
+хотя бы одно попадание
+\begin_inset Quotes frd
+\end_inset
+
+ будет 
+\begin_inset Quotes fld
+\end_inset
+
+ни одного попадания
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Считая, выстрелы независимыми, можно посчитать, что вероятность промаха
+ всем тремя выстрелами 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ссылка на теорему умножения?
+\end_layout
+
+\end_inset
+
+ равна
+\begin_inset Formula 
+\[
+\frac{6}{10}\cdot\frac{7}{10}\cdot\frac{8}{10}=\frac{336}{1000},
+\]
+
+\end_inset
+
+следовательно, вероятность того, что будет хотя бы одно попадание равна
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+1-\frac{336}{1000}=\frac{664}{1000}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Аксиоматика Колмогорова
 \end_layout
 
 \begin_layout Chapter
