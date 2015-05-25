@@ -350,6 +350,19 @@ status open
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Описать обозначения теории множеств и математической логики?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Требования к математической подготовке
 \end_layout
@@ -604,20 +617,6 @@ status open
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Подумать о порядке изложения подходов.
- Добавить примеры
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 
 \emph on
 Частотный подход 
@@ -698,6 +697,20 @@ status open
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Подумать о порядке изложения подходов.
+ Добавить примеры
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Непосредственный подсчёт вероятностей и геометрическая вероятность позволяют
  решить довольное большое количество задач.
 \end_layout
@@ -720,18 +733,6 @@ status open
 При использовании аксиоматического подхода утверждение о том, что вероятность
  и предел частоты равны (частотный подход), превращается из определения
  в теорему, которую нужно доказывать.
- И наоборот, некоторые теоремы классической теории вероятностей стали аксиомами.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Добавить ссылки на эту теоремы?
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -751,7 +752,11 @@ status open
 \end_layout
 
 \begin_layout Definition
-Произведением двух случайных событий 
+
+\emph on
+Произведением или совмещением 
+\emph default
+двух случайных событий 
 \begin_inset Formula $A$
 \end_inset
 
@@ -767,8 +772,12 @@ status open
 \begin_inset Formula $B$
 \end_inset
 
- происходят одновременно, и обозначается 
+ происходят одновременно, обозначается это событие
 \begin_inset Formula $AB$
+\end_inset
+
+ или 
+\begin_inset Formula $A\cap B$
 \end_inset
 
 .
@@ -794,6 +803,95 @@ status open
 .
 \end_layout
 
+\begin_layout Standard
+Условная вероятность события 
+\begin_inset Formula $A$
+\end_inset
+
+ при условии, что событие 
+\begin_inset Formula $B$
+\end_inset
+
+ произошло обозначается как 
+\begin_inset Formula $P\left\{ A|B\right\} .$
+\end_inset
+
+ Выведем формулу для вычисления этой вероятности с использованием непосредственн
+ого подсчёта вероятностей.
+ По определению, это вероятность равна количеству исходов, благоприятствующих
+ и 
+\begin_inset Formula $A$
+\end_inset
+
+, и 
+\begin_inset Formula $B$
+\end_inset
+
+, делённому на количество исходов, благоприятствующих событию 
+\begin_inset Formula $A$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left\{ B|A\right\} =\frac{m_{AB}}{m_{A}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Разделив числитель и знаменатель на общее число исходов (обозначим его 
+\begin_inset Formula $n$
+\end_inset
+
+), получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left\{ B|A\right\} =\frac{m_{AB}}{m_{A}}=\frac{m_{AB}}{n}\cdot\frac{n}{m_{A}}=\frac{P\left\{ AB\right\} }{P\left\{ A\right\} }.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Это равенство можно записать и другим способом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+P\left\{ AB\right\} =P\left\{ B|A\right\} \cdot P\left\{ A\right\} .\label{eq:joint_probability_via_conditional}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Добавить примеры
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Definition
 Случайные события называются 
 \emph on
@@ -806,6 +904,46 @@ status open
 зависимыми
 \emph default
 .
+ Формально можно написать, что события 
+\begin_inset Formula $A$
+\end_inset
+
+ и 
+\begin_inset Formula $B$
+\end_inset
+
+ независимы, то 
+\begin_inset Formula $P\left\{ A|B\right\} =P\left\{ A\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Следующее утверждение называется 
+\emph on
+теоремой умножения вероятностей
+\emph default
+.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:product_probability"
+
+\end_inset
+
+Пусть 
+\begin_inset Formula $A$
+\end_inset
+
+ и 
+\begin_inset Formula $B$
+\end_inset
+
+ — независимые случайные величины, тогда вероятность их совместного появления
+ равна произведению вероятностей этих событий.
 \end_layout
 
 \begin_layout Standard
@@ -819,10 +957,55 @@ P\left\{ AB\right\} =P\left\{ A\right\} \cdot P\left\{ B\right\} .
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Proof
+Так как события 
+\begin_inset Formula $A$
+\end_inset
+
+ и 
+\begin_inset Formula $B$
+\end_inset
+
+ независимы, то 
+\begin_inset Formula $P\left\{ A|B\right\} =P\left\{ A\right\} $
+\end_inset
+
+.
+ Подставляя это выражение в формулу 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:joint_probability_via_conditional"
+
+\end_inset
+
+, получим 
 \begin_inset Formula 
 \[
-P\left\{ AB\right\} =P\left\{ A\right\} \cdot P\left\{ B|A\right\} .
+P\left\{ AB\right\} =P\left\{ A|B\right\} \cdot P\left\{ B\right\} =P\left\{ A\right\} \cdot P\left\{ B\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Применяя теорему умножения несколько раз, мы можем получить аналогичный
+ результат для произведения произвольного числа независимых событий.
+\end_layout
+
+\begin_layout Theorem
+Пусть 
+\begin_inset Formula $A_{1},A_{2},...,A_{n}$
+\end_inset
+
+ — совокупность независимых событий, тогда
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula 
+\[
+P\left\{ \bigcap_{k=1}^{n}A_{k}\right\} =\prod_{k=1}^{n}P\left\{ A_{k}\right\} .
 \]
 
 \end_inset
@@ -835,7 +1018,7 @@ P\left\{ AB\right\} =P\left\{ A\right\} \cdot P\left\{ B|A\right\} .
 status open
 
 \begin_layout Plain Layout
-Добавить примеры
+Счётное число множителей?
 \end_layout
 
 \end_inset
@@ -888,24 +1071,41 @@ status open
 \end_layout
 
 \begin_layout Exercise
-Следующее утверждение называется 
-\emph on
-теоремой сложения вероятностей, 
-\emph default
-но в современной теории вероятности оно перешло в разряд аксиом.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-проверить это
-\end_layout
-
+Событие, которое заключается в том, что произойдёт одно из событий 
+\begin_inset Formula $A$
 \end_inset
 
+ или 
+\begin_inset Formula $B$
+\end_inset
 
+ (при этом совмещение этих событий не исключается), называется суммой этих
+ событий и обозначается 
+\begin_inset Formula $A+B$
+\end_inset
+
+ или 
+\begin_inset Formula $A\cup B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise
+Следующие утверждения называются 
+\emph on
+теоремой сложения вероятностей
+\emph default
+.
 \end_layout
 
 \begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:sum_probability"
+
+\end_inset
+
 Пусть 
 \begin_inset Formula $A$
 \end_inset
@@ -981,20 +1181,45 @@ P\left\{ A+B\right\} =\frac{m_{1}+m_{2}}{n}=\frac{m_{1}}{n}+\frac{m_{2}}{n}=P\le
 
 \end_layout
 
-\begin_layout Proof
+\begin_layout Standard
+Применяя теорему сложения несколько раз, мы можем получить аналогичный результат
+ для суммы произвольного числа несовместных событий.
+\end_layout
+
+\begin_layout Theorem
+Пусть 
+\begin_inset Formula $A_{1},A_{2},...,A_{n}$
+\end_inset
+
+ — совокупность несовместных событий, тогда
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula 
+\[
+P\left\{ \bigcup_{k=1}^{n}A_{k}\right\} =\sum_{k=1}^{n}P\left\{ A_{k}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Remark
+Отметим, что данный результат нельзя обобщить на объединения счётного числа
+ непересекающихся множеств.
+ Данный факт является одной из причин поиска более общего определния вероятности.
+ 
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-Написать про принцип 
-\begin_inset Quotes fld
-\end_inset
-
-Включения-исключения
-\begin_inset Quotes frd
-\end_inset
-
-
+Правда ли это? Может быть здесь нужен контрпример? Имеет ли это ограничение
+ значение в непосредственном подсчёте вероятностей?
 \end_layout
 
 \end_inset
@@ -1026,29 +1251,38 @@ P\left\{ A+B\right\} =P\left\{ A\right\} +P\left\{ B\right\} -P\left\{ AB\right\
 \end_layout
 
 \begin_layout Proof
+Идея доказательства состоит в том, чтобы свести общий случай к случую непересека
+ющихся множеств.
+\end_layout
+
+\begin_layout Proof
 Представим событие 
 \begin_inset Formula $A+B$
 \end_inset
 
- в виде объединения непересекающихся множеств: 
-\end_layout
-
-\begin_layout Proof
+ в виде объединения непересекающихся множеств:
 \begin_inset Formula 
 \[
-A+B=A+\left(B\setminus A\right)
+A+B=A+\left(B\setminus A\right),
 \]
 
 \end_inset
 
+в соответствии с теоремой сложения вероятностей 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:sum_probability"
 
+\end_inset
+
+, будет иметь место равенство
 \end_layout
 
 \begin_layout Proof
 \begin_inset Formula 
-\[
-P\left\{ A+B\right\} =P\left\{ A\right\} +P\left\{ B\setminus A\right\} .
-\]
+\begin{equation}
+P\left\{ A+B\right\} =P\left\{ A\right\} +P\left\{ B\setminus A\right\} .\label{eq:probability_sum_of_joint_via_sum_of_disjoint}
+\end{equation}
 
 \end_inset
 
@@ -1060,19 +1294,26 @@ P\left\{ A+B\right\} =P\left\{ A\right\} +P\left\{ B\setminus A\right\} .
 \begin_inset Formula $B$
 \end_inset
 
-, свою очередь может быть представлено в виде объединения двух непересекающися
+, свою очередь, может быть представлено в виде объединения двух непересекающися
  множеств следующим образом:
 \end_layout
 
 \begin_layout Proof
 \begin_inset Formula 
 \[
-B=B\setminus A+AB
+B=B\setminus A+AB,
 \]
 
 \end_inset
 
+снова применяя теорему 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:sum_probability"
 
+\end_inset
+
+, получим:
 \end_layout
 
 \begin_layout Proof
@@ -1088,9 +1329,9 @@ P\left\{ B\right\} =P\left\{ B\setminus A\right\} +P\left\{ AB\right\} ,
 
 \begin_layout Proof
 \begin_inset Formula 
-\[
-P\left\{ B\setminus A\right\} =P\left\{ B\right\} -P\left\{ AB\right\} .
-\]
+\begin{equation}
+P\left\{ B\setminus A\right\} =P\left\{ B\right\} -P\left\{ AB\right\} .\label{eq:probability_without_subset}
+\end{equation}
 
 \end_inset
 
@@ -1098,14 +1339,40 @@ P\left\{ B\setminus A\right\} =P\left\{ B\right\} -P\left\{ AB\right\} .
 \end_layout
 
 \begin_layout Proof
+Подставляя формулу 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:probability_without_subset"
+
+\end_inset
+
+ в 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:probability_sum_of_joint_via_sum_of_disjoint"
+
+\end_inset
+
+, получим утверждение теоремы:
+\end_layout
+
+\begin_layout Proof
 \begin_inset Formula 
 \[
-P\left\{ A+B\right\} =P\left\{ A\right\} +P\left\{ B\right\} -P\left\{ AB\right\} .
+P\left\{ A+B\right\} =P\left\{ A\right\} +P\left\{ B\setminus A\right\} =P\left\{ A\right\} +P\left\{ B\right\} -P\left\{ AB\right\} .
 \]
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Данное утверждение иногда называют 
+\emph on
+принципом включения-исключения
+\emph default
+.
 \end_layout
 
 \begin_layout Example
@@ -1283,17 +1550,14 @@ status open
 
 .
  Считая, выстрелы независимыми, можно посчитать, что вероятность промаха
- всем тремя выстрелами 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ссылка на теорему умножения?
-\end_layout
+ всем тремя выстрелами, в соответствии с теоремой умножения 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:product_probability"
 
 \end_inset
 
- равна
+, равна
 \begin_inset Formula 
 \[
 \frac{6}{10}\cdot\frac{7}{10}\cdot\frac{8}{10}=\frac{336}{1000},
@@ -1317,6 +1581,225 @@ status open
 
 \begin_layout Section
 Аксиоматика Колмогорова
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Дать определение булевой алгберы множества
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Оказывается, что для того, чтобы функцию множеств можно было бы считать
+ вероятностью, она должна удовлетворять двум аксиомам.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P\left\{ A\right\} \ge0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Пусть задано покрытие множества 
+\begin_inset Formula $\Omega$
+\end_inset
+
+непересекающимися множествами 
+\begin_inset Formula $\left\{ A_{n}\right\} $
+\end_inset
+
+: 
+\begin_inset Formula $\bigcup_{n\in\mathbb{N}}A_{n}=\Omega$
+\end_inset
+
+, 
+\begin_inset Formula $A_{n}\cap A_{k}=\emptyset$
+\end_inset
+
+ при 
+\begin_inset Formula $n\ne k$
+\end_inset
+
+, тогда 
+\begin_inset Formula $\sum_{n\in\mathbb{N}}P\left\{ A_{n}\right\} =1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Этот набор аксиом может показаться довольно скромным, но они позволяют доказать
+ следующие утверждения.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Превратить в Утверждения/Доказательства
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $0\le P\left\{ A\right\} \le1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P\left\{ \emptyset\right\} =0.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P\left\{ \Omega\right\} =1.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+Для любого счётного объединения непересекающихся множеств имеет место равенство
+ 
+\begin_inset Formula 
+\[
+P\left\{ \bigcup_{n\in\mathbb{N}}A_{n}\right\} =\sum_{n\in\mathbb{N}}P\left\{ A_{n}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Введём обозначение 
+\begin_inset Formula $B=\bigcup_{n\in\mathbb{N}}A_{n}$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\Omega=B\cup\overline{B}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+P\left\{ B\right\} +P\left\{ \overline{B}\right\} =1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+С другой стороны:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\Omega=\bigcup_{n\in\mathbb{N}}A_{n}\cup\overline{B}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\sum_{n\in\mathbb{N}}P\left\{ A_{n}\right\} +P\left\{ \overline{B}\right\} =1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Таким образом:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+P\left\{ \bigcup_{n\in\mathbb{N}}A_{n}\right\} =\sum_{n\in\mathbb{N}}P\left\{ A_{n}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Заключение
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Явно написать про алгебру событий
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Сумма и произведенение произвольного (конечного) числа событий
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Мы ввели понятие случайного события и алгебру случайных событий: произведение,
+ сумму и дополнение событий.
+ Кроме того, мы рассмотрели подходы к определению вероятности.
+\end_layout
+
+\begin_layout Enumerate
+Мы доказали основные теоремы, связанные со случайными событиями, используя
+ непосредственный подсчёт вероятностей.
+\end_layout
+
+\begin_layout Enumerate
+Наконец, мы рассмотрели аксиоматический подход к теории вероятностей.
 \end_layout
 
 \begin_layout Chapter
