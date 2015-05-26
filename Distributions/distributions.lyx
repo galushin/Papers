@@ -2516,10 +2516,14 @@ P\left\{ X>1\right\} \le\sum_{x\le1}x\cdot p\left(x\right)+\sum_{x>1}x\cdot p\le
 \end_inset
 
  и обозначается 
+\begin_inset Formula $\mathbb{E}\left[X\right]$
+\end_inset
+
+ или 
 \begin_inset Formula $M\left[X\right]$
 \end_inset
 
-:
+ (второе обозначение характерно для русскоязычной литературы):
 \end_layout
 
 \begin_layout Standard
@@ -2534,7 +2538,7 @@ M\left[X\right]=\sum_{x}x\cdot p\left(x\right).
 \end_layout
 
 \begin_layout Standard
-Для сокращении записи мы иногда будем применяеть обозначение 
+Для сокращении записи мы иногда будем применять обозначение 
 \begin_inset Formula $\mu_{X}$
 \end_inset
 
@@ -2549,9 +2553,56 @@ M\left[X\right]=\sum_{x}x\cdot p\left(x\right).
 \begin_layout Standard
 Если случайная величина имеет бесконечное количество возможных значений,
  то сумму в определении математического ожидания нужно понимать как сумму
- ряда.
- В таком случае математическое ожидание может и не существовать (если ряд
- не сходится).
+ ряда
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+добавить ссылку на соответствующий материал в матане
+\end_layout
+
+\end_inset
+
+.
+ В таком случае математическое ожидание может и не существовать, если ряд
+ не сходится абсолютно
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Мы требуем абсолютную сходимость, так как если ряд сходится условно (сходится,
+ но не абсолютно), то путём перестановки слагаемых ему можно придать любое
+ наперёд заданное значение 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+добавить ссылку
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+, то есть если расходится ряд
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{x}\left|x\right|\cdot p\left(x\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+.
 \end_layout
 
 \begin_layout Standard
@@ -2560,6 +2611,12 @@ M\left[X\right]=\sum_{x}x\cdot p\left(x\right).
 \end_layout
 
 \begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lem:tchebushev_inequality"
+
+\end_inset
+
 Пусть 
 \begin_inset Formula $X$
 \end_inset
@@ -4276,6 +4333,12 @@ D\left[a\right]=\left(a-M\left[a\right]\right)^{2}\cdot1=0.
 \end_layout
 
 \begin_layout Fact
+\begin_inset CommandInset label
+LatexCommand label
+name "fact:variance_mult_by_scalar"
+
+\end_inset
+
 Если 
 \begin_inset Formula $X$
 \end_inset
@@ -4360,16 +4423,39 @@ D\left[X\right]=M\left[X^{2}\right]-2\cdot\left(M\left[X\right]\right)^{2}+\left
 
 \begin_layout Standard
 Теперь мы перейдём к более сложному вопросу: дисперсия суммы случайных величин.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Вставить пример 
-\begin_inset Formula $D[2X]=D\left[X+X\right]$
+ Можно было бы ожидать, что, по аналогии с математическим ожиданием, дисперсия
+ суммы случайных величин равна сумме дисперсий этих случайных величин.
+ Рассмотрим сначала следующий контрпример: случайная величина 
+\begin_inset Formula $Y=2\cdot X$
 \end_inset
 
+.
+ По свойтсву 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fact:variance_mult_by_scalar"
 
-\end_layout
+\end_inset
+
+, 
+\begin_inset Formula $D\left[Y\right]=4\cdot M\left[X\right]$
+\end_inset
+
+.
+ С другой стороны, 
+\begin_inset Formula $Y=X+X$
+\end_inset
+
+, отсюда мы можем сделать вывод, что 
+\begin_inset Formula $D\left[X+X\right]\ne D\left[X\right]+D\left[X\right]$
+\end_inset
+
+.
+ Таким образом, в общем случае 
+\begin_inset Formula 
+\[
+D\left[X+Y\right]\ne D\left[X\right]+D\left[Y\right].
+\]
 
 \end_inset
 
@@ -4377,8 +4463,8 @@ status open
 \end_layout
 
 \begin_layout Standard
-Начнём с самого простого случая: дисперсия суммы случайной и неслучайной
- величины.
+Установление правила для дисперсии суммы мы начнём с самого простого случая:
+ дисперсия суммы случайной и неслучайной величины.
 \end_layout
 
 \begin_layout Fact
@@ -4785,17 +4871,14 @@ p, & X=1\\
 
 \end_inset
 
-или с использованием нотации Айверсона
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Нужно объяснить, что это такое
-\end_layout
+или, с использованием нотации Айверсона 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Croneccer_and_Iverson_notations"
 
 \end_inset
 
-
+:
 \end_layout
 
 \begin_layout Standard
@@ -5111,17 +5194,14 @@ P\left\{ Y=k\right\} =q^{k}p=\left(1-p\right)^{k}p.
 
 \begin_layout Standard
 Легко проверить, что сумма всех вероятностей действительно равна единице.
- По формуле суммы бесконечной геометрической прогрессии
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-вставить ссылку
-\end_layout
+ По формуле суммы бесконечной геометрической прогрессии 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:geometric_decreasing_sum"
 
 \end_inset
 
-
+:
 \end_layout
 
 \begin_layout Standard
@@ -5811,14 +5891,183 @@ status open
 Закон распределения непрерывной случайной величины
 \end_layout
 
+\begin_layout Standard
+
+\emph on
+Непрерывная случайная величина 
+\emph default
+— это случайная величина, множество возможных значений которой является
+ непрерывным.
+ 
+\begin_inset Quotes fld
+\end_inset
+
+Размер
+\begin_inset Quotes frd
+\end_inset
+
+ множества возможных значений, при этом, может быть как конечным (отрезок
+ числовой оси), так и бесконечным (вся числовая ось).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Примеры
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для определения непрерывной случайной величины нельзя воспользоваться функцией
+ вероятности, как это делается для дискретных случайных величин.
+ Дело в том, что постановка вопроса о вероятности того, что непрерывная
+ случайная величина примет конкретное значение не совсем конкретно: если
+ мы припишем несчётному множеству значений ненулевую вероятность, то сумма
+ этих вероятностей будет бесконечной.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{X}\left(x\right)=P\left\{ X\le x\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вероятность того, что случайная величина принадлежит заданному отрезку,
+ можно вычислить по формуле
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left\{ X\in\left[a;b\right]\right\} =F_{X}\left(b\right)-F_{X}\left(b\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если функция 
+\begin_inset Formula $F$
+\end_inset
+
+ является дифференцируемой, то можно ввести понятие функции плотности распределе
+ния:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{X}\left(x\right)=\frac{dF_{X}\left(x\right)}{dx},
+\]
+
+\end_inset
+
+которая является аналогом функции вероятности для дискретных случайных величин.
+ Так как дифференцирование и интегрирование являются взаимно-обратными операциям
+и
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+нужна ссылка
+\end_layout
+
+\end_inset
+
+, то функцию распределения можно записать следующим образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{X}\left(x\right)=\intop_{x\le y}f_{X}\left(y\right)dy.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если из контекста понятно, о какой случайной величине идёт речь, то индекс
+ у функции распределения и/или функции плотности распределения опускают.
+\end_layout
+
 \begin_layout Section
 Числовые характеристики непрерывных случайных величин
 \end_layout
 
 \begin_layout Standard
+Математическое ожидание непрерывной случайной величины 
+\begin_inset Formula $X$
+\end_inset
+
+ определяется следующим образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+M\left[X\right]=\intop_{\Omega}x\cdot f_{X}\left(x\right)dx\label{eq:mean_continuous}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ — является неограниченным множеством, либо подынтегральная функция имеет
+ особенность в 
+\begin_inset Formula $\Omega$
+\end_inset
+
+, то данный интеграл становится несобственным.
+ По аналогии с дискретными случайными величинами , в случае несобственного
+ интеграла, говорят, что математическое ожидание существует только если
+ интеграл 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:mean_continuous"
+
+\end_inset
+
+ сходится абсолютно, то есть если сходится интеграл
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intop_{\Omega}\left|x\right|\cdot f_{X}\left(x\right)dx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Заметим, что при доказательстве свойств дисперсии для дискретных случайных
  величин мы пользовались лишь свойствами математического ожидания, счётность
- множества возможных значений.
+ множества возможных значений, по существу, не использовалась.
  Так как мы перенесли свойства математического ожидания на непрерывные случайные
  величины, то свойства дисперсии непрерывных случайных величин автоматически
  становятся доказанными.
@@ -5827,6 +6076,25 @@ status open
 
 \begin_layout Section
 Неравенство Чебышёва для непрерывных случайных величин
+\end_layout
+
+\begin_layout Standard
+Используя введённое нами понятие математического ожидания 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:mean_continuous"
+
+\end_inset
+
+ для непрерывных случайных величин, мы можем доказать для них неравенство
+ Чебышёва 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lem:tchebushev_inequality"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
@@ -6895,6 +7163,10 @@ f\left(x\right)=f_{X}\left(x|y\right).
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Заключение
 \end_layout
 
 \begin_layout Chapter
@@ -14698,7 +14970,17 @@ name "chap:Sums_calculations"
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Croneccer_and_Iverson_notations"
+
+\end_inset
+
 Символ Кронеккера и нотация Аайверсона
+\end_layout
+
+\begin_layout Standard
+Символ Кронеккера определяется следующим образом:
 \end_layout
 
 \begin_layout Standard
@@ -14716,7 +14998,8 @@ name "chap:Sums_calculations"
 \end_layout
 
 \begin_layout Standard
-Нотация Айверсона является обобщением этого символа на произвольные условия.
+Нотация Айверсона является обобщением символа Кронеккера на произвольные
+ условия.
  Если дано утверждение 
 \begin_inset Formula $P$
 \end_inset
@@ -14744,7 +15027,7 @@ name "chap:Sums_calculations"
 \begin_inset Formula $1$
 \end_inset
 
-, множитель равен 
+, а множитель равен 
 \begin_inset Formula $q$
 \end_inset
 
@@ -14862,6 +15145,33 @@ S_{n}=1+q\cdot\left(S_{n}-q^{n}\right).
 \[
 S_{n}=\frac{1-q^{n+1}}{1-q}.
 \]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если 
+\begin_inset Formula $\left|q\right|<1$
+\end_inset
+
+, то 
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}q^{n+1}=0,
+\]
+
+\end_inset
+
+поэтому сумма бесконечно убывающей геометрической прогрессии равна
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\lim_{n\to\infty}S_{n}=\frac{1}{1-q}.\label{eq:geometric_decreasing_sum}
+\end{equation}
 
 \end_inset
 
