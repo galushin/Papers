@@ -2072,7 +2072,7 @@ reference "eq:probability_k_from_n"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\hat{p}=0,\,k>1,
+\hat{p}=0,\, k>1,
 \]
 
 \end_inset
@@ -2083,7 +2083,7 @@ reference "eq:probability_k_from_n"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-1-\hat{p}=0,\,k<n-2,
+1-\hat{p}=0,\, k<n-2,
 \]
 
 \end_inset
@@ -8354,7 +8354,7 @@ D\left[Z_{n}\right]=1.
 \end_inset
 
  в ряд Тейлора на отрезке 
-\begin_inset Formula $\left[-a;\,a\right]$
+\begin_inset Formula $\left[-a;\, a\right]$
 \end_inset
 
 :
@@ -12236,6 +12236,228 @@ a=\frac{\overline{x\cdot y}-\overline{x}\cdot\overline{y}}{\overline{x^{2}}-\lef
 Адаптивное вычисление коэффициентов линейной регрессии
 \end_layout
 
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{k=0}^{n}\left(x_{k}^{T}a-y_{k}\right)^{2}\to\min_{a}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\sum_{k=0}^{n}\left(x_{k}^{T}a_{n}-y_{k}\right)x_{k}=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(\sum_{k=0}^{n}x_{k}x_{k}^{T}\right)a_{n}=\sum_{k=0}^{n}y_{k}x_{k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Введём следующие обозначения:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C_{n}=\sum_{k=0}^{n}x_{k}x_{k}^{T},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+b_{n}=\sum_{k=0}^{n}y_{k}x_{k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C_{n+1}=C_{n}+x_{n+1}x_{n+1}^{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+b_{n+1}=b_{n}+y_{n+1}x_{n+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Уравнение для коэффициентов регрессии примет вид
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C_{n}a_{n}=b_{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C_{n+1}a_{n+1}=b_{n+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C_{n+1}a_{n+1}=b_{n}+y_{n+1}x_{n+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C_{n+1}a_{n+1}=C_{n}a_{n}+y_{n+1}x_{n+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{n+1}=C_{n+1}^{-1}C_{n}a_{n}+y_{n+1}C_{n+1}^{-1}x_{n+1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+I=C_{n+1}^{-1}C_{n}+C_{n+1}^{-1}x_{n+1}x_{n+1}^{T}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\gamma_{n+1}=C_{n+1}^{-1}x_{n+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C_{n+1}^{-1}C_{n}=I-\gamma_{n+1}x_{n+1}^{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{n+1}=\left(I-\gamma_{n+1}x_{n+1}^{T}\right)a_{n}+y_{n+1}\gamma_{n+1}=a_{n}+\gamma_{n+1}\left(y_{n}-x_{n+1}^{T}a_{n}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C_{n+1}^{-1}=\left(I-\gamma_{n+1}x_{n+1}^{T}\right)C_{n}^{-1}=C_{n}^{-1}-\gamma_{n+1}x_{n+1}^{T}C_{n}^{-1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C_{n+1}^{-1}x_{n+1}=C_{n}^{-1}x_{n+1}-\gamma_{n+1}x_{n+1}^{T}C_{n}^{-1}x_{n+1}=\gamma_{n+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выражая 
+\begin_inset Formula $\gamma_{n+1}$
+\end_inset
+
+, получим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\gamma_{n+1}=\frac{C_{n}^{-1}x_{n+1}}{1+x_{n+1}^{T}C_{n}^{-1}x_{n+1}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Другие виды регрессионных моделей
 \end_layout
@@ -12611,7 +12833,7 @@ status open
 \begin_layout Standard
 \begin_inset Formula 
 \[
-P\left\{ X=j\right\} =p_{j},\,j=1,...,N,
+P\left\{ X=j\right\} =p_{j},\, j=1,...,N,
 \]
 
 \end_inset
@@ -12622,7 +12844,7 @@ P\left\{ X=j\right\} =p_{j},\,j=1,...,N,
 \begin_layout Standard
 \begin_inset Formula 
 \[
-p_{j}\ge0,\,j=1,...,N,
+p_{j}\ge0,\, j=1,...,N,
 \]
 
 \end_inset
