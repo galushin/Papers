@@ -1971,7 +1971,17 @@ P\left(k,n,p\right)=\dbinom{n}{k}\cdot p^{k}q^{n-k}.
 
 \begin_layout Standard
 Точечная оценка параметра случайного объекта — это единственное значения
- соответствующего параметра.
+ соответствующего параметра
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Затуп №1
+\end_layout
+
+\end_inset
+
+.
  Для построения точечной оценки вероятности мы воспользуемся так называемым
  
 \emph on
@@ -2072,7 +2082,7 @@ reference "eq:probability_k_from_n"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\hat{p}=0,\, k>1,
+\hat{p}=0,\,k>1,
 \]
 
 \end_inset
@@ -2083,7 +2093,7 @@ reference "eq:probability_k_from_n"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-1-\hat{p}=0,\, k<n-2,
+1-\hat{p}=0,\,k<n-2,
 \]
 
 \end_inset
@@ -2156,6 +2166,16 @@ k\left(1-\hat{p}\right)-\left(n-k\right)\hat{p}=0.
 \begin_inset Formula $n$
 \end_inset
 
+
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Затуп №2
+\end_layout
+
+\end_inset
+
 .
  Таким образом, оценка вероятности по частоте даётся формулой
 \end_layout
@@ -2203,7 +2223,17 @@ k\left(1-\hat{p}\right)-\left(n-k\right)\hat{p}=0.
 Дискретная случайная величина 
 \emph default
 — это случайная величина, множество возможных значений которой является
- конечным или счётным.
+ конечным или счётным
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Счётное О_о
+\end_layout
+
+\end_inset
+
+.
  Иными словами множество возможных значений дискретной случайной величины
  эквивалентно подмножеству множества натуральных чисел.
  В данной главе мы будем считать, что случайные величины являются дискретными,
@@ -2244,8 +2274,17 @@ k\left(1-\hat{p}\right)-\left(n-k\right)\hat{p}=0.
  для случайной величины? Мы не можем взять определение сходимости числовой
  последовательности из математического анализа, так как случайная величина
  не является вещественным числом.
- Как и для конечномерных векторных пространств и множеств функций, сходимость
- можно определить разными способами.
+ Как и для конечномерных векторных пространств и множеств функций
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+упростить
+\end_layout
+
+\end_inset
+
+, сходимость можно определить разными способами.
  Подробнее мы рассмотрим виды сходимости позже, а пока ограничимся одним
  из них: 
 \emph on
@@ -2271,6 +2310,28 @@ k\left(1-\hat{p}\right)-\left(n-k\right)\hat{p}=0.
 \[
 \lim_{n\to\infty}P\left\{ \left|X_{n}-X\right|>\varepsilon\right\} =0.
 \]
+
+\end_inset
+
+
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+расшифровать 
+\begin_inset Formula $n$
+\end_inset
+
+ и 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, строгое определение для любого 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+ ...
+\end_layout
 
 \end_inset
 
@@ -2621,7 +2682,7 @@ name "lem:tchebushev_inequality"
 \begin_inset Formula $X$
 \end_inset
 
- — неотрицательная случайная величина для которой определено математическое
+ — неотрицательная случайная величина, для которой определено математическое
  ожидание, тогда 
 \end_layout
 
@@ -2630,6 +2691,16 @@ name "lem:tchebushev_inequality"
 \[
 P\left\{ X>1\right\} \le M\left[X\right].
 \]
+
+\end_inset
+
+
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+нужно таким дуракам как я, пояснить, что это и есть неравенство Чебышёва
+\end_layout
 
 \end_inset
 
@@ -2796,7 +2867,17 @@ M\left[\alpha\cdot X\right]=\alpha M\left[X\right].
 \begin_inset Formula $P\left\{ Y=\alpha\cdot x_{n}\right\} =P\left\{ X=x_{n}\right\} .$
 \end_inset
 
- Таким образом:
+ 
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+пояснить, откуда и почему так))
+\end_layout
+
+\end_inset
+
+Таким образом:
 \end_layout
 
 \begin_layout Proof
@@ -2891,7 +2972,17 @@ M\left[X+Y\right]=\sum_{k}z_{k}P\left\{ X+Y=z_{k}\right\} =\\
 \end_layout
 
 \begin_layout Standard
-Второе из этих свойств мы можем применить прямо сейчас:
+Второе из этих свойств мы можем применить прямо сейчас
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+в скобочках, может, указать Факт №
+\end_layout
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
@@ -3161,7 +3252,17 @@ M\left[\left(\hat{p}_{n}\right)^{2}\right]=\frac{1}{n^{2}}\sum_{i=1}^{n}\sum_{j=
 
 \end_inset
 
-причём слагаемые этой двойной суммы можно разделить на две группы.
+причём слагаемые этой двойной суммы можно разделить на две группы
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+почему?
+\end_layout
+
+\end_inset
+
+.
  Если 
 \begin_inset Formula $i=j$
 \end_inset
@@ -3342,7 +3443,7 @@ D\left[X\right]=M\left[\left(X-M\left[X\right]\right)^{2}\right].
 \begin_layout Standard
 В некоторых случаях дисперсия недостаточно информативна, так как единицей
  её измерения является квадрат единицы измерения описываемой случайной величины.
- Поэтому была введена характеристика, равна квадратному корню из дисперсии,
+ Поэтому была введена характеристика, равная квадратному корню из дисперсии,
  — 
 \emph on
 среднеквадратическое отклонение
@@ -3383,8 +3484,8 @@ D\left[X\right]=\sigma_{X}^{2}.
 
 \begin_layout Standard
 По сути, в предыдущем параграфе мы показали, что для несмещённой оценки
- сходимость в среднем-квадратичесом (а значит и сходимость по вероятности)
- к оцениваемому параметру следуют из стремлению к нулю дисперсии с ростом
+ сходимость в среднем-квадратическом (а, значит, и сходимость по вероятности)
+ к оцениваемому параметру следует из стремлению к нулю дисперсии с ростом
  колчества опытов.
  Однако это лишь достаточное условие.
  Рассмотрим следующий вопрос: можно ли ослабить требование несмещённости?
@@ -8354,7 +8455,7 @@ D\left[Z_{n}\right]=1.
 \end_inset
 
  в ряд Тейлора на отрезке 
-\begin_inset Formula $\left[-a;\, a\right]$
+\begin_inset Formula $\left[-a;\,a\right]$
 \end_inset
 
 :
@@ -12833,7 +12934,7 @@ status open
 \begin_layout Standard
 \begin_inset Formula 
 \[
-P\left\{ X=j\right\} =p_{j},\, j=1,...,N,
+P\left\{ X=j\right\} =p_{j},\,j=1,...,N,
 \]
 
 \end_inset
@@ -12844,7 +12945,7 @@ P\left\{ X=j\right\} =p_{j},\, j=1,...,N,
 \begin_layout Standard
 \begin_inset Formula 
 \[
-p_{j}\ge0,\, j=1,...,N,
+p_{j}\ge0,\,j=1,...,N,
 \]
 
 \end_inset
