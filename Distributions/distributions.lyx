@@ -368,6 +368,19 @@ status open
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Разбить по частям в зависимости от требований к математической подготовке
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Так как при выводе многих результатов теории вероятностей и математической
  статистики используются методы дифференциального и интегрального исчисления,
  поэтому предполагается, что читатель изучил курс математического анализа
@@ -384,6 +397,19 @@ status open
 
  Пропуская доказательства, можно существенно ослабить требования к подготовке
  в области математического анализа.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Описание требований к мат.подготовке по главам
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1970,19 +1996,21 @@ P\left(k,n,p\right)=\dbinom{n}{k}\cdot p^{k}q^{n-k}.
 \end_layout
 
 \begin_layout Standard
-Точечная оценка параметра случайного объекта — это единственное значения
- соответствующего параметра
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-Затуп №1
-\end_layout
+Точечная оценка параметра случайного объекта — это единственное значения,
+ предположительно близкое к оцениваемому параметру.
+ Это простейший подход к оцениванию, более информативный (и более сложный)
+ подход — интервальное оценивание мы рассмотрим позже 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Rare_events_and_interval_estimators"
 
 \end_inset
 
 .
- Для построения точечной оценки вероятности мы воспользуемся так называемым
+\end_layout
+
+\begin_layout Standard
+Для построения точечной оценки вероятности мы воспользуемся так называемым
  
 \emph on
 методом максимизации правдоподобия
@@ -2082,7 +2110,7 @@ reference "eq:probability_k_from_n"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\hat{p}=0,\,k>1,
+\hat{p}=0,\, k>1,
 \]
 
 \end_inset
@@ -2093,7 +2121,7 @@ reference "eq:probability_k_from_n"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-1-\hat{p}=0,\,k<n-2,
+1-\hat{p}=0,\, k<n-2,
 \]
 
 \end_inset
@@ -2166,17 +2194,7 @@ k\left(1-\hat{p}\right)-\left(n-k\right)\hat{p}=0.
 \begin_inset Formula $n$
 \end_inset
 
-
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-Затуп №2
-\end_layout
-
-\end_inset
-
-.
+ (то есть от исхода опытов).
  Таким образом, оценка вероятности по частоте даётся формулой
 \end_layout
 
@@ -2223,17 +2241,7 @@ status open
 Дискретная случайная величина 
 \emph default
 — это случайная величина, множество возможных значений которой является
- конечным или счётным
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-Счётное О_о
-\end_layout
-
-\end_inset
-
-.
+ конечным или счётным.
  Иными словами множество возможных значений дискретной случайной величины
  эквивалентно подмножеству множества натуральных чисел.
  В данной главе мы будем считать, что случайные величины являются дискретными,
@@ -2274,38 +2282,65 @@ status open
  для случайной величины? Мы не можем взять определение сходимости числовой
  последовательности из математического анализа, так как случайная величина
  не является вещественным числом.
- Как и для конечномерных векторных пространств и множеств функций
-\begin_inset Note Comment
+ Сходимость для случайных величин можно определить разными способами
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-упростить
+Как и для конечномерных векторных пространств и множеств функций 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+вставить ссылку
 \end_layout
 
 \end_inset
 
-, сходимость можно определить разными способами.
- Подробнее мы рассмотрим виды сходимости позже, а пока ограничимся одним
- из них: 
+
+\end_layout
+
+\end_inset
+
+.
+ Подробнее мы рассмотрим виды сходимости позже 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+вставить ссылку
+\end_layout
+
+\end_inset
+
+, а пока ограничимся одним из них: 
 \emph on
 сходимость по вероятности
 \emph default
 .
 \end_layout
 
-\begin_layout Standard
+\begin_layout Definition
 Последовательность случайных величин 
 \begin_inset Formula $\left\{ X_{n}\right\} $
 \end_inset
 
- сходится к случайной величине 
+, где 
+\begin_inset Formula $n$
+\end_inset
+
+ — натуральное число, сходится к случайной величине 
 \begin_inset Formula $X$
 \end_inset
 
- по вероятности, если
+ по вероятности, если для любого вещественного числа 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+ выполняется равенство
 \end_layout
 
-\begin_layout Standard
+\begin_layout Definition
 \begin_inset Formula 
 \[
 \lim_{n\to\infty}P\left\{ \left|X_{n}-X\right|>\varepsilon\right\} =0.
@@ -2314,32 +2349,10 @@ status open
 \end_inset
 
 
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-расшифровать 
-\begin_inset Formula $n$
-\end_inset
-
- и 
-\begin_inset Formula $\varepsilon$
-\end_inset
-
-, строгое определение для любого 
-\begin_inset Formula $\varepsilon>0$
-\end_inset
-
- ...
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
-Говоря неформально, Последовательность случайных величин 
+Говоря неформально, последовательность случайных величин 
 \begin_inset Formula $\left\{ X_{n}\right\} $
 \end_inset
 
@@ -2568,7 +2581,32 @@ P\left\{ X>1\right\} \le\sum_{x\le1}x\cdot p\left(x\right)+\sum_{x>1}x\cdot p\le
 \end_layout
 
 \begin_layout Standard
-Сумма в правой части этой формулы называется 
+Сумма
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Если случайная величина 
+\begin_inset Formula $X$
+\end_inset
+
+ имеет бесконечное количество возможных значений, то сумму в определении
+ математического ожидания нужно понимать как сумму ряда
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+добавить ссылку на соответствующий материал в матане
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ в правой части этой формулы называется 
 \emph on
 математическим ожиданием 
 \emph default
@@ -2612,20 +2650,7 @@ M\left[X\right]=\sum_{x}x\cdot p\left(x\right).
 \end_layout
 
 \begin_layout Standard
-Если случайная величина имеет бесконечное количество возможных значений,
- то сумму в определении математического ожидания нужно понимать как сумму
- ряда
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-добавить ссылку на соответствующий материал в матане
-\end_layout
-
-\end_inset
-
-.
- В таком случае математическое ожидание может и не существовать, если ряд
+В таком случае математическое ожидание может и не существовать, если ряд
  не сходится абсолютно
 \begin_inset Foot
 status open
@@ -2672,6 +2697,11 @@ status open
 \end_layout
 
 \begin_layout Lemma
+
+\series bold
+(Неравенство Чебышёва)
+\series default
+
 \begin_inset CommandInset label
 LatexCommand label
 name "lem:tchebushev_inequality"
@@ -2691,16 +2721,6 @@ name "lem:tchebushev_inequality"
 \[
 P\left\{ X>1\right\} \le M\left[X\right].
 \]
-
-\end_inset
-
-
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-нужно таким дуракам как я, пояснить, что это и есть неравенство Чебышёва
-\end_layout
 
 \end_inset
 
@@ -2864,16 +2884,10 @@ M\left[\alpha\cdot X\right]=\alpha M\left[X\right].
 \end_inset
 
 , причём 
-\begin_inset Formula $P\left\{ Y=\alpha\cdot x_{n}\right\} =P\left\{ X=x_{n}\right\} .$
-\end_inset
-
- 
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-пояснить, откуда и почему так))
-\end_layout
+\begin_inset Formula 
+\[
+P\left\{ Y=\alpha\cdot x_{n}\right\} =P\left\{ \alpha\cdot X=\alpha\cdot x_{n}\right\} =P\left\{ X=x_{n}\right\} .
+\]
 
 \end_inset
 
@@ -2972,17 +2986,14 @@ M\left[X+Y\right]=\sum_{k}z_{k}P\left\{ X+Y=z_{k}\right\} =\\
 \end_layout
 
 \begin_layout Standard
-Второе из этих свойств мы можем применить прямо сейчас
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-в скобочках, может, указать Факт №
-\end_layout
+Второе из этих свойств 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fact:mean_for_scaled_discrete"
 
 \end_inset
 
-:
+ мы можем применить прямо сейчас:
 \end_layout
 
 \begin_layout Standard
@@ -3252,14 +3263,12 @@ M\left[\left(\hat{p}_{n}\right)^{2}\right]=\frac{1}{n^{2}}\sum_{i=1}^{n}\sum_{j=
 
 \end_inset
 
-причём слагаемые этой двойной суммы можно разделить на две группы
-\begin_inset Note Comment
-status open
+причём слагаемые этой двойной суммы можно разделить на две группы: 
+\begin_inset Formula $i=j $
+\end_inset
 
-\begin_layout Plain Layout
-почему?
-\end_layout
-
+ и 
+\begin_inset Formula $i\ne j$
 \end_inset
 
 .
@@ -3608,6 +3617,12 @@ M\left[\left(X_{n}-a\right)^{2}\right]=M\left[\left(\left(X_{n}-\mu_{n}\right)-\
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Rare_events_and_interval_estimators"
+
+\end_inset
+
 Оценка вероятности редких событий и интервальное оценивание
 \end_layout
 
@@ -8455,7 +8470,7 @@ D\left[Z_{n}\right]=1.
 \end_inset
 
  в ряд Тейлора на отрезке 
-\begin_inset Formula $\left[-a;\,a\right]$
+\begin_inset Formula $\left[-a;\, a\right]$
 \end_inset
 
 :
@@ -12934,7 +12949,7 @@ status open
 \begin_layout Standard
 \begin_inset Formula 
 \[
-P\left\{ X=j\right\} =p_{j},\,j=1,...,N,
+P\left\{ X=j\right\} =p_{j},\, j=1,...,N,
 \]
 
 \end_inset
@@ -12945,7 +12960,7 @@ P\left\{ X=j\right\} =p_{j},\,j=1,...,N,
 \begin_layout Standard
 \begin_inset Formula 
 \[
-p_{j}\ge0,\,j=1,...,N,
+p_{j}\ge0,\, j=1,...,N,
 \]
 
 \end_inset
