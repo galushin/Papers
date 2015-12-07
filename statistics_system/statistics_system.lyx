@@ -79,6 +79,51 @@
  Галушин
 \end_layout
 
+\begin_layout Standard
+Требования к системе:
+\end_layout
+
+\begin_layout Enumerate
+Поддержка пользователей с различным уровнем математической подготовки и
+ навыков программирования.
+\end_layout
+
+\begin_layout Enumerate
+Высокая степень автоматизации.
+\end_layout
+
+\begin_layout Enumerate
+По умолчанию выбирать наиболее распространённый и безопасный вариант поведения.
+\end_layout
+
+\begin_layout Enumerate
+Поддержка многопоточности.
+\end_layout
+
+\begin_layout Enumerate
+Кросс-платформенность.
+\end_layout
+
+\begin_layout Enumerate
+Открытость: возможность создавать собственные расширения.
+\end_layout
+
+\begin_layout Enumerate
+Возможность получать данные из файлов распространённых форматов.
+\end_layout
+
+\begin_layout Enumerate
+Возможность сохранять отчёты в распространённых форматах документов.
+\end_layout
+
+\begin_layout Enumerate
+Интеграция с возможностями базового языка (С++).
+\end_layout
+
+\begin_layout Standard
+Компоненты системы:
+\end_layout
+
 \begin_layout Enumerate
 Библиотека для языка программирования высокого уровня (С++).
 \end_layout
