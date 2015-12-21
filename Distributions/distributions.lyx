@@ -484,11 +484,6 @@ status open
 \end_layout
 
 \begin_layout Standard
-В данной главе рассматриваются основные понятия и теоремы теории вероятностей,
- связанные со случайными событиями, в объёме российской средней школы.
-\end_layout
-
-\begin_layout Definition
 
 \emph on
 Теория вероятностей
@@ -506,11 +501,7 @@ status open
 — это раздел математики, изучающий закономерности массовых случайных событий.
 \end_layout
 
-\begin_layout --Separator--
-
-\end_layout
-
-\begin_layout Definition
+\begin_layout Standard
 
 \emph on
 \begin_inset Index idx
@@ -541,7 +532,7 @@ status open
 
 \end_layout
 
-\begin_layout Definition
+\begin_layout Standard
 
 \emph on
 Вероятность
@@ -581,7 +572,7 @@ status open
 .
 \end_layout
 
-\begin_layout Definition
+\begin_layout Standard
 Событие, вероятность которого равна нулю называется 
 \emph on
 невозможным
@@ -604,7 +595,7 @@ status open
 
 \end_layout
 
-\begin_layout Definition
+\begin_layout Standard
 Событие, вероятность которого равна единице называется 
 \emph on
 достоверным
@@ -1021,11 +1012,17 @@ P\left\{ AB\right\} =P\left\{ A|B\right\} \cdot P\left\{ B\right\} =P\left\{ A\r
 \end_layout
 
 \begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:product_probability_n"
+
+\end_inset
+
 Пусть 
 \begin_inset Formula $A_{1},A_{2},...,A_{n}$
 \end_inset
 
- — совокупность независимых событий, тогда
+ — набор событий, независимых в совокупности, тогда
 \end_layout
 
 \begin_layout Theorem
@@ -1050,6 +1047,45 @@ status open
 \end_inset
 
 
+\end_layout
+
+\begin_layout Remark
+Заметим, что для независимости событий в совокупности недостаточно их попарной
+ независимости.
+ Рассмтрим следующий пример: пусть из колоды вынимают случайную карту, 
+\begin_inset Formula $A_{1}$
+\end_inset
+
+— появление червей или пик, 
+\begin_inset Formula $A_{2}$
+\end_inset
+
+— появление червей или крестей, 
+\begin_inset Formula $A_{3}$
+\end_inset
+
+— появление червей или бубей.
+ Тогда 
+\begin_inset Formula $P\left\{ A_{1}\right\} =P\left\{ A_{2}\right\} =P\left\{ A_{3}\right\} =\frac{1}{2},$
+\end_inset
+
+ 
+\begin_inset Formula $P\left\{ A_{1}A_{2}\right\} =\frac{1}{4}=P\left\{ A_{1}\right\} P\left\{ A_{2}\right\} $
+\end_inset
+
+, 
+\begin_inset Formula $P\left\{ A_{1}A_{3}\right\} =\frac{1}{4}=P\left\{ A_{1}\right\} P\left\{ A_{3}\right\} $
+\end_inset
+
+, 
+\begin_inset Formula $P\left\{ A_{3}A_{2}\right\} =\frac{1}{4}=P\left\{ A_{3}\right\} P\left\{ A_{2}\right\} $
+\end_inset
+
+, но 
+\begin_inset Formula $P\left\{ A_{1}A_{2}A_{3}\right\} =\frac{1}{4}\ne P\left\{ A_{1}\right\} P\left\{ A_{2}\right\} P\left\{ A_{3}\right\} $
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -1914,7 +1950,14 @@ status open
 \begin_inset Formula $n-k$
 \end_inset
 
- опытах, в силу теорему умножения, равна
+ опытах, в силу теорему умножения
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:product_probability_n"
+
+\end_inset
+
+, равна
 \end_layout
 
 \begin_layout Standard
@@ -2785,8 +2828,17 @@ P\left\{ \left|\hat{\theta}_{n}-\theta\right|>\varepsilon\right\} =P\left\{ \fra
 
 \begin_layout Standard
 Оказывается, у математического ожидания есть ряд свойств, которые делают
- проверку этого факта более простым делом, чем праверка определения состоятельно
-сти.
+ проверку этого
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Нужно уточнить, какого факта
+\end_layout
+
+\end_inset
+
+ факта более простым делом, чем праверка определения состоятельности.
 \end_layout
 
 \begin_layout Fact
@@ -3264,7 +3316,7 @@ M\left[\left(\hat{p}_{n}\right)^{2}\right]=\frac{1}{n^{2}}\sum_{i=1}^{n}\sum_{j=
 \end_inset
 
 причём слагаемые этой двойной суммы можно разделить на две группы: 
-\begin_inset Formula $i=j $
+\begin_inset Formula $i=j$
 \end_inset
 
  и 
@@ -3410,7 +3462,17 @@ M\left[\left(X-a\right)^{2}\right],
 \begin_inset Formula $a$
 \end_inset
 
- — (неслучайное) число.
+ — (неслучайное) число
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Написать про то, что математическое ожидание минимизирует это выражение
+\end_layout
+
+\end_inset
+
+.
  Частный случай, когда 
 \begin_inset Formula $a$
 \end_inset
@@ -12353,14 +12415,45 @@ a=\frac{\overline{x\cdot y}-\overline{x}\cdot\overline{y}}{\overline{x^{2}}-\lef
 \end_layout
 
 \begin_layout Standard
+Рассмотрим задачу выбора параметров линейной регрессии с квадратичным критерием:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \[
-\sum_{k=0}^{n}\left(x_{k}^{T}a-y_{k}\right)^{2}\to\min_{a}
+\sum_{k=0}^{n}\left(x_{k}^{T}a-y_{k}\right)^{2}\to\min_{a}.
 \]
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Условием экстремума данной функции является
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+нужна ссылка
+\end_layout
+
+\end_inset
+
+ равенство нулю частных производных по параметру 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+нужно написать про дифференцирование и условие экстремума в векторной форме
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \[
 \sum_{k=0}^{n}\left(x_{k}^{T}a_{n}-y_{k}\right)x_{k}=0.
@@ -12369,6 +12462,14 @@ a=\frac{\overline{x\cdot y}-\overline{x}\cdot\overline{y}}{\overline{x^{2}}-\lef
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Перенесём слагаемые, не зависящие от 
+\begin_inset Formula $a_{n}$
+\end_inset
+
+ в правую часть:
 \end_layout
 
 \begin_layout Standard
@@ -12409,10 +12510,14 @@ b_{n}=\sum_{k=0}^{n}y_{k}x_{k}.
 \end_layout
 
 \begin_layout Standard
+Для этих величин имеют место следующие рекуррентные уравнения:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
-\[
-C_{n+1}=C_{n}+x_{n+1}x_{n+1}^{T}
-\]
+\begin{equation}
+C_{n+1}=C_{n}+x_{n+1}x_{n+1}^{T},\label{eq:linear_regression_C_recurrence}
+\end{equation}
 
 \end_inset
 
@@ -12421,9 +12526,9 @@ C_{n+1}=C_{n}+x_{n+1}x_{n+1}^{T}
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-b_{n+1}=b_{n}+y_{n+1}x_{n+1}
-\]
+\begin{equation}
+b_{n+1}=b_{n}+y_{n+1}x_{n+1}.\label{eq:linear_regression_b_recurrence}
+\end{equation}
 
 \end_inset
 
@@ -12431,18 +12536,23 @@ b_{n+1}=b_{n}+y_{n+1}x_{n+1}
 \end_layout
 
 \begin_layout Standard
-Уравнение для коэффициентов регрессии примет вид
+С учётом введённых обозначений, уравнение для вектора коэффициентов регрессии
+ примет вид
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-C_{n}a_{n}=b_{n}
-\]
+\begin{equation}
+C_{n}a_{n}=b_{n}.\label{eq:adaptive_linerar_regression_equation_n}
+\end{equation}
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Запишем аналогичное уравнение для следующего момента времени:
 \end_layout
 
 \begin_layout Standard
@@ -12453,13 +12563,24 @@ C_{n+1}a_{n+1}=b_{n+1}
 
 \end_inset
 
+и подставим в правую часть выражение для 
+\begin_inset Formula $b_{n+1}$
+\end_inset
 
+из 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:linear_regression_b_recurrence"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-C_{n+1}a_{n+1}=b_{n}+y_{n+1}x_{n+1}
+C_{n+1}a_{n+1}=b_{n}+y_{n+1}x_{n+1}.
 \]
 
 \end_inset
@@ -12468,9 +12589,24 @@ C_{n+1}a_{n+1}=b_{n}+y_{n+1}x_{n+1}
 \end_layout
 
 \begin_layout Standard
+Заменим 
+\begin_inset Formula $b_{n}$
+\end_inset
+
+, воспользовавшись уравнением 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:adaptive_linerar_regression_equation_n"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \[
-C_{n+1}a_{n+1}=C_{n}a_{n}+y_{n+1}x_{n+1}
+C_{n+1}a_{n+1}=C_{n}a_{n}+y_{n+1}x_{n+1}.
 \]
 
 \end_inset
@@ -12479,10 +12615,18 @@ C_{n+1}a_{n+1}=C_{n}a_{n}+y_{n+1}x_{n+1}
 \end_layout
 
 \begin_layout Standard
+Решая последнее уравнене относительно 
+\begin_inset Formula $a_{n+1}$
+\end_inset
+
+, получим:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
-\[
-a_{n+1}=C_{n+1}^{-1}C_{n}a_{n}+y_{n+1}C_{n+1}^{-1}x_{n+1}.
-\]
+\begin{equation}
+a_{n+1}=C_{n+1}^{-1}C_{n}a_{n}+y_{n+1}C_{n+1}^{-1}x_{n+1}.\label{eq:linear_regression_a_recurrence_step_1}
+\end{equation}
 
 \end_inset
 
@@ -12490,10 +12634,25 @@ a_{n+1}=C_{n+1}^{-1}C_{n}a_{n}+y_{n+1}C_{n+1}^{-1}x_{n+1}.
 \end_layout
 
 \begin_layout Standard
+Умножим левую и правую части уравнения 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:linear_regression_C_recurrence"
+
+\end_inset
+
+ слева на 
+\begin_inset Formula $C_{n+1}^{-1}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
-\[
-I=C_{n+1}^{-1}C_{n}+C_{n+1}^{-1}x_{n+1}x_{n+1}^{T}.
-\]
+\begin{equation}
+I=C_{n+1}^{-1}C_{n}+C_{n+1}^{-1}x_{n+1}x_{n+1}^{T}.\label{eq:adaptive_linear_regression_C_recurrence_mult_C_inv}
+\end{equation}
 
 \end_inset
 
@@ -12501,10 +12660,36 @@ I=C_{n+1}^{-1}C_{n}+C_{n+1}^{-1}x_{n+1}x_{n+1}^{T}.
 \end_layout
 
 \begin_layout Standard
+Введём обозначение
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
-\[
-\gamma_{n+1}=C_{n+1}^{-1}x_{n+1}
-\]
+\begin{equation}
+\gamma_{n+1}=C_{n+1}^{-1}x_{n+1},\label{eq:gamma_n+1}
+\end{equation}
+
+\end_inset
+
+тогда 
+\begin_inset Formula $C_{n+1}^{-1}C_{n}$
+\end_inset
+
+ можно выразить из уравнения 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:adaptive_linear_regression_C_recurrence_mult_C_inv"
+
+\end_inset
+
+ следующим образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+C_{n+1}^{-1}C_{n}=I-\gamma_{n+1}x_{n+1}^{T}.\label{eq:adaptive_linear_regression_C_n+1_inv_C_n}
+\end{equation}
 
 \end_inset
 
@@ -12512,14 +12697,14 @@ I=C_{n+1}^{-1}C_{n}+C_{n+1}^{-1}x_{n+1}x_{n+1}^{T}.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
-C_{n+1}^{-1}C_{n}=I-\gamma_{n+1}x_{n+1}^{T}
-\]
+Подставим это выражение в 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:linear_regression_a_recurrence_step_1"
 
 \end_inset
 
-
+:
 \end_layout
 
 \begin_layout Standard
@@ -12534,6 +12719,43 @@ a_{n+1}=\left(I-\gamma_{n+1}x_{n+1}^{T}\right)a_{n}+y_{n+1}\gamma_{n+1}=a_{n}+\g
 \end_layout
 
 \begin_layout Standard
+Единственной неизвестной величиной, оставшейся в правой части является 
+\begin_inset Formula $\gamma_{n+1}$
+\end_inset
+
+.
+ Для неё также нужно найти рекуррентное соотношение.
+ Так как в правой части определения 
+\begin_inset Formula $\gamma_{n+1}$
+\end_inset
+
+(уравнение 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:gamma_n+1"
+
+\end_inset
+
+) неизвестным является 
+\begin_inset Formula $C_{n+1}^{-1}$
+\end_inset
+
+, то нужно найти рекуррентную формулу для неё.
+ Умножим уравнение 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:adaptive_linear_regression_C_recurrence_mult_C_inv"
+
+\end_inset
+
+справа на 
+\begin_inset Formula $C_{n}^{-1}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \[
 C_{n+1}^{-1}=\left(I-\gamma_{n+1}x_{n+1}^{T}\right)C_{n}^{-1}=C_{n}^{-1}-\gamma_{n+1}x_{n+1}^{T}C_{n}^{-1}.
@@ -12545,9 +12767,22 @@ C_{n+1}^{-1}=\left(I-\gamma_{n+1}x_{n+1}^{T}\right)C_{n}^{-1}=C_{n}^{-1}-\gamma_
 \end_layout
 
 \begin_layout Standard
+Это и есть искомая рекуррентная формула для 
+\begin_inset Formula $C_{n+1}^{-1}$
+\end_inset
+
+.
+ Теперь умножим левую и правую часть полученного уравнения на 
+\begin_inset Formula $x_{n+1}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \[
-C_{n+1}^{-1}x_{n+1}=C_{n}^{-1}x_{n+1}-\gamma_{n+1}x_{n+1}^{T}C_{n}^{-1}x_{n+1}=\gamma_{n+1}
+C_{n+1}^{-1}x_{n+1}=C_{n}^{-1}x_{n+1}-\gamma_{n+1}x_{n+1}^{T}C_{n}^{-1}x_{n+1}.
 \]
 
 \end_inset
@@ -12556,7 +12791,33 @@ C_{n+1}^{-1}x_{n+1}=C_{n}^{-1}x_{n+1}-\gamma_{n+1}x_{n+1}^{T}C_{n}^{-1}x_{n+1}=\
 \end_layout
 
 \begin_layout Standard
-Выражая 
+По определению 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:gamma_n+1"
+
+\end_inset
+
+ левая часть данного уравнения есть 
+\begin_inset Formula $\gamma_{n+1}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\gamma_{n+1}=C_{n}^{-1}x_{n+1}-\gamma_{n+1}x_{n+1}^{T}C_{n}^{-1}x_{n+1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выражая из последнего уравнеия 
 \begin_inset Formula $\gamma_{n+1}$
 \end_inset
 
@@ -12567,6 +12828,44 @@ C_{n+1}^{-1}x_{n+1}=C_{n}^{-1}x_{n+1}-\gamma_{n+1}x_{n+1}^{T}C_{n}^{-1}x_{n+1}=\
 \begin_inset Formula 
 \[
 \gamma_{n+1}=\frac{C_{n}^{-1}x_{n+1}}{1+x_{n+1}^{T}C_{n}^{-1}x_{n+1}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Итак, рекуррентный алгоритм для вычисления коэффициентов линейной регрессии
+ можно записать следующим образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\gamma_{n+1}=\frac{C_{n}^{-1}x_{n+1}}{1+x_{n+1}^{T}C_{n}^{-1}x_{n+1}},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{n+1}=a_{n}+\gamma_{n+1}\left(y_{n}-x_{n+1}^{T}a_{n}\right),
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C_{n+1}^{-1}=C_{n}^{-1}-\gamma_{n+1}x_{n+1}^{T}C_{n}^{-1}.
 \]
 
 \end_inset
@@ -13659,6 +13958,28 @@ status open
 
 \begin_layout Chapter
 Основы теории информации
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Обосновать, почему количество информации в событии, вероятность которого
+ равна 
+\begin_inset Formula $p$
+\end_inset
+
+, есть 
+\begin_inset Formula $-\log_{2}p$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
