@@ -7451,8 +7451,8 @@ f\left(x,\mu,\sigma\right)=\frac{1}{\sqrt{2\pi}\cdot\sigma}\cdot\exp\left(-\frac
 \begin_inset Formula $\hat{\sigma}^{2}$
 \end_inset
 
-, обращающие эти уравнения в тождества, и будут оценками для математического
- ожидания и дисперсии, соответственно.
+, обращающие эти уравнения в тождества, и будут оценками максимума правдоподобия
+ для математического ожидания и дисперсии, соответственно.
 \end_layout
 
 \begin_layout Standard
@@ -7465,6 +7465,16 @@ f\left(x,\mu,\sigma\right)=\frac{1}{\sqrt{2\pi}\cdot\sigma}\cdot\exp\left(-\frac
 \end_inset
 
 , получим:
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+упорядочить обозначения
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7481,28 +7491,12 @@ f\left(x,\mu,\sigma\right)=\frac{1}{\sqrt{2\pi}\cdot\sigma}\cdot\exp\left(-\frac
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\hat{\sigma}^{2}=\frac{1}{n}\sum_{k=1}^{n}\left(X_{k}-\mu\right)^{2}.
+\hat{\sigma}^{2}=\frac{1}{n}\sum_{k=1}^{n}\left(X_{k}-\hat{\mu}\right)^{2}.
 \]
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Величину 
-\begin_inset Formula $\hat{\mu}$
-\end_inset
-
-(которую мы в дальнейшем будем также обозначать 
-\begin_inset Formula $m$
-\end_inset
-
-) называют выборочным средним, а 
-\begin_inset Formula $\hat{\sigma}^{2}$
-\end_inset
-
- — выборочной дисперсией.
 \end_layout
 
 \begin_layout Section
@@ -7518,7 +7512,7 @@ f\left(x,\mu,\sigma\right)=\frac{1}{\sqrt{2\pi}\cdot\sigma}\cdot\exp\left(-\frac
 
  имеет нормальное распределение.
  Математическое ожидание 
-\begin_inset Formula $m$
+\begin_inset Formula $\hat{\mu}$
 \end_inset
 
  равно 
@@ -7531,7 +7525,7 @@ f\left(x,\mu,\sigma\right)=\frac{1}{\sqrt{2\pi}\cdot\sigma}\cdot\exp\left(-\frac
 \begin_layout Standard
 \begin_inset Formula 
 \[
-M\left[m\right]=\frac{1}{n}\sum_{k=1}^{n}M\left[X_{k}\right]=\mu.
+M\left[\hat{\mu}\right]=\frac{1}{n}\sum_{k=1}^{n}M\left[X_{k}\right]=\mu.
 \]
 
 \end_inset
@@ -7554,7 +7548,7 @@ M\left[m\right]=\frac{1}{n}\sum_{k=1}^{n}M\left[X_{k}\right]=\mu.
 \begin_layout Standard
 \begin_inset Formula 
 \[
-D\left[m\right]=\frac{1}{n^{2}}\sum_{k=1}^{n}D\left[X_{k}\right]=\frac{1}{n}\sigma^{2}.
+D\left[\hat{\mu}\right]=\frac{1}{n^{2}}\sum_{k=1}^{n}D\left[X_{k}\right]=\frac{1}{n}\sigma^{2}.
 \]
 
 \end_inset
@@ -7568,6 +7562,81 @@ D\left[m\right]=\frac{1}{n^{2}}\sum_{k=1}^{n}D\left[X_{k}\right]=\frac{1}{n}\sig
 \end_inset
 
  дисперсия стремится к нулю.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+\text{\mathbb{E}\left[\hat{\sigma}^{2}\right]}=\frac{1}{n}\sum_{k=1}^{n}\mathbb{E}\left[\left(X_{k}-\hat{\mu}\right)^{2}\right]=\frac{1}{n}\sum_{k=1}^{n}\mathbb{E}\left[\left(X_{k}-\mu+\mu-\hat{\mu}\right)^{2}\right]=\\
+=\frac{1}{n}\sum_{k=1}^{n}\mathbb{E}\left[\left(X_{k}-\mu\right)^{2}+2\left(X_{k}-\mu\right)\left(\mu-\hat{\mu}\right)+\left(\mu-\hat{\mu}\right)^{2}\right]=\\
+=\frac{1}{n}\sum_{k=1}^{n}D\left[X_{k}\right]+2\cdot\mathbb{E}\left[\left(\hat{\mu}-\mu\right)\left(\mu-\hat{\mu}\right)\right]+\mathbb{E}\left[\left(\mu-\hat{\mu}\right)^{2}\right]=\\
+=\sigma^{2}-\mathbb{E}\left[\left(\mu-\hat{\mu}\right)^{2}\right]=\sigma^{2}-D\left[\mu\right]=\sigma^{2}-\frac{\sigma^{2}}{n}=\\
+=\frac{\left(n-1\right)}{n}\sigma^{2}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, оценка максимума правдоподобия для дисперсии нормального
+ распределения не является несмещённой, а лишь асимптотически несмещённой:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\to\infty}\text{\mathbb{E}\left[\hat{\sigma}^{2}\right]}=\sigma^{2}\lim_{n\to\infty}\frac{n-1}{n}=\sigma^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Очевидно, что для устранения смещения оценки дисперсии достаточно умножить
+ её на 
+\begin_inset Formula $\frac{n}{n-1}$
+\end_inset
+
+, то есть фактически заменить в знаменателе 
+\begin_inset Formula $n$
+\end_inset
+
+ на 
+\begin_inset Formula $n-1$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+s_{n}^{2}=\frac{1}{n-1}\sum_{k=1}^{n}\left(X_{k}-\hat{\mu}\right)^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Величину 
+\begin_inset Formula $\hat{\mu}$
+\end_inset
+
+(которую мы в дальнейшем будем также обозначать 
+\begin_inset Formula $m_{n}$
+\end_inset
+
+) называют выборочным средним, а 
+\begin_inset Formula $s_{n}^{2}$
+\end_inset
+
+ — выборочной дисперсией.
 \end_layout
 
 \begin_layout Section
@@ -9946,6 +10015,16 @@ reference "sec:Оценка-параметров-нормального"
 
 \end_inset
 
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Исправить эту ссылку
+\end_layout
+
+\end_inset
+
  было показано, что величина 
 \begin_inset Formula 
 \[
@@ -9999,18 +10078,15 @@ D\left[\hat{\sigma}^{2}\right]=\frac{\sigma^{4}}{n^{2}}\cdot2\left(n-1\right).
 \end_layout
 
 \begin_layout Standard
-Таким образом, выборочная дисперсия не является несмещённой оценкой дисперсии.
- Введём так называемую 
-\emph on
-несмещённую выборочную дисперсию
-\emph default
-:
+Мы снова уведили, что оценка максимума правдоподобия для дисперсии не является
+ несмещённой.
+ Несмещённая выборочная дисперсия распределена следующим образом:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-s^{2}=\frac{n}{n-1}\hat{\sigma}^{2}=\frac{1}{n-1}\sum_{i=1}^{n}\left(x_{i}-m\right)^{2}\sim\frac{\sigma^{2}}{n-1}\chi_{n-1}^{2},
+s_{n}^{2}=\frac{n}{n-1}\hat{\sigma}^{2}=\frac{1}{n-1}\sum_{i=1}^{n}\left(x_{i}-m\right)^{2}\sim\frac{\sigma^{2}}{n-1}\chi_{n-1}^{2},
 \]
 
 \end_inset
@@ -10042,7 +10118,7 @@ D\left[s^{2}\right]=\left(\frac{\sigma^{2}}{n-1}\right)^{2}\cdot2\cdot\left(n-1\
 
 \begin_layout Standard
 Таким образом, несмещённая дисперсия 
-\begin_inset Formula $s^{2}$
+\begin_inset Formula $s_{n}^{2}$
 \end_inset
 
  является несмещённой и состоятельной оценкой дисперсии.
