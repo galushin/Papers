@@ -264,18 +264,15 @@ status open
 \begin_layout Standard
 В главе 4 определения и результаты, полученные для дискретных случайных
  величин переносятся на непрерывные.
-\end_layout
-
-\begin_layout Standard
-Глава 5 посвящена изучению свойств важнейшего вида непрерывных случайных
- величин — нормального распределения.
+ Особое внимание в этой главе уделяется важнейшему виду непрерывных случайных
+ величин — имеющих нормальное распределение.
  Нормальное распределение выводится несколькими независимыми способами,
  чтобы показать, почему оно так часто становится объектом изучения в математичес
 кой статистике.
 \end_layout
 
 \begin_layout Standard
-В главе 6 изучение нормального распределения продолжается с другой точки
+В главе 5 изучение нормального распределения продолжается с другой точки
  зрения: как определить параметры этого распределения по наблюдениям.
 \end_layout
 
@@ -2110,7 +2107,7 @@ reference "eq:probability_k_from_n"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\hat{p}=0,\, k>1,
+\hat{p}=0,\,k>1,
 \]
 
 \end_inset
@@ -2121,7 +2118,7 @@ reference "eq:probability_k_from_n"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-1-\hat{p}=0,\, k<n-2,
+1-\hat{p}=0,\,k<n-2,
 \]
 
 \end_inset
@@ -3264,7 +3261,7 @@ M\left[\left(\hat{p}_{n}\right)^{2}\right]=\frac{1}{n^{2}}\sum_{i=1}^{n}\sum_{j=
 \end_inset
 
 причём слагаемые этой двойной суммы можно разделить на две группы: 
-\begin_inset Formula $i=j $
+\begin_inset Formula $i=j$
 \end_inset
 
  и 
@@ -8470,7 +8467,7 @@ D\left[Z_{n}\right]=1.
 \end_inset
 
  в ряд Тейлора на отрезке 
-\begin_inset Formula $\left[-a;\, a\right]$
+\begin_inset Formula $\left[-a;\,a\right]$
 \end_inset
 
 :
@@ -12949,7 +12946,7 @@ status open
 \begin_layout Standard
 \begin_inset Formula 
 \[
-P\left\{ X=j\right\} =p_{j},\, j=1,...,N,
+P\left\{ X=j\right\} =p_{j},\,j=1,...,N,
 \]
 
 \end_inset
@@ -12960,7 +12957,7 @@ P\left\{ X=j\right\} =p_{j},\, j=1,...,N,
 \begin_layout Standard
 \begin_inset Formula 
 \[
-p_{j}\ge0,\, j=1,...,N,
+p_{j}\ge0,\,j=1,...,N,
 \]
 
 \end_inset
