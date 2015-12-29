@@ -68,6 +68,275 @@
 
 \begin_body
 
+\begin_layout Section
+Вывод оценки плотности по методу регуляризации
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula $p\left(x\right)$
+\end_inset
+
+ ― неизвестная плотность.
+ 
+\begin_inset Formula $\hat{p}\left(x\right)$
+\end_inset
+
+ ― её оценка, которую нам предстоит построить.
+ Оценка функции распределения выбирается из следующих соображений: она должна
+ быть как можно более гладкой, но не слишком отличаться от ступенчатой оценкой
+ функции распределения.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q=\intop_{-\infty}^{+\infty}\left[\hat{p}\left(x\right)\right]^{2}dx\to min
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intop_{-\infty}^{+\infty}\left[F\left(x\right)-\hat{F}\left(x\right)\right]^{2}dx=\varepsilon^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Lambda=\intop_{-\infty}^{+\infty}\left(\left[\hat{p}\left(x\right)\right]^{2}+\lambda^{2}\left[F\left(x\right)-\hat{F}\left(x\right)\right]^{2}\right)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Воспользуемся преобразованием Фурье.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Lambda=\intop_{-\infty}^{+\infty}\left(\left[\hat{\varphi}\left(\omega\right)\right]^{2}+\lambda^{2}\left[\Phi\left(\omega\right)-\hat{\Phi}\left(\omega\right)\right]^{2}\right)d\omega
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\varPhi}\left(\omega\right)=\frac{1}{\omega}\hat{\varphi}\left(\omega\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(\hat{\varphi},\hat{\varphi}^{\prime},\omega\right)=\hat{\varphi}^{2}+\lambda^{2}\left[\frac{\hat{\varphi}}{\omega}-\Phi\right]^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как
+\begin_inset Formula 
+\[
+\frac{\partial L}{\partial\hat{\varphi}^{\prime}}=0\text{,}
+\]
+
+\end_inset
+
+то условием экстремума функционала является уравнение
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial L}{\partial\hat{\varphi}}=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial L}{\partial\hat{\varphi}}=2\hat{\varphi}+\lambda^{2}\cdot2\cdot\left[\hat{\frac{\varphi}{\omega}}-\Phi\right]\frac{1}{\omega}=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Решая это уравнение относительно 
+\begin_inset Formula $\hat{\varphi}$
+\end_inset
+
+, получим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\varphi}=\frac{\omega\cdot\Phi}{\omega^{2}+\lambda^{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+\frac{\omega}{\omega^{2}+\lambda^{2}}=\frac{\omega}{\left(\omega+i\lambda\right)\left(\omega-i\lambda\right)}=\\
+=\frac{1}{2}\frac{2\omega+i\lambda-i\lambda}{\left(\omega+i\lambda\right)\left(\omega-i\lambda\right)}=\frac{1}{2}\left[\frac{1}{\omega-i\lambda}+\frac{1}{\omega+i\lambda}\right].
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Характеристическая функция ядерной оценки
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{p}\left(x\right)=\frac{1}{nh}\sum_{i=1}^{n}K\left(\frac{x-x_{i}}{h}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\varphi}\left(\omega\right)=\frac{1}{nh}\sum_{i=1}^{n}\intop_{-\infty}^{+\infty}K\left(\frac{x-x_{i}}{h}\right)e^{i\omega x}dx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Сделаем замену
+\begin_inset Formula 
+\[
+\frac{x-x_{i}}{h}=u
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x=h\cdot u+x_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dx=h\cdot du
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+\hat{\varphi}\left(\omega\right)=\frac{1}{nh}\sum_{i=1}^{n}\intop_{-\infty}^{+\infty}K\left(u\right)e^{i\omega\left(hu+x_{i}\right)}\cdot h\cdot du=\\
+=\frac{1}{n}\sum_{i=1}^{n}\intop_{-\infty}^{+\infty}K\left(u\right)e^{i\left(\omega h\right)u}\cdot e^{i\omega x_{i}}\cdot du=\\
+=\kappa\left(\omega h\right)\cdot\frac{1}{n}\sum_{i=1}^{n}e^{i\omega x_{i}}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Второе слагаемое в правой части есть ни что иное как характеристическая
+ функция для дискретного распределения, принимающего значения 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+ с одинаковой вероятностью, равной 
+\begin_inset Formula $\frac{1}{n}$
+\end_inset
+
+.
+ Обозначим эту характеристическую функцию как 
+\begin_inset Formula $\psi_{n}\left(\omega\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\varphi}\left(\omega\right)=\kappa\left(h\omega\right)\cdot\psi_{n}\left(\omega\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Погрешность ядерной оценки в 
+\begin_inset Formula $L_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ядерная непараметрическая оценка плотности имеет вид
+\end_layout
+
 \begin_layout Standard
 \begin_inset Formula 
 \[
@@ -77,6 +346,10 @@
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Рассмотрим свойства этой оценки.
 \end_layout
 
 \begin_layout Standard
@@ -286,7 +559,8 @@ M\left[\hat{p}\left(x\right)\right]=p\left(x\right)+p^{\prime\prime}\left(x\righ
 \begin_inset Formula $\hat{p}\left(x\right)$
 \end_inset
 
- была асимптотически несмещённой оценкой плотности, чтобы выполнялось условие
+ была асимптотически несмещённой оценкой плотности, требуется выполнение
+ следующего условия:
 \end_layout
 
 \begin_layout Standard
@@ -316,9 +590,17 @@ Q\left(h\right)=\intop_{-\infty}^{+\infty}M\left[\left(\hat{p}\left(x\right)-p\l
 \end_layout
 
 \begin_layout Standard
+Учитывая, что 
+\begin_inset Formula $p\left(x\right)$
+\end_inset
+
+ не является случайной величиной:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \[
-M\left[\left(\hat{p}\left(x\right)-p\left(x\right)\right)^{2}\right]=M\left[\hat{p}^{2}\left(x\right)\right]-2p\left(x\right)M\left[\hat{p}\left(x\right)\right]+M\left[p^{2}\left(x\right)\right].
+M\left[\left(\hat{p}\left(x\right)-p\left(x\right)\right)^{2}\right]=M\left[\hat{p}^{2}\left(x\right)\right]-2p\left(x\right)M\left[\hat{p}\left(x\right)\right]+p^{2}\left(x\right).
 \]
 
 \end_inset
