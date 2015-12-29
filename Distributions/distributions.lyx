@@ -958,7 +958,7 @@ status open
 .
 \end_layout
 
-\begin_layout Definition
+\begin_layout Standard
 Следующее утверждение называется 
 \emph on
 теоремой умножения вероятностей
@@ -1692,20 +1692,19 @@ status open
  вероятностью, она должна удовлетворять двум аксиомам.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Enumerate
 \begin_inset Formula $P\left\{ A\right\} \ge0$
 \end_inset
 
 .
- 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Enumerate
 Пусть задано покрытие множества 
 \begin_inset Formula $\Omega$
 \end_inset
 
-непересекающимися множествами 
+ непересекающимися множествами 
 \begin_inset Formula $\left\{ A_{n}\right\} $
 \end_inset
 
@@ -2068,7 +2067,7 @@ P\left(k,n,p\right)=\dbinom{n}{k}\cdot p^{k}q^{n-k}.
 \end_layout
 
 \begin_layout Standard
-Точечная оценка параметра случайного объекта — это единственное значения,
+Точечная оценка параметра случайного объекта — это единственное значение,
  предположительно близкое к оцениваемому параметру.
  Это простейший подход к оцениванию, более информативный (и более сложный)
  подход — интервальное оценивание мы рассмотрим позже 
@@ -2267,6 +2266,7 @@ k\left(1-\hat{p}\right)-\left(n-k\right)\hat{p}=0.
 \end_inset
 
  (то есть от исхода опытов).
+ Кроме того, можно доказать, что эти точки не являются точками максимума.
  Таким образом, оценка вероятности по частоте даётся формулой
 \end_layout
 
@@ -2295,8 +2295,17 @@ k\left(1-\hat{p}\right)-\left(n-k\right)\hat{p}=0.
  частота.
  Частота события, в свою очередь, это величина, которая может принимать
  различные значения в различных сериях опытов, то есть является случайной.
- Систематическое изучение случайных величин мы отложим до следующих глав,
- а пока ограничимся несколькими определениями.
+ Систематическое изучение случайных величин мы отложим до следующих глав
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+добавить ссылку
+\end_layout
+
+\end_inset
+
+, а пока ограничимся несколькими определениями.
 \end_layout
 
 \begin_layout Standard
@@ -2328,11 +2337,26 @@ k\left(1-\hat{p}\right)-\left(n-k\right)\hat{p}=0.
 \begin_layout Standard
 В общем случае, свойства случайной величины, в отличие от случайного события,
  невозможно полностью описать с помощью одного вещественного числа (вероятности).
+ Случайная величина в общем случае задаётся своим 
+\emph on
+законом распределения.
+\emph default
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Добавить ссылку
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 Частным случаем дискретной случайной величины является неслучайная величина:
- у ней одно возможное значение, вероятность которого равна 1.
+ у неё одно возможное значение, вероятность которого равна 1.
 \end_layout
 
 \begin_layout Section
@@ -2539,7 +2563,7 @@ P\left\{ \left|\hat{\theta}_{n}-\theta\right|>\varepsilon\right\} =P\left\{ \fra
 
 \begin_layout Remark
 Внимательный читатель мог бы указать, что возведение в квадрат не является
- необходимым, мы могли бы рассмотреть случайную величину
+ необходимым, мы могли бы, например, рассмотреть случайную величину
 \end_layout
 
 \begin_layout Remark
@@ -2552,8 +2576,13 @@ P\left\{ \left|\hat{\theta}_{n}-\theta\right|>\varepsilon\right\} =P\left\{ \fra
 
 однако квадрат разности оказывается более удобной для манипулирования величиной,
  чем модуль разности.
- Вообще говоря, мы могли бы вместо квадрата взять любую монотонно возрастающую
- функцию.
+ Это связано с тем, что квадратичкая функция всюду имеет производную, а
+ модуль — нет.
+ Более того, производная квадратичной функции — линейная, а значит условием
+ экстремума квадратичной функции является линейной алгебраическое уравнение
+ (или их система).
+ Вообще говоря, мы могли бы вместо квадрата взять любую функцию, обращающуюся
+ в нуль в нуле и не убывающую при удалении от нуля.
  Отметим также, что неопределённость в выборе случайной величины для дальнейшего
  анализа связана с возможностью вводить разные виды сходимости для случайных
  величин.
@@ -2653,32 +2682,7 @@ P\left\{ X>1\right\} \le\sum_{x\le1}x\cdot p\left(x\right)+\sum_{x>1}x\cdot p\le
 \end_layout
 
 \begin_layout Standard
-Сумма
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Если случайная величина 
-\begin_inset Formula $X$
-\end_inset
-
- имеет бесконечное количество возможных значений, то сумму в определении
- математического ожидания нужно понимать как сумму ряда
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-добавить ссылку на соответствующий материал в матане
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-
- в правой части этой формулы называется 
+Сумма в правой части этой формулы называется 
 \emph on
 математическим ожиданием 
 \emph default
@@ -2700,7 +2704,7 @@ status open
 \begin_layout Standard
 \begin_inset Formula 
 \[
-M\left[X\right]=\sum_{x}x\cdot p\left(x\right).
+\mathbb{E}\left[X\right]=\sum_{x}x\cdot p\left(x\right).
 \]
 
 \end_inset
@@ -2722,7 +2726,23 @@ M\left[X\right]=\sum_{x}x\cdot p\left(x\right).
 \end_layout
 
 \begin_layout Standard
-В таком случае математическое ожидание может и не существовать, если ряд
+Если случайная величина 
+\begin_inset Formula $X$
+\end_inset
+
+ имеет счётное количество возможных значений, то сумму в определении математичес
+кого ожидания нужно понимать как сумму ряда
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+добавить ссылку на соответствующий материал в матане
+\end_layout
+
+\end_inset
+
+.
+ В таком случае математическое ожидание может и не существовать: если ряд
  не сходится абсолютно
 \begin_inset Foot
 status open
@@ -2760,12 +2780,8 @@ status open
 \end_layout
 
 \begin_layout Standard
-.
-\end_layout
-
-\begin_layout Standard
-Используя это обозначение и предшествующие рассуждения, мы можем сформулировать
- следующую лемму:
+Используя введённое обозначение и предшествующие рассуждения, мы можем сформулир
+овать следующую лемму:
 \end_layout
 
 \begin_layout Lemma
@@ -3045,16 +3061,133 @@ M\left[X+Y\right]=M\left[X\right]+M\left[Y\right].
 \begin_inset Formula $\left\{ z_{k}\right\} $
 \end_inset
 
-, тогда:
+, тогда можно написать:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\mathbb{E}\left[X+Y\right]=\sum_{k}z_{k}\cdot P\left\{ X+Y=z_{k}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Рассмотрим все возможные комбинации значений случайных величин 
+\begin_inset Formula $X$
+\end_inset
+
+ и 
+\begin_inset Formula $Y$
+\end_inset
+
+ и выберем такие, что 
+\begin_inset Formula $X+Y=z_{k}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\left\{ X+Y=z_{k}\right\} =\bigcup_{i}\bigcup_{j}\left\{ X=x_{i}\wedge Y=y_{j}\wedge x_{i}+y_{j}=z_{k}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+События, стоящие в правой части являются несовместными, поэтому
 \end_layout
 
 \begin_layout Proof
 \begin_inset Formula 
 \begin{multline*}
-M\left[X+Y\right]=\sum_{k}z_{k}P\left\{ X+Y=z_{k}\right\} =\\
-=\sum_{i}\sum_{j}\left(x_{i}+y_{j}\right)P\left\{ X=x_{i}\wedge Y=y_{j}\right\} =\\
-=\sum_{i}x_{i}\sum_{j}P\left\{ X=x_{i}\wedge Y=y_{j}\right\} +\sum_{j}y_{j}\sum_{i}P\left\{ X=x_{i}\wedge Y=y_{j}\right\} =\\
-=\sum_{i}x_{i}P\left\{ X=x_{i}\right\} +\sum_{j}y_{j}P\left\{ Y=y_{j}\right\} =M\left[X\right]+M\left[Y\right].
+P\left\{ X+Y=z_{k}\right\} =\sum_{i}\sum_{j}P\left\{ X=x_{i}\wedge Y=y_{j}\wedge x_{i}+y_{j}=z_{k}\right\} =\\
+=\sum_{i}\sum_{j}P\left\{ X=x_{i}\wedge Y=y_{j}\right\} \left[x_{i}+y_{j}=z_{k}\right].
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Таким образом:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\begin{multline*}
+\mathbb{E}\left[X+Y\right]=\sum_{k}z_{k}\cdot P\left\{ X+Y=z_{k}\right\} =.\\
+=\sum_{k}z_{k}\cdot\sum_{i}\sum_{j}P\left\{ X=x_{i}\wedge Y=y_{j}\right\} \left[x_{i}+y_{j}=z_{k}\right]=\\
+=\sum_{i}\sum_{j}\sum_{k}z_{k}\cdot P\left\{ X=x_{i}\wedge Y=y_{j}\right\} \left[x_{i}+y_{j}=z_{k}\right]=\\
+=\sum_{i}\sum_{j}P\left\{ X=x_{i}\wedge Y=y_{j}\right\} \sum_{k}z_{k}\left[x_{i}+y_{j}=z_{k}\right]=\\
+=\sum_{i}\sum_{j}P\left\{ X=x_{i}\wedge Y=y_{j}\right\} \left(x_{i}+y_{j}\right).
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Расскрыв скобки, получим:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\mathbb{E}\left[X+Y\right]=\sum_{i}x_{i}\sum_{j}P\left\{ X=x_{i}\wedge Y=y_{j}\right\} +\sum_{j}y_{j}\sum_{i}P\left\{ X=x_{i}\wedge Y=y_{j}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Суммируя по возможным значениям одной из случайных величин, получаем вероятность
+ для другой:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\sum_{j}P\left\{ X=x_{i}\wedge Y=y_{j}\right\} =P\left\{ X=x_{i}\right\} ,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\sum_{i}P\left\{ X=x_{i}\wedge Y=y_{j}\right\} =P\left\{ Y=y_{j}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Учитывая эти равенства, получим:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\begin{multline*}
+\mathbb{E}\left[X+Y\right]=\sum_{i}x_{i}P\left\{ X=x_{i}\right\} +\sum_{j}y_{j}P\left\{ Y=y_{j}\right\} =\\
+=\mathbb{E}\left[X\right]+\mathbb{E}\left[Y\right].
 \end{multline*}
 
 \end_inset
