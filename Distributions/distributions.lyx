@@ -2181,7 +2181,7 @@ reference "eq:probability_k_from_n"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\hat{p}=0,\,k>1,
+\hat{p}=0,\, k>1,
 \]
 
 \end_inset
@@ -2192,7 +2192,7 @@ reference "eq:probability_k_from_n"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-1-\hat{p}=0,\,k<n-2,
+1-\hat{p}=0,\, k<n-2,
 \]
 
 \end_inset
@@ -5194,7 +5194,27 @@ M\left[\left(\frac{\mathring{X}}{s_{X}}\right)^{k}\right]
 \begin_layout Standard
 \begin_inset Formula 
 \[
-M\left[X^{\underline{k}}\right]
+M\left[X^{\underline{k}}\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Абсолютным начальным моментом 
+\emph default
+порядка 
+\begin_inset Formula $k$
+\end_inset
+
+ называется величина
+\begin_inset Formula 
+\[
+a_{k}=\mathbb{E}\left[\left|X\right|^{k}\right].
 \]
 
 \end_inset
@@ -7249,6 +7269,261 @@ status open
 \end_layout
 
 \begin_layout Section
+Моменты стандартного нормального распределения
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Найти лучшее место для этого фрагмента
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Итак, плотность стандартного нормального распределения имеет вид
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f\left(x\right)=\frac{1}{\sqrt{2\pi}}\exp\left(-\frac{x^{2}}{2}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём моменты
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+нужна ссылка на определение моментов распределений
+\end_layout
+
+\end_inset
+
+ этого распределения.
+\end_layout
+
+\begin_layout Standard
+Так как плотность нормального распределения является чётной функцией, то
+ все моменты нечётного порядка для этого распределения равны нулю.
+ Займёмся вычислением моментов чётного порядка.
+ Рассмотрим интеграл
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu_{k}=\intop_{-\infty}^{+\infty}x^{k}\cdot f\left(x\right)dx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Воспользуемся методом интегрирования по частям:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+\mu_{k}=\left|\begin{array}{cc}
+u=x^{k-1} & dv=x\cdot\frac{1}{\sqrt{2\pi}}\exp\left(-\frac{x^{2}}{2}\right)\\
+du=\left(k-1\right)x^{k-2}dx & v=-\frac{1}{\sqrt{2\pi}}\exp\left(-\frac{x^{2}}{2}\right)
+\end{array}\right|=\\
+=\left.x^{k-1}\cdot\frac{-1}{\sqrt{2\pi}}\exp\left(-\frac{x^{2}}{2}\right)\right|_{-\infty}^{+\infty}+\left(k-1\right)\intop_{-\infty}^{+\infty}x^{k-2}\cdot\frac{1}{\sqrt{2\pi}}\exp\left(-\frac{x^{2}}{2}\right)dx.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Первое слагаемое обращается в ноль, а интеграл во втором есть 
+\begin_inset Formula $\mu_{k-2}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu_{k}=\left(k-1\right)\cdot\mu_{k-2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Применяя это рекуррентное соотношение к самому себе необходимое число раз,
+ получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu_{k}=\left(k-1\right)\cdot\left(k-3\right)\cdot...\cdot1\cdot\mu_{0}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+По определению, 
+\begin_inset Formula $\mu_{0}=1$
+\end_inset
+
+, а произведение в последней формуле можно кратко записать как 
+\begin_inset Formula $\left(k-1\right)!!$
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Написать раздел про двойной факториал и дать на него ссылку
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Дать определение момента через гамма-функцию
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu_{k}=\begin{cases}
+0, & k\text{ — чётное}\\
+\left(k-1\right)!!, & k\text{ — нечётное}
+\end{cases}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вычислим теперь абсолютные моменты.
+ Это нужно сделать только для нечётных 
+\begin_inset Formula $k$
+\end_inset
+
+, так как для чётных абсолютные моменты совпадают с обычными.
+ По определению:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{k}=\intop_{-\infty}^{+\infty}\left|x\right|^{k}\cdot f\left(x\right)dx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Снова воспользуемся чётностью функции 
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+ и произведём интегрирование по частям:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+a_{k}=2\cdot\intop_{0}^{+\infty}x^{k}\cdot f\left(x\right)dx=2\left(k-1\right)\intop_{0}^{+\infty}x^{k-2}\cdot\frac{1}{\sqrt{2\pi}}\exp\left(-\frac{x^{2}}{2}\right)dx=\\
+=\left(k-1\right)a_{k-2}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Разворачивая это рекуррентное соотношение, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{k}=\left(k-1\right)!!\cdot a_{1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Значит для получения окончательного ответа, нам нужно вычислить 
+\begin_inset Formula $a_{1}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+a_{1}=2\cdot\intop_{0}^{+\infty}x\cdot\frac{1}{\sqrt{2\pi}}\exp\left(-\frac{x^{2}}{2}\right)dx=-\frac{2}{\sqrt{2\pi}}\intop_{0}^{+\infty}\exp\left(-\frac{x^{2}}{2}\right)d\left(-\frac{x^{2}}{2}\right)=\\
+=-\sqrt{\frac{2}{\pi}}\cdot\left.\exp\left(-\frac{x^{2}}{2}\right)\right|_{0}^{+\infty}=\sqrt{\frac{2}{\pi}}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом:
+\begin_inset Formula 
+\[
+a_{k}=\begin{cases}
+\sqrt{\frac{2}{\pi}}\cdot\left(k-1\right)!!, & k\text{ — чётное}\\
+\left(k-1\right)!!, & k\text{ — нечётное}
+\end{cases}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
 Экспоненциальное распределение
 \end_layout
 
@@ -8787,7 +9062,7 @@ D\left[Z_{n}\right]=1.
 \end_inset
 
  в ряд Тейлора на отрезке 
-\begin_inset Formula $\left[-a;\,a\right]$
+\begin_inset Formula $\left[-a;\, a\right]$
 \end_inset
 
 :
@@ -13720,7 +13995,7 @@ status open
 \begin_layout Standard
 \begin_inset Formula 
 \[
-P\left\{ X=j\right\} =p_{j},\,j=1,...,N,
+P\left\{ X=j\right\} =p_{j},\, j=1,...,N,
 \]
 
 \end_inset
@@ -13731,7 +14006,7 @@ P\left\{ X=j\right\} =p_{j},\,j=1,...,N,
 \begin_layout Standard
 \begin_inset Formula 
 \[
-p_{j}\ge0,\,j=1,...,N,
+p_{j}\ge0,\, j=1,...,N,
 \]
 
 \end_inset
