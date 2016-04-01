@@ -9740,6 +9740,132 @@ g_{n}\left(x\right)=\frac{1}{\left(n-1\right)!}\sum_{k=0}^{n}\binom{n}{k}\left(-
 
 \end_layout
 
+\begin_layout Section
+Примеры вычисления распределений
+\end_layout
+
+\begin_layout Subsection
+Вычисление точного распределения суммы равномерно-распределённых случайных
+ величин
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula $X_{k}$
+\end_inset
+
+ — случайная величина с равномерным распределением на интервале 
+\begin_inset Formula $[0;1]$
+\end_inset
+
+.
+ Найдём точное распределение суммы 
+\begin_inset Formula $n$
+\end_inset
+
+ таких случайных величин.
+ Функция распределения таких случайных величин есть 
+\begin_inset Formula 
+\[
+f_{X_{k}}\left(x\right)=\begin{cases}
+1 & x\in\left[0;1\right]\\
+0 & x\notin\left[0;1\right]
+\end{cases}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём характеристическую функцию этого распределения, по определению 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+нужна ссылка
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi_{X_{k}}\left(\lambda\right)=M\left[e^{i\lambda X_{k}}\right]=\intop_{0}^{1}e^{i\lambda x}dx=\frac{1}{i\lambda}\left.e^{i\lambda x}\right|_{0}^{1}=\frac{e^{i\lambda}-1}{i\lambda}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Пусть теперь 
+\begin_inset Formula 
+\[
+Y_{n}=\sum_{k=1}^{n}X_{n}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Характеристическая функция суммы независимых случайных величин равна произведени
+ю характеристических функций слагаемых
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+нужна ссылка
+\end_layout
+
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{multline*}
+\varphi_{Y_{n}}\left(\lambda\right)=\left(\frac{e^{i\lambda}-1}{i\lambda}\right)^{n}=\sum_{k=0}^{n}\binom{n}{k}\left(-1\right)^{k}\frac{e^{i\lambda k}}{i^{n}\lambda^{n}}=\\
+=\sum_{k=0}^{n}\binom{n}{k}\left(-1\right)^{k}\frac{\left(e^{i\lambda k}-1\right)}{i^{n}\lambda^{n}}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для нахождения функции плотности распределения воспользуемся формулой обратного
+ преобразования
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+нужна ссылка
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+f_{Y_{n}}\left(x\right)=\frac{1}{2\pi}\intop_{-\infty}^{+\infty}\varphi_{Y_{n}}\left(\lambda\right)e^{-i\lambda x}d\lambda=.\\
+=\sum_{k=0}^{n}\binom{n}{k}\left(-1\right)^{k}\frac{1}{2\pi}\intop_{-\infty}^{+\infty}\frac{\left(e^{i\lambda k}-1\right)e^{-i\lambda x}}{i^{n}\lambda^{n}}d\lambda.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 Интервальные оценки параметров нормального распределения
 \end_layout
@@ -17049,7 +17175,16 @@ key "ConcreteMath"
 
 \end_inset
 
-Конкретная математика
+Кнут, Д.
+ Конкретная математика.
+ Математические основы информатики = Concrete Mathematics.
+ A Foundation for Computer Science / Д.
+ Кнут, Р.
+ Грэхем, О.
+ Паташник.
+ — 2-е.
+ — М.: «Вильямс», 2009.
+ — 784 с.
 \end_layout
 
 \begin_layout Standard
