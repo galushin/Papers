@@ -264,18 +264,15 @@ status open
 \begin_layout Standard
 В главе 4 определения и результаты, полученные для дискретных случайных
  величин переносятся на непрерывные.
-\end_layout
-
-\begin_layout Standard
-Глава 5 посвящена изучению свойств важнейшего вида непрерывных случайных
- величин — нормального распределения.
+ Особое внимание в этой главе уделяется важнейшему виду непрерывных случайных
+ величин — имеющих нормальное распределение.
  Нормальное распределение выводится несколькими независимыми способами,
  чтобы показать, почему оно так часто становится объектом изучения в математичес
 кой статистике.
 \end_layout
 
 \begin_layout Standard
-В главе 6 изучение нормального распределения продолжается с другой точки
+В главе 5 изучение нормального распределения продолжается с другой точки
  зрения: как определить параметры этого распределения по наблюдениям.
 \end_layout
 
@@ -961,7 +958,7 @@ status open
 .
 \end_layout
 
-\begin_layout Definition
+\begin_layout Standard
 Следующее утверждение называется 
 \emph on
 теоремой умножения вероятностей
@@ -1695,20 +1692,19 @@ status open
  вероятностью, она должна удовлетворять двум аксиомам.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Enumerate
 \begin_inset Formula $P\left\{ A\right\} \ge0$
 \end_inset
 
 .
- 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Enumerate
 Пусть задано покрытие множества 
 \begin_inset Formula $\Omega$
 \end_inset
 
-непересекающимися множествами 
+ непересекающимися множествами 
 \begin_inset Formula $\left\{ A_{n}\right\} $
 \end_inset
 
@@ -2071,7 +2067,7 @@ P\left(k,n,p\right)=\dbinom{n}{k}\cdot p^{k}q^{n-k}.
 \end_layout
 
 \begin_layout Standard
-Точечная оценка параметра случайного объекта — это единственное значения,
+Точечная оценка параметра случайного объекта — это единственное значение,
  предположительно близкое к оцениваемому параметру.
  Это простейший подход к оцениванию, более информативный (и более сложный)
  подход — интервальное оценивание мы рассмотрим позже 
@@ -2270,6 +2266,7 @@ k\left(1-\hat{p}\right)-\left(n-k\right)\hat{p}=0.
 \end_inset
 
  (то есть от исхода опытов).
+ Кроме того, можно доказать, что эти точки не являются точками максимума.
  Таким образом, оценка вероятности по частоте даётся формулой
 \end_layout
 
@@ -2298,8 +2295,17 @@ k\left(1-\hat{p}\right)-\left(n-k\right)\hat{p}=0.
  частота.
  Частота события, в свою очередь, это величина, которая может принимать
  различные значения в различных сериях опытов, то есть является случайной.
- Систематическое изучение случайных величин мы отложим до следующих глав,
- а пока ограничимся несколькими определениями.
+ Систематическое изучение случайных величин мы отложим до следующих глав
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+добавить ссылку
+\end_layout
+
+\end_inset
+
+, а пока ограничимся несколькими определениями.
 \end_layout
 
 \begin_layout Standard
@@ -2331,11 +2337,26 @@ k\left(1-\hat{p}\right)-\left(n-k\right)\hat{p}=0.
 \begin_layout Standard
 В общем случае, свойства случайной величины, в отличие от случайного события,
  невозможно полностью описать с помощью одного вещественного числа (вероятности).
+ Случайная величина в общем случае задаётся своим 
+\emph on
+законом распределения.
+\emph default
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Добавить ссылку
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 Частным случаем дискретной случайной величины является неслучайная величина:
- у ней одно возможное значение, вероятность которого равна 1.
+ у неё одно возможное значение, вероятность которого равна 1.
 \end_layout
 
 \begin_layout Section
@@ -2542,7 +2563,7 @@ P\left\{ \left|\hat{\theta}_{n}-\theta\right|>\varepsilon\right\} =P\left\{ \fra
 
 \begin_layout Remark
 Внимательный читатель мог бы указать, что возведение в квадрат не является
- необходимым, мы могли бы рассмотреть случайную величину
+ необходимым, мы могли бы, например, рассмотреть случайную величину
 \end_layout
 
 \begin_layout Remark
@@ -2555,8 +2576,13 @@ P\left\{ \left|\hat{\theta}_{n}-\theta\right|>\varepsilon\right\} =P\left\{ \fra
 
 однако квадрат разности оказывается более удобной для манипулирования величиной,
  чем модуль разности.
- Вообще говоря, мы могли бы вместо квадрата взять любую монотонно возрастающую
- функцию.
+ Это связано с тем, что квадратичкая функция всюду имеет производную, а
+ модуль — нет.
+ Более того, производная квадратичной функции — линейная, а значит условием
+ экстремума квадратичной функции является линейной алгебраическое уравнение
+ (или их система).
+ Вообще говоря, мы могли бы вместо квадрата взять любую функцию, обращающуюся
+ в нуль в нуле и не убывающую при удалении от нуля.
  Отметим также, что неопределённость в выборе случайной величины для дальнейшего
  анализа связана с возможностью вводить разные виды сходимости для случайных
  величин.
@@ -2656,32 +2682,7 @@ P\left\{ X>1\right\} \le\sum_{x\le1}x\cdot p\left(x\right)+\sum_{x>1}x\cdot p\le
 \end_layout
 
 \begin_layout Standard
-Сумма
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Если случайная величина 
-\begin_inset Formula $X$
-\end_inset
-
- имеет бесконечное количество возможных значений, то сумму в определении
- математического ожидания нужно понимать как сумму ряда
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-добавить ссылку на соответствующий материал в матане
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-
- в правой части этой формулы называется 
+Сумма в правой части этой формулы называется 
 \emph on
 математическим ожиданием 
 \emph default
@@ -2703,7 +2704,7 @@ status open
 \begin_layout Standard
 \begin_inset Formula 
 \[
-M\left[X\right]=\sum_{x}x\cdot p\left(x\right).
+\mathbb{E}\left[X\right]=\sum_{x}x\cdot p\left(x\right).
 \]
 
 \end_inset
@@ -2725,7 +2726,23 @@ M\left[X\right]=\sum_{x}x\cdot p\left(x\right).
 \end_layout
 
 \begin_layout Standard
-В таком случае математическое ожидание может и не существовать, если ряд
+Если случайная величина 
+\begin_inset Formula $X$
+\end_inset
+
+ имеет счётное количество возможных значений, то сумму в определении математичес
+кого ожидания нужно понимать как сумму ряда
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+добавить ссылку на соответствующий материал в матане
+\end_layout
+
+\end_inset
+
+.
+ В таком случае математическое ожидание может и не существовать: если ряд
  не сходится абсолютно
 \begin_inset Foot
 status open
@@ -2763,12 +2780,8 @@ status open
 \end_layout
 
 \begin_layout Standard
-.
-\end_layout
-
-\begin_layout Standard
-Используя это обозначение и предшествующие рассуждения, мы можем сформулировать
- следующую лемму:
+Используя введённое обозначение и предшествующие рассуждения, мы можем сформулир
+овать следующую лемму:
 \end_layout
 
 \begin_layout Lemma
@@ -3048,16 +3061,133 @@ M\left[X+Y\right]=M\left[X\right]+M\left[Y\right].
 \begin_inset Formula $\left\{ z_{k}\right\} $
 \end_inset
 
-, тогда:
+, тогда можно написать:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\mathbb{E}\left[X+Y\right]=\sum_{k}z_{k}\cdot P\left\{ X+Y=z_{k}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Рассмотрим все возможные комбинации значений случайных величин 
+\begin_inset Formula $X$
+\end_inset
+
+ и 
+\begin_inset Formula $Y$
+\end_inset
+
+ и выберем такие, что 
+\begin_inset Formula $X+Y=z_{k}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\left\{ X+Y=z_{k}\right\} =\bigcup_{i}\bigcup_{j}\left\{ X=x_{i}\wedge Y=y_{j}\wedge x_{i}+y_{j}=z_{k}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+События, стоящие в правой части являются несовместными, поэтому
 \end_layout
 
 \begin_layout Proof
 \begin_inset Formula 
 \begin{multline*}
-M\left[X+Y\right]=\sum_{k}z_{k}P\left\{ X+Y=z_{k}\right\} =\\
-=\sum_{i}\sum_{j}\left(x_{i}+y_{j}\right)P\left\{ X=x_{i}\wedge Y=y_{j}\right\} =\\
-=\sum_{i}x_{i}\sum_{j}P\left\{ X=x_{i}\wedge Y=y_{j}\right\} +\sum_{j}y_{j}\sum_{i}P\left\{ X=x_{i}\wedge Y=y_{j}\right\} =\\
-=\sum_{i}x_{i}P\left\{ X=x_{i}\right\} +\sum_{j}y_{j}P\left\{ Y=y_{j}\right\} =M\left[X\right]+M\left[Y\right].
+P\left\{ X+Y=z_{k}\right\} =\sum_{i}\sum_{j}P\left\{ X=x_{i}\wedge Y=y_{j}\wedge x_{i}+y_{j}=z_{k}\right\} =\\
+=\sum_{i}\sum_{j}P\left\{ X=x_{i}\wedge Y=y_{j}\right\} \left[x_{i}+y_{j}=z_{k}\right].
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Таким образом:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\begin{multline*}
+\mathbb{E}\left[X+Y\right]=\sum_{k}z_{k}\cdot P\left\{ X+Y=z_{k}\right\} =.\\
+=\sum_{k}z_{k}\cdot\sum_{i}\sum_{j}P\left\{ X=x_{i}\wedge Y=y_{j}\right\} \left[x_{i}+y_{j}=z_{k}\right]=\\
+=\sum_{i}\sum_{j}\sum_{k}z_{k}\cdot P\left\{ X=x_{i}\wedge Y=y_{j}\right\} \left[x_{i}+y_{j}=z_{k}\right]=\\
+=\sum_{i}\sum_{j}P\left\{ X=x_{i}\wedge Y=y_{j}\right\} \sum_{k}z_{k}\left[x_{i}+y_{j}=z_{k}\right]=\\
+=\sum_{i}\sum_{j}P\left\{ X=x_{i}\wedge Y=y_{j}\right\} \left(x_{i}+y_{j}\right).
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Расскрыв скобки, получим:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\mathbb{E}\left[X+Y\right]=\sum_{i}x_{i}\sum_{j}P\left\{ X=x_{i}\wedge Y=y_{j}\right\} +\sum_{j}y_{j}\sum_{i}P\left\{ X=x_{i}\wedge Y=y_{j}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Суммируя по возможным значениям одной из случайных величин, получаем вероятность
+ для другой:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\sum_{j}P\left\{ X=x_{i}\wedge Y=y_{j}\right\} =P\left\{ X=x_{i}\right\} ,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\sum_{i}P\left\{ X=x_{i}\wedge Y=y_{j}\right\} =P\left\{ Y=y_{j}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Учитывая эти равенства, получим:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\begin{multline*}
+\mathbb{E}\left[X+Y\right]=\sum_{i}x_{i}P\left\{ X=x_{i}\right\} +\sum_{j}y_{j}P\left\{ Y=y_{j}\right\} =\\
+=\mathbb{E}\left[X\right]+\mathbb{E}\left[Y\right].
 \end{multline*}
 
 \end_inset
@@ -5064,7 +5194,27 @@ M\left[\left(\frac{\mathring{X}}{s_{X}}\right)^{k}\right]
 \begin_layout Standard
 \begin_inset Formula 
 \[
-M\left[X^{\underline{k}}\right]
+M\left[X^{\underline{k}}\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Абсолютным начальным моментом 
+\emph default
+порядка 
+\begin_inset Formula $k$
+\end_inset
+
+ называется величина
+\begin_inset Formula 
+\[
+a_{k}=\mathbb{E}\left[\left|X\right|^{k}\right].
 \]
 
 \end_inset
@@ -7116,6 +7266,261 @@ status open
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Section
+Моменты стандартного нормального распределения
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Найти лучшее место для этого фрагмента
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Итак, плотность стандартного нормального распределения имеет вид
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f\left(x\right)=\frac{1}{\sqrt{2\pi}}\exp\left(-\frac{x^{2}}{2}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём моменты
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+нужна ссылка на определение моментов распределений
+\end_layout
+
+\end_inset
+
+ этого распределения.
+\end_layout
+
+\begin_layout Standard
+Так как плотность нормального распределения является чётной функцией, то
+ все моменты нечётного порядка для этого распределения равны нулю.
+ Займёмся вычислением моментов чётного порядка.
+ Рассмотрим интеграл
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu_{k}=\intop_{-\infty}^{+\infty}x^{k}\cdot f\left(x\right)dx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Воспользуемся методом интегрирования по частям:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+\mu_{k}=\left|\begin{array}{cc}
+u=x^{k-1} & dv=x\cdot\frac{1}{\sqrt{2\pi}}\exp\left(-\frac{x^{2}}{2}\right)\\
+du=\left(k-1\right)x^{k-2}dx & v=-\frac{1}{\sqrt{2\pi}}\exp\left(-\frac{x^{2}}{2}\right)
+\end{array}\right|=\\
+=\left.x^{k-1}\cdot\frac{-1}{\sqrt{2\pi}}\exp\left(-\frac{x^{2}}{2}\right)\right|_{-\infty}^{+\infty}+\left(k-1\right)\intop_{-\infty}^{+\infty}x^{k-2}\cdot\frac{1}{\sqrt{2\pi}}\exp\left(-\frac{x^{2}}{2}\right)dx.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Первое слагаемое обращается в ноль, а интеграл во втором есть 
+\begin_inset Formula $\mu_{k-2}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu_{k}=\left(k-1\right)\cdot\mu_{k-2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Применяя это рекуррентное соотношение к самому себе необходимое число раз,
+ получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu_{k}=\left(k-1\right)\cdot\left(k-3\right)\cdot...\cdot1\cdot\mu_{0}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+По определению, 
+\begin_inset Formula $\mu_{0}=1$
+\end_inset
+
+, а произведение в последней формуле можно кратко записать как 
+\begin_inset Formula $\left(k-1\right)!!$
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Написать раздел про двойной факториал и дать на него ссылку
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Дать определение момента через гамма-функцию
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu_{k}=\begin{cases}
+0, & k\text{ — чётное}\\
+\left(k-1\right)!!, & k\text{ — нечётное}
+\end{cases}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вычислим теперь абсолютные моменты.
+ Это нужно сделать только для нечётных 
+\begin_inset Formula $k$
+\end_inset
+
+, так как для чётных абсолютные моменты совпадают с обычными.
+ По определению:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{k}=\intop_{-\infty}^{+\infty}\left|x\right|^{k}\cdot f\left(x\right)dx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Снова воспользуемся чётностью функции 
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+ и произведём интегрирование по частям:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+a_{k}=2\cdot\intop_{0}^{+\infty}x^{k}\cdot f\left(x\right)dx=2\left(k-1\right)\intop_{0}^{+\infty}x^{k-2}\cdot\frac{1}{\sqrt{2\pi}}\exp\left(-\frac{x^{2}}{2}\right)dx=\\
+=\left(k-1\right)a_{k-2}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Разворачивая это рекуррентное соотношение, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{k}=\left(k-1\right)!!\cdot a_{1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Значит для получения окончательного ответа, нам нужно вычислить 
+\begin_inset Formula $a_{1}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+a_{1}=2\cdot\intop_{0}^{+\infty}x\cdot\frac{1}{\sqrt{2\pi}}\exp\left(-\frac{x^{2}}{2}\right)dx=-\frac{2}{\sqrt{2\pi}}\intop_{0}^{+\infty}\exp\left(-\frac{x^{2}}{2}\right)d\left(-\frac{x^{2}}{2}\right)=\\
+=-\sqrt{\frac{2}{\pi}}\cdot\left.\exp\left(-\frac{x^{2}}{2}\right)\right|_{0}^{+\infty}=\sqrt{\frac{2}{\pi}}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом:
+\begin_inset Formula 
+\[
+a_{k}=\begin{cases}
+\sqrt{\frac{2}{\pi}}\cdot\left(k-1\right)!!, & k\text{ — чётное}\\
+\left(k-1\right)!!, & k\text{ — нечётное}
+\end{cases}.
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
