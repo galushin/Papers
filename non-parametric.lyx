@@ -376,12 +376,11 @@ M\left[K\left(\frac{x_{i}-x}{h}\right)K\left(\frac{x_{j}-x}{h}\right)\right]=M\l
 \end_layout
 
 \begin_layout Standard
-Пусть 
-\begin_inset Formula $B=\left\{ f>g\right\} $
+Для любого 
+\begin_inset Formula $B$
 \end_inset
 
-.
- 
+:
 \end_layout
 
 \begin_layout Standard
@@ -437,6 +436,15 @@ M\left[K\left(\frac{x_{i}-x}{h}\right)K\left(\frac{x_{j}-x}{h}\right)\right]=M\l
 \end_layout
 
 \begin_layout Standard
+Пусть 
+\begin_inset Formula $B=\left\{ f>g\right\} $
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \[
 \int\left|f-g\right|=\intop_{B}\left(f-g\right)+\intop_{B^{C}}\left(g-f\right)=\intop_{B}\left(f-g\right)-\intop_{B^{C}}\left(f-g\right)=2\intop_{B}\left(f-g\right).
@@ -448,9 +456,21 @@ M\left[K\left(\frac{x_{i}-x}{h}\right)K\left(\frac{x_{j}-x}{h}\right)\right]=M\l
 \end_layout
 
 \begin_layout Standard
+Так как выбранное нами множество
+\begin_inset Formula $B$
+\end_inset
+
+ принадлежит 
+\begin_inset Formula $\mathcal{B}$
+\end_inset
+
+, то
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \[
-\int\left|f-g\right|\le2\sup_{B\in\mathcal{B}}\left|\intop_{B}f-\intop_{B}g\right|.
+\int\left|f-g\right|\le2\sup_{A\in\mathcal{B}}\left|\intop_{A}f-\intop_{A}g\right|.
 \]
 
 \end_inset
@@ -509,6 +529,17 @@ M\left[K\left(\frac{x_{i}-x}{h}\right)K\left(\frac{x_{j}-x}{h}\right)\right]=M\l
 \left|\intop_{A}f-\intop_{A}g\right|\le\max\left\{ \intop_{A\cap B}\left(f-g\right),\intop_{A\cap B^{C}}\left(g-f\right)\right\} \le\\
 \le\max\left\{ \intop_{B}\left(f-g\right),\intop_{B^{C}}\left(g-f\right)\right\} =\intop_{B}\left(f-g\right)=\frac{1}{2}\int\left|f-g\right|.
 \end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int\left|f-g\right|\ge2\sup_{A\in\mathcal{B}}\left|\intop_{A}f-\intop_{A}g\right|.
+\]
 
 \end_inset
 
