@@ -9255,6 +9255,216 @@ reference "eq:bernoulli_phi"
 
 \end_layout
 
+\begin_layout Section
+Точное распределение равномерно распределённых случайных величин
+\end_layout
+
+\begin_layout Standard
+Пусть имеется 
+\begin_inset Formula $n$
+\end_inset
+
+ независимых случайных величин 
+\begin_inset Formula $X_{1},...,X_{n}$
+\end_inset
+
+ с одинаковым равномерным распределением на интервале 
+\begin_inset Formula $\left[0;1\right]$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{1}\left(x\right)=\begin{cases}
+1, & x\in\left[0;1\right]\\
+0, & x\notin\left[0;1\right]
+\end{cases}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём распределение случайной величины
+\begin_inset Formula 
+\[
+Y_{n}=\sum_{k=1}^{n}X_{k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Функция плотности распределения суммы случайных величин есть свёртка функций
+ плотности распределений слагаемых
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ссылка?
+\end_layout
+
+\end_inset
+
+.
+ Для произвольного числа слагамых применение этого способа вычислений не
+ подходит.
+\end_layout
+
+\begin_layout Standard
+Мы воспользуемся преобразованием Лапласа, аналогичным характеристической
+ функции, но подходящих для функций, которые не являются интегрируемыми
+ с квадратом
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ссылка и уточнение
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Преобразование Лапласа определяется как
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(p\right)=\intop_{0}^{+\infty}f\left(x\right)e^{-px}dx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В нашем случае
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(p\right)=\intop_{0}^{1}1\cdot e^{-px}dx=\frac{1}{-p}\left.e^{-px}\right|_{0}^{1}=\frac{1-e^{-p}}{p}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+G_{n}\left(p\right)=\frac{\left(1-e^{-p}\right)^{n}}{p^{n}}=\sum_{k=0}^{n}\binom{n}{k}\left(-1\right)^{k}\frac{e^{-kp}}{p^{n}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Преобразование Лапласа является линейным, а множитель 
+\begin_inset Formula $e^{-kp}$
+\end_inset
+
+ соответствует сдвигу аргументу функции на 
+\begin_inset Formula $k$
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+нужна ссылка
+\end_layout
+
+\end_inset
+
+, поэтому вопрос сводится к нахождению функции, изображение Лапласа которой
+ есть 
+\begin_inset Formula $\frac{1}{p^{n}}$
+\end_inset
+
+.
+ Можно показать
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+доказать
+\end_layout
+
+\end_inset
+
+, что это есть функция
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f\left(x\right)=\frac{x^{n-1}}{\left(n-1\right)!}\cdot\left[x\ge0\right]=\frac{x_{+}^{n-1}}{\left(n-1\right)!},
+\]
+
+\end_inset
+
+где знак 
+\begin_inset Quotes fld
+\end_inset
+
+плюс
+\begin_inset Quotes frd
+\end_inset
+
+ в нижнем индексе обозначает 
+\begin_inset Quotes fld
+\end_inset
+
+положительную часть числа
+\begin_inset Quotes frd
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{+}=\begin{cases}
+x, & x\ge0\\
+0, & x<0
+\end{cases}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g_{n}\left(x\right)=\frac{1}{\left(n-1\right)!}\sum_{k=0}^{n}\binom{n}{k}\left(-1\right)^{k}\cdot\left(x-k\right)_{+}^{n-1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 Интервальные оценки параметров нормального распределения
 \end_layout
@@ -15601,7 +15811,7 @@ F\left(x\right)=\frac{1}{\pi}\mathrm{arctg\left(x\right)+\frac{1}{2}.}
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{1}{\pi}\mathrm{arcrg\left(\mathrm{tg}\Phi\right)+\frac{1}{2}=V},
+\frac{1}{\pi}\mathrm{arctg\left(\mathrm{tg}\Phi\right)+\frac{1}{2}=V},
 \]
 
 \end_inset
