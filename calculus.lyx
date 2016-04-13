@@ -621,7 +621,7 @@ f^{\prime\prime}+\omega_{0}^{2}f=0.
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-f\left(t\right)=0,\, t<0.\label{eq:original_is_zero_before_start}
+f\left(t\right)=0,\,t<0.\label{eq:original_is_zero_before_start}
 \end{equation}
 
 \end_inset
@@ -681,7 +681,7 @@ F\left(p\right)=\intop_{0}^{+\infty}f\left(t\right)\exp\left(-pt\right)dt\label{
 
 \begin_layout Standard
 Если 
-\begin_inset Formula $\Re\left(p\right)>0$
+\begin_inset Formula $\Re\left(p\right)>s$
 \end_inset
 
 , то
@@ -979,9 +979,13 @@ L\left\{ \cos t\right\} =\frac{p}{p^{2}+1}.
 \end_layout
 
 \begin_layout Standard
+Пусть
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \[
-g\left(t\right)=f\left(a\cdot t\right),\, a>0.
+g\left(t\right)=f\left(a\cdot t\right),\,a>0.
 \]
 
 \end_inset
@@ -1116,6 +1120,74 @@ L\left\{ \cos\omega t\right\} =\frac{1}{\omega}\frac{\frac{p}{\omega}}{\left(\fr
 \end_layout
 
 \begin_layout Section
+Запаздывание
+\end_layout
+
+\begin_layout Standard
+Рассмотрим функцию 
+\begin_inset Formula $g\left(t\right)=f\left(t-a\right)$
+\end_inset
+
+, где 
+\begin_inset Formula $a>0$
+\end_inset
+
+.
+ Легко доказать, что если 
+\begin_inset Formula $f\left(t\right)$
+\end_inset
+
+ является оригиналом, то и 
+\begin_inset Formula $f\left(t-a\right)$
+\end_inset
+
+ является оригиналом.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+G\left(p\right)=\intop_{a}^{+\infty}f\left(t-a\right)e^{-pt}dt.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Сделаем замену переменных 
+\begin_inset Formula $t-a=\tau$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+G\left(p\right)=\intop_{0}^{+\infty}f\left(\tau\right)e^{-p\left(\tau+a\right)}d\tau=e^{-pa}\intop_{0}^{+\infty}f\left(t\right)e^{-pt}dt=e^{-pa}F\left(p\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{L}\left\{ f\left(t-a\right)\right\} =e^{-pa}\mathcal{L}\left\{ f\left(t\right)\right\} .\label{eq:Laplace_original_arg_shift}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, запаздывание аргумента оригинала приводит к умножению изображения
+ на показательную функцию.
+\end_layout
+
+\begin_layout Section
 Сдвиг аргумента изображения
 \end_layout
 
@@ -1133,10 +1205,6 @@ F\left(p+a\right)=\intop_{0}^{+\infty}f\left(t\right)e^{-\left(p+a\right)t}dt=\i
 \begin_layout Standard
 Таким образом, сдвигу аргумента изображения соответствует умножение оригинала
  на показательную функцию.
-\end_layout
-
-\begin_layout Section
-Запаздывание
 \end_layout
 
 \begin_layout Section
@@ -1521,6 +1589,35 @@ reference "eq:Laplace_image_at_infinity"
 \[
 f\left(0\right)=\lim_{p\to+\infty}pF\left(p\right).
 \]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Производная изображения
+\end_layout
+
+\begin_layout Standard
+Найдём производную изображения 
+\begin_inset Formula $F\left(p\right)$
+\end_inset
+
+ некоторой функции 
+\begin_inset Formula $f\left(t\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+\frac{dF}{dp}=\frac{d}{dp}\left(\intop_{0}^{+\infty}f\left(t\right)e^{-pt}dt\right)=\\
+=\intop_{0}^{+\infty}\frac{d}{dp}\left(f\left(t\right)e^{-pt}\right)dt=\intop_{0}^{+\infty}f\left(t\right)(-t)e^{-pt}dt=\\
+=\mathcal{L}\left\{ f\left(t\right)\cdot\left(-t\right)\right\} .
+\end{multline*}
 
 \end_inset
 
@@ -1979,7 +2076,7 @@ F\left(p\right)=\frac{A\cdot p+B}{\left(p^{2}+bp+c\right)^{k}},
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-b^{2}-4c<0.\label{eq:Laplace_3_type_fraction_discriminant-1}
+b^{2}-4c<0.\label{eq:Laplace_4_type_fraction_discriminant}
 \end{equation}
 
 \end_inset
