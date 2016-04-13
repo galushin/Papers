@@ -9531,6 +9531,7 @@ reference "eq:bernoulli_phi"
 \end_layout
 
 \begin_layout Section
+<<<<<<< HEAD
 Точное распределение равномерно распределённых случайных величин
 \end_layout
 
@@ -9556,6 +9557,37 @@ reference "eq:bernoulli_phi"
 f_{1}\left(x\right)=\begin{cases}
 1, & x\in\left[0;1\right]\\
 0, & x\notin\left[0;1\right]
+=======
+Примеры вычисления распределений
+\end_layout
+
+\begin_layout Subsection
+Вычисление точного распределения суммы равномерно-распределённых случайных
+ величин
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula $X_{k}$
+\end_inset
+
+ — случайная величина с равномерным распределением на интервале 
+\begin_inset Formula $[0;1]$
+\end_inset
+
+.
+ Найдём точное распределение суммы 
+\begin_inset Formula $n$
+\end_inset
+
+ таких случайных величин.
+ Функция распределения таких случайных величин есть 
+\begin_inset Formula 
+\[
+f_{X_{k}}\left(x\right)=\begin{cases}
+1 & x\in\left[0;1\right]\\
+0 & x\notin\left[0;1\right]
+>>>>>>> 2fd9de2fab596d664d0fd7206029b51a9775f6cb
 \end{cases}.
 \]
 
@@ -9565,6 +9597,7 @@ f_{1}\left(x\right)=\begin{cases}
 \end_layout
 
 \begin_layout Standard
+<<<<<<< HEAD
 Найдём распределение случайной величины
 \begin_inset Formula 
 \[
@@ -9579,10 +9612,14 @@ Y_{n}=\sum_{k=1}^{n}X_{k}.
 \begin_layout Standard
 Функция плотности распределения суммы случайных величин есть свёртка функций
  плотности распределений слагаемых
+=======
+Найдём характеристическую функцию этого распределения, по определению 
+>>>>>>> 2fd9de2fab596d664d0fd7206029b51a9775f6cb
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
+<<<<<<< HEAD
 ссылка?
 \end_layout
 
@@ -9626,12 +9663,24 @@ F\left(p\right)=\intop_{0}^{+\infty}f\left(x\right)e^{-px}dx.
 
 \begin_layout Standard
 В нашем случае
+=======
+нужна ссылка
+\end_layout
+
+\end_inset
+
+:
+>>>>>>> 2fd9de2fab596d664d0fd7206029b51a9775f6cb
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
+<<<<<<< HEAD
 F\left(p\right)=\intop_{0}^{1}1\cdot e^{-px}dx=\frac{1}{-p}\left.e^{-px}\right|_{0}^{1}=\frac{1-e^{-p}}{p}.
+=======
+\varphi_{X_{k}}\left(\lambda\right)=M\left[e^{i\lambda X_{k}}\right]=\intop_{0}^{1}e^{i\lambda x}dx=\frac{1}{i\lambda}\left.e^{i\lambda x}\right|_{0}^{1}=\frac{e^{i\lambda}-1}{i\lambda}.
+>>>>>>> 2fd9de2fab596d664d0fd7206029b51a9775f6cb
 \]
 
 \end_inset
@@ -9640,9 +9689,16 @@ F\left(p\right)=\intop_{0}^{1}1\cdot e^{-px}dx=\frac{1}{-p}\left.e^{-px}\right|_
 \end_layout
 
 \begin_layout Standard
+<<<<<<< HEAD
 \begin_inset Formula 
 \[
 G_{n}\left(p\right)=\frac{\left(1-e^{-p}\right)^{n}}{p^{n}}=\sum_{k=0}^{n}\binom{n}{k}\left(-1\right)^{k}\frac{e^{-kp}}{p^{n}}.
+=======
+Пусть теперь 
+\begin_inset Formula 
+\[
+Y_{n}=\sum_{k=1}^{n}X_{n}.
+>>>>>>> 2fd9de2fab596d664d0fd7206029b51a9775f6cb
 \]
 
 \end_inset
@@ -9651,6 +9707,7 @@ G_{n}\left(p\right)=\frac{\left(1-e^{-p}\right)^{n}}{p^{n}}=\sum_{k=0}^{n}\binom
 \end_layout
 
 \begin_layout Standard
+<<<<<<< HEAD
 Преобразование Лапласа является линейным, а множитель 
 \begin_inset Formula $e^{-kp}$
 \end_inset
@@ -9660,6 +9717,10 @@ G_{n}\left(p\right)=\frac{\left(1-e^{-p}\right)^{n}}{p^{n}}=\sum_{k=0}^{n}\binom
 \end_inset
 
 
+=======
+Характеристическая функция суммы независимых случайных величин равна произведени
+ю характеристических функций слагаемых
+>>>>>>> 2fd9de2fab596d664d0fd7206029b51a9775f6cb
 \begin_inset Note Note
 status open
 
@@ -9669,6 +9730,7 @@ status open
 
 \end_inset
 
+<<<<<<< HEAD
 , поэтому вопрос сводится к нахождению функции, изображение Лапласа которой
  есть 
 \begin_inset Formula $\frac{1}{p^{n}}$
@@ -9727,13 +9789,47 @@ x, & x\ge0\\
 \end_inset
 
 
+=======
+:
+\begin_inset Formula 
+\begin{multline*}
+\varphi_{Y_{n}}\left(\lambda\right)=\left(\frac{e^{i\lambda}-1}{i\lambda}\right)^{n}=\sum_{k=0}^{n}\binom{n}{k}\left(-1\right)^{k}\frac{e^{i\lambda k}}{i^{n}\lambda^{n}}=\\
+=\sum_{k=0}^{n}\binom{n}{k}\left(-1\right)^{k}\frac{\left(e^{i\lambda k}-1\right)}{i^{n}\lambda^{n}}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для нахождения функции плотности распределения воспользуемся формулой обратного
+ преобразования
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+нужна ссылка
+\end_layout
+
+\end_inset
+
+:
+>>>>>>> 2fd9de2fab596d664d0fd7206029b51a9775f6cb
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
+<<<<<<< HEAD
 \[
 g_{n}\left(x\right)=\frac{1}{\left(n-1\right)!}\sum_{k=0}^{n}\binom{n}{k}\left(-1\right)^{k}\cdot\left(x-k\right)_{+}^{n-1}.
 \]
+=======
+\begin{multline*}
+f_{Y_{n}}\left(x\right)=\frac{1}{2\pi}\intop_{-\infty}^{+\infty}\varphi_{Y_{n}}\left(\lambda\right)e^{-i\lambda x}d\lambda=.\\
+=\sum_{k=0}^{n}\binom{n}{k}\left(-1\right)^{k}\frac{1}{2\pi}\intop_{-\infty}^{+\infty}\frac{\left(e^{i\lambda k}-1\right)e^{-i\lambda x}}{i^{n}\lambda^{n}}d\lambda.
+\end{multline*}
+>>>>>>> 2fd9de2fab596d664d0fd7206029b51a9775f6cb
 
 \end_inset
 
