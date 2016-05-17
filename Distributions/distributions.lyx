@@ -75,7 +75,7 @@ theorems-ams
 \papercolumns 1
 \papersides 2
 \paperpagestyle default
-\tracking_changes true
+\tracking_changes false
 \output_changes true
 \html_math_output 0
 \html_css_as_file 0
@@ -2181,7 +2181,7 @@ reference "eq:probability_k_from_n"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\hat{p}=0,\, k>1,
+\hat{p}=0,\,k>1,
 \]
 
 \end_inset
@@ -2192,7 +2192,7 @@ reference "eq:probability_k_from_n"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-1-\hat{p}=0,\, k<n-2,
+1-\hat{p}=0,\,k<n-2,
 \]
 
 \end_inset
@@ -9062,7 +9062,7 @@ D\left[Z_{n}\right]=1.
 \end_inset
 
  в ряд Тейлора на отрезке 
-\begin_inset Formula $\left[-a;\, a\right]$
+\begin_inset Formula $\left[-a;\,a\right]$
 \end_inset
 
 :
@@ -10802,7 +10802,8 @@ D\left[s^{2}\right]=\left(\frac{\sigma^{2}}{n-1}\right)^{2}\cdot2\cdot\left(n-1\
 \end_layout
 
 \begin_layout Standard
-Мы установили распределение для несмещённой выборочной дисперсии:
+В предыдущем разделе мы установили распределение для несмещённой выборочной
+ дисперсии:
 \end_layout
 
 \begin_layout Standard
@@ -11511,6 +11512,138 @@ T_{n}=\frac{\Gamma\left(\frac{n+1}{2}\right)}{\Gamma\left(\frac{n}{2}\right)\sqr
 \begin_inset Formula 
 \[
 D\left[t_{n}\right]=\frac{n}{n-2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Распределение и числовые характеристики среднеквадратичного уклонения
+\end_layout
+
+\begin_layout Standard
+Мы установили
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+нужна ссылка
+\end_layout
+
+\end_inset
+
+ распределение для несмещённой выборочной дисперсии:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+s^{2}\sim\frac{\sigma^{2}}{n-1}\chi_{n-1}^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[s\right]=\frac{\sigma}{\sqrt{n-1}}M\left[\sqrt{\chi_{n-1}^{2}}\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём теперь распределение для среднеквадратичного уклонения 
+\begin_inset Formula $s$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{s}\left(x\right)=P\left\{ s<x\right\} =P\left\{ s^{2}<x^{2}\right\} =F_{s^{2}}\left(x^{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{s}\left(x\right)=f_{s^{2}}\left(x^{2}\right)\cdot2x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+f_{\chi_{n}}\left(x\right)=\frac{1}{2^{\frac{n}{2}}\cdot\Gamma\left(\frac{n}{2}\right)}x^{2\left(\frac{n}{2}-1\right)}\exp\left(-\frac{x^{2}}{2}\right)\cdot2x=\\
+=\frac{1}{2^{\frac{n}{2}-1}\cdot\Gamma\left(\frac{n}{2}\right)}\cdot x^{n-1}\cdot\exp\left(-\frac{x^{2}}{2}\right).
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}\left[\chi_{n}\right]=\intop_{0}^{+\infty}x\cdot f_{\chi_{n}}\left(x\right)dx=\frac{1}{2^{\frac{n}{2}-1}\cdot\Gamma\left(\frac{n}{2}\right)}\cdot\intop_{0}^{+\infty}x^{n}\exp\left(-\frac{x^{2}}{2}\right)dx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Произведём замену 
+\begin_inset Formula $t=\frac{x^{2}}{2}$
+\end_inset
+
+, тогда 
+\begin_inset Formula $x=\sqrt{2t}$
+\end_inset
+
+, 
+\begin_inset Formula $dx=\frac{dt}{\sqrt{2t}}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+\mathbb{E}\left[\chi_{n}\right]=\frac{1}{2^{\frac{n}{2}-1}\cdot\Gamma\left(\frac{n}{2}\right)}\intop_{0}^{+\infty}t^{\frac{n-1}{2}}\cdot2^{\frac{n}{2}-\frac{1}{2}}\cdot\exp\left(-t\right)dt=.\\
+=\sqrt{2}\frac{\Gamma\left(\frac{n+1}{2}\right)}{\Gamma\left(\frac{n}{2}\right)}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbb{E}\left[s\right]=\sigma\frac{\sqrt{2}}{\sqrt{n-1}}\frac{\Gamma\left(\frac{n+1}{2}\right)}{\Gamma\left(\frac{n}{2}\right)}.
 \]
 
 \end_inset
@@ -13995,7 +14128,7 @@ status open
 \begin_layout Standard
 \begin_inset Formula 
 \[
-P\left\{ X=j\right\} =p_{j},\, j=1,...,N,
+P\left\{ X=j\right\} =p_{j},\,j=1,...,N,
 \]
 
 \end_inset
@@ -14006,7 +14139,7 @@ P\left\{ X=j\right\} =p_{j},\, j=1,...,N,
 \begin_layout Standard
 \begin_inset Formula 
 \[
-p_{j}\ge0,\, j=1,...,N,
+p_{j}\ge0,\,j=1,...,N,
 \]
 
 \end_inset
