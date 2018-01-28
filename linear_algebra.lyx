@@ -1,0 +1,995 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass extreport
+\begin_preamble
+\usepackage{indentfirst}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language russian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref section
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{sloppy}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Линейная алгебра
+\end_layout
+
+\begin_layout Author
+П.
+ В.
+ Галушин
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Введение
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Введение}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Основные понятия и результаты
+\end_layout
+
+\begin_layout Subsection
+Понятие линейного пространства
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Векторы на плоскости и в пространстве
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Общее определение линейного пространства
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Другие примеры линейных пространств
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Линейная независимость и размерность
+\end_layout
+
+\begin_layout Standard
+Элементы 
+\begin_inset Formula $x_{1},...,x_{m}$
+\end_inset
+
+ называются линейно независимыми, если равенство 
+\begin_inset Formula $\sum_{i=1}^{m}a_{i}x_{i}=0$
+\end_inset
+
+, где 
+\begin_inset Formula $a_{i},i=1...m$
+\end_inset
+
+ — вещественные числа, возможно только когда все 
+\begin_inset Formula $a_{i}=0$
+\end_inset
+
+.
+ Иными словами, ни один из 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ нельзя представить в виде линейной комбинации остальных элементов.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "Размерность-определение"
+
+\end_inset
+
+Наибольшее количество линейно независимых элементов в некотором пространстве
+ называется размерностью этого пространства.
+\end_layout
+
+\begin_layout Standard
+Если в пространстве можно выбрать произвольное число линейно независимых
+ векторов, то оно называется бесконечномерным.
+\end_layout
+
+\begin_layout Standard
+Пространства, не являющиеся бесконечномерными, называются конечномерными.
+ 
+\end_layout
+
+\begin_layout Standard
+В линейной алгебре рассматриваются конечномерные пространства, а бесконечномерны
+е — в курсах функционального анализа.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Система,-содержащая-нулевой-элемент,-является-линейно-зависимой"
+
+\end_inset
+
+Система, содержащая нулевой элемент, является линейно зависимой
+\end_layout
+
+\begin_layout Subsection
+Часть линейно независимой системы является линейно независимой
+\end_layout
+
+\begin_layout Subsection
+Базис
+\end_layout
+
+\begin_layout Standard
+Если любой элемент пространства может быть представлен в виде линейной комбинаци
+и системы элементов 
+\begin_inset Formula $x_{1},...,x_{m}$
+\end_inset
+
+, то эта система называется базисом.
+\end_layout
+
+\begin_layout Standard
+Если размерность пространства 
+\begin_inset Formula $L$
+\end_inset
+
+ равна 
+\begin_inset Formula $n$
+\end_inset
+
+ и выбраны 
+\begin_inset Formula $n$
+\end_inset
+
+ линейно независимых элементов 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+, то любой элемент 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ этого пространства может быть представлен в виде линейной комбинации векторов
+ 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+.
+ Действительно, по определению размерности, система 
+\begin_inset Formula $x_{0},x_{1},...,x_{n}$
+\end_inset
+
+ является линейно зависимой, так как содержит 
+\begin_inset Formula $n+1$
+\end_inset
+
+ элемент.
+ Значит существуют такие числа 
+\begin_inset Formula $a_{0},a_{1},...,a_{n}$
+\end_inset
+
+, не все равные нулю, что имеет место равенство
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{0}x+\sum_{i=1}^{n}a_{i}x_{i}=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $a_{0}\ne0$
+\end_inset
+
+, так как в противном случае имелись бы числа 
+\begin_inset Formula $a_{1},...,a_{n}$
+\end_inset
+
+ не все равные нулю, такие, что 
+\begin_inset Formula 
+\[
+\sum_{i=1}^{n}a_{i}x_{i}=0,
+\]
+
+\end_inset
+
+а значит элементы 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+ были бы линейно зависимыми, что противоречит нашему предположению.
+ Таким образом, можно записать
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x=-\sum_{i=1}^{n}\frac{a_{i}}{a_{0}}x_{i}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Невозможность-повышения-размерноcти-за-счёт-линейного-комбинирования"
+
+\end_inset
+
+Невозможность повышения размерности за счёт линейного комбинирования
+\end_layout
+
+\begin_layout Standard
+Пусть дана линейно независимая система 
+\begin_inset Formula $x_{1},...,x_{m}$
+\end_inset
+
+ и из элементов этой системы составлены линейные комбинации 
+\begin_inset Formula $y_{j}=\sum_{i=1}^{m}c_{ji}x_{i}$
+\end_inset
+
+, 
+\begin_inset Formula $j=1..r$
+\end_inset
+
+.
+ Если система 
+\begin_inset Formula $y_{1},...,y_{r}$
+\end_inset
+
+ является линейно-независимой, то 
+\begin_inset Formula $r\le m$
+\end_inset
+
+.
+ Это утверждение является интуитивно понятным.
+ Докажем его с помощью метода математической индукции.
+\end_layout
+
+\begin_layout Standard
+При 
+\begin_inset Formula $m=1$
+\end_inset
+
+ утверждение является почти тривиальным и образует базис индукции.
+\end_layout
+
+\begin_layout Standard
+Так как 
+\begin_inset Formula $y_{j}=c_{j1}x_{1}$
+\end_inset
+
+, то 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{j=1}^{r}a_{j}y_{j}=\left(\sum_{j=1}^{r}a_{j}c_{j1}\right)x_{1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выберем 
+\begin_inset Formula $a_{2},...,a_{r}$
+\end_inset
+
+ произвольно и положим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{1}=-\frac{1}{c_{11}}\sum_{j=2}^{r}a_{j}c_{j1}
+\]
+
+\end_inset
+
+(
+\begin_inset Formula $c_{11}\ne0$
+\end_inset
+
+ так как в противном случае система 
+\begin_inset Formula $y_{1},...,y_{r}$
+\end_inset
+
+ содержала бы нулевой элемент и по доказанному в 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Система,-содержащая-нулевой-элемент,-является-линейно-зависимой"
+
+\end_inset
+
+ была бы линейно зависимой), тогда получим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{j=1}^{r}a_{j}y_{j}=0\cdot x_{1}=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Перейдём теперь к шагу индукции.
+ Пусть при некотором 
+\begin_inset Formula $m$
+\end_inset
+
+ утверждение выполняется, докажем его для 
+\begin_inset Formula $m+1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Если все 
+\begin_inset Formula $c_{ji}$
+\end_inset
+
+ равны нулю, то все 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ равны нулевым элементам.
+ Система, содержащая нулевой элемент, является линейно зависимой (как показано
+ в 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Система,-содержащая-нулевой-элемент,-является-линейно-зависимой"
+
+\end_inset
+
+), что противоречит условиям утверждения.
+ Значит, существуют 
+\begin_inset Formula $c_{ji}$
+\end_inset
+
+ не равные нулю.
+ Без ограничения общности можно предположить, что 
+\begin_inset Formula $c_{r,m+1}\ne0$
+\end_inset
+
+.
+ Этого можно достичь за счёт изменения порядка 
+\begin_inset Formula $x_{1},...,x_{m+1}$
+\end_inset
+
+ и 
+\begin_inset Formula $y_{1},...,y_{r}$
+\end_inset
+
+.
+ Выразим 
+\begin_inset Formula $x_{m+1}$
+\end_inset
+
+из определения 
+\begin_inset Formula $y_{r}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{m+1}=\frac{1}{c_{r,m+1}}\left(y_{r}-\sum_{i=1}^{m}c_{ri}x_{i}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Подставим это выражение во все остальные выражения для 
+\begin_inset Formula $y_{j}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{j}=\sum_{i=1}^{m}c_{ji}x_{i}+\frac{c_{j,m+1}}{c_{r,m+1}}\left(y_{r}-\sum_{i=1}^{m}c_{ri}x_{i}\right),j=1..r-1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Приведём подобные слагаемые:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{j}=\sum_{i=1}^{m}\left(c_{ji}-\frac{c_{j,m+1}}{c_{r,m+1}}c_{ri}\right)x_{i}+\frac{c_{j,m+1}}{c_{r,m+1}}y_{r},j=1..r-1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Положим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{j}^{\prime}=y_{j}-\frac{c_{j,m+1}}{c_{r,m+1}}y_{r},j=1..r-1,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+c_{ji}^{\prime}=c_{ji}-\frac{c_{j,m+1}}{c_{r,m+1}}c_{ri},j=1..r-1,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+тогда будет иметь место соотношение
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{j}^{\prime}=\sum_{i=1}^{m}c_{ji}^{\prime}x_{i},j=1..r-1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Докажем, что 
+\begin_inset Formula $y_{1}^{\prime},...,y_{r-1}^{\prime}$
+\end_inset
+
+ является линейно независимой.
+ Для этого рассмотрим сумму
+\begin_inset Formula 
+\[
+\sum_{j=1}^{r-1}\lambda_{j}y_{j}^{\prime}=\sum_{j=1}^{r-1}\lambda_{j}\left(y_{j}-\frac{c_{j,m+1}}{c_{r,m+1}}y_{r}\right)=\sum_{i=1}^{r-1}\lambda_{j}y_{j}-\sum_{i=1}^{r-1}\lambda_{j}\frac{c_{j,m+1}}{c_{r,m+1}}y_{r}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как система 
+\begin_inset Formula $y_{1},...,y_{r}$
+\end_inset
+
+ является линейно независимой по предположению, то последняя сумма равна
+ нулю только когда 
+\begin_inset Formula 
+\[
+\lambda_{j}=0.
+\]
+
+\end_inset
+
+ А значит и система 
+\begin_inset Formula $y_{1}^{\prime},...,y_{r-1}^{\prime}$
+\end_inset
+
+ является линейно независимой.
+ Итак, мы имеем 
+\begin_inset Formula $r-1$
+\end_inset
+
+ линейной независимых линейных комбинаций 
+\begin_inset Formula $m$
+\end_inset
+
+ линейно независимых элементов, значит мы можем применить предположение
+ шага индукции: 
+\begin_inset Formula $r-1\le m$
+\end_inset
+
+.
+ Прибавляя единицу к левой и правой части этого неравенства получим 
+\begin_inset Formula $r\le m+1$
+\end_inset
+
+, что завершает доказательство.
+\end_layout
+
+\begin_layout Subsection
+Количество элементов базиса равна размерности пространства
+\end_layout
+
+\begin_layout Standard
+Если любой элемент линейного пространства 
+\begin_inset Formula $L$
+\end_inset
+
+ может быть представлен в виде линейной комбинации 
+\begin_inset Formula $n$
+\end_inset
+
+ линейно независимых элементов 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+, то размерность этого пространства равна 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Предположим, что в 
+\begin_inset Formula $L$
+\end_inset
+
+ нашлось 
+\begin_inset Formula $m>n$
+\end_inset
+
+ линейно-независимых векторов 
+\begin_inset Formula $y_{1},...,y_{m}$
+\end_inset
+
+.
+ По условию, их можно представить в виде линейных комбинаций элементов 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+.
+ Но тогда, по доказанному в 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Невозможность-повышения-размерноcти-за-счёт-линейного-комбинирования"
+
+\end_inset
+
+, должно быть 
+\begin_inset Formula $m\le n$
+\end_inset
+
+.
+ Это противоречит предположению.
+ Значит в 
+\begin_inset Formula $L$
+\end_inset
+
+ можно найти 
+\begin_inset Formula $n$
+\end_inset
+
+ линейно независимых векторов, а 
+\begin_inset Formula $m>n$
+\end_inset
+
+ — нельзя.
+ По определению размерности линейного пространства (см.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Размерность-определение"
+
+\end_inset
+
+), размерность 
+\begin_inset Formula $L$
+\end_inset
+
+ равна 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Изоморфизм всех линейных пространств одной (конечной) размерности
+\end_layout
+
+\begin_layout Subsection
+Количество линейно независимых линейных комбинаций линейной зависимых элементов
+\end_layout
+
+\begin_layout Chapter
+В разноброс
+\end_layout
+
+\begin_layout Section
+стр.
+ 22, упражнение 1
+\end_layout
+
+\begin_layout Standard
+Если подпространство 
+\begin_inset Formula $R^{\prime}$
+\end_inset
+
+ пространства 
+\begin_inset Formula $R$
+\end_inset
+
+ имеет ту же размерность, что и всё пространство 
+\begin_inset Formula $R$
+\end_inset
+
+, то оно совпадает с 
+\begin_inset Formula $R$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Из равенства размерностей 
+\begin_inset Formula $R^{\prime}$
+\end_inset
+
+ и 
+\begin_inset Formula $R$
+\end_inset
+
+ следует, из векторов 
+\begin_inset Formula $R^{\prime}$
+\end_inset
+
+ можно составить базис пространства 
+\begin_inset Formula $R$
+\end_inset
+
+.
+ Таким образом, любой элемент 
+\begin_inset Formula $R$
+\end_inset
+
+ является линейной комбинацией, векторов из 
+\begin_inset Formula $R^{\prime}$
+\end_inset
+
+.
+ Но, по определению подпространства, линейная комбинация векторов 
+\begin_inset Formula $R^{\prime}$
+\end_inset
+
+ тоже принадлежит 
+\begin_inset Formula $R^{\prime}$
+\end_inset
+
+.
+ Таким образом, элемент 
+\begin_inset Formula $R\subset R^{\prime}$
+\end_inset
+
+.
+ С другой стороны, из определению подпространства следует 
+\begin_inset Formula $R^{\prime}\subset R$
+\end_inset
+
+.
+ Таким образом, 
+\begin_inset Formula $R^{\prime}=R$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+стр.
+ 22, упражнение
+\end_layout
+
+\begin_layout Standard
+Показать, что в 
+\begin_inset Formula $n$
+\end_inset
+
+-мерном пространстве существуют подпространства всех меньших размерностей.
+\end_layout
+
+\begin_layout Standard
+В 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+ подпространство размерности 
+\begin_inset Formula $n-k$
+\end_inset
+
+ получаются, если рассматривать вектора, 
+\begin_inset Formula $k$
+\end_inset
+
+ первых координат которых равны нулю.
+ Для остальных пространств утверждение справедливо в силу изоморфности всех
+ конечномерных линейных пространств одной размерности.
+\end_layout
+
+\begin_layout Standard
+В 
+\begin_inset Formula $n$
+\end_inset
+
+-мерном пространстве можно выбрать 
+\begin_inset Formula $1\le k<n$
+\end_inset
+
+ линейно независимых векторов.
+ Пространство порождённое такой системой является 
+\begin_inset Formula $k$
+\end_inset
+
+-мерным.
+\end_layout
+
+\begin_layout Section
+стр.
+ 23, упражнение 1
+\end_layout
+
+\begin_layout Standard
+Показать, что в пространстве 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+ совокупность векторов, удовлетворяющих соотношению
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{k=1}^{n}a_{k}x_{k}=0,
+\]
+
+\end_inset
+
+где 
+\begin_inset Formula $a_{1},..,a_{n}$
+\end_inset
+
+ — фиксированные вещественные числа, не все равные нулю, образует подпространств
+о 
+\begin_inset Formula $L$
+\end_inset
+
+ размерности 
+\begin_inset Formula $n-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula $a_{n}\ne0$
+\end_inset
+
+ (этого всегда можно достичь изменив нумерацию координат), тогда
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{n}=-\frac{1}{a_{n}}\sum_{k=1}^{n-1}a_{k}x_{k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, зная первые 
+\begin_inset Formula $n-1$
+\end_inset
+
+ координаты вектора 
+\begin_inset Formula $x$
+\end_inset
+
+ мы можем определить его последнюю кординату.
+ Таким образом, векторы из 
+\begin_inset Formula $L$
+\end_inset
+
+ изоморфны совокупность 
+\begin_inset Formula $n-1$
+\end_inset
+
+ вещественного числа.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{sloppy}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
