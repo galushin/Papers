@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass extbook
 \use_default_options true
 \maintain_unincluded_children false
@@ -9,16 +11,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -599,6 +601,230 @@ f^{\prime\prime}+\omega_{0}^{2}f=0.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Исключение первой производной из линейного дифференциального уравненения
+ второго порядка
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y^{\prime\prime}+2py^{\prime}+qy=f\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Сделаем замену 
+\begin_inset Formula $y\left(x\right)=u\left(x\right)\cdot w\left(x\right)$
+\end_inset
+
+.
+ Производные функции 
+\begin_inset Formula $y$
+\end_inset
+
+ выражаются следующим образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y^{\prime}=u^{\prime}w+uw^{\prime}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y^{\prime\prime}=u^{\prime\prime}w+2u^{\prime}w^{\prime}+uw^{\prime\prime}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Подставив данные выражения в исходное уравнение и сгруппировав слагаемые,
+ содержащие производные одинаковой степени от 
+\begin_inset Formula $u$
+\end_inset
+
+, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u^{\prime\prime}w+u^{\prime}\left(2w^{\prime}+2pw\right)+u\left(w^{\prime\prime}+2pw^{\prime}+qw\right)=f\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Потребуем, чтобы функция 
+\begin_inset Formula $w$
+\end_inset
+
+ удовлетворяла дифференциальному уравнению
+\begin_inset Formula 
+\[
+w^{\prime}=-pw.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Это уравнение с разделяющимися переменными и оно может быть проинтегрировано
+ в общем виде:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dw}{w}=-pdx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+d\ln w=-pdx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ln w=-\intop p\left(x\right)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+w=C\cdot\exp\left(-\intop p\left(x\right)dx\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Постоянную интегрирования можно выбрать произвольно, так как мы ещё не предъявля
+ли никаких требований к функции 
+\begin_inset Formula $u$
+\end_inset
+
+.
+ С учётом дифференциального уравнения для 
+\begin_inset Formula $w$
+\end_inset
+
+ выражение для коэффициента при 
+\begin_inset Formula $u$
+\end_inset
+
+ можно записать следующим образом
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+w^{\prime\prime}=\left(-pw\right)^{\prime}=-p^{\prime}w-pw^{\prime}=-p^{\prime}w+p^{2}w
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+w^{\prime\prime}+2pw^{\prime}+qw=-p^{\prime}w+p^{2}w-2p^{2}w+qw=w\left(-p^{\prime}-p^{2}+q\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Введём обозначение
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+r=-p^{\prime}-p^{2}+q
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Полученные выражения позволяют переписать исходное дифференциальное уравнение
+ следующим образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+w\left[u^{\prime\prime}+r\cdot u\right]=f
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u^{\prime\prime}+ru=\frac{f}{w}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В качестве упражнения для читателя оставим проверку того, что применительно
+ к уравнению с постоянными коэффициентами данный метод даёт тот же результат,
+ что был нами получен ранее.
 \end_layout
 
 \begin_layout Chapter

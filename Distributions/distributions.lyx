@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass scrbook
 \begin_preamble
 \usepackage{indentfirst}
@@ -15,16 +17,16 @@ theorems-ams
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -589,7 +591,10 @@ status open
  
 \end_layout
 
-\begin_layout --Separator--
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1294,7 +1299,10 @@ P\left\{ \bigcup_{k=1}^{n}A_{k}\right\} =\sum_{k=1}^{n}P\left\{ A_{k}\right\} .
 
 \end_layout
 
-\begin_layout --Separator--
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1601,7 +1609,10 @@ status open
 
 \end_layout
 
-\begin_layout --Separator--
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -5401,7 +5412,7 @@ D\left[X\right]=p\cdot\left(1-p\right)=-\left(p^{2}-p\right)=\\
 \begin_layout Section
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Биномиальное-распределение"
+name "subsec:Биномиальное-распределение"
 
 \end_inset
 
@@ -6008,7 +6019,7 @@ D\left[X\right]=\frac{\left(N-1\right)\left(2N-1\right)}{6}-\frac{\left(N-1\righ
  Вычислим предел 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Биномиальное-распределение"
+reference "subsec:Биномиальное-распределение"
 
 \end_inset
 
@@ -6614,7 +6625,7 @@ D\left[X\right]=M\left[X^{2}\right]-\left(M\left[X\right]\right)^{2}=\frac{a^{2}
 \begin_layout Section
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:normal_as_limit_of_binomial"
+name "subsec:normal_as_limit_of_binomial"
 
 \end_inset
 
@@ -7245,6 +7256,19 @@ g\left(x\right)=C\cdot\exp\left(\frac{\lambda x^{2}}{2}\right).
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Проверка нормировки для плотности нормального распределения
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -14184,7 +14208,7 @@ p_{j}\ge0,\,j=1,...,N,
  Как было показано в 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:normal_as_limit_of_binomial"
+reference "subsec:normal_as_limit_of_binomial"
 
 \end_inset
 

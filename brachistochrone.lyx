@@ -1,0 +1,1819 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language russian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Тригонометрия
+\end_layout
+
+\begin_layout Subsection
+Понижение степени
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\cos2z=\cos^{2}z-\sin^{2}z=1-2\sin^{2}z
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sin^{2}z=\frac{1-\cos2z}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Выражение синуса через тангенс
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathrm{tg}^{2}\alpha=\frac{\sin^{2}\alpha}{\cos^{2}\alpha}=\frac{\sin^{2}\alpha}{1-\sin^{2}\alpha}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sin^{2}\alpha=\left(1-\sin^{2}\alpha\right)\mathrm{tg}^{2}\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sin^{2}\alpha\left(1+\mathrm{tg}^{2}\alpha\right)=\mathrm{tg}^{2}\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sin^{2}\alpha=\frac{\mathrm{tg}^{2}\alpha}{1+\mathrm{tg}^{2}\alpha}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sin\alpha=\frac{\mathrm{tg}\alpha}{\sqrt{1+\mathrm{tg}^{2}\alpha}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Определённый интеграл
+\end_layout
+
+\begin_layout Subsection
+Интеграл Эйлера-Пуассона
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A=\intop_{-\infty}^{+\infty}e^{-z^{2}}dz
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A^{2}=\intop_{-\infty}^{+\infty}e^{-x^{2}}dx\cdot\intop_{-\infty}^{+\infty}e^{-y^{2}}dy=\intop_{-\infty}^{+\infty}\intop_{-\infty}^{+\infty}e^{-x^{2}}e^{-y^{2}}dydx=\intop_{-\infty}^{+\infty}\intop_{-\infty}^{+\infty}e^{-\left(x^{2}+y^{2}\right)}dydx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Перейдём к полярным координатам:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x=r\cos\varphi
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=r\sin\varphi
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x^{2}+y^{2}=r^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Якобиан равен
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+J=\left|\begin{array}{cc}
+\cos\varphi & -r\sin\varphi\\
+\sin\varphi & r\cos\varphi
+\end{array}\right|=r
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A^{2}=\intop_{0}^{+\infty}\intop_{0}^{2\pi}e^{-r^{2}}rdrd\varphi=\pi\cdot\intop_{0}^{+\infty}e^{-r^{2}}d\left(r^{2}\right)=\pi\cdot\left(-1\right)\cdot\left.e^{-r^{2}}\right|_{0}^{+\infty}=\pi
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\intop_{-\infty}^{+\infty}e^{-z^{2}}dz=\sqrt{\pi}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Вариационное исчисление
+\end_layout
+
+\begin_layout Subsection
+Необходимые условия экстремума
+\end_layout
+
+\begin_layout Standard
+Задача вариационного исчисления — поиск функций, доставляющих экстремум
+ функционалу.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left[y\right]=\intop L\left(y,y^{\prime},x\right)dx\to\min
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\delta F=F\left[y+\delta y\right]-F\left[y\right]=\intop\left[L\left(y+\delta y,y^{\prime}+\delta y^{\prime},x\right)-L\left(y,y^{\prime},x\right)\right]dx=\intop\left[\frac{\partial L}{\partial y}\delta y+\frac{\partial L}{\partial y^{\prime}}\delta y^{\prime}\right]dx+o\left(\delta y\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\delta F=\intop\frac{\partial L}{\partial y}\delta ydx+\intop\frac{\partial L}{\partial y^{\prime}}\left(\delta y\right)^{\prime}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Во втором интеграле произведём интегрирование по частям:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\delta F=\intop\frac{\partial L}{\partial y}\delta ydx+\left.\frac{\partial L}{\partial y^{\prime}}\delta y\right|-\intop\frac{d}{dx}\left(\frac{\partial L}{\partial y^{\prime}}\right)\delta ydx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+На концах вариация равна нулю, поэтому:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\delta F=\intop\left[\frac{\partial L}{\partial y}-\frac{d}{dx}\left(\frac{\partial L}{\partial y^{\prime}}\right)\right]\delta ydx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В силу произвольности 
+\begin_inset Formula $\delta y$
+\end_inset
+
+, получаем необходимые условия экстремума — уравнения Эйлера:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial L}{\partial y}=\frac{d}{dx}\left(\frac{\partial L}{\partial y^{\prime}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Сохранение энергии
+\end_layout
+
+\begin_layout Standard
+Если 
+\begin_inset Formula $L$
+\end_inset
+
+ не зависит явно от 
+\begin_inset Formula $x$
+\end_inset
+
+ мы можем упростить:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dL}{dx}=\frac{\partial L}{\partial y}y^{\prime}+\frac{\partial L}{\partial y^{\prime}}\frac{dy^{\prime}}{dx}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В силу уравнений Эйлера:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dL}{dx}=\frac{d}{dx}\left(\frac{\partial L}{\partial y^{\prime}}\right)y^{\prime}+\frac{\partial L}{\partial y^{\prime}}\frac{dy^{\prime}}{dx}=\frac{d}{dx}\left(\frac{\partial L}{\partial y^{\prime}}y^{\prime}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d}{dx}\left(\frac{\partial L}{\partial y^{\prime}}y^{\prime}-L\right)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial L}{\partial y^{\prime}}y^{\prime}-L=const
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Брахистохрона
+\end_layout
+
+\begin_layout Subsection
+Вывод функционала
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dt}=v_{y}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dt=\frac{dy}{v_{y}}=\frac{y^{\prime}}{v_{y}}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T=\intop_{0}^{x_{1}}\frac{y^{\prime}}{v_{y}}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Уточнение функционала
+\end_layout
+
+\begin_layout Standard
+Ось 
+\begin_inset Formula $y$
+\end_inset
+
+ направим вертикально вниз.
+ Начальная точка — 
+\begin_inset Formula $\left(0;0\right)$
+\end_inset
+
+, конечная — 
+\begin_inset Formula $\left(x_{1};y_{1}\right).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Запишем закон сохранения энергии для начальной точки и произвольной точки
+ кривой 
+\begin_inset Formula $\left(x;y\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+0=\frac{mv^{2}}{2}-mgy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v^{2}=2gy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v=\sqrt{2g}\cdot\sqrt{y}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v_{y}=v\cdot\sin\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathrm{tg}\alpha=y^{\prime}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Воспользуемся выражением синуса через тангенс:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sin\alpha=\frac{y^{\prime}}{\sqrt{1+\left(y^{\prime}\right)^{2}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v_{y}=\sqrt{2g}\cdot\sqrt{y}\cdot\frac{y^{\prime}}{\sqrt{1+\left(y^{\prime}\right)^{2}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T=\intop_{0}^{x_{1}}\frac{y^{\prime}}{\sqrt{2g}\cdot\sqrt{y}\cdot\frac{y^{\prime}}{\sqrt{1+\left(y^{\prime}\right)^{2}}}}dx=\frac{1}{\sqrt{2g}}\intop_{0}^{x_{1}}\frac{\sqrt{1+\left(y^{\prime}\right)^{2}}}{\sqrt{y}}dx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(y;y^{\prime};x\right)=\frac{\sqrt{1+\left(y^{\prime}\right)^{2}}}{\sqrt{y}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Дифференциальное уравнение
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial L}{\partial y^{\prime}}y^{\prime}-L=\mathrm{const}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вычислим необходимую частную производную:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial L}{\partial y^{\prime}}=\frac{1}{\sqrt{y}}\frac{2y^{\prime}}{2\sqrt{1+\left(y^{\prime}\right)^{2}}}=\frac{y^{\prime}}{\sqrt{y}\cdot\sqrt{1+\left(y^{\prime}\right)^{2}}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{\sqrt{y}}\frac{y^{\prime}}{\sqrt{1+\left(y^{\prime}\right)^{2}}}y^{\prime}-\frac{\sqrt{1+\left(y^{\prime}\right)^{2}}}{\sqrt{y}}=C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(y^{\prime}\right)^{2}-\left(1+\left(y^{\prime}\right)^{2}\right)=C\cdot\sqrt{y}\cdot\sqrt{1+\left(y^{\prime}\right)^{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sqrt{y}\cdot\sqrt{1+\left(y^{\prime}\right)^{2}}=-\frac{1}{C}=A.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Разрешим относительно 
+\begin_inset Formula $y^{\prime}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sqrt{1+\left(y^{\prime}\right)^{2}}=\frac{A}{\sqrt{y}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+1+\left(y^{\prime}\right)^{2}=\frac{A^{2}}{y}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\frac{A^{2}}{1+\left(y^{\prime}\right)^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(y^{\prime}\right)^{2}=\frac{A^{2}}{y}-1=\frac{A^{2}-y}{y}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y^{\prime}=\sqrt{\frac{A^{2}-y}{y}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Решаем дифференциальное уравнение
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dx=\frac{\sqrt{y}dy}{\sqrt{A^{2}-y}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Произведём замену:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=A^{2}\sin^{2}z
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A^{2}-y=A^{2}\cos^{2}z
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dy=A^{2}2\sin z\cdot\cos zdz=A^{2}\sin2zdz
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dx=\frac{A\sin z\cdot A^{2}2\sin z\cdot\cos zdz}{A\cos z}=2A^{2}\sin^{2}zdz
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В результате замены получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dx=2A^{2}\frac{1-\cos2z}{2}dz=A^{2}\left(1-\cos2z\right)dz
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Проинтегрируем:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x+B=A^{2}\left(z-\frac{1}{2}\sin2z\right)=A^{2}\left(z-\sin z\cdot\cos z\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=A^{2}\frac{1-\cos2z}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\cos2z=1-\frac{2y}{A^{2}}=\frac{A^{2}-2y}{A^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+z=\frac{1}{2}\arccos\frac{A^{2}-2y}{A^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sin z\cdot\cos z=\sqrt{\frac{y}{A^{2}}\frac{\left(A^{2}-y\right)}{A^{2}}}=\frac{\sqrt{y\left(A^{2}-y\right)}}{A^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x+B=A^{2}\left(\frac{1}{2}\arccos\frac{A^{2}-2y}{A^{2}}-\frac{\sqrt{y\left(A^{2}-y\right)}}{A^{2}}\right)=\frac{A^{2}}{2}\arccos\frac{A^{2}-2y}{A^{2}}-\sqrt{y\left(A^{2}-y\right)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Уравнения движения
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dt=\frac{dy}{v_{y}}=\frac{y^{\prime}}{v_{y}}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v_{y}=\frac{y^{\prime}\sqrt{2gy}}{\sqrt{1+\left(y^{\prime}\right)^{2}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dt=\frac{y^{\prime}\cdot\sqrt{1+\left(y^{\prime}\right)^{2}}}{y^{\prime}\sqrt{2gy}}dx=\frac{\sqrt{1+\left(y^{\prime}\right)^{2}}}{\sqrt{2gy}}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y^{\prime}=\sqrt{\frac{A^{2}-y}{y}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(y^{\prime}\right)^{2}=\frac{A^{2}-y}{y}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+1+\left(y^{\prime}\right)^{2}=1+\frac{A^{2}-y}{y}=\frac{A^{2}}{y}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dt=\frac{A}{\sqrt{y}\cdot\sqrt{2gy}}dx=\frac{A}{\sqrt{2g}\cdot y}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dx=\frac{\sqrt{y}dy}{\sqrt{A^{2}-y}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dt=\frac{A}{\sqrt{2g}}\cdot\frac{\sqrt{y}dy}{y\sqrt{A^{2}-y}}=\frac{A}{\sqrt{2g}}\cdot\frac{dy}{\sqrt{y\left(A^{2}-y\right)}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=A^{2}\sin^{2}z
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sqrt{y\left(A^{2}-y\right)}=\sqrt{A^{2}\sin^{2}z\cdot A^{2}\cos^{2}z}=\frac{A^{2}}{2}\sqrt{\sin^{2}2z}=\frac{A^{2}\sin2z}{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dt=\frac{A}{\sqrt{2g}}\cdot\frac{2A^{2}\sin2zdz}{A^{2}\sin2z}=\sqrt{\frac{2A^{2}}{g}}\cdot dz
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+t+a=\sqrt{\frac{2A^{2}}{g}}\cdot z
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+z=\sqrt{\frac{g}{2A^{2}}}\cdot\left(t+a\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Определяем значение постоянных по краевым условиям
+\end_layout
+
+\begin_layout Standard
+Подставляем 
+\begin_inset Formula $x=0$
+\end_inset
+
+, 
+\begin_inset Formula $y=0$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+B=\frac{A^{2}}{2}\arccos1=\frac{A^{2}}{2}\cdot0=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Теперь подставим 
+\begin_inset Formula $x=x_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $y=y_{1}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Section
+Таутохронная кривая
+\end_layout
+
+\begin_layout Subsection
+Определение времени движения по траектории в зависимости от начальной точки
+\end_layout
+
+\begin_layout Standard
+Теперь мы должны немного изменить постановку задачи.
+ Тело начинает движение из точки 
+\begin_inset Formula $\left(x_{0};y_{0}\right)$
+\end_inset
+
+ в точку 
+\begin_inset Formula $\left(0;0\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Снова воспользуемся законом сохранения энергии.
+ В начальной точке кинетическая энергия равна нулю, а потенциальная — 
+\begin_inset Formula $mgy_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+В произвольной точке 
+\begin_inset Formula $\left(x;y\right)$
+\end_inset
+
+ энергия равна 
+\begin_inset Formula $\frac{mv^{2}}{2}+mgy=mgy_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v^{2}=g\left(y_{0}-y\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v=\sqrt{g}\cdot\sqrt{y_{0}-y}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dt=\frac{dy}{v_{y}}=\frac{y^{\prime}}{v_{y}}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Движение осуществляется справа налево, поэтому проекцию скорости можно записать
+ следующим образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v_{y}=-v\cdot\sin\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sin\alpha=\frac{y^{\prime}}{\sqrt{1+\left(y^{\prime}\right)^{2}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v_{y}=-\frac{\sqrt{g}\cdot\sqrt{y_{0}-y}\cdot y^{\prime}}{\sqrt{1+\left(y^{\prime}\right)^{2}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T\left(y_{0}\right)=-\frac{1}{\sqrt{g}}\intop_{y_{0}}^{0}\frac{\sqrt{1+\left(y^{\prime}\right)^{2}}}{\sqrt{y_{0}-y}\cdot y^{\prime}}dy=\frac{1}{\sqrt{g}}\intop_{0}^{y_{0}}\frac{1}{\sqrt{y_{0}-y}}\cdot\frac{\sqrt{1+\left(y^{\prime}\right)^{2}}}{y^{\prime}}dy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Обозначим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+h\left(y\right)=\frac{\sqrt{1+\left(y^{\prime}\right)^{2}}}{y^{\prime}\sqrt{g}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В этой формуле 
+\begin_inset Formula $y^{\prime}$
+\end_inset
+
+ нужно рассматривать как функцию от 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T\left(y_{0}\right)=\intop_{0}^{y_{0}}\frac{1}{\sqrt{y_{0}-y}}\cdot h\left(y\right)dy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Определение траектории по зависимости времени движения от начальной точки
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f\left(y\right)=\frac{1}{\sqrt{y}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Применим преобразование Лапласа:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T\left(p\right)=F\left(p\right)H\left(p\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(p\right)=\intop_{0}^{+\infty}f\left(y\right)e^{-py}dy=\intop_{0}^{+\infty}\frac{e^{-py}}{\sqrt{y}}dy=\intop_{0}^{+\infty}\frac{e^{-py}}{\sqrt{py}}\cdot\frac{\sqrt{p}}{p}d\left(py\right)=\frac{1}{\sqrt{p}}\intop_{0}^{+\infty}\frac{e^{-s}}{\sqrt{s}}ds
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(p\right)=\frac{1}{\sqrt{p}}\intop_{0}^{+\infty}\frac{e^{-z^{2}}}{z}2\cdot zdz=\frac{1}{\sqrt{p}}2\intop_{0}^{+\infty}e^{-z^{2}}dz=\frac{1}{\sqrt{p}}\intop_{-\infty}^{+\infty}e^{-z^{2}}dz=\frac{\sqrt{\pi}}{\sqrt{p}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H\left(p\right)=\frac{T\left(p\right)}{F\left(p\right)}=\frac{\sqrt{p}}{\sqrt{\pi}}\cdot T\left(p\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Вывод уравнения для таутохроны
+\end_layout
+
+\begin_layout Standard
+Если время не зависит от начальной точки, то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T\left(p\right)=\intop_{0}^{+\infty}1\cdot e^{-py}dy=-\frac{1}{p}\left.e^{-py}\right|_{0}^{+\infty}=\frac{1}{p}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H\left(p\right)=\frac{1}{\sqrt{\pi}}\cdot\frac{1}{\sqrt{p}}=\frac{1}{\pi}\frac{\sqrt{\pi}}{\sqrt{p}}=\frac{1}{\pi}F\left(p\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+h\left(y\right)=\frac{1}{\pi}f\left(y\right)=\frac{1}{\pi}\frac{1}{\sqrt{y}}=\frac{\sqrt{1+\left(y^{\prime}\right)^{2}}}{y^{\prime}\sqrt{g}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{\pi^{2}y}=\frac{1+\left(y^{\prime}\right)^{2}}{\left(y^{\prime}\right)^{2}g}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\pi^{2}y}{g}=\frac{\left(y^{\prime}\right)^{2}}{1+\left(y^{\prime}\right)^{2}}=\frac{\left(y^{\prime}\right)^{2}+1-1}{1+\left(y^{\prime}\right)^{2}}=1-\frac{1}{1+\left(y^{\prime}\right)^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+1-\frac{\pi^{2}y}{g}=\frac{1}{1+\left(y^{\prime}\right)^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+1+\left(y^{\prime}\right)^{2}=\frac{g}{g-\pi^{2}y}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(y^{\prime}\right)^{2}=\frac{g-g+\pi^{2}y}{g-\pi^{2}y}=\frac{\pi^{2}y}{g-\pi^{2}y}=\frac{y}{\frac{g}{\pi^{2}}-y}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y^{\prime}=\sqrt{\frac{y}{\frac{g}{\pi^{2}}-y}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+z=\frac{g}{\pi^{2}}-y
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\frac{g}{\pi^{2}}-z
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y^{\prime}=-z^{\prime}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+z^{\prime}=-\sqrt{\frac{\frac{g}{\pi^{2}}-z}{z}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, мы снова получаем дифференциальное уравнение циклоиды.
+\end_layout
+
+\begin_layout Section
+Интегрирование уравнений движения
+\end_layout
+
+\begin_layout Subsection
+Одномерное движение
+\end_layout
+
+\begin_layout Subsection
+Зависимость периода одномерного движения от потенциальной энергии
+\end_layout
+
+\begin_layout Standard
+Будем исходить из закона сохранения энергии:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{mv^{2}}{2}+U\left(x\right)=E
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Пусть потенциальная энергия имеет минимум в точке 
+\begin_inset Formula $x=0$
+\end_inset
+
+ и возрастает с удалением от этой точки.
+ В указанном случае движение точки будет осуществляться между точками 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ и 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ такими, что 
+\begin_inset Formula $U\left(x_{1}\right)=U\left(x_{2}\right)=E$
+\end_inset
+
+.
+ Так как в этих точках кинетическая энергия обращается в нуль и, следовательно,
+ точка разворачивается.
+\end_layout
+
+\begin_layout Standard
+Решим данное уравнение относительно 
+\begin_inset Formula $v$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dx}{dt}=v=\sqrt{\frac{2}{m}\left(E-U\left(x\right)\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dt=\sqrt{\frac{m}{2}}\cdot\frac{dx}{\sqrt{E-U\left(x\right)}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Введём новую переменную 
+\begin_inset Formula $U=U\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dU=\frac{dU}{dx}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dx=\frac{dx}{dU}\cdot dU
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dt=\sqrt{\frac{m}{2}}\cdot\frac{1}{\sqrt{E-U}}\cdot\frac{dx}{dU}\cdot dU
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Обратная к 
+\begin_inset Formula $U$
+\end_inset
+
+ функция не является однозначной.
+ Она состоит из двух ветвей, обозначим их как 
+\begin_inset Formula $x_{1}\left(U\right)$
+\end_inset
+
+ и 
+\begin_inset Formula $x_{2}\left(U\right)$
+\end_inset
+
+.
+ На ветви 
+\begin_inset Formula $x_{1}\left(U\right)$
+\end_inset
+
+ значение функции убывает с ростом 
+\begin_inset Formula $U$
+\end_inset
+
+, а на ветви 
+\begin_inset Formula $x_{2}\left(U\right)$
+\end_inset
+
+ — возрастает.
+ Поэтому
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dx_{1}}{dU}\le0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dx_{2}}{dU}\ge0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Удвоенное время движения по этим ветвям и даст период колебаний, который
+ будет функцией полной энергии 
+\begin_inset Formula $E$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T\left(E\right)=2\cdot\sqrt{\frac{m}{2}}\intop_{0}^{E}\frac{1}{\sqrt{E-U}}\cdot\frac{dx_{2}}{dU}\cdot dU+2\cdot\sqrt{\frac{m}{2}}\intop_{E}^{0}\frac{1}{\sqrt{E-U}}\cdot\frac{dx_{1}}{dU}\cdot dU
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T\left(E\right)=2\cdot\sqrt{\frac{m}{2}}\intop_{0}^{E}\frac{1}{\sqrt{E-U}}\left(\frac{dx_{2}}{dU}-\frac{dx_{1}}{dU}\right)dU
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Введём обозначение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi\left(U\right)=\frac{dx_{2}}{dU}-\frac{dx_{1}}{dU}=\frac{d\left(x_{2}-x_{1}\right)}{dU}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Тогда мы можем записать следующее выражение для периода
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+T\left(E\right)=\sqrt{2m}\cdot\intop_{0}^{E}\frac{1}{\sqrt{E-U}}\varphi\left(U\right)dU\label{eq:period_as_functional_of_potential_energy}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Восстановление потенциальной энергии по периоду колебаний
+\end_layout
+
+\begin_layout Subsubsection
+С использованием преобразования Лапласа
+\end_layout
+
+\begin_layout Standard
+Попытаемся решить задачу, обратную к той, что была нами рассмотрена выше:
+ определение потенциальной энергии по периоду колебаний.
+ Это обобщение задачи поиска таутохроны.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Добавить ссылку
+\end_layout
+
+\end_inset
+
+ Воспользуемся аналогичным методом: применим интегральное преобразование
+ Лапласа.
+ Получим следующее уравнение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{L}\left(p\right)=\sqrt{2m}\cdot\sqrt{\frac{\pi}{p}}\cdot\varphi_{L}\left(p\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi_{L}\left(p\right)=\frac{1}{\sqrt{\pi\cdot2m}}\sqrt{p}\cdot T_{L}\left(p\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\varphi_{L}\left(p\right)}{p}=\frac{1}{\pi\sqrt{2m}}\cdot\sqrt{\frac{\pi}{p}}\cdot T_{L}\left(p\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Левая часть этого уравнения есть изображение для интеграла от 
+\begin_inset Formula $\varphi\left(U\right)$
+\end_inset
+
+, то есть для 
+\begin_inset Formula $x_{2}\left(U\right)-x_{1}\left(U\right)$
+\end_inset
+
+, а правая с точностью до множителя совпадает с изображением свёртки 
+\begin_inset Formula $\frac{1}{\sqrt{E}}$
+\end_inset
+
+ и 
+\begin_inset Formula $T\left(E\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{2}\left(U\right)-x_{1}\left(U\right)=\frac{1}{\pi\sqrt{2m}}\intop_{0}^{U}\frac{1}{\sqrt{U-E}}T\left(E\right)dE.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, мы видим, что вид потенциальной энергии определяется по зависимос
+ти периода колебаний от энергии не вполне.
+ Чётко определения только разность между ветвями.
+ Однозначным решение становится в случае, если потенциальная энергия симметрична
+, то есть 
+\begin_inset Formula 
+\[
+x_{2}\left(U\right)=-x_{1}\left(U\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В этом случае получаем:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{2}\left(U\right)=\frac{1}{\pi2\sqrt{2m}}\intop_{0}^{U}\frac{1}{\sqrt{U-E}}T\left(E\right)dE.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Историческое доказательство
+\end_layout
+
+\end_body
+\end_document
