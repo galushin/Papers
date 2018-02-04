@@ -604,8 +604,8 @@ f^{\prime\prime}+\omega_{0}^{2}f=0.
 \end_layout
 
 \begin_layout Section
-Исключение первой производной из линейного дифференциального уравненения
- второго порядка
+Исключение первой производной из линейного дифференциального уравнения второго
+ порядка
 \end_layout
 
 \begin_layout Standard
@@ -2679,7 +2679,7 @@ b_{k}=\frac{1}{\pi}\intop_{-\pi}^{\pi}f\left(x\right)\sin\left(kx\right)dx.\labe
 \end_layout
 
 \begin_layout Standard
-Подствив эту выражения в определение ряда Фурье 
+Подставив эти выражения в определение ряда Фурье 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:Fourier_serie_definition"
@@ -2820,7 +2820,7 @@ g_{N}\left(x\right)=\sum_{n=-N}^{+N}\frac{1}{2\pi}e^{inx}\intop_{-\pi}^{\pi}f\le
 \end_layout
 
 \begin_layout Standard
-Меня порядок интегрирвоания и суммирования, получим:
+Меня порядок интегрирования и суммирования, получим:
 \end_layout
 
 \begin_layout Standard
