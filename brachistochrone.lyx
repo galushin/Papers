@@ -1815,5 +1815,166 @@ x_{2}\left(U\right)=\frac{1}{\pi2\sqrt{2m}}\intop_{0}^{U}\frac{1}{\sqrt{U-E}}T\l
 Историческое доказательство
 \end_layout
 
+\begin_layout Section
+Разное
+\end_layout
+
+\begin_layout Subsection
+Вывод параметрического уравнения циклоиды из уравнений движения колеса
+\end_layout
+
+\begin_layout Standard
+Рассмотрим движение колеса радиуса 
+\begin_inset Formula $r$
+\end_inset
+
+ без проскальзывания по горизонтальной плоскости.
+ Точнее, будем рассматривать движение точки касания колеса и поверхности
+ в начальный момент времени.
+\end_layout
+
+\begin_layout Standard
+Колесо вращается с периодом 
+\begin_inset Formula $1$
+\end_inset
+
+, а центр колеса движется равномерно и прямолинейно со скоростью 
+\begin_inset Formula $V$
+\end_inset
+
+ (которую мы определим позже).
+\end_layout
+
+\begin_layout Standard
+Уравнение движения центра колеса имеют вид
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{c}=Vt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{c}=r
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вращение колеса относительно центра описывается уравнениями
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x^{\prime}=-r\sin t
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y^{\prime}=-r\cos t
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x=x_{c}+x^{\prime}=Vt-r\sin t
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=r-r\cos t
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Остаётся только найти связь между скоростью 
+\begin_inset Formula $V$
+\end_inset
+
+ и радиусом колеса 
+\begin_inset Formula $r$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Так как в точке касания нет проскальзывания, а цент движется со скоростью
+ 
+\begin_inset Formula $V$
+\end_inset
+
+, то противоположная относительно центра точка движется со скоростью 
+\begin_inset Formula $2V$
+\end_inset
+
+.
+ Относительно центра скоростью этой точки равна 
+\begin_inset Formula $V$
+\end_inset
+
+ и направлена параллельно поверхности.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dx^{\prime}}{dt}=-r\cos t=y^{\prime}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В верхней точке колеса 
+\begin_inset Formula $y^{\prime}=r$
+\end_inset
+
+, значит и 
+\begin_inset Formula $V=r$
+\end_inset
+
+.
+\end_layout
+
 \end_body
 \end_document
