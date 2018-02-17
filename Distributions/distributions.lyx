@@ -175,6 +175,19 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Предметный указатель?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -510,33 +523,14 @@ status open
 
 \emph on
 Теория вероятностей
-\begin_inset Index idx
-status open
-
-\begin_layout Plain Layout
-Теория вероятностей
-\end_layout
-
-\end_inset
-
- 
 \emph default
-— это раздел математики, изучающий закономерности массовых случайных событий.
+ — это раздел математики, изучающий закономерности массовых случайных событий.
  
 \end_layout
 
 \begin_layout Standard
 
 \emph on
-\begin_inset Index idx
-status open
-
-\begin_layout Plain Layout
-Случайное событие
-\end_layout
-
-\end_inset
-
 Случайное событие — 
 \emph default
 это событие, которое может произойти или не произойти в результате опыта,
@@ -559,17 +553,7 @@ status open
 \begin_layout Standard
 
 \emph on
-Вероятность
-\begin_inset Index idx
-status open
-
-\begin_layout Plain Layout
-Вероятность
-\end_layout
-
-\end_inset
-
- случайного события — 
+Вероятность случайного события — 
 \emph default
 это вещественное число из интервала 
 \begin_inset Formula $[0;1]$
@@ -601,41 +585,14 @@ status open
 \emph on
 невозможным
 \emph default
-
-\begin_inset Index idx
-status open
-
-\begin_layout Plain Layout
-Случайное событие!невозможное
-\end_layout
-
-\end_inset
-
 .
  
 \end_layout
 
 \begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Событие, вероятность которого равна единице называется 
 \emph on
-достоверным
-\begin_inset Index idx
-status open
-
-\begin_layout Plain Layout
-Случайное событие!достоверное
-\end_layout
-
-\end_inset
-
-.
+достоверным.
 \end_layout
 
 \begin_layout Standard
@@ -16971,16 +16928,6 @@ S_{n,2}=\frac{n\left(n+1\right)\left(2n+1\right)}{6}.
  Для дискретной математики можно ввести более естественные 
 \emph on
 факториальные степени
-\begin_inset Index idx
-status open
-
-\begin_layout Plain Layout
-Факториальная степень
-\end_layout
-
-\end_inset
-
-
 \emph default
 :
 \end_layout
@@ -17240,16 +17187,6 @@ key "ConcreteMath"
  — 2-е.
  — М.: «Вильямс», 2009.
  — 784 с.
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset index_print
-LatexCommand printindex
-type "idx"
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
