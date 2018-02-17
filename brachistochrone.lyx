@@ -1075,6 +1075,81 @@ B=\frac{A^{2}}{2}\arccos1=\frac{A^{2}}{2}\cdot0=0
 :
 \end_layout
 
+\begin_layout Subsection
+Параметрическое уравнение
+\end_layout
+
+\begin_layout Standard
+Будем исходить из следующего уравнения:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x=r\cdot\arccos\frac{r-y}{r}-\sqrt{y\left(2r-y\right)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Избавимся от арккосинуса, выполнив замену:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{r-y}{r}=\cos t
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=r-r\cos t
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Подкоренное выражение примет вид
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y\left(2r-y\right)=\left(r-r\cos t\right)\left(r+r\cos t\right)=r^{2}-r^{2}\cos^{2}t=r^{2}\sin^{2}t.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Окончательно получаем:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x=rt-r\sin t.
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Таутохронная кривая
 \end_layout
@@ -1813,6 +1888,227 @@ x_{2}\left(U\right)=\frac{1}{\pi2\sqrt{2m}}\intop_{0}^{U}\frac{1}{\sqrt{U-E}}T\l
 
 \begin_layout Subsubsection
 Историческое доказательство
+\end_layout
+
+\begin_layout Section
+Разное
+\end_layout
+
+\begin_layout Subsection
+Вывод параметрического уравнения циклоиды из уравнений движения колеса
+\end_layout
+
+\begin_layout Standard
+Рассмотрим движение колеса радиуса 
+\begin_inset Formula $r$
+\end_inset
+
+ без проскальзывания по горизонтальной плоскости.
+ Точнее, будем рассматривать движение точки касания колеса и поверхности
+ в начальный момент времени.
+\end_layout
+
+\begin_layout Standard
+Колесо вращается с периодом 
+\begin_inset Formula $1$
+\end_inset
+
+, а центр колеса движется равномерно и прямолинейно со скоростью 
+\begin_inset Formula $V$
+\end_inset
+
+ (которую мы определим позже).
+\end_layout
+
+\begin_layout Standard
+Уравнение движения центра колеса имеют вид
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{c}=Vt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{c}=r
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вращение колеса относительно центра описывается уравнениями
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x^{\prime}=-r\sin t
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y^{\prime}=-r\cos t
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x=x_{c}+x^{\prime}=Vt-r\sin t
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=r-r\cos t
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Остаётся только найти связь между скоростью 
+\begin_inset Formula $V$
+\end_inset
+
+ и радиусом колеса 
+\begin_inset Formula $r$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Так как в точке касания нет проскальзывания, а цент движется со скоростью
+ 
+\begin_inset Formula $V$
+\end_inset
+
+, то противоположная относительно центра точка движется со скоростью 
+\begin_inset Formula $2V$
+\end_inset
+
+.
+ Относительно центра скоростью этой точки равна 
+\begin_inset Formula $V$
+\end_inset
+
+ и направлена параллельно поверхности.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dx^{\prime}}{dt}=-r\cos t=y^{\prime}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В верхней точке колеса 
+\begin_inset Formula $y^{\prime}=r$
+\end_inset
+
+, значит и 
+\begin_inset Formula $V=r$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Проверим, что полученная кривая удовлетворяет дифференциальному уравнению,
+ полученному для брахистохроны.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dt}=r\sin t
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dx}{dt}=r-r\cos t
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(\frac{dy}{dx}\right)^{2}=\left(\frac{r\sin t}{r-r\cos t}\right)^{2}=\frac{r^{2}\left(1-\cos^{2}t\right)}{r^{2}\left(1-\cos t\right)^{2}}=\frac{1+\cos t}{1-\cos t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{2r-y}{y}=\frac{2r-r+r\cos t}{r-r\cos t}=\frac{r+r\cos t}{r-r\cos t}=\frac{1+\cos t}{1-\cos t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(\frac{dy}{dx}\right)^{2}=\frac{2r-y}{y}.
+\]
+
+\end_inset
+
+
 \end_layout
 
 \end_body
