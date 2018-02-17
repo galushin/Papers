@@ -1,0 +1,267 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language russian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Для автоматического создания графического интерфейса по данным нужны две
+ вещи:
+\end_layout
+
+\begin_layout Enumerate
+Механизм описания данных (статическая рефлексия).
+\end_layout
+
+\begin_layout Enumerate
+Механизм создания элементов графического интерфейса по описанию данных.
+\end_layout
+
+\begin_layout Standard
+Первый пункт трудно реализовать в современном C++.
+\end_layout
+
+\begin_layout Standard
+Структура или класс дают удобный для человека способ обращения к отдельным
+ полям.
+ Кортеж даёт легкий способ перечисления полей.
+\end_layout
+
+\begin_layout Standard
+Стоит заметить, что полная автоматизация вряд ли возможна.
+ Например, как задать названия полей в удобном для человека виде и с поддержкой
+ локализации?
+\end_layout
+
+\begin_layout Standard
+Второй можно реализовать на современном C++ c использованием одной из библиотек
+ графического интерфейса.
+ Желательно, чтобы используемая библиотека была деталью реализации.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Как пользователь меняет данные?
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Реакция компилятора
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Удаляет поле
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ошибка компиляции
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Меняет имя поля
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ошибка компиляции
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Меняет тип поля
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Всё работает правильно
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Добавляет поле
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Никакой диагностики
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Компилятор умеет перечислять все поля (например, в конструкторах без аргумента
+ и копирования, деструкторе, операторе присваивания), но не даст эту информацию
+ программисту.
+\end_layout
+
+\begin_layout Standard
+Если компилятор не может (или не хочет) сделать работу за программиста,
+ то, может быть, он сможет проверить, что программист не ошибся?
+\end_layout
+
+\begin_layout Standard
+Иными словами, может ли компилятор проверить, что пользователь перечислил
+ все поля?
+\end_layout
+
+\begin_layout Standard
+Можно предложить следующий вариант: библиотека строит структуру с указанными
+ типами полей и сравнивает её размер с размером структуры, которую предоставил
+ пользователь.
+\end_layout
+
+\begin_layout Standard
+Против такого подхода возможны два возражения.
+\end_layout
+
+\begin_layout Enumerate
+Что если программисту нужно исключить некоторые поля? Возможно, добавляем
+ поле в обёртке 
+\begin_inset Quotes fld
+\end_inset
+
+игнорировать это поле
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Что если программист хочет добавить поля на форму не в том же порядке, что
+ они объявлены?
+\end_layout
+
+\end_body
+\end_document
