@@ -17094,6 +17094,10 @@ reference "eq:difference_of_factorial_power"
  как сумму факториальных степеней.
 \end_layout
 
+\begin_layout Subsection
+Сумма квадратов натуральных чисел
+\end_layout
+
 \begin_layout Standard
 Попробуем применить описанный метод для вычисления суммы квадратов.
 \end_layout
@@ -17138,6 +17142,115 @@ status open
 
 , где описываются числа, дающие такое разложение
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Сумма кубов натуральных чисел
+\end_layout
+
+\begin_layout Standard
+Вычислим аналогичным методом сумму кубов первых 
+\begin_inset Formula $n$
+\end_inset
+
+ натуральных чисел.
+\end_layout
+
+\begin_layout Standard
+Начнём с выражения 
+\begin_inset Formula $k^{3}$
+\end_inset
+
+ через факториальные степени.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k^{\underline{3}}=k\left(k-1\right)\left(k-2\right)=\left(k^{2}-k\right)\left(k-2\right)=k^{3}-3k^{2}+2k
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+k^{3}=k^{\underline{3}}+3k^{2}-2k=k^{\underline{3}}+3\left(k^{\underline{2}}+k^{\underline{1}}\right)-2k^{\underline{1}}=k^{\underline{3}}+3k^{\underline{2}}+k^{\underline{1}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{k=1}^{n}k^{3}=\sum_{k=1}^{n}k^{\underline{3}}+3\sum_{k=1}^{n}k^{\underline{2}}+\sum_{k=1}^{n}k^{\underline{1}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{k=1}^{n}k^{3}=\frac{\left(n+1\right)^{\underline{4}}}{4}+3\frac{\left(n+1\right)^{\underline{3}}}{3}+\frac{\left(n+1\right)^{\underline{2}}}{2}=\frac{\left(n+1\right)^{\underline{4}}}{4}+\left(n+1\right)^{\underline{3}}+\frac{\left(n+1\right)^{\underline{2}}}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вернёмся к обычным степеням:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{k=1}^{n}k^{3}=\frac{\left(n+1\right)n\left(n-1\right)\left(n-2\right)}{4}+\left(n+1\right)n\left(n-1\right)+\frac{\left(n+1\right)n}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вынесем общие множители за скобки
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{k=1}^{n}k^{3}=\left(n+1\right)n\left(\frac{\left(n-1\right)\left(n-2\right)}{4}+n-1+\frac{1}{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Приведём выражение в скобках к общему знаменателю:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{k=1}^{n}k^{3}=\frac{\left(n+1\right)n}{4}\left(n^{2}-3n+2+4n-4+2\right)=\frac{\left(n+1\right)n\left(n^{2}+n\right)}{4}=\frac{n^{2}\left(n+1\right)^{2}}{4}.
+\]
 
 \end_inset
 
