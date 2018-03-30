@@ -71,20 +71,57 @@
 
 \begin_body
 
-\begin_layout Section
-Связь между размерностью пространства и свойствами центрально-симметричного
- поля
+\begin_layout Standard
+Найдём кривую, такую, что длина её дуги численно равна площади под ней (на
+ любом отрезке).
 \end_layout
 
 \begin_layout Standard
-Выведем формулы для силы потенциального центрально-симметричного поля в
- точке, где заряды отсутствуют.
+Длина дуги даётся формулой
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-f\left(x\right)=\nabla\varphi\left(x\right).
+L\left[a;b\right]=\intop_{a}^{b}\sqrt{1+\left(y^{\prime}\right)^{2}}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Площадь
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S\left[a;b\right]=\intop_{a}^{b}ydx.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В силу произвольности 
+\begin_inset Formula $a$
+\end_inset
+
+ и 
+\begin_inset Formula $b$
+\end_inset
+
+ должны быть равны подынтегральные выражения:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\sqrt{1+\left(y^{\prime}\right)^{2}}
 \]
 
 \end_inset
@@ -95,49 +132,7 @@ f\left(x\right)=\nabla\varphi\left(x\right).
 \begin_layout Standard
 \begin_inset Formula 
 \[
-f_{i}\left(x\right)=\frac{\partial\varphi}{\partial x_{i}}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Вычислим дивергенцию
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\mathrm{div}f=\sum_{i=1}^{n}\frac{\partial f_{i}}{\partial x_{i}}=\sum_{i=1}^{n}\frac{\partial^{2}\varphi}{\partial x_{i}^{2}}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Так как поле центрально-симметричное, то
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\varphi\left(x\right)=\varphi\left(r\right),
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-где
-\begin_inset Formula 
-\[
-r=\sqrt{\sum_{k=1}^{n}x_{k}^{2}}.
+y^{2}=1+\left(y^{\prime}\right)^{2}
 \]
 
 \end_inset
@@ -148,99 +143,7 @@ r=\sqrt{\sum_{k=1}^{n}x_{k}^{2}}.
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{\partial r}{\partial x_{i}}=\frac{1}{2}\frac{1}{\sqrt{\sum_{k=1}^{n}x_{k}^{2}}}\frac{\partial}{\partial x_{i}}\left(\sum_{k=1}^{n}x_{k}^{2}\right)=\frac{1}{2\cdot r}\sum_{k=1}^{n}2x_{k}\delta_{ik}=\frac{2\cdot x_{i}}{2\cdot r}=\frac{x_{i}}{r}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Вычислим частные производные от 
-\begin_inset Formula $\varphi$
-\end_inset
-
-:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\frac{\partial\varphi}{\partial x_{i}}=\frac{d\varphi}{dr}\cdot\frac{\partial r}{\partial x_{i}}=\frac{d\varphi}{dr}\cdot\frac{2\cdot x_{i}}{2\cdot r}=\frac{d\varphi}{dr}\cdot\frac{x_{i}}{r}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{multline*}
-\frac{\partial^{2}\varphi}{\partial x_{i}^{2}}=\frac{\partial}{\partial x_{i}}\left(\frac{d\varphi}{dr}\cdot\frac{1}{r}\right)\cdot x_{i}+\frac{d\varphi}{dr}\cdot\frac{1}{r}=\frac{d}{dr}\left(\frac{d\varphi}{dr}\cdot\frac{1}{r}\right)\cdot\frac{x_{i}^{2}}{r}+\frac{d\varphi}{dr}\cdot\frac{1}{r}=\\
-=\left(\frac{d^{2}\varphi}{dr^{2}}\frac{1}{r}-\frac{d\varphi}{dr}\frac{1}{r^{2}}\right)\cdot\frac{x_{i}^{2}}{r}+\frac{d\varphi}{dr}\cdot\frac{1}{r}.
-\end{multline*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Суммируя по всем 
-\begin_inset Formula $n$
-\end_inset
-
- переменным, получим:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\mathrm{div}f=\left(\frac{d^{2}\varphi}{dr^{2}}-\frac{d\varphi}{dr}\frac{1}{r}\right)+\frac{d\varphi}{dr}\cdot\frac{n}{r}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Приравнивая дивергенцию к нулю, получим дифференциальное уравнение для потенциал
-а:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\frac{d^{2}\varphi}{dr^{2}}=\frac{1-n}{r}\cdot\frac{d\varphi}{dr}
-\]
-
-\end_inset
-
-или
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\frac{d\varphi^{\prime}}{dr}=-\frac{n-1}{r}\cdot\varphi^{\prime}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Это уравнение с разделяющимися переменными:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\frac{d\varphi^{\prime}}{\varphi^{\prime}}=-\left(n-1\right)\frac{dr}{r},
+y^{2}-1=\left(y^{\prime}\right)^{2}
 \]
 
 \end_inset
@@ -251,7 +154,7 @@ r=\sqrt{\sum_{k=1}^{n}x_{k}^{2}}.
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\ln\varphi^{\prime}=\ln C\cdot r^{-\left(n-1\right)},
+y^{\prime}=\sqrt{y^{2}-1}
 \]
 
 \end_inset
@@ -262,7 +165,23 @@ r=\sqrt{\sum_{k=1}^{n}x_{k}^{2}}.
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\varphi^{\prime}\left(r\right)=\frac{C}{r^{n-1}}.
+\frac{dy}{\sqrt{y^{2}-1}}=dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для того, чтобы проинтегрировать это уравнение, воспользуемся первой подстановко
+й Эйлера:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sqrt{y^{2}-1}=t-y
 \]
 
 \end_inset
@@ -273,7 +192,128 @@ r=\sqrt{\sum_{k=1}^{n}x_{k}^{2}}.
 \begin_layout Standard
 \begin_inset Formula 
 \[
-f_{i}\left(x\right)=\frac{C}{r^{n-1}}\cdot\frac{x_{i}}{r}.
+y^{2}-1=y^{2}-2yt+t^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+t^{2}-2yt=-1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+2yt=t^{2}+1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\frac{t^{2}+1}{2t}=\frac{1}{2}\left(t+\frac{1}{t}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+t=\sqrt{y^{2}-1}+y
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dy=\frac{1}{2}\left(1-\frac{1}{t^{2}}\right)dt=\frac{t^{2}-1}{2t^{2}}dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sqrt{y^{2}-1}=t-y=t-\frac{t^{2}+1}{2t}=\frac{t^{2}-1}{2t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dx=\frac{2t}{t^{2}-1}\cdot\frac{t^{2}-1}{2t^{2}}dt=\frac{dt}{t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dx=d\ln\left|t\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x+C=\ln\left|t\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+t=Ae^{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\frac{A}{2}\left(e^{-x}+e^{x}\right)=A\cosh x.
 \]
 
 \end_inset

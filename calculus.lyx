@@ -1,24 +1,29 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass extbook
 \use_default_options true
+\begin_modules
+theorems-ams-chap-bytype
+\end_modules
 \maintain_unincluded_children false
 \language russian
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -78,12 +83,871 @@
 
 \begin_body
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{sloppy}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Интегральное и дифференциальное исчисление в упражнениях и задачах
+\end_layout
+
+\begin_layout Author
+Галушин П.В.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Введение
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Введение}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 Предварительные сведения
 \end_layout
 
+\begin_layout Standard
+Данная глава содержит справочные сведения по элементарной (школьной) математике.
+\end_layout
+
 \begin_layout Section
-Тригонометрические тождества
+Формулы сокращённого умножения многочленов
+\end_layout
+
+\begin_layout Exercise
+\begin_inset CommandInset label
+LatexCommand label
+name "ex:square-of-sum"
+
+\end_inset
+
+Доказать равенство 
+\begin_inset Formula $\left(a+b\right)^{2}=a^{2}+2ab+b^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution
+Расскроем скобки:
+\end_layout
+
+\begin_layout Solution
+\begin_inset Formula 
+\[
+\left(a+b\right)^{2}=\left(a+b\right)\cdot\left(a+b\right)=a^{2}+ab+ba+b^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+Приведём подобные слагаемые:
+\end_layout
+
+\begin_layout Solution
+\begin_inset Formula 
+\[
+\left(a+b\right)^{2}=a^{2}+2ab+b^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise
+Доказать равенство 
+\begin_inset Formula $\left(a-b\right)^{2}=a^{2}-2ab+b^{2}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+Можно воспользоваться той же идеей доказательства, что и в 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "ex:square-of-sum"
+
+\end_inset
+
+, либо просто заменить 
+\begin_inset Formula $b$
+\end_inset
+
+ на 
+\begin_inset Formula $-b$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Chapter
+Тур по дифференциальному исчислению
+\end_layout
+
+\begin_layout Standard
+Цель данной главы — дать представление о задачах, которые привели к появлению
+ математического анализа.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Может быть начать с интерполяции таблиц?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Зачем вычислять квадратный корень на практике
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Точные квадраты
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Обращение таблицы квадратов
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Бинарный поиск: увеличиваем кандидата в два раза, пока не превысим
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Рассмотрим следующую задачу: пусть дано вещественное число 
+\begin_inset Formula $a\ge0$
+\end_inset
+
+, необходимо найти квадратный корень из этого числа.
+\end_layout
+
+\begin_layout Standard
+Задачу извлечения квадратного корня можно сформулировать как задачу решения
+ уравнения
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+x^{2}=a.\label{eq:square_root_algebraic_equation}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Итерационная формула Герона
+\end_layout
+
+\begin_layout Subsection
+Идея метода
+\end_layout
+
+\begin_layout Standard
+Пусть нам удалось найти (например, по таблице) приближённое значение 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+.
+ Подумаем, как можно уточнить это приближение.
+ Новое приближение к 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ будем искать в форме
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{1}=x_{0}+d,
+\]
+
+\end_inset
+
+где 
+\begin_inset Formula $d$
+\end_inset
+
+ — неизвестная пока поправка.
+ Подставив выражение для 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ в уравнение 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:square_root_algebraic_equation"
+
+\end_inset
+
+ и воспользовавшись формулой сокращённого умножения 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "ex:square-of-sum"
+
+\end_inset
+
+, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{1}^{2}=\left(x_{0}+d\right)^{2}=x_{0}^{2}+2x_{0}d+d^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если мы приравняем правую часть к 
+\begin_inset Formula $a$
+\end_inset
+
+ мы снова придём к квадратному уравнению (в этот раз — относительно 
+\begin_inset Formula $d$
+\end_inset
+
+) и необходимости извлечения квадратного корня.
+ Чтобы вырваться из этого порочного круга, заметим, что если 
+\begin_inset Formula $d$
+\end_inset
+
+ мало, то 
+\begin_inset Formula $d^{2}$
+\end_inset
+
+ ещё меньше.
+ Пренебрежём этой величиной и получим следующее уравнение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{0}^{2}+2x_{0}d=a,
+\]
+
+\end_inset
+
+откуда:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+d=\frac{a-x_{0}^{2}}{2x_{0}}
+\]
+
+\end_inset
+
+и окончательно получаем
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{1}=x_{0}+\frac{a-x_{0}^{2}}{2x_{0}}=\frac{2x_{0}^{2}+a-x_{0}^{2}}{2x_{0}}=\frac{x_{0}^{2}+a}{2x_{0}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Условие улучшения приближения
+\end_layout
+
+\begin_layout Standard
+Наши рассуждения не были строгими, поэтому мы должно ещё проверить, что
+ 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ действительно ближе к корню, чем 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+.
+ Для этого вычислим невязку 
+\begin_inset Formula $x_{1}^{2}-a$
+\end_inset
+
+ приближения:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+x_{1}^{2}-a=\left(\frac{x_{0}^{2}+a}{2x_{0}}\right)^{2}-a=\\
+=\frac{x_{0}^{4}+2x_{0}^{2}a+a^{2}}{4x_{0}^{2}}-a=\frac{x_{0}^{4}+2x_{0}^{2}a+a^{2}-4x_{0}^{2}a}{4x_{0}^{2}}=\\
+=\frac{x_{0}^{4}-2x_{0}^{2}a+a^{2}}{4x_{0}^{2}}=\frac{\left(x_{0}^{2}-a\right)^{2}}{4x_{0}^{2}}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Непосредственно отсюда можно сделать вывод, что каким бы ни было начальное
+ приближение 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ будет больше 
+\begin_inset Formula $\sqrt{a}$
+\end_inset
+
+.
+ Найдём отношение невязки исходного и нового приближений:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|\frac{x_{1}^{2}-a}{x_{0}^{2}-a}\right|=\frac{\left|x_{0}^{2}-a\right|}{4x_{0}^{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Новое приближение будет лучше, если это отношение меньше единицы, то есть
+ если выполняется соотношение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\left|x_{0}^{2}-a\right|}{4x_{0}^{2}}<1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Возможны две ситуации, в зависимости от знака выражения под модулем.
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula $x_{0}^{2}-a\ge0$
+\end_inset
+
+, тогда неравенство принимает вид
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{x_{0}^{2}-a}{4x_{0}^{2}}<1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{0}^{2}-a<4x_{0}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+3x_{0}^{2}>-a
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Но квадрат вещественного числа всегда больше отрицательного числа.
+\end_layout
+
+\begin_layout Standard
+Рассмотрим второй случай: 
+\begin_inset Formula $x_{0}^{2}-a<0$
+\end_inset
+
+, тогда условие примет вид
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{a-x_{0}^{2}}{4x_{0}^{2}}<1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a-x_{0}^{2}<4x_{0}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a<5x_{0}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{0}^{2}>\frac{a}{5}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, если начальное приближение взять слишком маленьким, то новое
+ приближение будет хуже начального.
+\end_layout
+
+\begin_layout Standard
+Однако, как было показано выше, в этом случае окажется, что 
+\begin_inset Formula $x_{1}^{2}-a>0$
+\end_inset
+
+, то есть если мы используем 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ как начальное приближение, то следующее приближение будет лучше, чем 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{2}=\frac{x_{1}^{2}+a}{2x_{1}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Продолжая эту идею, мы можем неограниченно продолжать вычисление приближений
+ по формуле:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{n+1}=\frac{x_{n}^{2}+a}{2x_{n}}=\frac{1}{2}\left(x_{n}+\frac{a}{x_{n}}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+И каково бы ни было первое приближение, начиная со второго приближения,
+ невязка будет убывать.
+\end_layout
+
+\begin_layout Standard
+При 
+\begin_inset Formula $n>1$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{n}^{2}\ge a.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Из убывания невязки
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{n+1}^{2}-a\le x_{n}^{2}-a
+\]
+
+\end_inset
+
+следует убывание величины самого приближения:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{n+1}^{2}\le x_{n}^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Обеспечение любой наперёд заданной точности
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Нужно как-то ввести знак произведения
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Изучим скорость убывания:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{x_{n+1}^{2}-a}{x_{1}^{2}-a}=\frac{x_{n+1}^{2}-a}{x_{n}^{2}-a}\cdot\frac{x_{n}^{2}-a}{x_{1}^{2}-a}=\prod_{k=1}^{n}\frac{x_{k+1}^{2}-a}{x_{k}^{2}-a}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{x_{n+1}^{2}-a}{x_{1}^{2}-a}=\prod_{k=1}^{n}\frac{x_{k}^{2}-a}{4x_{k}^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Условие
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{x_{k}^{2}-a}{4x_{k}^{2}}<1
+\]
+
+\end_inset
+
+выполняется при 
+\begin_inset Formula $k>1$
+\end_inset
+
+.
+ Так как 
+\begin_inset Formula $a<x_{k}^{2}$
+\end_inset
+
+, то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{x_{k}^{2}-a}{4x_{k}^{2}}=\frac{1}{4}-\frac{a}{4x_{k}^{2}}\le\frac{1}{4}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{x_{n+1}^{2}-a}{x_{1}^{2}-a}\le\left(\frac{1}{4}\right)^{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{n}^{2}-a\le\left(\frac{1}{4}\right)^{n}\cdot\left(x_{1}^{2}-a\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Величину можно сделать сколь угодно малой за счёт выбора 
+\begin_inset Formula $n$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(\frac{1}{4}\right)^{n}\cdot\left(x_{1}^{2}-a\right)<\varepsilon
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+n\log\frac{1}{4}<\log\frac{\varepsilon}{x_{1}^{2}-a}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+n>\frac{\log\varepsilon-\log\left(x_{1}^{2}-a\right)}{\log\frac{1}{4}}=\frac{\log\left(x_{1}^{2}-a\right)-\log\varepsilon}{\log4}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Уменьшение невязки означает уменьшение ошибки
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Вставить пример вычисления
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Написать, что новое приближение для квадратного корня есть среднее арифметическо
+е
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Может быть вставить текст функции, реализующей данный метод
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Очевидно, что описанную идею можно применить и для решения других уравнений
+ вида 
+\begin_inset Formula $f\left(x\right)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Подведём итог: для вычисления некоторой функции (в нашем случае, квадратного
+ корня), мы строим последовательные приближения 
+\begin_inset Formula $x_{1},x_{2},...,x_{n}...$
+\end_inset
+
+, которые всё ближе к некоторому числу.
+\end_layout
+
+\begin_layout Chapter
+Последовательности и их пределы
+\end_layout
+
+\begin_layout Chapter
+Непрерывность функций
+\end_layout
+
+\begin_layout Chapter
+Производная и дифференциал
+\end_layout
+
+\begin_layout Chapter
+Неопределённые интеграл
+\end_layout
+
+\begin_layout Chapter
+Определённый интеграл
 \end_layout
 
 \begin_layout Chapter
@@ -599,6 +1463,230 @@ f^{\prime\prime}+\omega_{0}^{2}f=0.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Исключение первой производной из линейного дифференциального уравнения второго
+ порядка
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y^{\prime\prime}+2py^{\prime}+qy=f\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Сделаем замену 
+\begin_inset Formula $y\left(x\right)=u\left(x\right)\cdot w\left(x\right)$
+\end_inset
+
+.
+ Производные функции 
+\begin_inset Formula $y$
+\end_inset
+
+ выражаются следующим образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y^{\prime}=u^{\prime}w+uw^{\prime}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y^{\prime\prime}=u^{\prime\prime}w+2u^{\prime}w^{\prime}+uw^{\prime\prime}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Подставив данные выражения в исходное уравнение и сгруппировав слагаемые,
+ содержащие производные одинаковой степени от 
+\begin_inset Formula $u$
+\end_inset
+
+, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u^{\prime\prime}w+u^{\prime}\left(2w^{\prime}+2pw\right)+u\left(w^{\prime\prime}+2pw^{\prime}+qw\right)=f\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Потребуем, чтобы функция 
+\begin_inset Formula $w$
+\end_inset
+
+ удовлетворяла дифференциальному уравнению
+\begin_inset Formula 
+\[
+w^{\prime}=-pw.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Это уравнение с разделяющимися переменными и оно может быть проинтегрировано
+ в общем виде:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dw}{w}=-pdx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+d\ln w=-pdx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ln w=-\intop p\left(x\right)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+w=C\cdot\exp\left(-\intop p\left(x\right)dx\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Постоянную интегрирования можно выбрать произвольно, так как мы ещё не предъявля
+ли никаких требований к функции 
+\begin_inset Formula $u$
+\end_inset
+
+.
+ С учётом дифференциального уравнения для 
+\begin_inset Formula $w$
+\end_inset
+
+ выражение для коэффициента при 
+\begin_inset Formula $u$
+\end_inset
+
+ можно записать следующим образом
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+w^{\prime\prime}=\left(-pw\right)^{\prime}=-p^{\prime}w-pw^{\prime}=-p^{\prime}w+p^{2}w
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+w^{\prime\prime}+2pw^{\prime}+qw=-p^{\prime}w+p^{2}w-2p^{2}w+qw=w\left(-p^{\prime}-p^{2}+q\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Введём обозначение
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+r=-p^{\prime}-p^{2}+q
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Полученные выражения позволяют переписать исходное дифференциальное уравнение
+ следующим образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+w\left[u^{\prime\prime}+r\cdot u\right]=f
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u^{\prime\prime}+ru=\frac{f}{w}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В качестве упражнения для читателя оставим проверку того, что применительно
+ к уравнению с постоянными коэффициентами данный метод даёт тот же результат,
+ что был нами получен ранее.
 \end_layout
 
 \begin_layout Chapter
@@ -2453,7 +3541,7 @@ b_{k}=\frac{1}{\pi}\intop_{-\pi}^{\pi}f\left(x\right)\sin\left(kx\right)dx.\labe
 \end_layout
 
 \begin_layout Standard
-Подствив эту выражения в определение ряда Фурье 
+Подставив эти выражения в определение ряда Фурье 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:Fourier_serie_definition"
@@ -2594,7 +3682,7 @@ g_{N}\left(x\right)=\sum_{n=-N}^{+N}\frac{1}{2\pi}e^{inx}\intop_{-\pi}^{\pi}f\le
 \end_layout
 
 \begin_layout Standard
-Меня порядок интегрирвоания и суммирования, получим:
+Меня порядок интегрирования и суммирования, получим:
 \end_layout
 
 \begin_layout Standard
@@ -2741,6 +3829,241 @@ g_{N}\left(x\right)-f\left(x\right)=\intop_{-\pi}^{\pi}\left[f\left(t\right)-f\l
 
 \begin_layout Chapter
 Преобразование Фурье
+\end_layout
+
+\begin_layout Chapter
+Дополнение: неструктурированные материалы
+\end_layout
+
+\begin_layout Section
+Метод деления отрезка пополам
+\end_layout
+
+\begin_layout Standard
+Пусть нам удалось каки-либо образом определить отрезок 
+\begin_inset Formula $\left[x_{0};y_{0}\right]$
+\end_inset
+
+, которому принадлежит корень, то есть 
+\begin_inset Formula $x_{0}^{2}\le a$
+\end_inset
+
+ и 
+\begin_inset Formula $y_{0}^{2}\text{\ge}a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Возьмём середину этого отрезка
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+z_{0}=\frac{x_{0}+y_{0}}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если 
+\begin_inset Formula $z_{0}^{2}\ge a$
+\end_inset
+
+, то положим 
+\begin_inset Formula $x_{1}=x_{0}$
+\end_inset
+
+ и 
+\begin_inset Formula $y_{1}=z_{0}$
+\end_inset
+
+.
+ В противном случае, положим 
+\begin_inset Formula $x_{1}=z_{0}$
+\end_inset
+
+ и 
+\begin_inset Formula $y_{1}=y_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Заметим, что в любом случае будут иметь неравенства 
+\begin_inset Formula $x_{1}^{2}\le a$
+\end_inset
+
+ и 
+\begin_inset Formula $y_{1}^{2}\ge a$
+\end_inset
+
+, значит к отрезку 
+\begin_inset Formula $\left[x_{1};y_{1}\right]$
+\end_inset
+
+ можно снова применить описанную выше процедуру.
+\end_layout
+
+\begin_layout Standard
+В общем случае, процедура описывается следующим образом.
+\end_layout
+
+\begin_layout Standard
+Если 
+\begin_inset Formula $z_{n}^{2}\ge a$
+\end_inset
+
+, то положим 
+\begin_inset Formula $x_{n+1}=x_{n}$
+\end_inset
+
+ и 
+\begin_inset Formula $y_{n+1}=z_{n}$
+\end_inset
+
+.
+ В противном случае, положим 
+\begin_inset Formula $x_{n+1}=z_{n}$
+\end_inset
+
+ и 
+\begin_inset Formula $y_{n+1}=y_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Длина отрезка на каждом шаге уменьшается вдвое.
+ Поэтому максимальная ошибка 
+\begin_inset Formula $\varepsilon_{n}=y_{n}-x_{n}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varepsilon_{n}=\frac{1}{2^{n}}\left(y_{0}-x_{0}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Метод секущих
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=x^{2}-a
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Проведём прямую, проходящие через две точки 
+\begin_inset Formula $\left(x_{1},y_{1}\right)$
+\end_inset
+
+ и 
+\begin_inset Formula $\left(x_{2},y_{2}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x=x_{1}+x_{2}\frac{y-y_{1}}{y_{2}-y_{1}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём, точку пересечения этой прямой с осью 
+\begin_inset Formula $Ox$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{3}=x_{1}-x_{2}\frac{y_{1}}{y_{2}-y_{1}}=x_{1}-x_{2}\frac{x_{1}^{2}-a}{x_{2}^{2}-a-\left(x_{1}^{2}-a\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{3}=x_{1}-x_{2}\frac{x_{1}^{2}-a}{x_{2}^{2}-x_{1}^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{3}=\frac{x_{1}\left(x_{2}^{2}-x_{1}^{2}\right)-x_{2}\left(x_{1}^{2}-a\right)}{x_{2}^{2}-x_{1}^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{3}=\frac{-x_{1}^{3}+x_{2}a}{\left(x_{2}-x_{1}\right)\left(x_{2}+x_{1}\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{sloppy}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body

@@ -7,7 +7,7 @@
 \textclass article
 \use_default_options true
 \maintain_unincluded_children false
-\language russian
+\language english
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -27,7 +27,6 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
-\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -58,7 +57,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language french
+\quotes_language english
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -72,93 +71,48 @@
 \begin_body
 
 \begin_layout Section
-Связь между размерностью пространства и свойствами центрально-симметричного
- поля
+Проекция точки плоскости на прямую
 \end_layout
 
 \begin_layout Standard
-Выведем формулы для силы потенциального центрально-симметричного поля в
- точке, где заряды отсутствуют.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-f\left(x\right)=\nabla\varphi\left(x\right).
-\]
-
+Точка 
+\begin_inset Formula $M_{0}=\left(x_{0},y_{0}\right)$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
-f_{i}\left(x\right)=\frac{\partial\varphi}{\partial x_{i}}.
-\]
+Уравнение плоскости 
+\begin_inset Formula $l$
+\end_inset
 
+: 
+\begin_inset Formula $ax+by+c=0$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Вычислим дивергенцию
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\mathrm{div}f=\sum_{i=1}^{n}\frac{\partial f_{i}}{\partial x_{i}}=\sum_{i=1}^{n}\frac{\partial^{2}\varphi}{\partial x_{i}^{2}}.
-\]
-
+Направляющий вектор 
+\begin_inset Formula $\left(a,b\right)$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Так как поле центрально-симметричное, то
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\varphi\left(x\right)=\varphi\left(r\right),
-\]
-
+Вектор, перпендикулярный направляющему: 
+\begin_inset Formula $\left(b,-a\right)$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-где
-\begin_inset Formula 
-\[
-r=\sqrt{\sum_{k=1}^{n}x_{k}^{2}}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\frac{\partial r}{\partial x_{i}}=\frac{1}{2}\frac{1}{\sqrt{\sum_{k=1}^{n}x_{k}^{2}}}\frac{\partial}{\partial x_{i}}\left(\sum_{k=1}^{n}x_{k}^{2}\right)=\frac{1}{2\cdot r}\sum_{k=1}^{n}2x_{k}\delta_{ik}=\frac{2\cdot x_{i}}{2\cdot r}=\frac{x_{i}}{r}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Вычислим частные производные от 
-\begin_inset Formula $\varphi$
+Уравнение прямой, перепендикулярной прямой 
+\begin_inset Formula $l$
 \end_inset
 
 :
@@ -167,7 +121,7 @@ r=\sqrt{\sum_{k=1}^{n}x_{k}^{2}}.
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{\partial\varphi}{\partial x_{i}}=\frac{d\varphi}{dr}\cdot\frac{\partial r}{\partial x_{i}}=\frac{d\varphi}{dr}\cdot\frac{2\cdot x_{i}}{2\cdot r}=\frac{d\varphi}{dr}\cdot\frac{x_{i}}{r}.
+bx-ay+d=0
 \]
 
 \end_inset
@@ -176,29 +130,20 @@ r=\sqrt{\sum_{k=1}^{n}x_{k}^{2}}.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\begin{multline*}
-\frac{\partial^{2}\varphi}{\partial x_{i}^{2}}=\frac{\partial}{\partial x_{i}}\left(\frac{d\varphi}{dr}\cdot\frac{1}{r}\right)\cdot x_{i}+\frac{d\varphi}{dr}\cdot\frac{1}{r}=\frac{d}{dr}\left(\frac{d\varphi}{dr}\cdot\frac{1}{r}\right)\cdot\frac{x_{i}^{2}}{r}+\frac{d\varphi}{dr}\cdot\frac{1}{r}=\\
-=\left(\frac{d^{2}\varphi}{dr^{2}}\frac{1}{r}-\frac{d\varphi}{dr}\frac{1}{r^{2}}\right)\cdot\frac{x_{i}^{2}}{r}+\frac{d\varphi}{dr}\cdot\frac{1}{r}.
-\end{multline*}
-
+\begin_inset Formula $d$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-Суммируя по всем 
-\begin_inset Formula $n$
+ определяется из условия, что 
+\begin_inset Formula $M_{0}$
 \end_inset
 
- переменным, получим:
+ принадлежит этой прямой:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\mathrm{div}f=\left(\frac{d^{2}\varphi}{dr^{2}}-\frac{d\varphi}{dr}\frac{1}{r}\right)+\frac{d\varphi}{dr}\cdot\frac{n}{r}.
+d=-bx_{0}+ay_{0}
 \]
 
 \end_inset
@@ -207,25 +152,16 @@ r=\sqrt{\sum_{k=1}^{n}x_{k}^{2}}.
 \end_layout
 
 \begin_layout Standard
-Приравнивая дивергенцию к нулю, получим дифференциальное уравнение для потенциал
-а:
+Теперь остаётся только найти точку пересечния:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{d^{2}\varphi}{dr^{2}}=\frac{1-n}{r}\cdot\frac{d\varphi}{dr}
-\]
-
-\end_inset
-
-или
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\frac{d\varphi^{\prime}}{dr}=-\frac{n-1}{r}\cdot\varphi^{\prime}.
+\begin{array}{c}
+ax+by=-c\\
+bx-ay=bx_{0}-ay_{0}
+\end{array}
 \]
 
 \end_inset
@@ -234,13 +170,20 @@ r=\sqrt{\sum_{k=1}^{n}x_{k}^{2}}.
 \end_layout
 
 \begin_layout Standard
-Это уравнение с разделяющимися переменными:
+Найдём выражение для 
+\begin_inset Formula $x$
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{d\varphi^{\prime}}{\varphi^{\prime}}=-\left(n-1\right)\frac{dr}{r},
+\begin{array}{c}
+a^{2}x+aby=-ac\\
+b^{2}x-aby=b^{2}x_{0}-aby_{0}
+\end{array}
 \]
 
 \end_inset
@@ -251,7 +194,7 @@ r=\sqrt{\sum_{k=1}^{n}x_{k}^{2}}.
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\ln\varphi^{\prime}=\ln C\cdot r^{-\left(n-1\right)},
+\left(a^{2}+b^{2}\right)x=b\left(bx_{0}-ay_{0}\right)-ac
 \]
 
 \end_inset
@@ -262,7 +205,7 @@ r=\sqrt{\sum_{k=1}^{n}x_{k}^{2}}.
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\varphi^{\prime}\left(r\right)=\frac{C}{r^{n-1}}.
+x=\frac{b^{2}x_{0}-aby_{0}-ac}{a^{2}+b^{2}}
 \]
 
 \end_inset
@@ -273,12 +216,165 @@ r=\sqrt{\sum_{k=1}^{n}x_{k}^{2}}.
 \begin_layout Standard
 \begin_inset Formula 
 \[
-f_{i}\left(x\right)=\frac{C}{r^{n-1}}\cdot\frac{x_{i}}{r}.
+\begin{array}{c}
+abx+b^{2}y=-bc\\
+abx-a^{2}y=abx_{0}-a^{2}y_{0}
+\end{array}
 \]
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(a^{2}+b^{2}\right)y=-bc+a^{2}y_{0}-abx_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{1}=\frac{-bc+a^{2}y_{0}-abx_{0}}{a^{2}+b^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{1}=\frac{b^{2}x_{0}-aby_{0}-ac}{a^{2}+b^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Проверим, что эта точка принадлежит 
+\begin_inset Formula $l$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+ax_{1}+by_{1}=\frac{ab^{2}x_{0}-a^{2}by_{0}-a^{2}c+a^{2}by_{0}-ab^{2}x_{0}-b^{2}c}{a^{2}+b^{2}}=-c
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Проекция точки на гиперплоскость
+\end_layout
+
+\begin_layout Standard
+Плоскость задаётся уравнением 
+\begin_inset Formula $a^{T}x=c$
+\end_inset
+
+, где 
+\begin_inset Formula $a$
+\end_inset
+
+ - нормальный вектор плоскости.
+\end_layout
+
+\begin_layout Standard
+Параметрическое уравнение прямой, сонаправленной с 
+\begin_inset Formula $a$
+\end_inset
+
+ и проходящей через 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x=x_{0}+a\cdot t
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a^{T}\left(x_{0}+a\cdot t\right)=c
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a^{T}a\cdot t=c-a^{T}x_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+t=\frac{c-a^{T}x_{0}}{a^{T}a}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{1}=x_{0}+a\frac{c-a^{T}x_{0}}{a^{T}a}=\frac{ac+\left(a^{T}a\cdot I-aa^{T}\right)x_{0}}{a^{T}a}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Проверим принадлежность:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a^{T}x_{1}=a^{T}x_{0}+c-a^{T}x_{0}=c
+\]
+
+\end_inset
+
+ 
 \end_layout
 
 \end_body

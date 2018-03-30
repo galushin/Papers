@@ -1,0 +1,4003 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass book
+\begin_preamble
+\usepackage{indentfirst}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams-bytype
+\end_modules
+\maintain_unincluded_children false
+\language russian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref section
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{sloppy}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Аналитическая геометрия и линейная алгебра
+\end_layout
+
+\begin_layout Author
+Галушин
+\begin_inset space \thinspace{}
+\end_inset
+
+П.
+\begin_inset space \thinspace{}
+\end_inset
+
+В.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+РЕДАКТИРОВАНИЕ ЗАВЕРШЕНО ДО ЭТОГО МОМЕНТА
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Уточнить нотацию
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Введение
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Введение}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Группы
+\end_layout
+
+\begin_layout Section
+Множества
+\end_layout
+
+\begin_layout Section
+Операции
+\end_layout
+
+\begin_layout Section
+Полугруппа
+\end_layout
+
+\begin_layout Section
+Моноид
+\end_layout
+
+\begin_layout Subsection
+Определение
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Определение
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Моноид — это полугруппа с единицей.
+\end_layout
+
+\begin_layout Subsection
+Примеры
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Примеры
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Формальный способ получения моноида из полугруппы
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Единственность нейтрального элемента
+\end_layout
+
+\begin_layout Problem
+Доказать, что нейтральный элемент бинарной операции является единственным.
+\end_layout
+
+\begin_layout Solution
+Пусть имеется два единичных элемента
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Нужно дать определение
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $e_{1}$
+\end_inset
+
+ и 
+\begin_inset Formula $e_{2}$
+\end_inset
+
+.
+ По определению единичного элемента, для любого элемента должно выполняться:
+\end_layout
+
+\begin_layout Solution
+\begin_inset Formula 
+\[
+e_{1}\circ x=x\circ e_{1}=x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+\begin_inset Formula 
+\[
+e_{2}\circ x=x\circ e_{2}=x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+Положим в первом из этих равенств 
+\begin_inset Formula $x=e_{2}$
+\end_inset
+
+, а во втором 
+\begin_inset Formula $x=e_{1}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Solution
+\begin_inset Formula 
+\[
+e_{1}\circ e_{2}=e_{2}\circ e_{1}=e_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+\begin_inset Formula 
+\[
+e_{2}\circ e_{1}=e_{1}\circ e_{2}=e_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+Отсюда следует:
+\end_layout
+
+\begin_layout Solution
+\begin_inset Formula 
+\[
+e_{1}\circ e_{2}=e_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+\begin_inset Formula 
+\[
+e_{1}\circ e_{2}=e_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+Так как левые части равны, то равны и правые:
+\end_layout
+
+\begin_layout Solution
+\begin_inset Formula 
+\[
+e_{1}=e_{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Ассоциативность не используется, так что можно поднять выше
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Remark
+Из доказательства видно, что предположения о 
+\begin_inset Formula $e_{1}$
+\end_inset
+
+ и 
+\begin_inset Formula $e_{2}$
+\end_inset
+
+ можно ослабить.
+ Для 
+\begin_inset Formula $e_{1}$
+\end_inset
+
+ достаточно не изменять 
+\begin_inset Formula $x$
+\end_inset
+
+ при умножении слева, а для 
+\begin_inset Formula $e_{2}$
+\end_inset
+
+ справа.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Какие следствия из этого?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Группы
+\end_layout
+
+\begin_layout Subsection
+Определение
+\end_layout
+
+\begin_layout Subsection
+Примеры
+\end_layout
+
+\begin_layout Subsection
+Единственность обратного элемента
+\end_layout
+
+\begin_layout Problem
+Доказать, что для любого элемента 
+\begin_inset Formula $x$
+\end_inset
+
+ обратный элемент является единственным.
+\end_layout
+
+\begin_layout Solution
+Допустим, что для некоторого элемента 
+\begin_inset Formula $x$
+\end_inset
+
+ существуют два обратных элемента 
+\begin_inset Formula $y_{1}$
+\end_inset
+
+ и 
+\begin_inset Formula $y_{2}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Solution
+\begin_inset Formula 
+\[
+x\circ y_{1}=0,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+\begin_inset Formula 
+\[
+x\circ y_{2}=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Рассмотрим выражение 
+\begin_inset Formula $y_{1}\circ x\circ y_{2}$
+\end_inset
+
+.
+ В силу ассоциативности сложения, это выражение можно вычислить двумя способами:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{1}\circ x\circ y_{2}=\left(y_{1}\circ x\right)\circ y_{2}=0\circ y_{2}=y_{2},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{1}\circ x\circ y_{2}=y_{1}\circ\left(x\circ y_{2}\right)=y_{1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Так как левые части равны, то равны и правые, то есть 
+\begin_inset Formula $y_{1}=y_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Обратный элемент к обратному
+\end_layout
+
+\begin_layout Problem
+Доказать, что 
+\begin_inset Formula $\left(x^{-1}\right)^{-1}=x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution
+По определению обратного элемента должно быть 
+\begin_inset Formula 
+\[
+\left(-x\right)+\left(-\left(-x\right)\right)=0.
+\]
+
+\end_inset
+
+Но так как операция сложения коммутативна, имеет место равенство:
+\begin_inset Formula 
+\[
+\left(-x\right)+x=x+\left(-x\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+По определению обратного элемента:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(-x\right)+x=x+\left(-x\right)=0,
+\]
+
+\end_inset
+
+то есть 
+\begin_inset Formula $x$
+\end_inset
+
+ удовлетворяет требованиям к обратному элементу для 
+\begin_inset Formula $\left(-x\right)$
+\end_inset
+
+, а поскольку обратный элемент является единственным, то утверждение доказано.
+ 
+\end_layout
+
+\begin_layout Section
+Коммутативные (абелевы) группы
+\end_layout
+
+\begin_layout Chapter
+n-мерное пространство.
+ Линейные и билинейные формы
+\end_layout
+
+\begin_layout Section
+Линейное (аффинное) n-мерное пространство
+\end_layout
+
+\begin_layout Subsection
+Определение линейного пространства
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Актуальность
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пример: в геометрии - векторы в трёхмерном пространстве
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пример: в алгебре - многомерные векторы
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пример: в анализе - функции
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Подводим итог: аналогичные операции над разными объектами, абстрагируемся
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Определение линейного (аффинного пространства).
+ Аксиомы
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Добавить задачу про то, что 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Замечание про абстрагирование от конкретных операций.
+ Чем меньше требований, тем больше круг явлений, к которым применима развиваемая
+ теория
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+Проверить, что в приведённых выше примерах 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Уточнить
+\end_layout
+
+\end_inset
+
+ аксиомы действительно выполнены.
+\end_layout
+
+\begin_layout Solution
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Написать решение
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пример: многочлены степени не больше 
+\begin_inset Formula $n$
+\end_inset
+
+ и многочлены степени ровно 
+\begin_inset Formula $n$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пример: матрицы порядка 
+\begin_inset Formula $n$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пример: многочлены с положительными коэффициенты не образуют линейного пространс
+тва
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пример: функции с модулем, ограниченным фиксированным числом, не образуют
+ линейного пространства
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Элементы линейного пространства называются векторами
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Вещественные и комплексные линейные пространства
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Дополнительный материал: линейные пространства над произвольным полем
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+Доказать, что 
+\begin_inset Formula $0\cdot x=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution
+Проверим, что 
+\begin_inset Formula $0\cdot x$
+\end_inset
+
+ удовлетворяет требованиям к нулевому элементу: 
+\begin_inset Formula 
+\[
+x+0\cdot x=1\cdot x+0\cdot x=\left(1+0\right)\cdot x=1\cdot x=x.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+Так как нулевой элемент является единственным, то утверждение доказано.
+\end_layout
+
+\begin_layout Problem
+Доказать, что 
+\begin_inset Formula $-x=\left(-1\right)\cdot x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution
+Проверим, что 
+\begin_inset Formula $\left(-1\right)\cdot x$
+\end_inset
+
+ удовлетворяет требованиям к обратному элементу для элемента 
+\begin_inset Formula $x$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+x+\left(-1\right)\cdot x=1\cdot x+\left(-1\right)\cdot x=\left(1+\left(-1\right)\right)\cdot x=0\cdot x.
+\]
+
+\end_inset
+
+Так как обратный элемент является единственным, то утверждение доказано.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Подумать, какие ещё задачи, аналогичные задачам из книги про теорему Абеля,
+ можно включить сюда?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+Доказать, что умножение любого числа на нулевой вектор снова даёт нулевой
+ вектор: 
+\begin_inset Formula $a\cdot0=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution
+По определению нулевого вектора 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Добавить ссылку
+\end_layout
+
+\end_inset
+
+: 
+\begin_inset Formula 
+\[
+a\cdot0=a\cdot\left(x+\left(-x\right)\right)=a\cdot x+a\cdot\left(-x\right),
+\]
+
+\end_inset
+
+а по доказанному выше 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Добавить ссылку
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $a\cdot\left(-x\right)=a\cdot\left(-1\right)\cdot x=\left(-a\right)\cdot x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution
+Окончательно получаем 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Добавить ссылку для последнего равенства−
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Solution
+\begin_inset Formula 
+\[
+a\cdot0=a\cdot x+\left(-a\right)\cdot x=\left(a-a\right)\cdot x=0\cdot x=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Размерность линейного пространства
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Определение линейно зависимых векторов
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Элементы 
+\begin_inset Formula $x_{1},...,x_{m}$
+\end_inset
+
+ называются линейно независимыми, если равенство 
+\begin_inset Formula $\sum_{i=1}^{m}a_{i}x_{i}=0$
+\end_inset
+
+, где 
+\begin_inset Formula $a_{i},i=1...m$
+\end_inset
+
+ — вещественные числа, возможно только когда все 
+\begin_inset Formula $a_{i}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Линейная комбинация векторов
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Доказательство того, что по меньшей мере один вектор из набора линейно зависимых
+ можно представить в виде линейной комбинации остальных
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+Доказать, что векторы, один из которых является линейной комбинацией остальных,
+ то линейно зависимы.
+\end_layout
+
+\begin_layout Solution
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Написать решение
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+Доказать, что если система векторов линейно зависима, то среди них есть
+ по меньшей мере один, который является линейной комбинацией остальных.
+\end_layout
+
+\begin_layout Solution
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Написать решение
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+\begin_inset CommandInset label
+LatexCommand label
+name "Система,-содержащая-нулевой-элемент,-является-линейно-зависимой"
+
+\end_inset
+
+Если среди векторов 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+ есть нулевой, то эти вектора обязательно линейно зависимы.
+\end_layout
+
+\begin_layout Solution
+Изменением нумерации можно добиться, чтобы нулевым был вектор 
+\begin_inset Formula $x_{n}$
+\end_inset
+
+.
+ Рассмотрим систему вещественных чисел 
+\begin_inset Formula $a_{1}=a_{2}...=a_{n-1}=0$
+\end_inset
+
+, 
+\begin_inset Formula $a_{n}=1$
+\end_inset
+
+, тогда 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Добавить ссылки на то, откуда это следует
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Solution
+\begin_inset Formula 
+\[
+\sum_{k=1}^{n}a_{k}x_{k}=\sum_{k=1}^{n-1}0\cdot x_{k}+1\cdot x_{n}=x_{n}=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+Очевидно, что не все 
+\begin_inset Formula $a_{1},...,a_{n}$
+\end_inset
+
+ равны нулю, значит система векторов 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+ является линейно зависимой.
+\end_layout
+
+\begin_layout Problem
+Если к линейно зависимым векторам 
+\begin_inset Formula $x_{1},...,x_{m}$
+\end_inset
+
+ добавить вектора 
+\begin_inset Formula $x_{m+1},...,x_{n}$
+\end_inset
+
+, то все эти векторы вместе будут линейно зависимыми.
+\end_layout
+
+\begin_layout Solution
+Так как 
+\begin_inset Formula $x_{1},...,x_{m}$
+\end_inset
+
+ — линейно зависимы, то по определению, существуют такие числа 
+\begin_inset Formula $a_{1},...,a_{m}$
+\end_inset
+
+ не все равные нулю, что
+\end_layout
+
+\begin_layout Solution
+\begin_inset Formula 
+\[
+\sum_{k=1}^{m}a_{k}x_{k}=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+Рассмотрим теперь сумму
+\begin_inset Formula 
+\[
+\sum_{k=1}^{m}a_{k}x_{k}+\sum_{k=m+1}^{n}0\cdot y_{k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+Первое слагаемое в ней равно нулевому вектора по доказанному выше, а второе,
+ в силу того, что произведение любого вектора на ноль равно нулевому вектору
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+нужна ссылка
+\end_layout
+
+\end_inset
+
+.
+ Таким образом, если положить 
+\begin_inset Formula $a_{k}=0$
+\end_inset
+
+ при 
+\begin_inset Formula $k=m+1...n$
+\end_inset
+
+, то можно написать:
+\end_layout
+
+\begin_layout Solution
+\begin_inset Formula 
+\[
+\sum_{k=1}^{n}a_{k}x_{k}=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+Не все 
+\begin_inset Formula $a_{k}=0$
+\end_inset
+
+, поэтому система векторов 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+ будет линейно зависимой.
+\end_layout
+
+\begin_layout Problem
+Если векторы 
+\begin_inset Formula $x_{1},...,x_{m}$
+\end_inset
+
+ линейно независимы и вектор 
+\begin_inset Formula $y$
+\end_inset
+
+ представим в виде их линейной комбинации 
+\begin_inset Formula $y=\sum_{k=1}^{m}a_{k}x_{k}$
+\end_inset
+
+, то это представление единственно.
+\end_layout
+
+\begin_layout Solution
+Пусть существует другое разложение 
+\begin_inset Formula 
+\[
+y=\sum_{k=1}^{m}b_{k}x_{k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+Вычтем одно представление из другого:
+\end_layout
+
+\begin_layout Solution
+\begin_inset Formula 
+\[
+y-y=\sum_{k=1}^{m}\left(a_{k}-b_{k}\right)\cdot x_{k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+Левая часть равна нулю
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Добавить ссылку
+\end_layout
+
+\end_inset
+
+, поэтому:
+\end_layout
+
+\begin_layout Solution
+\begin_inset Formula 
+\[
+\sum_{k=1}^{m}\left(a_{k}-b_{k}\right)\cdot x_{k}=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+Так как по предположению векторы 
+\begin_inset Formula $x_{1},...,x_{n}$
+\end_inset
+
+ линейно независимы, то последнее равенство выполняется только если все
+ 
+\begin_inset Formula $\left(a_{k}-b_{k}\right)$
+\end_inset
+
+ равны нулю, то есть
+\end_layout
+
+\begin_layout Solution
+\begin_inset Formula 
+\[
+a_{k}=b_{k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Единственно ли разложение в линейную комбинацию линейно-зависимых векторов
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Соображение, приводящие к понятию размерности
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Определение размерности
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Бесконечномерное линейное пространство.
+ Ссылка на функциональный анализ
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Задача: 
+\begin_inset Quotes fld
+\end_inset
+
+треугольная
+\begin_inset Quotes frd
+\end_inset
+
+ система является линейно независимой, если на диагонали не стоят нули
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Найти размерности пространств рассмотренных выше
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "Невозможность-повышения-размерности-за-счёт-линейного-комбинирования"
+
+\end_inset
+
+Пусть дана линейно независимая система 
+\begin_inset Formula $x_{1},...,x_{m}$
+\end_inset
+
+ и из элементов этой системы составлены линейные комбинации 
+\begin_inset Formula $y_{j}=\sum_{i=1}^{m}c_{ji}x_{i}$
+\end_inset
+
+, 
+\begin_inset Formula $j=1...r$
+\end_inset
+
+.
+ Если система 
+\begin_inset Formula $y_{1},...,y_{r}$
+\end_inset
+
+ является линейно независимой, то 
+\begin_inset Formula $r\le m$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Это утверждение является интуитивно понятным.
+\end_layout
+
+\begin_layout Proof
+Докажем его с помощью метода математической индукции.
+\end_layout
+
+\begin_layout Proof
+При 
+\begin_inset Formula $m=1$
+\end_inset
+
+ утверждение является почти тривиальным и образует базис индукции.
+\end_layout
+
+\begin_layout Proof
+Так как 
+\begin_inset Formula $y_{j}=c_{j1}x_{1}$
+\end_inset
+
+, то 
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\sum_{j=1}^{r}a_{j}y_{j}=\left(\sum_{j=1}^{r}a_{j}c_{j1}\right)x_{1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Выберем 
+\begin_inset Formula $a_{2},...,a_{r}$
+\end_inset
+
+ произвольно и положим
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+a_{1}=-\frac{1}{c_{11}}\sum_{j=2}^{r}a_{j}c_{j1}
+\]
+
+\end_inset
+
+(
+\begin_inset Formula $c_{11}\ne0$
+\end_inset
+
+ так как в противном случае система 
+\begin_inset Formula $y_{1},...,y_{r}$
+\end_inset
+
+ содержала бы нулевой элемент и по доказанному в задаче 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Система,-содержащая-нулевой-элемент,-является-линейно-зависимой"
+
+\end_inset
+
+ была бы линейно зависимой), тогда получим
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\sum_{j=1}^{r}a_{j}y_{j}=0\cdot x_{1}=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Перейдём теперь к шагу индукции.
+ Пусть при некотором 
+\begin_inset Formula $m$
+\end_inset
+
+ утверждение выполняется, докажем его для 
+\begin_inset Formula $m+1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Если все 
+\begin_inset Formula $c_{ji}$
+\end_inset
+
+ равны нулю, то все 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ равны нулевым элементам.
+ Система, содержащая нулевой элемент, является линейно зависимой (как показано
+ в задаче 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Система,-содержащая-нулевой-элемент,-является-линейно-зависимой"
+
+\end_inset
+
+), что противоречит условиям утверждения.
+ Значит, существуют 
+\begin_inset Formula $c_{ji}$
+\end_inset
+
+ не равные нулю.
+ Без ограничения общности можно предположить, что 
+\begin_inset Formula $c_{r,m+1}\ne0$
+\end_inset
+
+.
+ Этого можно достичь за счёт изменения порядка 
+\begin_inset Formula $x_{1},...,x_{m+1}$
+\end_inset
+
+ и 
+\begin_inset Formula $y_{1},...,y_{r}$
+\end_inset
+
+.
+ Выразим 
+\begin_inset Formula $x_{m+1}$
+\end_inset
+
+из определения 
+\begin_inset Formula $y_{r}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+x_{m+1}=\frac{1}{c_{r,m+1}}\left(y_{r}-\sum_{i=1}^{m}c_{ri}x_{i}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Подставим это выражение во все остальные выражения для 
+\begin_inset Formula $y_{j}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+y_{j}=\sum_{i=1}^{m}c_{ji}x_{i}+\frac{c_{j,m+1}}{c_{r,m+1}}\left(y_{r}-\sum_{i=1}^{m}c_{ri}x_{i}\right),j=1..r-1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Приведём подобные слагаемые:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+y_{j}=\sum_{i=1}^{m}\left(c_{ji}-\frac{c_{j,m+1}}{c_{r,m+1}}c_{ri}\right)x_{i}+\frac{c_{j,m+1}}{c_{r,m+1}}y_{r},j=1..r-1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Положим
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+y_{j}^{\prime}=y_{j}-\frac{c_{j,m+1}}{c_{r,m+1}}y_{r},j=1..r-1,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+c_{ji}^{\prime}=c_{ji}-\frac{c_{j,m+1}}{c_{r,m+1}}c_{ri},j=1..r-1,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+тогда будет иметь место соотношение
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+y_{j}^{\prime}=\sum_{i=1}^{m}c_{ji}^{\prime}x_{i},j=1..r-1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Докажем, что 
+\begin_inset Formula $y_{1}^{\prime},...,y_{r-1}^{\prime}$
+\end_inset
+
+ является линейно независимой.
+ Для этого рассмотрим сумму
+\begin_inset Formula 
+\[
+\sum_{j=1}^{r-1}\lambda_{j}y_{j}^{\prime}=\sum_{j=1}^{r-1}\lambda_{j}\left(y_{j}-\frac{c_{j,m+1}}{c_{r,m+1}}y_{r}\right)=\sum_{i=1}^{r-1}\lambda_{j}y_{j}-\sum_{i=1}^{r-1}\lambda_{j}\frac{c_{j,m+1}}{c_{r,m+1}}y_{r}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Так как система 
+\begin_inset Formula $y_{1},...,y_{r}$
+\end_inset
+
+ является линейно независимой по предположению, то последняя сумма равна
+ нулю только когда 
+\begin_inset Formula 
+\[
+\lambda_{j}=0.
+\]
+
+\end_inset
+
+ А значит и система 
+\begin_inset Formula $y_{1}^{\prime},...,y_{r-1}^{\prime}$
+\end_inset
+
+ является линейно независимой.
+ Итак, мы имеем 
+\begin_inset Formula $r-1$
+\end_inset
+
+ линейной независимых линейных комбинаций 
+\begin_inset Formula $m$
+\end_inset
+
+ линейно независимых элементов, значит мы можем применить предположение
+ шага индукции: 
+\begin_inset Formula $r-1\le m$
+\end_inset
+
+.
+ Прибавляя единицу к левой и правой части этого неравенства получим 
+\begin_inset Formula $r\le m+1$
+\end_inset
+
+, что завершает доказательство.
+\end_layout
+
+\begin_layout Problem
+Если в пространстве 
+\begin_inset Formula $R$
+\end_inset
+
+ существует 
+\begin_inset Formula $n$
+\end_inset
+
+ линейно-независимых векторов таких, что каждый элемент 
+\begin_inset Formula $R$
+\end_inset
+
+ есть их линейная комбинация, то пространство 
+\begin_inset Formula $R$
+\end_inset
+
+ 
+\begin_inset Formula $n$
+\end_inset
+
+-мерно.
+\end_layout
+
+\begin_layout Solution
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Написать решение
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Подводим итог: размерность пространств из примера
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+Пусть система 
+\begin_inset Formula $x_{1},...,x_{m}$
+\end_inset
+
+ является линейно зависимой и из элементов этой системы составлены линейные
+ комбинации 
+\begin_inset Formula $y_{j}=\sum_{i=1}^{m}c_{ji}x_{i}$
+\end_inset
+
+, 
+\begin_inset Formula $j=1...r$
+\end_inset
+
+.
+ Если система 
+\begin_inset Formula $y_{1},...,y_{r}$
+\end_inset
+
+ является линейно независимой, то 
+\begin_inset Formula $r<m$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution
+Это вариация на тему леммы 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Невозможность-повышения-размерности-за-счёт-линейного-комбинирования"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution
+Во-первых, положив 
+\begin_inset Formula $y_{j}=x_{j}$
+\end_inset
+
+, 
+\begin_inset Formula $j=1...m$
+\end_inset
+
+, получим пример системы с 
+\begin_inset Formula $r=m$
+\end_inset
+
+, которая является линейно зависимой.
+\end_layout
+
+\begin_layout Solution
+Будем доказывать методом математической индукции.
+ Начнём со случая 
+\begin_inset Formula $m=1$
+\end_inset
+
+.
+ Система из одного вектора является линейной зависимой только если он нулевой
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Добавить задачу про это?
+\end_layout
+
+\end_inset
+
+.
+ Поэтому 
+\begin_inset Formula $x_{1}=0$
+\end_inset
+
+, а значит 
+\begin_inset Formula 
+\[
+y_{j}=c_{j1}x_{1}=c_{j1}0=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+добавить выше задачу про 
+\begin_inset Formula $a\cdot0=0$
+\end_inset
+
+ и сослаться здесь на неё
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+Таким образом, линейно независимую систему составить невозможно, то есть
+ при 
+\begin_inset Formula $m=1$
+\end_inset
+
+ 
+\begin_inset Formula $r=0$
+\end_inset
+
+ и базис индукции 
+\begin_inset Formula $r<m$
+\end_inset
+
+ доказан.
+\end_layout
+
+\begin_layout Solution
+Шаг индукции выполняется аналогично шагу индукции в доказательстве леммы
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Невозможность-повышения-размерности-за-счёт-линейного-комбинирования"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Может быть вынести шаг индукции в отдельное утверждение, а в этих доказательства
+х сослаться на него.
+ Особенно важно, что этот шаг является конструктивным: он используется при
+ решении систем линейных алгебраических уравнений
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Задача: если в лемме вектора являются линейно зависимыми, то число линейно
+ независимых линейных комбинаций меньше, чем число исходных векторов
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Базис и координаты в 
+\begin_inset Formula $n$
+\end_inset
+
+-мерном пространстве
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Определение базиса.
+ Примечание: мне больше нравится определение базиса как совокупности векторов,
+ через которую можно выразить любой другой вектор, причём единственным образом.
+ Это определение лучше даёт представление о цели введение понятия базиса.
+ Кроме того, получается более мягкий переход от предыдущего пункта Про другое
+ определение можно сказать отдельно и подчеркнуть их эквивалентность.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Примеры базиса
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Существование базиса в конечномерном пространстве
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Линейно-независимую систему векторов можно дополнить до базиса
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Теорема о том, что каждый вектор линейного пространства можно представить
+ как линейную комбинацию векторов базиса, причём единственным образом.
+ Примечание: при предложенном выше подходе в этом месте должна быть теорема
+ о том, что любые 
+\begin_inset Formula $n$
+\end_inset
+
+ линейно-независимых векторов образуют базис.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Определение координат вектора в базисе
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Координаты суммы векторов и произведения вектора на число
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Нулевой вектор имеет нулевые координаты
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пример: координаты в трёхмерном пространстве из аналитической геометрии
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пример: координаты в 
+\begin_inset Quotes fld
+\end_inset
+
+верхне-треугольном
+\begin_inset Quotes frd
+\end_inset
+
+ базисе
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Абстрактный многомерный вектор: компоненты как координаты
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+Доказать, что в любом базисе координаты некоторого вектора 
+\begin_inset Formula $x=\left(\xi_{1},...,\xi_{n}\right)$
+\end_inset
+
+ суть линейные комбинации чисел 
+\begin_inset Formula $\xi_{1},...,\xi_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Написать решение
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пример: многочлены степени не выше 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ 
+\begin_inset Quotes fld
+\end_inset
+
+Сдвинутый
+\begin_inset Quotes frd
+\end_inset
+
+ базис.
+ Связь с рядом Тейлора
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Изоморфизм 
+\begin_inset Formula $n$
+\end_inset
+
+-мерных пространств
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Мотивировка введения понятия изоморфизм
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Определение изоморфизма
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Изоморфизм сохраняет линейную (не)зависимость
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Два пространства разной размерности не изоморфны
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Теорема: все пространства одной (конечной) размерности изоморфны друг другу
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Размерность — единственная существенная характеристика линейного пространства
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Подпространства линейного пространства
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Определение подпространства линейного пространства
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пример: нулевое подпространство
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пример: всё пространство
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Определение: несобственное и собственное подпространство
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пример: плоскость в трёхмерном пространстве
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пример: многомерное пространство, полагаем одну координату равной нулю
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пример: многочлены степени меньше 
+\begin_inset Formula $n$
+\end_inset
+
+ в пространстве всех непрерывных функций
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+В подпространстве содержится нулевой элемент.
+ Перенос понятий линейного пространства на подпространство
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Размерность подпространства не превосходит размерности всего пространства
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+Доказать, что если подпространство 
+\begin_inset Formula $R^{\prime}$
+\end_inset
+
+ пространства 
+\begin_inset Formula $R$
+\end_inset
+
+ имеет ту же размерность, что и всё пространство 
+\begin_inset Formula $R$
+\end_inset
+
+, то оно совпадает с 
+\begin_inset Formula $R$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution
+Из равенства размерностей 
+\begin_inset Formula $R^{\prime}$
+\end_inset
+
+ и 
+\begin_inset Formula $R$
+\end_inset
+
+ следует, из векторов 
+\begin_inset Formula $R^{\prime}$
+\end_inset
+
+ можно составить базис пространства 
+\begin_inset Formula $R$
+\end_inset
+
+.
+ Таким образом, любой элемент 
+\begin_inset Formula $R$
+\end_inset
+
+ является линейной комбинацией векторов из 
+\begin_inset Formula $R^{\prime}$
+\end_inset
+
+.
+ Но, по определению подпространства, линейная комбинация векторов 
+\begin_inset Formula $R^{\prime}$
+\end_inset
+
+ тоже принадлежит 
+\begin_inset Formula $R^{\prime}$
+\end_inset
+
+.
+ Таким образом, элемент 
+\begin_inset Formula $R\subset R^{\prime}$
+\end_inset
+
+.
+ С другой стороны, из определению подпространства следует 
+\begin_inset Formula $R^{\prime}\subset R$
+\end_inset
+
+.
+ Таким образом, 
+\begin_inset Formula $R^{\prime}=R$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+Доказать, что если 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+ и 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+ — подпространства пространства 
+\begin_inset Formula $R$
+\end_inset
+
+, 
+\begin_inset Formula $R_{1}\subset R_{2}$
+\end_inset
+
+ и размерности 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+ и 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+ совпадают, то 
+\begin_inset Formula $R_{1}=R_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Написать решение
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Подпространство, порождённое набором векторов, как наименьшее подпространство,
+ содержащее этот набор.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Подпространство порождённое линейно-независимыми векторами, его размерность,
+ базис в нём
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+Показать, что в 
+\begin_inset Formula $n$
+\end_inset
+
+-мерном пространстве существуют подпространства всех меньших размерностей.
+\end_layout
+
+\begin_layout Solution
+В 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+ подпространство размерности 
+\begin_inset Formula $n-k$
+\end_inset
+
+ получаются, если рассматривать вектора, 
+\begin_inset Formula $k$
+\end_inset
+
+ первых координат которых равны нулю.
+ Для остальных пространств утверждение справедливо в силу изоморфности всех
+ конечномерных линейных пространств одной размерности.
+\end_layout
+
+\begin_layout Solution
+В 
+\begin_inset Formula $n$
+\end_inset
+
+-мерном пространстве можно выбрать 
+\begin_inset Formula $1\le k<n$
+\end_inset
+
+ линейно независимых векторов.
+ Пространство порождённое такой системой является 
+\begin_inset Formula $k$
+\end_inset
+
+-мерным.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Прямая в линейном пространстве как простейшее собственное подпространство
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Плоскость в линейном пространстве
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+Показать, что в пространстве систем 
+\begin_inset Formula $n$
+\end_inset
+
+ действительных чисел 
+\begin_inset Formula $\left(x_{1},...,x_{n}\right)$
+\end_inset
+
+ совокупность векторов, удовлетворяющих соотношению 
+\begin_inset Formula 
+\[
+\sum_{k=1}^{n}a_{n}x_{n}=0,
+\]
+
+\end_inset
+
+где 
+\begin_inset Formula $a_{1},...,a_{n}$
+\end_inset
+
+ — фиксированные вещественные числа, не все равные нулю, образуют подпространств
+а размерности 
+\begin_inset Formula $n-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution
+Обозначим рассматриваемое подпространство как 
+\begin_inset Formula $L$
+\end_inset
+
+.
+ Пусть 
+\begin_inset Formula $a_{n}\ne0$
+\end_inset
+
+ (этого всегда можно достичь изменив нумерацию координат), тогда
+\end_layout
+
+\begin_layout Solution
+\begin_inset Formula 
+\[
+x_{n}=-\frac{1}{a_{n}}\sum_{k=1}^{n-1}a_{k}x_{k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+Таким образом, зная первые 
+\begin_inset Formula $n-1$
+\end_inset
+
+ координаты вектора 
+\begin_inset Formula $x$
+\end_inset
+
+ мы можем определить его последнюю координату.
+ Таким образом, векторы из 
+\begin_inset Formula $L$
+\end_inset
+
+ изоморфны совокупность 
+\begin_inset Formula $n-1$
+\end_inset
+
+ вещественного числа.
+\end_layout
+
+\begin_layout Problem
+Показать, что если два подпространства 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+ и 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+ пространства 
+\begin_inset Formula $R$
+\end_inset
+
+ имеют общим лишь нулевой вектор, то сумма их размерностей не превосходит
+ размерности 
+\begin_inset Formula $R$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Написать решение
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+Показать, что размерность подпространства, порождённого системой векторов,
+ равна максимальному числу линейно-независимых векторов среди них.
+\end_layout
+
+\begin_layout Solution
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Написать решение
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Разложение линейного пространства в прямую сумму подпространств.
+ Сумма и пересечение подпространств
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Определение разложения пространства в прямую сумму подпространств
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Достаточное условие разложимости в сумму подпространств: общим для подпространст
+в является только нулевой вектор, Сумма размерностей подпространств равна
+ размерности пространства
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пересечение подпространств является пространством
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Сумма подпространств является пространством.
+ Отличие от прямой суммы
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+Показать, что сумма двух различных двумерных подпространств трёхмерного
+ пространства есть всё это пространство
+\end_layout
+
+\begin_layout Solution
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Написать решение
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Теорема: сумма размерностей подпространств равна размерности суммы плюс
+ размерность пересечения (аналог принципа включения-исключения)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Упражнение: проверить теорему для случая двух двумерных подпространств трёхмерно
+го пространства
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Упражнение: каково наименьшее число измерений пространства, в котором две
+ плоскости могут пересекаться в точке?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Упражнение: доказать, что если 
+\begin_inset Formula $R_{1}\cap R_{2}$
+\end_inset
+
+ есть нулевое подпространство, то 
+\begin_inset Formula $\tilde{R}=R_{1}+R_{2}$
+\end_inset
+
+ есть прямая сумма 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+ и 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Упражнение: доказать, что если имеется разложение в прямую сумму, то пересечение
+ слагаемых есть нулевое подпространство и, следовательно, сумма размерностей
+ подпространств-слагаемых равна размерности всего пространства
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Преобразование координат при изменении базиса
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Полная и матричная форма преобразований координат
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Формулы обратного преобразования
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Евклидово пространство
+\end_layout
+
+\begin_layout Subsection
+Определение евклидова пространства
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Мотивировка введения понятия евклидова пространства: длина вектора, угол
+ между векторами
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Определение и аксиомы скалярного произведения
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Определение евклидова пространства
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пример: трёхмерные векторы из геометрии
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пример: абстрактные многомерные вектора
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пример: метрическая матрица, какие условия на неё нужно наложить? Положительно
+ определённые квадратичные формы, связь с обычным скалярным произведением
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Упражнение: даны две матрицы, проверить, являются ли они положительно определённ
+ыми
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пример: непрерывные на отрезке функции, скалярное произведение - интеграл
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пример: многочлены степени не выше 
+\begin_inset Formula $n$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Длина вектора.
+ Угол между векторами
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Определение длины вектора
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Определение угла между векторами (через связь с определением из геометрии)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Ортогональные вектора
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пример: абстрактная теорема Пифагора
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Неравенство Коши-Буняковского
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Формулировка и доказательство
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Упражнение: равенство достигается тогда и только тогда, когда векторы линейно
+ зависимы
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Примеры: неравенство Коши-Буняковского в примерах первого пункта
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Неравенство треугольника
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Упражнение: неравенство треугольника в пространствах-примерах
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Расстояние между двумя точками
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Ортогональный базис.
+ Изоморфизм евклидовых пространств
+\end_layout
+
+\begin_layout Subsection
+Ортогональный базис
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Равноправие базисов в линейном пространства.
+ Наиболее удобные базисы в евклидовом пространстве, связь с прямоугольными
+ системами координат в аналитической геометрии
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Определение: ортогональный базис
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Определение: ортонормированный базис
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Доказать, что ортонормированная система образует базис, если взять достаточно
+ векторов
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Процесс ортогонализации
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Теорема о существовании ортогональных базисов
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Примеры ортогонализации: геометрия, многочлены Лежандра
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Скалярное произведение в ортогональном базисе
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Упражнение: скалярное произведение в произвольном базисе
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Упражнение: если скалярное произведение задаётся евклидовой формулой, то
+ базис является ортогональным и нормированным
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Координаты вектора в ортонормированном базисе
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Проекция одного вектора на другой
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пример: разложение по многочленам Лежандра
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пример: ортогональность тригонометрической системы
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Перпендикуляр из точки в подпространства.
+ Кратчайшее расстояние от точки до подпространства 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+пометить, что этот пункт можно пропустить при первом чтении
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Определение: ортогональность вектора подпространству
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Ортогональность линейной комбинации
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Упражнение: Доказать, что совокупность векторов, ортогональных подпространству,
+ само образует подпространство
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Ставим задачу о построении перпендикуляра
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Докажем, что по перпендикуляру расстояние до подмножества наименьшее 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Фактическое построение перпендикуляра.
+ Доказательство его единственности
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Случай произвольного базиса
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Случай ортогонального базиса
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пример: метод наименьших квадратов.
+ Система нормальных уравнений
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пример: решить некоторую систему методом наименьших квадратов
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Пример: приближение функций тригонометрическими многочленами.
+ Ряд Фурье
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Изоморфизм евклидовых пространств
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Мотивировка
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Определение изоморфизма евклидовых пространств, связь с изоморфизмом линейных
+ пространств
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Теорема: все евклидовы пространства одной размерности изоморфны между собой
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Упражнение: доказать эту теорему по аналогии с доказательством для линейных
+ пространств
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Замечание: любое утверждение о двух или трёх векторах достаточно проверить
+ в трёхмерном пространстве элементарной геометрии
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Доказательство неравенства Коши-Буняковского через элементарную геометрию
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Неравенство треугольника через элементарную геометрию
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Билинейные и квадратичные формы
+\end_layout
+
+\begin_layout Subsection
+Линейная функция
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Определение линейной функции (линейной формы)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ПРОДОЛЖАТЬ С ЭТОГО МЕСТА
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Билинейные функции
+\end_layout
+
+\begin_layout Subsection
+Матрица билинейной формы
+\end_layout
+
+\begin_layout Subsection
+Преобразование матрицы билинейной формы при изменении базиса
+\end_layout
+
+\begin_layout Subsection
+Квадратичные формы
+\end_layout
+
+\begin_layout Section
+Приведение квадратичной формы к сумме квадратов
+\end_layout
+
+\begin_layout Section
+Приведение квадратичной формы к сумме квадратов треугольным преобразованием
+\end_layout
+
+\begin_layout Subsection
+Метод Якоби
+\end_layout
+
+\begin_layout Subsection
+Критерии положительной определённости матрицы
+\end_layout
+
+\begin_layout Subsection
+Определители Грама
+\end_layout
+
+\begin_layout Section
+Закон инерции
+\end_layout
+
+\begin_layout Subsection
+Закон инерции
+\end_layout
+
+\begin_layout Subsection
+Ранг квадратичной формы
+\end_layout
+
+\begin_layout Section
+Комплексное n-мерное пространство
+\end_layout
+
+\begin_layout Subsection
+Комплексное линейное пространство
+\end_layout
+
+\begin_layout Subsection
+Комплексное евклидово пространство
+\end_layout
+
+\begin_layout Subsection
+Ортогональный базис.
+ Изоморфизм комплексных евклидовых пространств
+\end_layout
+
+\begin_layout Subsection
+Билинейные и квадратичные формы
+\end_layout
+
+\begin_layout Subsection
+Приведение квадратичной формы к сумме квадратов
+\end_layout
+
+\begin_layout Subsection
+Приведение эрмитовой квадратичной формы к сумме квадратов треугольным преобразов
+анием
+\end_layout
+
+\begin_layout Subsection
+Закон инерции
+\end_layout
+
+\begin_layout Chapter
+Линейные преобразования
+\end_layout
+
+\begin_layout Section
+Линейные преобразования и операции над ними
+\end_layout
+
+\begin_layout Subsection
+Основные определения
+\end_layout
+
+\begin_layout Subsection
+Связь между матрицами и линейными преобразованиями
+\end_layout
+
+\begin_layout Subsection
+Сложение и умножение линейных преобразований
+\end_layout
+
+\begin_layout Subsection
+Обратное преобразование.
+ Ядро и образ преобразования
+\end_layout
+
+\begin_layout Subsection
+Связь между матрицами линейного преобразования в различных базисах
+\end_layout
+
+\begin_layout Subsection
+Линейное преобразование пространства 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+ в пространство 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Инвариантные подпространства, собственные векторы и собственные значения
+ линейного преобразования
+\end_layout
+
+\begin_layout Subsection
+Инвариантные подпространства
+\end_layout
+
+\begin_layout Subsection
+Собственные векторы и собственные значения
+\end_layout
+
+\begin_layout Subsection
+Приведение к диагональной форме в базисе собственных векторов, если они
+ все линейной независимы
+\end_layout
+
+\begin_layout Subsection
+Характеристический многочлен
+\end_layout
+
+\begin_layout Section
+Линейное преобразование, сопряжённое к данному
+\end_layout
+
+\begin_layout Subsection
+Связь между линейными преобразованиями и билинейными формами в евклидовом
+ пространстве
+\end_layout
+
+\begin_layout Subsection
+Операция перехода от преобразования к его сопряжённому
+\end_layout
+
+\begin_layout Subsection
+Самосопряжённые, унитарные и нормальные линейные преобразования
+\end_layout
+
+\begin_layout Section
+Самосопряженные (эрмитовы) преобразования.
+ Одновременное приведение пары квадратичных форм к сумме квадратов
+\end_layout
+
+\begin_layout Subsection
+Самосопряжённые преобразования
+\end_layout
+
+\begin_layout Subsection
+Приведение к главным осям.
+ Одновременное приведение пары квадратичных форм к сумме квадратов.
+\end_layout
+
+\begin_layout Section
+Унитарные преобразования
+\end_layout
+
+\begin_layout Section
+Перестановочные линейные преобразования.
+ Нормальные преобразования
+\end_layout
+
+\begin_layout Subsection
+Перестановочные преобразования
+\end_layout
+
+\begin_layout Subsection
+Нормальные преобразования
+\end_layout
+
+\begin_layout Section
+Разложение линейного преобразования в произведение унитарного и эрмитового
+\end_layout
+
+\begin_layout Section
+Линейные преобразования в вещественном евклидовом пространстве
+\end_layout
+
+\begin_layout Subsection
+Линейные преобразования в вещественном пространстве
+\end_layout
+
+\begin_layout Subsection
+Самосопряжённые преобразования
+\end_layout
+
+\begin_layout Subsection
+Приведение к главным осям
+\end_layout
+
+\begin_layout Subsection
+Одновременное приведение пары квадратичных форм к сумме квадратов
+\end_layout
+
+\begin_layout Subsection
+Ортогональные преобразования
+\end_layout
+
+\begin_layout Section
+Экстремальные свойства собственных значений
+\end_layout
+
+\begin_layout Chapter
+Канонический вид произвольных линейных преобразований
+\end_layout
+
+\begin_layout Section
+Нормальная форма линейного преобразования
+\end_layout
+
+\begin_layout Section
+Приведение произвольного преобразования к нормальной форме
+\end_layout
+
+\begin_layout Subsection
+Собственные и присоединённые векторы линейного преобразования
+\end_layout
+
+\begin_layout Subsection
+Выделение подпространства, в котором преобразование имеет только одно собственно
+е значение
+\end_layout
+
+\begin_layout Subsection
+Приведение к нормальной форме матрицы с одним собственным значением
+\end_layout
+
+\begin_layout Section
+Другое доказательство теоремы о приведении к нормальной форме
+\end_layout
+
+\begin_layout Section
+Инвариантные множители
+\end_layout
+
+\begin_layout Section
+\begin_inset Formula $\lambda$
+\end_inset
+
+-матрицы (полиномиальные матрицы)
+\end_layout
+
+\begin_layout Subsection
+Определение полиномиальной матрицы
+\end_layout
+
+\begin_layout Subsection
+Однозначность нормальной
+\end_layout
+
+\begin_layout Subsection
+Обратимость
+\end_layout
+
+\begin_layout Subsection
+Эквивалентность полиномиальных матриц первой степени
+\end_layout
+
+\begin_layout Chapter
+Понятие о тензорах
+\end_layout
+
+\begin_layout Section
+Сопряжённое (двойственное) пространство
+\end_layout
+
+\begin_layout Section
+Тензоры
+\end_layout
+
+\begin_layout Section
+Тензорное произведение
+\end_layout
+
+\begin_layout Chapter*
+Теория возмущений
+\end_layout
+
+\begin_layout Section
+Случай некратных собственных значений
+\end_layout
+
+\begin_layout Section
+Случай кратных собственных значений
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{sloppy}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
