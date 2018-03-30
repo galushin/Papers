@@ -1,0 +1,381 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language russian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{k=1}^{n}\left\Vert az_{k}+b-x_{k}\right\Vert ^{2}\to\min_{a,b}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+Q\left(a,b\right)=\frac{1}{n}\sum_{k=1}^{n}\left\Vert az_{k}+b-x_{k}\right\Vert ^{2}=\frac{1}{n}\sum_{k=1}^{n}\left(az_{k}+b-x_{k}\right)^{T}\left(az_{k}+b-x_{k}\right)=\\
+=\frac{1}{n}\sum_{k=1}^{n}\left(a^{T}a\cdot z_{k}^{2}+2\cdot a^{T}bz_{k}-2\cdot a^{T}x_{k}z_{k}+b^{T}b-2\cdot b^{T}x_{k}+x_{k}^{T}x_{k}\right)=\\
+=a^{T}a\cdot\overline{z^{2}}+2a^{T}b\cdot\overline{z}-2a^{T}\overline{xz}+b^{T}b-2\cdot b^{T}\overline{x}+\overline{x^{T}x}
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial Q}{\partial b}=2a\overline{z}+2b-2\overline{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial Q}{\partial a}=2a\cdot\overline{z^{2}}+2b\cdot\overline{z}-2\overline{xz}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+a\cdot\overline{z}+b=\overline{x}\\
+a\cdot\overline{z^{2}}+b\cdot\overline{z}=\overline{xz}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+b=\overline{x}-a\cdot\overline{z}\\
+a\cdot\left(\overline{z^{2}}-\overline{z}^{2}\right)=\overline{xz}-\overline{x}\cdot\overline{z}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+a=\frac{\overline{xz}-\overline{x}\cdot\overline{z}}{\overline{z^{2}}-\overline{z}^{2}}\\
+b=\overline{x}-a\cdot\overline{z}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Без ограничения общности можно считать, что 
+\begin_inset Formula $\overline{z}=0$
+\end_inset
+
+, 
+\begin_inset Formula $\overline{x}=0$
+\end_inset
+
+, 
+\begin_inset Formula $\overline{x_{k}^{2}}=1$
+\end_inset
+
+ и 
+\begin_inset Formula $\overline{z^{2}}-\overline{z}^{2}=1$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\overline{x^{T}x}=\sum_{i=1}^{m}x_{i}^{2}=m.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a=\overline{xz}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+b=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q^{*}=\left(\overline{xz}\right)^{T}\left(\overline{xz}\right)-2\left(\overline{xz}\right)^{T}\overline{xz}+\overline{x^{T}x}=m-\left(\overline{xz}\right)^{T}\overline{xz}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Пусть теперь 
+\begin_inset Formula $z=\alpha^{T}x$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\overline{xz}=\frac{1}{n}\sum_{k=1}^{n}x_{k}x_{k}^{T}\alpha=S\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S=\frac{1}{n}\sum_{k=1}^{n}x_{k}x_{k}^{T}=\overline{xx^{T}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q^{*}=m-\alpha^{T}S^{T}S\alpha.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\overline{z^{2}}=\alpha^{T}\overline{xx^{T}}\alpha=\alpha^{T}S\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\alpha^{T}S^{T}S\alpha\to\max_{\alpha}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\alpha^{T}S\alpha=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L=\alpha^{T}S^{T}S\alpha-2\lambda\left(\alpha^{T}S\alpha-1\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial L}{\partial\alpha}=2S^{T}S\alpha-2\lambda S^{T}\alpha=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S\alpha=\lambda\alpha.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Подставляя это выражение в ограничение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\alpha^{T}S\alpha=\alpha^{T}\lambda\alpha=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda=\frac{1}{\alpha^{T}\alpha}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q^{*}=m-\lambda^{2}\alpha^{T}\alpha=m-\lambda.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом, нужно выбирать наибольшее из возможных значений 
+\begin_inset Formula $\lambda$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document

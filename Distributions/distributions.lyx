@@ -3770,8 +3770,8 @@ M\left[\left(X_{n}-a\right)^{2}\right]=M\left[\left(\left(X_{n}-\mu_{n}\right)-\
 \end_layout
 
 \begin_layout Standard
-Так как оба предела справа не могут отрицательны, то для того, чтобы левая
- часть была равна нулю необходимо выполнение двух условий:
+Так как оба предела справа не могут быть отрицательны, то для того, чтобы
+ левая часть была равна нулю необходимо выполнение двух условий:
 \end_layout
 
 \begin_layout Standard
@@ -5832,6 +5832,12 @@ D\left[Y\right]=M\left[Y^{2}\right]-M^{2}\left[Y\right]=\frac{q}{p^{2}}.
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Равномерное-дискретное-распредел"
+
+\end_inset
+
 Равномерное дискретное распределение
 \end_layout
 
@@ -13171,6 +13177,159 @@ P\left\{ \left|t_{n-2}\right|<\left|t_{emp}\right|\right\} =2\cdot F_{t_{n-1}}\l
 
 \end_layout
 
+\begin_layout Section
+Ранговая корреляция
+\end_layout
+
+\begin_layout Standard
+Идея состоит в том, чтобы найти коэффициент корреляции не для самих значений,
+ а для их рангов.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left[\left(X-Y\right)^{2}\right]=M\left[X^{2}-2XY+Y^{2}\right]=M\left[X^{2}\right]-2M\left[XY\right]+M\left[Y^{2}\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выразим математическое ожидание произведения:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+2M\left[XY\right]=M\left[X^{2}\right]+M\left[Y^{2}\right]-M\left[\left(X-Y\right)^{2}\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём теперь выражение для ковариации:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+2\mathrm{Cov}\left(X,Y\right)=2\left(M\left[XY\right]-\mu_{X}\mu_{Y}\right)=\\
+=M\left[X^{2}\right]+M\left[Y^{2}\right]-M\left[\left(X-Y\right)^{2}\right]-2\mu_{X}\mu_{Y}=\\
+=\sigma_{X}^{2}+\mu_{X}^{2}+\sigma_{Y}^{2}+\mu_{Y}^{2}-M\left[\left(X-Y\right)^{2}\right]-2\mu_{X}\mu_{Y}=\\
+=\sigma_{X}^{2}+\sigma_{Y}^{2}-M\left[\left(X-Y\right)^{2}\right]+\mu_{X}^{2}-2\mu_{X}\mu_{Y}+\mu_{Y}^{2}=\\
+=\sigma_{X}^{2}+\sigma_{Y}^{2}-M\left[\left(X-Y\right)^{2}\right]+\left(\mu_{X}-\mu_{Y}\right)^{2}=\\
+=\sigma_{X}^{2}+\sigma_{Y}^{2}-M\left[\left(X-Y\right)^{2}\right]+\mu_{X-Y}^{2}=\\
+=\sigma_{X}^{2}+\sigma_{Y}^{2}-\sigma_{X-Y}^{2}.
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Наконец, запишем формулу для коэффициента корреляции:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+2\rho_{XY}=\frac{\mathrm{Cov}\left(X,Y\right)}{\sigma_{X}\sigma_{Y}}=\frac{\sigma_{X}}{\sigma_{Y}}+\frac{\sigma_{Y}}{\sigma_{X}}-\frac{\sigma_{X-Y}^{2}}{\sigma_{X}\sigma_{Y}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если дисперсии случайных величин 
+\begin_inset Formula $X$
+\end_inset
+
+ и 
+\begin_inset Formula $Y$
+\end_inset
+
+ одинаковы (что и имеет место для рангов), то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\rho_{XY}=1-\frac{\sigma_{X-Y}^{2}}{2\sigma_{X}^{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдём выражение для дисперсии рангов в выборке 
+\begin_inset Formula $n$
+\end_inset
+
+ элементов.
+ Ранги — это целые числа от 
+\begin_inset Formula $1$
+\end_inset
+
+ до 
+\begin_inset Formula $n$
+\end_inset
+
+, причём каждое должно встречаться ровно один раз.
+ Это соотвествует равномерному дискретному распределению
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Равномерное-дискретное-распредел"
+
+\end_inset
+
+ с 
+\begin_inset Formula $a=1$
+\end_inset
+
+ и 
+\begin_inset Formula $b=n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma_{X}^{2}=\frac{\left(b-a+1\right)^{2}-1}{12}=\frac{n^{2}-1}{12}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Окончательно получаем
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\rho_{XY}=1-\frac{6\sigma_{X-Y}^{2}}{n^{2}-1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 Регрессионный анализ
 \end_layout
@@ -16744,7 +16903,7 @@ S_{n}=\frac{1-q^{n+1}}{1-q}.
 \end_layout
 
 \begin_layout Section
-Сумма квадратов
+Сумма степеней последовательных целых чисел
 \end_layout
 
 \begin_layout Standard
@@ -16899,6 +17058,218 @@ S_{n,3}=\sum_{k=1}^{n}k^{3}=1+\sum_{k=2}^{n}k^{3}=1+\sum_{k=1}^{n-1}\left(k+1\ri
 \[
 S_{n,2}=\frac{n\left(n+1\right)\left(2n+1\right)}{6}.
 \]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Рассмотрим теперь общий случай.
+\end_layout
+
+\begin_layout Standard
+С одной стороны:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n+1,t}=S_{n,t}+\left(n+1\right)^{t}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+С другой стороны:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n+1,t}=1^{t}+\sum_{k=2}^{n+1}k^{t}=1+\sum_{k=1}^{n}\left(k+1\right)^{t}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Воспользуемся формулой бинома Ньютона:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n+1,t}=1+\sum_{k=1}^{n}\sum_{j=0}^{t}\binom{t}{j}k^{j}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Изменим порядок суммирования:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n+1,t}=1+\sum_{j=0}^{t}\binom{t}{j}\sum_{k=1}^{n}k^{j}=1+\sum_{j=0}^{t}\binom{t}{j}S_{n,j}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выделим последнее слагаемое:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n+1,t}=1+\sum_{j=0}^{t-1}\binom{t}{j}S_{n,j}+S_{n,t}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Приравняв два выражения 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Добавить ссылки
+\end_layout
+
+\end_inset
+
+ для 
+\begin_inset Formula $S_{n+1,t}$
+\end_inset
+
+, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n,t}+\left(n+1\right)^{t}=1+\sum_{j=0}^{t-1}\binom{t}{j}S_{n,j}+S_{n,t}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(n+1\right)^{t}=1+\sum_{j=0}^{t-1}\binom{t}{j}S_{n,j}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выделим в сумме последнее слагаемое:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(n+1\right)^{t}=1+\sum_{j=0}^{t-2}\binom{t}{j}S_{n,j}+\binom{t}{t-1}S_{n,t-1}=1+\sum_{j=0}^{t-2}\binom{t}{j}S_{n,j}+t\cdot S_{n,t-1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n,t-1}=\frac{1}{t}\left[\left(n+1\right)^{t}-1-\sum_{j=0}^{t-2}\binom{t}{j}S_{n,j}\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Заменяя 
+\begin_inset Formula $t$
+\end_inset
+
+ на 
+\begin_inset Formula $t+1$
+\end_inset
+
+, получим:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n,t}=\frac{1}{t+1}\left[\left(n+1\right)^{t+1}-1-\sum_{j=0}^{t-1}\binom{t+1}{j}S_{n,j}\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для проверки формулы рассмотрим несколько первых значений:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n,0}=\frac{1}{1}\left[\left(n+1\right)^{1}-1\right]=n.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n,1}=\frac{1}{2}\left[\left(n+1\right)^{2}-1-\binom{2}{0}S_{n,0}\right]=\frac{1}{2}\left[\left(n+1\right)^{2}-1-n\right]=\frac{\left(n+1\right)n}{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+S_{n,2}=\frac{1}{3}\left[\left(n+1\right)^{3}-1-\binom{3}{0}S_{n,0}-\binom{3}{1}S_{n,1}\right]=\\
+=\frac{1}{3}\left[\left(n+1\right)^{3}-1-n-3\frac{\left(n+1\right)n}{2}\right]=\\
+=\frac{n+1}{3}\left[\left(n+1\right)^{2}-1-\frac{3}{2}n\right]=\frac{\left(n+1\right)}{6}\left[2\left(n^{2}+2n+1\right)-2-3n\right]=\\
+=\frac{n+1}{6}\left[2n^{2}+4n+2-2-3n\right]=\frac{n+1}{6}\left[2n^{2}+n\right]=\frac{\left(n+1\right)n\left(2n+1\right)}{6}.
+\end{multline*}
 
 \end_inset
 

@@ -1,5 +1,5 @@
-#LyX 2.0 created this file. For more info see http://www.lyx.org/
-\lyxformat 413
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
 \textclass article
@@ -12,13 +12,13 @@
 \font_roman default
 \font_sans default
 \font_typewriter default
+\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
-
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -28,15 +28,24 @@
 \use_hyperref false
 \papersize default
 \use_geometry false
-\use_amsmath 1
-\use_esint 1
-\use_mhchem 1
-\use_mathdots 1
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
 \cite_engine basic
+\cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
+\justification true
 \use_refstyle 1
 \index Index
 \shortcut idx
@@ -60,7 +69,24 @@
 \begin_body
 
 \begin_layout Section
-QR-алгоритм
+QR-алгоритм 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Разбить на подразделы
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Определение алгоритма
 \end_layout
 
 \begin_layout Standard
@@ -122,7 +148,20 @@ A_{k+1}=R_{k}Q_{k}\label{eq:QR_A_k+1}
 
 \end_layout
 
+\begin_layout Subsection
+Подобие матриц
+\end_layout
+
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Нужно написать про это
+\end_layout
+
+\end_inset
+
 Покажем, что все матрицы 
 \begin_inset Formula $A_{k}$
 \end_inset
@@ -200,7 +239,7 @@ A_{k+1}=\left(Q_{k}^{T}\cdot...\cdot Q_{1}^{T}\right)A_{1}\left(Q_{1}\cdot...\cd
 \begin_layout Standard
 \begin_inset Formula 
 \[
-S_{k}=Q_{1}\cdot...\cdot Q_{k}
+S_{k}=Q_{1}\cdot...\cdot Q_{k}.
 \]
 
 \end_inset
@@ -208,7 +247,16 @@ S_{k}=Q_{1}\cdot...\cdot Q_{k}
 
 \end_layout
 
+\begin_layout Subsection
+Формула для степеней
+\end_layout
+
 \begin_layout Standard
+Найдём теперь выражение для степеней матрицы 
+\begin_inset Formula $k$
+\end_inset
+
+: 
 \begin_inset Formula 
 \[
 A^{k}=A_{1}^{k}=\left(Q_{1}R_{1}\right)^{k}=Q_{1}\left(R_{1}Q_{1}\right)^{k-1}R_{1}=Q_{1}A_{2}^{k-1}R_{1}.
@@ -260,6 +308,10 @@ A^{k}=S_{k}T_{k}
 
 \end_layout
 
+\begin_layout Subsection
+Предельное соотношение
+\end_layout
+
 \begin_layout Standard
 С другой стороны
 \end_layout
@@ -296,6 +348,16 @@ S\Lambda^{k}S^{T}=S_{k}T_{k}
 \end_inset
 
 :
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Что делать, если такого разложения нет?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -344,6 +406,16 @@ S\Lambda^{k}L\Lambda^{-k}=S_{k}T_{k}U^{-1}\Lambda^{-k}
 
 \begin_layout Standard
 Можно показать, что
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Добавить доказательство
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -388,7 +460,32 @@ T_{k}U^{-1}\Lambda^{-k}=P_{k}
 \begin_inset Formula $P_{k}$
 \end_inset
 
- — положительно определённая правая верхняя треугольная матрица.
+ — положительно определённая правая верхняя треугольная матрица
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Доказать
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{k}P_{k}\to S\cdot L^{\prime}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Лемма о сходимости произведения ортогональной и правотреугольной матрицы
 \end_layout
 
 \begin_layout Standard
@@ -404,7 +501,17 @@ T_{k}U^{-1}\Lambda^{-k}=P_{k}
 \begin_inset Formula $P_{k}$
 \end_inset
 
- — верхняя треугольная, и 
+ — положительно-определённая верхняя треугольная матрица
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+уточнить требования
+\end_layout
+
+\end_inset
+
+, и 
 \begin_inset Formula $S_{k}P_{k}\to S$
 \end_inset
 
@@ -485,8 +592,8 @@ p_{k,11}\cdot s_{k,1}\to s_{1}.
 \begin_inset Formula $p_{k}$
 \end_inset
 
- — положительная треугольная матрица, её диагональные элементы положительны,
- поэтому:
+ — положительно-определённая треугольная матрица, её диагональные элементы
+ положительны, поэтому:
 \end_layout
 
 \begin_layout Standard
@@ -609,6 +716,23 @@ s_{k,2}\to s_{2}.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Завершить доказательство леммы
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Завершение доказательства
 \end_layout
 
 \begin_layout Standard
